@@ -35,17 +35,16 @@ def is_blacklisted(title: str, summary: str, blacklist):
 
 
 def parse_arxiv_id(link: str) -> str:
-    # link is often like http://arxiv.org/abs/XXXX.XXXXvN
+    # Example: http://arxiv.org/abs/XXXX.XXXXvN
     m = re.search(r"arxiv\.org/abs/([^?#]+)", link or "")
     return m.group(1) if m else (link or "")
 
 
 def entry_date(entry) -> datetime:
-    # arXiv API feed usually uses published/updated
     d = None
-    if "published" in entry and entry.published:
+    if getattr(entry, "published", None):
         d = dtparser.parse(entry.published)
-    elif "updated" in entry and entry.updated:
+    elif getattr(entry, "updated", None):
         d = dtparser.parse(entry.updated)
     else:
         return datetime.now(timezone.utc)
@@ -57,7 +56,7 @@ def entry_date(entry) -> datetime:
 
 def fetch_topic(search_query: str, max_results: int, start: int = 0):
     """
-    Fetch papers from arXiv API using a properly URL-encoded query.
+    Fetch recent papers from arXiv API using a URL-encoded query.
     """
     params = {
         "search_query": search_query,
@@ -70,9 +69,11 @@ def fetch_topic(search_query: str, max_results: int, start: int = 0):
 
     feed = feedparser.parse(url)
 
-    # Optional: if parsing failed, raise a clearer error
+    # If parsing failed, raise a clearer error for CI logs
     if getattr(feed, "bozo", 0):
-        raise RuntimeError(f"Feed parsing failed: {getattr(feed, 'bozo_exception', 'unknown error')}")
+        raise RuntimeError(
+            f"Feed parsing failed: {getattr(feed, 'bozo_exception', 'unknown error')}"
+        )
 
     items = []
     for e in feed.entries:
@@ -102,7 +103,7 @@ def within_days(dt_utc: datetime, days_back: int) -> bool:
     return dt_utc >= cutoff
 
 
-def md_paper(item):
+def md_paper(item) -> str:
     date_str = item["published_utc"].strftime("%Y-%m-%d")
     authors = ", ".join(item["authors"][:10])
     if len(item["authors"]) > 10:
@@ -124,9 +125,11 @@ def write_topic_page(topic_name: str, slug: str, items, updated_str: str):
     lines.append(f"_Updated: {updated_str}_\n")
     lines.append(f"Total papers shown: **{len(items)}**\n")
     lines.append("\n---\n")
+
     for it in items:
         lines.append(md_paper(it))
         lines.append("\n")
+
     with open(path, "w", encoding="utf-8") as f:
         f.write("\n".join(lines))
 
@@ -138,29 +141,19 @@ def write_index(site_title: str, description: str, topics_meta, updated_str: str
     if description:
         lines.append(f"{description}\n")
     lines.append(f"_Updated: {updated_str}_\n")
+
     lines.append("\n## Topics\n")
     for t in topics_meta:
-        # NOTE: If you're using GitHub Pages with Jekyll / docs folder,
-        # linking to .md may work better than .html unless you have conversion.
+        # We generate .md files, so link to .md
         lines.append(
             f"- [{t['name']}](topics/{t['slug']}.md) — **{t['count']}** papers (last {t['days_back']} days)\n"
         )
+
     lines.append("\n---\n")
     lines.append("Generated automatically from arXiv.\n")
+
     with open(path, "w", encoding="utf-8") as f:
         f.write("\n".join(lines))
-
-
-def write_readme(site_title: str):
-    text = f"""# {site_title}
-
-This repo auto-updates arXiv papers daily and publishes pages via GitHub Pages.
-
-- Open the site: `Settings → Pages` after enabling Pages (branch: `main`, folder: `/docs`)
-- Generated pages live in `docs/`.
-"""
-    with open("README.md", "w", encoding="utf-8") as f:
-        f.write(text)
 
 
 def main():
@@ -174,7 +167,6 @@ def main():
     days_back = int(site.get("days_back", 7))
 
     blacklist = (cfg.get("filters", {}) or {}).get("blacklist", [])
-
     updated_str = datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M UTC")
 
     topics_meta = []
@@ -187,7 +179,6 @@ def main():
 
         raw = fetch_topic(query, max_results=max_per_topic)
 
-        # filter by days_back + blacklist + dedup
         items = []
         for it in raw:
             if not within_days(it["published_utc"], days_back):
@@ -196,18 +187,18 @@ def main():
                 continue
             if it["arxiv_id"] in seen_global:
                 continue
+
             seen_global.add(it["arxiv_id"])
             items.append(it)
 
-        # sort by date (newest first)
         items.sort(key=lambda x: x["published_utc"], reverse=True)
 
         write_topic_page(name, slug, items, updated_str)
-        topics_meta.append({"name": name, "slug": slug, "count": len(items), "days_back": days_back})
+        topics_meta.append(
+            {"name": name, "slug": slug, "count": len(items), "days_back": days_back}
+        )
 
     write_index(title, desc, topics_meta, updated_str)
-    write_readme(title)
-
     print("Done. Pages generated under docs/")
 
 
