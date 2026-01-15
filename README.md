@@ -2,6 +2,9 @@
 
 Daily arXiv digest focused on **3D Computer Vision** research, including geometry-aware perception, reconstruction, and scene understanding.
 
+<!-- AUTO-GENERATED:START -->
+<!-- AUTO-GENERATED:END -->
+
 This repository is designed to support:
 
 - literature review
@@ -20,28 +23,6 @@ This repository is designed to support:
 - Point Clouds & 3D Representations
 - 3D Scene Understanding
 - Perception for Robotics & Autonomous Systems
-
----
-
-## Latest
-
-Updated on: **2026-01-15**
-
-Generated pages are available under `docs/`.
-
----
-
-## Topic Navigator
-
-| Topic | Papers | Link |
-|------|--------|------|
-| Neural Radiance Fields (NeRFs) | auto | docs/topics/nerf.md |
-| 3D Reconstruction | auto | docs/topics/3d-reconstruction.md |
-| Depth Estimation | auto | docs/topics/depth-estimation.md |
-| SLAM & Visual Odometry | auto | docs/topics/slam.md |
-| Point Clouds & 3D Geometry | auto | docs/topics/point-clouds.md |
-
-*(Paper counts and content are updated automatically.)*
 
 ---
 
