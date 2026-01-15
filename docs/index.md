@@ -2,7 +2,7 @@
 
 Daily arXiv papers by topic
 
-_Updated: 2026-01-15 07:17 UTC_
+_Updated: 2026-01-15 07:20 UTC_
 
 
 ## Topics
