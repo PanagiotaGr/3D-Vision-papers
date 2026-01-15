@@ -1,4 +1,4 @@
-# 3D Reconstruction
+# Neural Rendering & View Synthesis
 
 _Updated: 2026-01-15 10:49 UTC_
 

@@ -1,11 +1,22 @@
-# NeRF
+# NeRF & Neural Radiance Fields
 
-_Updated: 2026-01-15 10:46 UTC_
+_Updated: 2026-01-15 10:49 UTC_
 
-Total papers shown: **30**
+Total papers shown: **38**
 
 
 ---
+
+- **Fast-ThinkAct: Efficient Vision-Language-Action Reasoning via Verbalizable Latent Planning**  
+  Chi-Pin Huang, Yunze Man, Zhiding Yu, Min-Hung Chen, Jan Kautz, Yu-Chiang Frank Wang, Fu-En Yang  
+  _2026-01-14_ · https://arxiv.org/abs/2601.09708v1  
+  <details><summary>Abstract</summary>
+
+  Vision-Language-Action (VLA) tasks require reasoning over complex visual scenes and executing adaptive actions in dynamic environments. While recent studies on reasoning VLAs show that explicit chain-of-thought (CoT) can improve generalization, they suffer from high inference latency due to lengthy reasoning traces. We propose Fast-ThinkAct, an efficient reasoning framework that achieves compact yet performant planning through verbalizable latent reasoning. Fast-ThinkAct learns to reason efficiently with latent CoTs by distilling from a teacher, driven by a preference-guided objective to align manipulation trajectories that transfers both linguistic and visual planning capabilities for embodied control. This enables reasoning-enhanced policy learning that effectively connects compact reasoning to action execution. Extensive experiments across diverse embodied manipulation and reasoning benchmarks demonstrate that Fast-ThinkAct achieves strong performance with up to 89.3\% reduced inference latency over state-of-the-art reasoning VLAs, while maintaining effective long-horizon planning, few-shot adaptation, and failure recovery.
+
+  </details>
+
+
 
 - **SAM3-DMS: Decoupled Memory Selection for Multi-target Video Segmentation of SAM3**  
   Ruiqi Shen, Chang Liu, Henghui Ding  
@@ -128,12 +139,45 @@ Total papers shown: **30**
 
 
 
+- **PersonalAlign: Hierarchical Implicit Intent Alignment for Personalized GUI Agent with Long-Term User-Centric Records**  
+  Yibo Lyu, Gongwei Chen, Rui Shao, Weili Guan, Liqiang Nie  
+  _2026-01-14_ · https://arxiv.org/abs/2601.09636v1  
+  <details><summary>Abstract</summary>
+
+  While GUI agents have shown strong performance under explicit and completion instructions, real-world deployment requires aligning with users' more complex implicit intents. In this work, we highlight Hierarchical Implicit Intent Alignment for Personalized GUI Agent (PersonalAlign), a new agent task that requires agents to leverage long-term user records as persistent context to resolve omitted preferences in vague instructions and anticipate latent routines by user state for proactive assistance. To facilitate this study, we introduce AndroidIntent, a benchmark designed to evaluate agents' ability in resolving vague instructions and providing proactive suggestions through reasoning over long-term user records. We annotated 775 user-specific preferences and 215 routines from 20k long-term records across different users for evaluation. Furthermore, we introduce Hierarchical Intent Memory Agent (HIM-Agent), which maintains a continuously updating personal memory and hierarchically organizes user preferences and routines for personalization. Finally, we evaluate a range of GUI agents on AndroidIntent, including GPT-5, Qwen3-VL, and UI-TARS, further results show that HIM-Agent significantly improves both execution and proactive performance by 15.7% and 7.3%.
+
+  </details>
+
+
+
 - **Toward Understanding Unlearning Difficulty: A Mechanistic Perspective and Circuit-Guided Difficulty Metric**  
   Jiali Cheng, Ziheng Chen, Chirag Agarwal, Hadi Amiri  
   _2026-01-14_ · https://arxiv.org/abs/2601.09624v1  
   <details><summary>Abstract</summary>
 
   Machine unlearning is becoming essential for building trustworthy and compliant language models. Yet unlearning success varies considerably across individual samples: some are reliably erased, while others persist despite the same procedure. We argue that this disparity is not only a data-side phenomenon, but also reflects model-internal mechanisms that encode and protect memorized information. We study this problem from a mechanistic perspective based on model circuits--structured interaction pathways that govern how predictions are formed. We propose Circuit-guided Unlearning Difficulty (CUD), a {\em pre-unlearning} metric that assigns each sample a continuous difficulty score using circuit-level signals. Extensive experiments demonstrate that CUD reliably separates intrinsically easy and hard samples, and remains stable across unlearning methods. We identify key circuit-level patterns that reveal a mechanistic signature of difficulty: easy-to-unlearn samples are associated with shorter, shallower interactions concentrated in earlier-to-intermediate parts of the original model, whereas hard samples rely on longer and deeper pathways closer to late-stage computation. Compared to existing qualitative studies, CUD takes a first step toward a principled, fine-grained, and interpretable analysis of unlearning difficulty; and motivates the development of unlearning methods grounded in model mechanisms.
+
+  </details>
+
+
+
+- **CogRail: Benchmarking VLMs in Cognitive Intrusion Perception for Intelligent Railway Transportation Systems**  
+  Yonglin Tian, Qiyao Zhang, Wei Xu, Yutong Wang, Yihao Wu, Xinyi Li, Xingyuan Dai, Hui Zhang, Zhiyong Cui, Baoqing Guo, et al.  
+  _2026-01-14_ · https://arxiv.org/abs/2601.09613v1  
+  <details><summary>Abstract</summary>
+
+  Accurate and early perception of potential intrusion targets is essential for ensuring the safety of railway transportation systems. However, most existing systems focus narrowly on object classification within fixed visual scopes and apply rule-based heuristics to determine intrusion status, often overlooking targets that pose latent intrusion risks. Anticipating such risks requires the cognition of spatial context and temporal dynamics for the object of interest (OOI), which presents challenges for conventional visual models. To facilitate deep intrusion perception, we introduce a novel benchmark, CogRail, which integrates curated open-source datasets with cognitively driven question-answer annotations to support spatio-temporal reasoning and prediction. Building upon this benchmark, we conduct a systematic evaluation of state-of-the-art visual-language models (VLMs) using multimodal prompts to identify their strengths and limitations in this domain. Furthermore, we fine-tune VLMs for better performance and propose a joint fine-tuning framework that integrates three core tasks, position perception, movement prediction, and threat analysis, facilitating effective adaptation of general-purpose foundation models into specialized models tailored for cognitive intrusion perception. Extensive experiments reveal that current large-scale multimodal models struggle with the complex spatial-temporal reasoning required by the cognitive intrusion perception task, underscoring the limitations of existing foundation models in this safety-critical domain. In contrast, our proposed joint fine-tuning framework significantly enhances model performance by enabling targeted adaptation to domain-specific reasoning demands, highlighting the advantages of structured multi-task learning in improving both accuracy and interpretability. Code will be available at https://github.com/Hub-Tian/CogRail.
+
+  </details>
+
+
+
+- **GRCF: Two-Stage Groupwise Ranking and Calibration Framework for Multimodal Sentiment Analysis**  
+  Manning Gao, Leheng Zhang, Shiqin Han, Haifeng Hu, Yuncheng Jiang, Sijie Mai  
+  _2026-01-14_ · https://arxiv.org/abs/2601.09606v1  
+  <details><summary>Abstract</summary>
+
+  Most Multimodal Sentiment Analysis research has focused on point-wise regression. While straightforward, this approach is sensitive to label noise and neglects whether one sample is more positive than another, resulting in unstable predictions and poor correlation alignment. Pairwise ordinal learning frameworks emerged to address this gap, capturing relative order by learning from comparisons. Yet, they introduce two new trade-offs: First, they assign uniform importance to all comparisons, failing to adaptively focus on hard-to-rank samples. Second, they employ static ranking margins, which fail to reflect the varying semantic distances between sentiment groups. To address this, we propose a Two-Stage Group-wise Ranking and Calibration Framework (GRCF) that adapts the philosophy of Group Relative Policy Optimization (GRPO). Our framework resolves these trade-offs by simultaneously preserving relative ordinal structure, ensuring absolute score calibration, and adaptively focusing on difficult samples. Specifically, Stage 1 introduces a GRPO-inspired Advantage-Weighted Dynamic Margin Ranking Loss to build a fine-grained ordinal structure. Stage 2 then employs an MAE-driven objective to align prediction magnitudes. To validate its generalizability, we extend GRCF to classification tasks, including multimodal humor detection and sarcasm detection. GRCF achieves state-of-the-art performance on core regression benchmarks, while also showing strong generalizability in classification tasks.
 
   </details>
 
@@ -227,12 +271,34 @@ Total papers shown: **30**
 
 
 
+- **GlovEgo-HOI: Bridging the Synthetic-to-Real Gap for Industrial Egocentric Human-Object Interaction Detection**  
+  Alfio Spoto, Rosario Leonardi, Francesco Ragusa, Giovanni Maria Farinella  
+  _2026-01-14_ · https://arxiv.org/abs/2601.09528v1  
+  <details><summary>Abstract</summary>
+
+  Egocentric Human-Object Interaction (EHOI) analysis is crucial for industrial safety, yet the development of robust models is hindered by the scarcity of annotated domain-specific data. We address this challenge by introducing a data generation framework that combines synthetic data with a diffusion-based process to augment real-world images with realistic Personal Protective Equipment (PPE). We present GlovEgo-HOI, a new benchmark dataset for industrial EHOI, and GlovEgo-Net, a model integrating Glove-Head and Keypoint- Head modules to leverage hand pose information for enhanced interaction detection. Extensive experiments demonstrate the effectiveness of the proposed data generation framework and GlovEgo-Net. To foster further research, we release the GlovEgo-HOI dataset, augmentation pipeline, and pre-trained models at: GitHub project.
+
+  </details>
+
+
+
 - **Video Joint-Embedding Predictive Architectures for Facial Expression Recognition**  
   Lennart Eing, Cristina Luna-Jiménez, Silvan Mertes, Elisabeth André  
   _2026-01-14_ · https://arxiv.org/abs/2601.09524v1  
   <details><summary>Abstract</summary>
 
   This paper introduces a novel application of Video Joint-Embedding Predictive Architectures (V-JEPAs) for Facial Expression Recognition (FER). Departing from conventional pre-training methods for video understanding that rely on pixel-level reconstructions, V-JEPAs learn by predicting embeddings of masked regions from the embeddings of unmasked regions. This enables the trained encoder to not capture irrelevant information about a given video like the color of a region of pixels in the background. Using a pre-trained V-JEPA video encoder, we train shallow classifiers using the RAVDESS and CREMA-D datasets, achieving state-of-the-art performance on RAVDESS and outperforming all other vision-based methods on CREMA-D (+1.48 WAR). Furthermore, cross-dataset evaluations reveal strong generalization capabilities, demonstrating the potential of purely embedding-based pre-training approaches to advance FER. We release our code at https://github.com/lennarteingunia/vjepa-for-fer.
+
+  </details>
+
+
+
+- **Class Adaptive Conformal Training**  
+  Badr-Eddine Marani, Julio Silva-Rodriguez, Ismail Ben Ayed, Maria Vakalopoulou, Stergios Christodoulidis, Jose Dolz  
+  _2026-01-14_ · https://arxiv.org/abs/2601.09522v1  
+  <details><summary>Abstract</summary>
+
+  Deep neural networks have achieved remarkable success across a variety of tasks, yet they often suffer from unreliable probability estimates. As a result, they can be overconfident in their predictions. Conformal Prediction (CP) offers a principled framework for uncertainty quantification, yielding prediction sets with rigorous coverage guarantees. Existing conformal training methods optimize for overall set size, but shaping the prediction sets in a class-conditional manner is not straightforward and typically requires prior knowledge of the data distribution. In this work, we introduce Class Adaptive Conformal Training (CaCT), which formulates conformal training as an augmented Lagrangian optimization problem that adaptively learns to shape prediction sets class-conditionally without making any distributional assumptions. Experiments on multiple benchmark datasets, including standard and long-tailed image recognition as well as text classification, demonstrate that CaCT consistently outperforms prior conformal training methods, producing significantly smaller and more informative prediction sets while maintaining the desired coverage guarantees.
 
   </details>
 
@@ -255,6 +321,17 @@ Total papers shown: **30**
   <details><summary>Abstract</summary>
 
   Powerful 3D representations such as DUSt3R invariant point maps, which encode 3D shape and camera parameters, have significantly advanced feed forward 3D reconstruction. While point maps assume static scenes, Dynamic Point Maps (DPMs) extend this concept to dynamic 3D content by additionally representing scene motion. However, existing DPMs are limited to image pairs and, like DUSt3R, require post processing via optimization when more than two views are involved. We argue that DPMs are more useful when applied to videos and introduce V-DPM to demonstrate this. First, we show how to formulate DPMs for video input in a way that maximizes representational power, facilitates neural prediction, and enables reuse of pretrained models. Second, we implement these ideas on top of VGGT, a recent and powerful 3D reconstructor. Although VGGT was trained on static scenes, we show that a modest amount of synthetic data is sufficient to adapt it into an effective V-DPM predictor. Our approach achieves state of the art performance in 3D and 4D reconstruction for dynamic scenes. In particular, unlike recent dynamic extensions of VGGT such as P3, DPMs recover not only dynamic depth but also the full 3D motion of every point in the scene.
+
+  </details>
+
+
+
+- **Towards Robust Cross-Dataset Object Detection Generalization under Domain Specificity**  
+  Ritabrata Chakraborty, Hrishit Mitra, Shivakumara Palaiahnakote, Umapada Pal  
+  _2026-01-14_ · https://arxiv.org/abs/2601.09497v1  
+  <details><summary>Abstract</summary>
+
+  Object detectors often perform well in-distribution, yet degrade sharply on a different benchmark. We study cross-dataset object detection (CD-OD) through a lens of setting specificity. We group benchmarks into setting-agnostic datasets with diverse everyday scenes and setting-specific datasets tied to a narrow environment, and evaluate a standard detector family across all train--test pairs. This reveals a clear structure in CD-OD: transfer within the same setting type is relatively stable, while transfer across setting types drops substantially and is often asymmetric. The most severe breakdowns occur when transferring from specific sources to agnostic targets, and persist after open-label alignment, indicating that domain shift dominates in the hardest regimes. To disentangle domain shift from label mismatch, we compare closed-label transfer with an open-label protocol that maps predicted classes to the nearest target label using CLIP similarity. Open-label evaluation yields consistent but bounded gains, and many corrected cases correspond to semantic near-misses supported by the image evidence. Overall, we provide a principled characterization of CD-OD under setting specificity and practical guidance for evaluating detectors under distribution shift. Code will be released at \href{[https://github.com/Ritabrata04/cdod-icpr.git}{https://github.com/Ritabrata04/cdod-icpr}.
 
   </details>
 
@@ -288,6 +365,17 @@ Total papers shown: **30**
   <details><summary>Abstract</summary>
 
   Automated analysis of ancient coins has the potential to help researchers extract more historical insights from large collections of coins and to help collectors understand what they are buying or selling. Recent research in this area has shown promise in focusing on identification of semantic elements as they are commonly depicted on ancient coins, by using convolutional neural networks (CNNs). This paper is the first to apply the recently proposed Vision Transformer (ViT) deep learning architecture to the task of identification of semantic elements on coins, using fully automatic learning from multi-modal data (images and unstructured text). This article summarises previous research in the area, discusses the training and implementation of ViT and CNN models for ancient coins analysis and provides an evaluation of their performance. The ViT models were found to outperform the newly trained CNN models in accuracy.
+
+  </details>
+
+
+
+- **Video-MSR: Benchmarking Multi-hop Spatial Reasoning Capabilities of MLLMs**  
+  Rui Zhu, Xin Shen, Shuchen Wu, Chenxi Miao, Xin Yu, Yang Li, Weikang Li, Deguo Xia, Jizhou Huang  
+  _2026-01-14_ · https://arxiv.org/abs/2601.09430v1  
+  <details><summary>Abstract</summary>
+
+  Spatial reasoning has emerged as a critical capability for Multimodal Large Language Models (MLLMs), drawing increasing attention and rapid advancement. However, existing benchmarks primarily focus on single-step perception-to-judgment tasks, leaving scenarios requiring complex visual-spatial logical chains significantly underexplored. To bridge this gap, we introduce Video-MSR, the first benchmark specifically designed to evaluate Multi-hop Spatial Reasoning (MSR) in dynamic video scenarios. Video-MSR systematically probes MSR capabilities through four distinct tasks: Constrained Localization, Chain-based Reference Retrieval, Route Planning, and Counterfactual Physical Deduction. Our benchmark comprises 3,052 high-quality video instances with 4,993 question-answer pairs, constructed via a scalable, visually-grounded pipeline combining advanced model generation with rigorous human verification. Through a comprehensive evaluation of 20 state-of-the-art MLLMs, we uncover significant limitations, revealing that while models demonstrate proficiency in surface-level perception, they exhibit distinct performance drops in MSR tasks, frequently suffering from spatial disorientation and hallucination during multi-step deductions. To mitigate these shortcomings and empower models with stronger MSR capabilities, we further curate MSR-9K, a specialized instruction-tuning dataset, and fine-tune Qwen-VL, achieving a +7.82% absolute improvement on Video-MSR. Our results underscore the efficacy of multi-hop spatial instruction data and establish Video-MSR as a vital foundation for future research. The code and data will be available at https://github.com/ruiz-nju/Video-MSR.
 
   </details>
 

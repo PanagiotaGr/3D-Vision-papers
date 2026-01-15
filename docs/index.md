@@ -1,19 +1,25 @@
-# My arXiv Daily
+# arXiv Daily – 3D Vision & Robotics
 
-Daily arXiv papers by topic
+Daily arXiv digest covering NeRF, Gaussian Splatting, SLAM, 3D Reconstruction & Neural Rendering
 
-_Updated: 2026-01-15 10:46 UTC_
+_Updated: 2026-01-15 10:49 UTC_
 
 
 ## Topics
 
-- [NeRF](topics/nerf.md) — **30** papers (last 1 days)
+- [NeRF & Neural Radiance Fields](topics/nerf.md) — **38** papers (last 1 days)
 
-- [Gaussian Splatting](topics/gaussian-splatting.md) — **0** papers (last 1 days)
+- [Gaussian Splatting & 3DGS](topics/gaussian-splatting.md) — **0** papers (last 1 days)
 
-- [SLAM](topics/slam.md) — **1** papers (last 1 days)
+- [SLAM & Localization](topics/slam.md) — **3** papers (last 1 days)
 
 - [3D Reconstruction](topics/3d-reconstruction.md) — **0** papers (last 1 days)
+
+- [Neural Rendering & View Synthesis](topics/neural-rendering.md) — **0** papers (last 1 days)
+
+- [Dynamic Scenes & 4D Reconstruction](topics/dynamic-scenes.md) — **0** papers (last 1 days)
+
+- [Datasets & Benchmarks (3D / Vision)](topics/datasets-benchmarks.md) — **0** papers (last 1 days)
 
 
 ---
