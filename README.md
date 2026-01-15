@@ -3,6 +3,24 @@
 Daily arXiv digest focused on **3D Computer Vision** research, including geometry-aware perception, reconstruction, and scene understanding.
 
 <!-- AUTO-GENERATED:START -->
+
+## Latest
+
+Updated on: **2026-01-15**
+
+
+Generated pages are available under `docs/`.
+
+
+## Topic Navigator
+
+| Topic | Papers | Link |
+|------|--------|------|
+| NeRF | 4 | [NeRF](docs/topics/nerf.md) |
+| Gaussian Splatting | 17 | [Gaussian Splatting](docs/topics/gaussian-splatting.md) |
+| SLAM | 3 | [SLAM](docs/topics/slam.md) |
+| 3D Reconstruction | 8 | [3D Reconstruction](docs/topics/3d-reconstruction.md) |
+
 <!-- AUTO-GENERATED:END -->
 
 This repository is designed to support:
