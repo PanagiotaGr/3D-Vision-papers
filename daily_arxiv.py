@@ -3,24 +3,28 @@
 
 import os
 import re
-import math
 import yaml
 import html
 import feedparser
 from datetime import datetime, timezone, timedelta
 from dateutil import parser as dtparser
+from urllib.parse import urlencode
 
-ARXIV_API_RSS = "http://export.arxiv.org/api/query?search_query={query}&start=0&max_results={max_results}&sortBy=submittedDate&sortOrder=descending"
+ARXIV_API_BASE = "http://export.arxiv.org/api/query"
+
 
 def load_config(path="config.yaml"):
     with open(path, "r", encoding="utf-8") as f:
         return yaml.safe_load(f)
 
+
 def ensure_dirs():
     os.makedirs("docs/topics", exist_ok=True)
 
+
 def normalize(text: str) -> str:
     return re.sub(r"\s+", " ", (text or "")).strip()
+
 
 def is_blacklisted(title: str, summary: str, blacklist):
     hay = (title + " " + summary).lower()
@@ -29,13 +33,15 @@ def is_blacklisted(title: str, summary: str, blacklist):
             return True
     return False
 
+
 def parse_arxiv_id(link: str) -> str:
     # link is often like http://arxiv.org/abs/XXXX.XXXXvN
     m = re.search(r"arxiv\.org/abs/([^?#]+)", link or "")
     return m.group(1) if m else (link or "")
 
+
 def entry_date(entry) -> datetime:
-    # arXiv RSS uses published/updated
+    # arXiv API feed usually uses published/updated
     d = None
     if "published" in entry and entry.published:
         d = dtparser.parse(entry.published)
@@ -43,13 +49,31 @@ def entry_date(entry) -> datetime:
         d = dtparser.parse(entry.updated)
     else:
         return datetime.now(timezone.utc)
+
     if d.tzinfo is None:
         d = d.replace(tzinfo=timezone.utc)
     return d.astimezone(timezone.utc)
 
-def fetch_topic(query: str, max_results: int):
-    url = ARXIV_API_RSS.format(query=escape_query(query), max_results=max_results)
+
+def fetch_topic(search_query: str, max_results: int, start: int = 0):
+    """
+    Fetch papers from arXiv API using a properly URL-encoded query.
+    """
+    params = {
+        "search_query": search_query,
+        "start": start,
+        "max_results": max_results,
+        "sortBy": "submittedDate",
+        "sortOrder": "descending",
+    }
+    url = ARXIV_API_BASE + "?" + urlencode(params)
+
     feed = feedparser.parse(url)
+
+    # Optional: if parsing failed, raise a clearer error
+    if getattr(feed, "bozo", 0):
+        raise RuntimeError(f"Feed parsing failed: {getattr(feed, 'bozo_exception', 'unknown error')}")
+
     items = []
     for e in feed.entries:
         title = normalize(html.unescape(getattr(e, "title", "")))
@@ -60,25 +84,23 @@ def fetch_topic(query: str, max_results: int):
             authors = [a.name for a in e.authors if hasattr(a, "name")]
         published = entry_date(e)
 
-        items.append({
-            "title": title,
-            "summary": summary,
-            "link": link,
-            "arxiv_id": parse_arxiv_id(link),
-            "authors": authors,
-            "published_utc": published,
-        })
+        items.append(
+            {
+                "title": title,
+                "summary": summary,
+                "link": link,
+                "arxiv_id": parse_arxiv_id(link),
+                "authors": authors,
+                "published_utc": published,
+            }
+        )
     return items
 
-def escape_query(q: str) -> str:
-    # arXiv wants URL-encoded query. feedparser can handle, but we should encode safely.
-    # We avoid urllib.parse.quote to keep this file minimal; do it manually for common chars.
-    from urllib.parse import quote
-    return quote(q, safe="():\"' ORAND+-_*")
 
 def within_days(dt_utc: datetime, days_back: int) -> bool:
     cutoff = datetime.now(timezone.utc) - timedelta(days=days_back)
     return dt_utc >= cutoff
+
 
 def md_paper(item):
     date_str = item["published_utc"].strftime("%Y-%m-%d")
@@ -94,6 +116,7 @@ def md_paper(item):
         f"  </details>\n"
     )
 
+
 def write_topic_page(topic_name: str, slug: str, items, updated_str: str):
     path = f"docs/topics/{slug}.md"
     lines = []
@@ -107,6 +130,7 @@ def write_topic_page(topic_name: str, slug: str, items, updated_str: str):
     with open(path, "w", encoding="utf-8") as f:
         f.write("\n".join(lines))
 
+
 def write_index(site_title: str, description: str, topics_meta, updated_str: str):
     path = "docs/index.md"
     lines = []
@@ -116,14 +140,18 @@ def write_index(site_title: str, description: str, topics_meta, updated_str: str
     lines.append(f"_Updated: {updated_str}_\n")
     lines.append("\n## Topics\n")
     for t in topics_meta:
-        lines.append(f"- [{t['name']}](topics/{t['slug']}.html) — **{t['count']}** papers (last {t['days_back']} days)\n")
+        # NOTE: If you're using GitHub Pages with Jekyll / docs folder,
+        # linking to .md may work better than .html unless you have conversion.
+        lines.append(
+            f"- [{t['name']}](topics/{t['slug']}.md) — **{t['count']}** papers (last {t['days_back']} days)\n"
+        )
     lines.append("\n---\n")
     lines.append("Generated automatically from arXiv.\n")
     with open(path, "w", encoding="utf-8") as f:
         f.write("\n".join(lines))
 
+
 def write_readme(site_title: str):
-    # κρατάμε README απλό: link προς Pages
     text = f"""# {site_title}
 
 This repo auto-updates arXiv papers daily and publishes pages via GitHub Pages.
@@ -133,6 +161,7 @@ This repo auto-updates arXiv papers daily and publishes pages via GitHub Pages.
 """
     with open("README.md", "w", encoding="utf-8") as f:
         f.write(text)
+
 
 def main():
     cfg = load_config("config.yaml")
@@ -180,6 +209,7 @@ def main():
     write_readme(title)
 
     print("Done. Pages generated under docs/")
+
 
 if __name__ == "__main__":
     main()
