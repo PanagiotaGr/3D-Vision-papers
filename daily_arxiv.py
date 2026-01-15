@@ -35,7 +35,6 @@ def is_blacklisted(title: str, summary: str, blacklist):
 
 
 def parse_arxiv_id(link: str) -> str:
-    # Example: http://arxiv.org/abs/XXXX.XXXXvN
     m = re.search(r"arxiv\.org/abs/([^?#]+)", link or "")
     return m.group(1) if m else (link or "")
 
@@ -55,9 +54,6 @@ def entry_date(entry) -> datetime:
 
 
 def fetch_topic(search_query: str, max_results: int, start: int = 0):
-    """
-    Fetch recent papers from arXiv API using a URL-encoded query.
-    """
     params = {
         "search_query": search_query,
         "start": start,
@@ -69,7 +65,6 @@ def fetch_topic(search_query: str, max_results: int, start: int = 0):
 
     feed = feedparser.parse(url)
 
-    # If parsing failed, raise a clearer error for CI logs
     if getattr(feed, "bozo", 0):
         raise RuntimeError(
             f"Feed parsing failed: {getattr(feed, 'bozo_exception', 'unknown error')}"
@@ -144,7 +139,6 @@ def write_index(site_title: str, description: str, topics_meta, updated_str: str
 
     lines.append("\n## Topics\n")
     for t in topics_meta:
-        # We generate .md files, so link to .md
         lines.append(
             f"- [{t['name']}](topics/{t['slug']}.md) — **{t['count']}** papers (last {t['days_back']} days)\n"
         )
@@ -154,6 +148,52 @@ def write_index(site_title: str, description: str, topics_meta, updated_str: str
 
     with open(path, "w", encoding="utf-8") as f:
         f.write("\n".join(lines))
+
+
+def update_readme_block(updated_str: str, topics_meta):
+    """
+    Updates README.md only between:
+    <!-- AUTO-GENERATED:START -->
+    <!-- AUTO-GENERATED:END -->
+    """
+    start_marker = "<!-- AUTO-GENERATED:START -->"
+    end_marker = "<!-- AUTO-GENERATED:END -->"
+
+    updated_date = updated_str.split(" ")[0]  # YYYY-MM-DD
+
+    lines = []
+    lines.append("## Latest\n")
+    lines.append(f"Updated on: **{updated_date}**\n")
+    lines.append("\nGenerated pages are available under `docs/`.\n")
+    lines.append("\n## Topic Navigator\n")
+    lines.append("| Topic | Papers | Link |")
+    lines.append("|------|--------|------|")
+
+    for t in topics_meta:
+        # README is at repo root -> link must include docs/
+        link = f"docs/topics/{t['slug']}.md"
+        lines.append(f"| {t['name']} | {t['count']} | [{t['name']}]({link}) |")
+
+    block = "\n".join(lines) + "\n"
+
+    try:
+        with open("README.md", "r", encoding="utf-8") as f:
+            readme = f.read()
+    except FileNotFoundError:
+        readme = f"# arXiv Daily\n\n{start_marker}\n{end_marker}\n"
+
+    if start_marker not in readme or end_marker not in readme:
+        readme = readme.rstrip() + f"\n\n{start_marker}\n{end_marker}\n"
+
+    pattern = re.compile(
+        re.escape(start_marker) + r".*?" + re.escape(end_marker),
+        flags=re.DOTALL,
+    )
+    replacement = f"{start_marker}\n\n{block}\n{end_marker}"
+    new_readme = pattern.sub(replacement, readme)
+
+    with open("README.md", "w", encoding="utf-8") as f:
+        f.write(new_readme)
 
 
 def main():
@@ -170,7 +210,7 @@ def main():
     updated_str = datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M UTC")
 
     topics_meta = []
-    seen_global = set()  # dedup across topics by arXiv id
+    seen_global = set()
 
     for t in cfg.get("topics", []):
         name = t["name"]
@@ -199,7 +239,11 @@ def main():
         )
 
     write_index(title, desc, topics_meta, updated_str)
-    print("Done. Pages generated under docs/")
+
+    # ✅ Update only the AUTO-GENERATED block in README
+    update_readme_block(updated_str, topics_meta)
+
+    print("Done. Pages generated under docs/ and README block updated.")
 
 
 if __name__ == "__main__":
