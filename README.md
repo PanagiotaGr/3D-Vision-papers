@@ -16,10 +16,10 @@ Generated pages are available under `docs/`.
 
 | Topic | Papers | Link |
 |------|--------|------|
-| NeRF | 4 | [NeRF](docs/topics/nerf.md) |
-| Gaussian Splatting | 17 | [Gaussian Splatting](docs/topics/gaussian-splatting.md) |
-| SLAM | 3 | [SLAM](docs/topics/slam.md) |
-| 3D Reconstruction | 8 | [3D Reconstruction](docs/topics/3d-reconstruction.md) |
+| NeRF | 30 | [NeRF](docs/topics/nerf.md) |
+| Gaussian Splatting | 0 | [Gaussian Splatting](docs/topics/gaussian-splatting.md) |
+| SLAM | 1 | [SLAM](docs/topics/slam.md) |
+| 3D Reconstruction | 0 | [3D Reconstruction](docs/topics/3d-reconstruction.md) |
 
 <!-- AUTO-GENERATED:END -->
 
