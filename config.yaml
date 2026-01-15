@@ -3,7 +3,7 @@ site:
   description: "Daily arXiv papers by topic"
   base_url: ""   # προαιρετικό (π.χ. https://<user>.github.io/<repo>)
   max_results_per_topic: 40
-  days_back: 7
+  days_back: 1
 
 topics:
   - name: "NeRF"
