@@ -1,0 +1,26 @@
+site:
+  title: "My arXiv Daily"
+  description: "Daily arXiv papers by topic"
+  base_url: ""   # προαιρετικό (π.χ. https://<user>.github.io/<repo>)
+  max_results_per_topic: 40
+  days_back: 7
+
+topics:
+  - name: "NeRF"
+    slug: "nerf"
+    query: '(ti:"neural radiance field" OR abs:"neural radiance field" OR ti:NeRF OR abs:NeRF) AND (cat:cs.CV OR cat:cs.GR)'
+  - name: "Gaussian Splatting"
+    slug: "gaussian-splatting"
+    query: '(ti:"gaussian splatting" OR abs:"gaussian splatting" OR ti:"3d gaussian" OR abs:"3d gaussian") AND (cat:cs.CV OR cat:cs.GR)'
+  - name: "SLAM"
+    slug: "slam"
+    query: '(ti:SLAM OR abs:SLAM OR ti:"simultaneous localization and mapping" OR abs:"simultaneous localization and mapping") AND (cat:cs.RO OR cat:cs.CV)'
+  - name: "3D Reconstruction"
+    slug: "3d-reconstruction"
+    query: '(ti:"3d reconstruction" OR abs:"3d reconstruction" OR ti:"multi-view stereo" OR abs:"multi-view stereo") AND (cat:cs.CV OR cat:cs.GR)'
+
+filters:
+  # προαιρετικά: λέξεις που αν εμφανιστούν σε τίτλο/abstract -> κόψιμο
+  blacklist:
+    - "survey"       # αν δεν θες surveys
+    - "benchmark"    # αν σε ενοχλούν benchmark papers
