@@ -1,12 +1,14 @@
 site:
-  title: "My arXiv Daily"
-  description: "Daily arXiv papers by topic"
+  title: "arXiv Daily – 3D Vision & Robotics"
+  description: "Daily arXiv digest covering NeRF, Gaussian Splatting, SLAM, 3D Reconstruction & Neural Rendering"
   base_url: ""
-  max_results_per_topic: 40
+  max_results_per_topic: 50
   days_back: 1
 
+
 topics:
-  - name: "NeRF"
+
+  - name: "NeRF & Neural Radiance Fields"
     slug: "nerf"
     query: '(cat:cs.CV OR cat:cs.GR)'
     include_any:
@@ -14,16 +16,23 @@ topics:
       - "nerf"
       - "radiance field"
       - "volume rendering"
+      - "neural implicit"
+      - "implicit representation"
       - "instant-ngp"
       - "hash grid"
       - "mip-nerf"
       - "nerf in the wild"
-    include_all: []          # προαιρετικό AND-group
+      - "plenoptic"
+      - "view synthesis"
+      - "novel view synthesis"
+      - "neural volume"
     exclude_any:
       - "survey"
       - "benchmark"
+      - "tutorial"
 
-  - name: "Gaussian Splatting"
+
+  - name: "Gaussian Splatting & 3DGS"
     slug: "gaussian-splatting"
     query: '(cat:cs.CV OR cat:cs.GR)'
     include_any:
@@ -32,31 +41,41 @@ topics:
       - "3dgs"
       - "gaussian renderer"
       - "gaussian radiance field"
-      - "splatting"
       - "anisotropic gaussian"
       - "dynamic gaussian"
+      - "gaussian primitives"
+      - "gaussian point cloud"
+      - "splatting-based"
+      - "neural gaussian"
     exclude_any:
       - "survey"
       - "benchmark"
 
-  - name: "SLAM"
+
+  - name: "SLAM & Localization"
     slug: "slam"
     query: '(cat:cs.RO OR cat:cs.CV)'
     include_any:
       - "slam"
       - "simultaneous localization and mapping"
-      - "visual odometry"
-      - "vslam"
-      - "lidar odometry"
-      - "pose graph"
-      - "loop closure"
-      - "bundle adjustment"
-      - "place recognition"
       - "localization"
       - "mapping"
+      - "visual slam"
+      - "vslam"
+      - "visual odometry"
+      - "lidar odometry"
+      - "sensor fusion"
+      - "loop closure"
+      - "pose graph"
+      - "bundle adjustment"
+      - "place recognition"
+      - "relocalization"
+      - "camera pose"
+      - "state estimation"
     exclude_any:
       - "survey"
       - "benchmark"
+
 
   - name: "3D Reconstruction"
     slug: "3d-reconstruction"
@@ -68,18 +87,78 @@ topics:
       - "structure from motion"
       - "sfm"
       - "depth estimation"
+      - "depth reconstruction"
       - "point cloud"
-      - "meshing"
+      - "mesh reconstruction"
+      - "surface reconstruction"
       - "tsdf"
-      - "neural implicit"
+      - "volumetric reconstruction"
+      - "neural reconstruction"
     exclude_any:
       - "survey"
       - "benchmark"
 
+
+  - name: "Neural Rendering & View Synthesis"
+    slug: "neural-rendering"
+    query: '(cat:cs.CV OR cat:cs.GR)'
+    include_any:
+      - "neural rendering"
+      - "differentiable rendering"
+      - "view synthesis"
+      - "novel view"
+      - "image-based rendering"
+      - "neural graphics"
+      - "rendering network"
+      - "scene rendering"
+      - "appearance modeling"
+    exclude_any:
+      - "survey"
+      - "benchmark"
+
+
+  - name: "Dynamic Scenes & 4D Reconstruction"
+    slug: "dynamic-scenes"
+    query: '(cat:cs.CV OR cat:cs.GR)'
+    include_any:
+      - "dynamic scene"
+      - "dynamic reconstruction"
+      - "4d reconstruction"
+      - "temporal reconstruction"
+      - "scene flow"
+      - "dynamic nerf"
+      - "time-varying"
+      - "motion-aware"
+      - "spatio-temporal"
+    exclude_any:
+      - "survey"
+      - "benchmark"
+
+
+  - name: "Datasets & Benchmarks (3D / Vision)"
+    slug: "datasets-benchmarks"
+    query: '(cat:cs.CV OR cat:cs.RO)'
+    include_any:
+      - "dataset"
+      - "benchmark"
+      - "large-scale dataset"
+      - "synthetic dataset"
+      - "real-world dataset"
+      - "annotation"
+      - "evaluation protocol"
+      - "3d dataset"
+      - "multi-view dataset"
+      - "slam dataset"
+    exclude_any:
+      - "survey"
+
+
 filters:
-  # global blacklist (ισχύει για όλα τα topics)
+  # global blacklist – ισχύει για ΟΛΑ τα topics
   blacklist:
     - "survey"
-    - "benchmark"
     - "systematic review"
     - "tutorial"
+    - "position paper"
+    - "editorial"
+    - "workshop overview"
