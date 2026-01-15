@@ -1,26 +1,85 @@
 site:
   title: "My arXiv Daily"
   description: "Daily arXiv papers by topic"
-  base_url: ""   # προαιρετικό (π.χ. https://<user>.github.io/<repo>)
+  base_url: ""
   max_results_per_topic: 40
   days_back: 1
 
 topics:
   - name: "NeRF"
     slug: "nerf"
-    query: '(ti:"neural radiance field" OR abs:"neural radiance field" OR ti:NeRF OR abs:NeRF) AND (cat:cs.CV OR cat:cs.GR)'
+    query: '(cat:cs.CV OR cat:cs.GR)'
+    include_any:
+      - "neural radiance field"
+      - "nerf"
+      - "radiance field"
+      - "volume rendering"
+      - "instant-ngp"
+      - "hash grid"
+      - "mip-nerf"
+      - "nerf in the wild"
+    include_all: []          # προαιρετικό AND-group
+    exclude_any:
+      - "survey"
+      - "benchmark"
+
   - name: "Gaussian Splatting"
     slug: "gaussian-splatting"
-    query: '(ti:"gaussian splatting" OR abs:"gaussian splatting" OR ti:"3d gaussian" OR abs:"3d gaussian") AND (cat:cs.CV OR cat:cs.GR)'
+    query: '(cat:cs.CV OR cat:cs.GR)'
+    include_any:
+      - "gaussian splatting"
+      - "3d gaussian"
+      - "3dgs"
+      - "gaussian renderer"
+      - "gaussian radiance field"
+      - "splatting"
+      - "anisotropic gaussian"
+      - "dynamic gaussian"
+    exclude_any:
+      - "survey"
+      - "benchmark"
+
   - name: "SLAM"
     slug: "slam"
-    query: '(ti:SLAM OR abs:SLAM OR ti:"simultaneous localization and mapping" OR abs:"simultaneous localization and mapping") AND (cat:cs.RO OR cat:cs.CV)'
+    query: '(cat:cs.RO OR cat:cs.CV)'
+    include_any:
+      - "slam"
+      - "simultaneous localization and mapping"
+      - "visual odometry"
+      - "vslam"
+      - "lidar odometry"
+      - "pose graph"
+      - "loop closure"
+      - "bundle adjustment"
+      - "place recognition"
+      - "localization"
+      - "mapping"
+    exclude_any:
+      - "survey"
+      - "benchmark"
+
   - name: "3D Reconstruction"
     slug: "3d-reconstruction"
-    query: '(ti:"3d reconstruction" OR abs:"3d reconstruction" OR ti:"multi-view stereo" OR abs:"multi-view stereo") AND (cat:cs.CV OR cat:cs.GR)'
+    query: '(cat:cs.CV OR cat:cs.GR)'
+    include_any:
+      - "3d reconstruction"
+      - "multi-view stereo"
+      - "mvs"
+      - "structure from motion"
+      - "sfm"
+      - "depth estimation"
+      - "point cloud"
+      - "meshing"
+      - "tsdf"
+      - "neural implicit"
+    exclude_any:
+      - "survey"
+      - "benchmark"
 
 filters:
-  # προαιρετικά: λέξεις που αν εμφανιστούν σε τίτλο/abstract -> κόψιμο
+  # global blacklist (ισχύει για όλα τα topics)
   blacklist:
-    - "survey"       # αν δεν θες surveys
-    - "benchmark"    # αν σε ενοχλούν benchmark papers
+    - "survey"
+    - "benchmark"
+    - "systematic review"
+    - "tutorial"
