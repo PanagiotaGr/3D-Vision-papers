@@ -26,10 +26,33 @@ def normalize(text: str) -> str:
     return re.sub(r"\s+", " ", (text or "")).strip()
 
 
+def text_haystack(title: str, summary: str) -> str:
+    return (title + " " + summary).lower()
+
+
+def compile_terms(terms):
+    pats = []
+    for t in (terms or []):
+        t = (t or "").strip()
+        if not t:
+            continue
+        # phrases: simple contains
+        if " " in t or "-" in t:
+            pats.append(re.compile(re.escape(t), re.IGNORECASE))
+        else:
+            # single token: word boundary
+            pats.append(re.compile(rf"\b{re.escape(t)}\b", re.IGNORECASE))
+    return pats
+
+
+def matches_any(text: str, patterns) -> bool:
+    return any(p.search(text) for p in patterns)
+
+
 def is_blacklisted(title: str, summary: str, blacklist):
-    hay = (title + " " + summary).lower()
+    hay = text_haystack(title, summary)
     for w in blacklist or []:
-        if w.lower() in hay:
+        if (w or "").lower() in hay:
             return True
     return False
 
@@ -64,7 +87,6 @@ def fetch_topic(search_query: str, max_results: int, start: int = 0):
     url = ARXIV_API_BASE + "?" + urlencode(params)
 
     feed = feedparser.parse(url)
-
     if getattr(feed, "bozo", 0):
         raise RuntimeError(
             f"Feed parsing failed: {getattr(feed, 'bozo_exception', 'unknown error')}"
@@ -151,15 +173,9 @@ def write_index(site_title: str, description: str, topics_meta, updated_str: str
 
 
 def update_readme_block(updated_str: str, topics_meta):
-    """
-    Updates README.md only between:
-    <!-- AUTO-GENERATED:START -->
-    <!-- AUTO-GENERATED:END -->
-    """
     start_marker = "<!-- AUTO-GENERATED:START -->"
     end_marker = "<!-- AUTO-GENERATED:END -->"
-
-    updated_date = updated_str.split(" ")[0]  # YYYY-MM-DD
+    updated_date = updated_str.split(" ")[0]
 
     lines = []
     lines.append("## Latest\n")
@@ -170,7 +186,6 @@ def update_readme_block(updated_str: str, topics_meta):
     lines.append("|------|--------|------|")
 
     for t in topics_meta:
-        # README is at repo root -> link must include docs/
         link = f"docs/topics/{t['slug']}.md"
         lines.append(f"| {t['name']} | {t['count']} | [{t['name']}]({link}) |")
 
@@ -206,32 +221,54 @@ def main():
     max_per_topic = int(site.get("max_results_per_topic", 40))
     days_back = int(site.get("days_back", 7))
 
+    # Τραβάμε περισσότερα για να μην “χάνονται” papers πριν το keyword filter
+    fetch_k = int(site.get("fetch_multiplier", 8))
+    fetch_n = min(max_per_topic * fetch_k, 300)
+
     blacklist = (cfg.get("filters", {}) or {}).get("blacklist", [])
     updated_str = datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M UTC")
 
     topics_meta = []
-    seen_global = set()
 
     for t in cfg.get("topics", []):
         name = t["name"]
         slug = t["slug"]
         query = t["query"]
 
-        raw = fetch_topic(query, max_results=max_per_topic)
+        include_any = t.get("include_any", [])
+        exclude_any = t.get("exclude_any", [])
+
+        inc_p = compile_terms(include_any)
+        exc_p = compile_terms(exclude_any)
+
+        raw = fetch_topic(query, max_results=fetch_n)
 
         items = []
+        seen_in_topic = set()
+
         for it in raw:
             if not within_days(it["published_utc"], days_back):
                 continue
-            if is_blacklisted(it["title"], it["summary"], blacklist):
+
+            # topic include/exclude
+            hay = text_haystack(it["title"], it["summary"])
+            if include_any and not matches_any(hay, inc_p):
                 continue
-            if it["arxiv_id"] in seen_global:
+            if exclude_any and matches_any(hay, exc_p):
                 continue
 
-            seen_global.add(it["arxiv_id"])
+            # global blacklist (τελευταίο)
+            if is_blacklisted(it["title"], it["summary"], blacklist):
+                continue
+
+            if it["arxiv_id"] in seen_in_topic:
+                continue
+            seen_in_topic.add(it["arxiv_id"])
+
             items.append(it)
 
         items.sort(key=lambda x: x["published_utc"], reverse=True)
+        items = items[:max_per_topic]  # τελικό cap
 
         write_topic_page(name, slug, items, updated_str)
         topics_meta.append(
@@ -239,10 +276,7 @@ def main():
         )
 
     write_index(title, desc, topics_meta, updated_str)
-
-    # ✅ Update only the AUTO-GENERATED block in README
     update_readme_block(updated_str, topics_meta)
-
     print("Done. Pages generated under docs/ and README block updated.")
 
 
