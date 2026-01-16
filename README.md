@@ -16,13 +16,13 @@ Generated pages are available under `docs/`.
 
 | Topic | Papers | Link |
 |------|--------|------|
-| NeRF & Neural Radiance Fields | 50 | [NeRF & Neural Radiance Fields](docs/topics/nerf.md) |
-| Gaussian Splatting & 3DGS | 0 | [Gaussian Splatting & 3DGS](docs/topics/gaussian-splatting.md) |
+| NeRF & Neural Radiance Fields | 3 | [NeRF & Neural Radiance Fields](docs/topics/nerf.md) |
+| Gaussian Splatting & 3DGS | 6 | [Gaussian Splatting & 3DGS](docs/topics/gaussian-splatting.md) |
 | SLAM & Localization | 8 | [SLAM & Localization](docs/topics/slam.md) |
-| 3D Reconstruction | 0 | [3D Reconstruction](docs/topics/3d-reconstruction.md) |
-| Neural Rendering & View Synthesis | 0 | [Neural Rendering & View Synthesis](docs/topics/neural-rendering.md) |
-| Dynamic Scenes & 4D Reconstruction | 0 | [Dynamic Scenes & 4D Reconstruction](docs/topics/dynamic-scenes.md) |
-| Datasets & Benchmarks (3D / Vision) | 0 | [Datasets & Benchmarks (3D / Vision)](docs/topics/datasets-benchmarks.md) |
+| 3D Reconstruction | 10 | [3D Reconstruction](docs/topics/3d-reconstruction.md) |
+| Neural Rendering & View Synthesis | 4 | [Neural Rendering & View Synthesis](docs/topics/neural-rendering.md) |
+| Dynamic Scenes & 4D Reconstruction | 8 | [Dynamic Scenes & 4D Reconstruction](docs/topics/dynamic-scenes.md) |
+| Datasets & Benchmarks (3D / Vision) | 50 | [Datasets & Benchmarks (3D / Vision)](docs/topics/datasets-benchmarks.md) |
 
 <!-- AUTO-GENERATED:END -->
 
