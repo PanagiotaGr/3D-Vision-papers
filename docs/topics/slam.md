@@ -1,40 +1,95 @@
 # SLAM & Localization
 
-_Updated: 2026-01-15 10:49 UTC_
+_Updated: 2026-01-16 06:49 UTC_
 
-Total papers shown: **3**
+Total papers shown: **8**
 
 
 ---
 
-- **CLARE: Continual Learning for Vision-Language-Action Models via Autonomous Adapter Routing and Expansion**  
-  Ralf Römer, Yi Zhang, Angela P. Schoellig  
-  _2026-01-14_ · https://arxiv.org/abs/2601.09512v1  
+- **SurgGoal: Rethinking Surgical Planning Evaluation via Goal-Satisfiability**  
+  Ruochen Li, Kun Yuan, Yufei Xia, Yue Zhou, Qingyu Lu, Weihang Li, Youxiang Zhu, Nassir Navab  
+  _2026-01-15_ · https://arxiv.org/abs/2601.10455v1  
   <details><summary>Abstract</summary>
 
-  To teach robots complex manipulation tasks, it is now a common practice to fine-tune a pre-trained vision-language-action model (VLA) on task-specific data. However, since this recipe updates existing representations, it is unsuitable for long-term operation in the real world, where robots must continually adapt to new tasks and environments while retaining the knowledge they have already acquired. Existing continual learning methods for robotics commonly require storing previous data (exemplars), struggle with long task sequences, or rely on task identifiers for deployment. To address these limitations, we propose CLARE, a general, parameter-efficient framework for exemplar-free continual learning with VLAs. CLARE introduces lightweight modular adapters into selected feedforward layers and autonomously expands the model only where necessary when learning a new task, guided by layer-wise feature similarity. During deployment, an autoencoder-based routing mechanism dynamically activates the most relevant adapters without requiring task labels. Through extensive experiments on the LIBERO benchmark, we show that CLARE achieves high performance on new tasks without catastrophic forgetting of earlier tasks, significantly outperforming even exemplar-based methods. Code and data are available at https://tum-lsy.github.io/clare.
+  Surgical planning integrates visual perception, long-horizon reasoning, and procedural knowledge, yet it remains unclear whether current evaluation protocols reliably assess vision-language models (VLMs) in safety-critical settings. Motivated by a goal-oriented view of surgical planning, we define planning correctness via phase-goal satisfiability, where plan validity is determined by expert-defined surgical rules. Based on this definition, we introduce a multicentric meta-evaluation benchmark with valid procedural variations and invalid plans containing order and content errors. Using this benchmark, we show that sequence similarity metrics systematically misjudge planning quality, penalizing valid plans while failing to identify invalid ones. We therefore adopt a rule-based goal-satisfiability metric as a high-precision meta-evaluation reference to assess Video-LLMs under progressively constrained settings, revealing failures due to perception errors and under-constrained reasoning. Structural knowledge consistently improves performance, whereas semantic guidance alone is unreliable and benefits larger models only when combined with structural constraints.
 
   </details>
 
 
 
-- **Data Scaling for Navigation in Unknown Environments**  
-  Lauri Suomela, Naoki Takahata, Sasanka Kuruppu Arachchige, Harry Edelman, Joni-Kristian Kämäräinen  
-  _2026-01-14_ · https://arxiv.org/abs/2601.09444v1  
+- **Online identification of nonlinear time-varying systems with uncertain information**  
+  He Ren, Gaowei Yan, Hang Liu, Lifeng Cao, Zhijun Zhao, Gang Dang  
+  _2026-01-15_ · https://arxiv.org/abs/2601.10379v1  
   <details><summary>Abstract</summary>
 
-  Generalization of imitation-learned navigation policies to environments unseen in training remains a major challenge. We address this by conducting the first large-scale study of how data quantity and data diversity affect real-world generalization in end-to-end, map-free visual navigation. Using a curated 4,565-hour crowd-sourced dataset collected across 161 locations in 35 countries, we train policies for point goal navigation and evaluate their closed-loop control performance on sidewalk robots operating in four countries, covering 125 km of autonomous driving. Our results show that large-scale training data enables zero-shot navigation in unknown environments, approaching the performance of policies trained with environment-specific demonstrations. Critically, we find that data diversity is far more important than data quantity. Doubling the number of geographical locations in a training set decreases navigation errors by ~15%, while performance benefit from adding data from existing locations saturates with very little data. We also observe that, with noisy crowd-sourced data, simple regression-based models outperform generative and sequence-based architectures. We release our policies, evaluation setup and example videos on the project page.
+  Digital twins (DTs), serving as the core enablers for real-time monitoring and predictive maintenance of complex cyber-physical systems, impose critical requirements on their virtual models: high predictive accuracy, strong interpretability, and online adaptive capability. However, existing techniques struggle to meet these demands simultaneously: Bayesian methods excel in uncertainty quantification but lack model interpretability, while interpretable symbolic identification methods (e.g., SINDy) are constrained by their offline, batch-processing nature, which make real-time updates challenging. To bridge this semantic and computational gap, this paper proposes a novel Bayesian Regression-based Symbolic Learning (BRSL) framework. The framework formulates online symbolic discovery as a unified probabilistic state-space model. By incorporating sparse horseshoe priors, model selection is transformed into a Bayesian inference task, enabling simultaneous system identification and uncertainty quantification. Furthermore, we derive an online recursive algorithm with a forgetting factor and establish precise recursive conditions that guarantee the well-posedness of the posterior distribution. These conditions also function as real-time monitors for data utility, enhancing algorithmic robustness. Additionally, a rigorous convergence analysis is provided, demonstrating the convergence of parameter estimates under persistent excitation conditions. Case studies validate the effectiveness of the proposed framework in achieving interpretable, probabilistic prediction and online learning.
 
   </details>
 
 
 
-- **ReflexDiffusion: Reflection-Enhanced Trajectory Planning for High-lateral-acceleration Scenarios in Autonomous Driving**  
-  Xuemei Yao, Xiao Yang, Jianbin Sun, Liuwei Xie, Xuebin Shao, Xiyu Fang, Hang Su, Kewei Yang  
-  _2026-01-14_ · https://arxiv.org/abs/2601.09377v1  
+- **FastStair: Learning to Run Up Stairs with Humanoid Robots**  
+  Yan Liu, Tao Yu, Haolin Song, Hongbo Zhu, Nianzong Hu, Yuzhi Hao, Xiuyong Yao, Xizhe Zang, Hua Chen, Jie Zhao  
+  _2026-01-15_ · https://arxiv.org/abs/2601.10365v1  
   <details><summary>Abstract</summary>
 
-  Generating safe and reliable trajectories for autonomous vehicles in long-tail scenarios remains a significant challenge, particularly for high-lateral-acceleration maneuvers such as sharp turns, which represent critical safety situations. Existing trajectory planners exhibit systematic failures in these scenarios due to data imbalance. This results in insufficient modelling of vehicle dynamics, road geometry, and environmental constraints in high-risk situations, leading to suboptimal or unsafe trajectory prediction when vehicles operate near their physical limits. In this paper, we introduce ReflexDiffusion, a novel inference-stage framework that enhances diffusion-based trajectory planners through reflective adjustment. Our method introduces a gradient-based adjustment mechanism during the iterative denoising process: after each standard trajectory update, we compute the gradient between the conditional and unconditional noise predictions to explicitly amplify critical conditioning signals, including road curvature and lateral vehicle dynamics. This amplification enforces strict adherence to physical constraints, particularly improving stability during high-lateral-acceleration maneuvers where precise vehicle-road interaction is paramount. Evaluated on the nuPlan Test14-hard benchmark, ReflexDiffusion achieves a 14.1% improvement in driving score for high-lateral-acceleration scenarios over the state-of-the-art (SOTA) methods. This demonstrates that inference-time trajectory optimization can effectively compensate for training data sparsity by dynamically reinforcing safety-critical constraints near handling limits. The framework's architecture-agnostic design enables direct deployment to existing diffusion-based planners, offering a practical solution for improving autonomous vehicle safety in challenging driving conditions.
+  Running up stairs is effortless for humans but remains extremely challenging for humanoid robots due to the simultaneous requirements of high agility and strict stability. Model-free reinforcement learning (RL) can generate dynamic locomotion, yet implicit stability rewards and heavy reliance on task-specific reward shaping tend to result in unsafe behaviors, especially on stairs; conversely, model-based foothold planners encode contact feasibility and stability structure, but enforcing their hard constraints often induces conservative motion that limits speed. We present FastStair, a planner-guided, multi-stage learning framework that reconciles these complementary strengths to achieve fast and stable stair ascent. FastStair integrates a parallel model-based foothold planner into the RL training loop to bias exploration toward dynamically feasible contacts and to pretrain a safety-focused base policy. To mitigate planner-induced conservatism and the discrepancy between low- and high-speed action distributions, the base policy was fine-tuned into speed-specialized experts and then integrated via Low-Rank Adaptation (LoRA) to enable smooth operation across the full commanded-speed range. We deploy the resulting controller on the Oli humanoid robot, achieving stable stair ascent at commanded speeds up to 1.65 m/s and traversing a 33-step spiral staircase (17 cm rise per step) in 12 s, demonstrating robust high-speed performance on long staircases. Notably, the proposed approach served as the champion solution in the Canton Tower Robot Run Up Competition.
+
+  </details>
+
+
+
+- **CHORAL: Traversal-Aware Planning for Safe and Efficient Heterogeneous Multi-Robot Routing**  
+  David Morilla-Cabello, Eduardo Montijano  
+  _2026-01-15_ · https://arxiv.org/abs/2601.10340v1  
+  <details><summary>Abstract</summary>
+
+  Monitoring large, unknown, and complex environments with autonomous robots poses significant navigation challenges, where deploying teams of heterogeneous robots with complementary capabilities can substantially improve both mission performance and feasibility. However, effectively modeling how different robotic platforms interact with the environment requires rich, semantic scene understanding. Despite this, existing approaches often assume homogeneous robot teams or focus on discrete task compatibility rather than continuous routing. Consequently, scene understanding is not fully integrated into routing decisions, limiting their ability to adapt to the environment and to leverage each robot's strengths. In this paper, we propose an integrated semantic-aware framework for coordinating heterogeneous robots. Starting from a reconnaissance flight, we build a metric-semantic map using open-vocabulary vision models and use it to identify regions requiring closer inspection and capability-aware paths for each platform to reach them. These are then incorporated into a heterogeneous vehicle routing formulation that jointly assigns inspection tasks and computes robot trajectories. Experiments in simulation and in a real inspection mission with three robotic platforms demonstrate the effectiveness of our approach in planning safer and more efficient routes by explicitly accounting for each platform's navigation capabilities. We release our framework, CHORAL, as open source to support reproducibility and deployment of diverse robot teams.
+
+  </details>
+
+
+
+- **The impact of tactile sensor configurations on grasp learning efficiency -- a comparative evaluation in simulation**  
+  Eszter Birtalan, Miklós Koller  
+  _2026-01-15_ · https://arxiv.org/abs/2601.10268v1  
+  <details><summary>Abstract</summary>
+
+  Tactile sensors are breaking into the field of robotics to provide direct information related to contact surfaces, including contact events, slip events and even texture identification. These events are especially important for robotic hand designs, including prosthetics, as they can greatly improve grasp stability. Most presently published robotic hand designs, however, implement them in vastly different densities and layouts on the hand surface, often reserving the majority of the available space. We used simulations to evaluate 6 different tactile sensor configurations with different densities and layouts, based on their impact on reinforcement learning. Our two-setup system allows for robust results that are not dependent on the use of a given physics simulator, robotic hand model or machine learning algorithm. Our results show setup-specific, as well as generalized effects across the 6 sensorized simulations, and we identify one configuration as consistently yielding the best performance across both setups. These results could help future research aimed at robotic hand designs, including prostheses.
+
+  </details>
+
+
+
+- **Proactive Local-Minima-Free Robot Navigation: Blending Motion Prediction with Safe Control**  
+  Yifan Xue, Ze Zhang, Knut Åkesson, Nadia Figueroa  
+  _2026-01-15_ · https://arxiv.org/abs/2601.10233v1  
+  <details><summary>Abstract</summary>
+
+  This work addresses the challenge of safe and efficient mobile robot navigation in complex dynamic environments with concave moving obstacles. Reactive safe controllers like Control Barrier Functions (CBFs) design obstacle avoidance strategies based only on the current states of the obstacles, risking future collisions. To alleviate this problem, we use Gaussian processes to learn barrier functions online from multimodal motion predictions of obstacles generated by neural networks trained with energy-based learning. The learned barrier functions are then fed into quadratic programs using modulated CBFs (MCBFs), a local-minimum-free version of CBFs, to achieve safe and efficient navigation. The proposed framework makes two key contributions. First, it develops a prediction-to-barrier function online learning pipeline. Second, it introduces an autonomous parameter tuning algorithm that adapts MCBFs to deforming, prediction-based barrier functions. The framework is evaluated in both simulations and real-world experiments, consistently outperforming baselines and demonstrating superior safety and efficiency in crowded dynamic environments.
+
+  </details>
+
+
+
+- **A Unified Framework for Kinematic Simulation of Rigid Foldable Structures**  
+  Dongwook Kwak, Geonhee Cho, Jiook Chung, Jinkyu Yang  
+  _2026-01-15_ · https://arxiv.org/abs/2601.10225v1  
+  <details><summary>Abstract</summary>
+
+  Origami-inspired structures with rigid panels now span thick, kirigami, and multi-sheet realizations, making unified kinematic analysis essential. Yet a general method that consolidates their loop constraints has been lacking. We present an automated approach that generates the Pfaffian constraint matrix for arbitrary rigid foldable structures (RFS). From a minimally extended data schema, the tool constructs the facet-hinge graph, extracts a minimum cycle basis that captures all constraints, and assembles a velocity-level constraint matrix via screw theory that encodes coupled rotation and translation loop closure. The framework computes and visualizes deploy and fold motions across diverse RFS while eliminating tedious and error-prone constraint calculations.
+
+  </details>
+
+
+
+- **Terrain-Adaptive Mobile 3D Printing with Hierarchical Control**  
+  Shuangshan Nors Li, J. Nathan Kutz  
+  _2026-01-15_ · https://arxiv.org/abs/2601.10208v1  
+  <details><summary>Abstract</summary>
+
+  Mobile 3D printing on unstructured terrain remains challenging due to the conflict between platform mobility and deposition precision. Existing gantry-based systems achieve high accuracy but lack mobility, while mobile platforms struggle to maintain print quality on uneven ground. We present a framework that tightly integrates AI-driven disturbance prediction with multi-modal sensor fusion and hierarchical hardware control, forming a closed-loop perception-learning-actuation system. The AI module learns terrain-to-perturbation mappings from IMU, vision, and depth sensors, enabling proactive compensation rather than reactive correction. This intelligence is embedded into a three-layer control architecture: path planning, predictive chassis-manipulator coordination, and precision hardware execution. Through outdoor experiments on terrain with slopes and surface irregularities, we demonstrate sub-centimeter printing accuracy while maintaining full platform mobility. This AI-hardware integration establishes a practical foundation for autonomous construction in unstructured environments.
 
   </details>
 
