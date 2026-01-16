@@ -3,8 +3,7 @@ site:
   description: "Daily arXiv digest covering NeRF, Gaussian Splatting, SLAM, 3D Reconstruction & Neural Rendering"
   base_url: ""
   max_results_per_topic: 50
-  days_back: 1
-
+  days_back: 3
 
 topics:
 
@@ -26,11 +25,11 @@ topics:
       - "view synthesis"
       - "novel view synthesis"
       - "neural volume"
+      - "neural field"
+      - "neural scene representation"
     exclude_any:
       - "survey"
-      - "benchmark"
       - "tutorial"
-
 
   - name: "Gaussian Splatting & 3DGS"
     slug: "gaussian-splatting"
@@ -49,8 +48,7 @@ topics:
       - "neural gaussian"
     exclude_any:
       - "survey"
-      - "benchmark"
-
+      - "tutorial"
 
   - name: "SLAM & Localization"
     slug: "slam"
@@ -58,8 +56,6 @@ topics:
     include_any:
       - "slam"
       - "simultaneous localization and mapping"
-      - "localization"
-      - "mapping"
       - "visual slam"
       - "vslam"
       - "visual odometry"
@@ -72,10 +68,12 @@ topics:
       - "relocalization"
       - "camera pose"
       - "state estimation"
+      - "visual localization"
+      - "camera localization"
+      - "robot localization"
     exclude_any:
       - "survey"
-      - "benchmark"
-
+      - "tutorial"
 
   - name: "3D Reconstruction"
     slug: "3d-reconstruction"
@@ -96,8 +94,7 @@ topics:
       - "neural reconstruction"
     exclude_any:
       - "survey"
-      - "benchmark"
-
+      - "tutorial"
 
   - name: "Neural Rendering & View Synthesis"
     slug: "neural-rendering"
@@ -114,8 +111,7 @@ topics:
       - "appearance modeling"
     exclude_any:
       - "survey"
-      - "benchmark"
-
+      - "tutorial"
 
   - name: "Dynamic Scenes & 4D Reconstruction"
     slug: "dynamic-scenes"
@@ -130,10 +126,11 @@ topics:
       - "time-varying"
       - "motion-aware"
       - "spatio-temporal"
+      - "deformation field"
+      - "canonical space"
     exclude_any:
       - "survey"
-      - "benchmark"
-
+      - "tutorial"
 
   - name: "Datasets & Benchmarks (3D / Vision)"
     slug: "datasets-benchmarks"
@@ -151,10 +148,9 @@ topics:
       - "slam dataset"
     exclude_any:
       - "survey"
-
+      - "tutorial"
 
 filters:
-  # global blacklist – ισχύει για ΟΛΑ τα topics
   blacklist:
     - "survey"
     - "systematic review"
