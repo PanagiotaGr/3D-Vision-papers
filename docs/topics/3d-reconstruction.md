@@ -1,8 +1,8 @@
 # 3D Reconstruction
 
-_Updated: 2026-01-16 13:08 UTC_
+_Updated: 2026-01-17 06:45 UTC_
 
-Total papers shown: **10**
+Total papers shown: **7**
 
 
 ---
@@ -79,39 +79,6 @@ Total papers shown: **10**
   <details><summary>Abstract</summary>
 
   Powerful 3D representations such as DUSt3R invariant point maps, which encode 3D shape and camera parameters, have significantly advanced feed forward 3D reconstruction. While point maps assume static scenes, Dynamic Point Maps (DPMs) extend this concept to dynamic 3D content by additionally representing scene motion. However, existing DPMs are limited to image pairs and, like DUSt3R, require post processing via optimization when more than two views are involved. We argue that DPMs are more useful when applied to videos and introduce V-DPM to demonstrate this. First, we show how to formulate DPMs for video input in a way that maximizes representational power, facilitates neural prediction, and enables reuse of pretrained models. Second, we implement these ideas on top of VGGT, a recent and powerful 3D reconstructor. Although VGGT was trained on static scenes, we show that a modest amount of synthetic data is sufficient to adapt it into an effective V-DPM predictor. Our approach achieves state of the art performance in 3D and 4D reconstruction for dynamic scenes. In particular, unlike recent dynamic extensions of VGGT such as P3, DPMs recover not only dynamic depth but also the full 3D motion of every point in the scene.
-
-  </details>
-
-
-
-- **Affostruction: 3D Affordance Grounding with Generative Reconstruction**  
-  Chunghyun Park, Seunghyeon Lee, Minsu Cho  
-  _2026-01-14_ · https://arxiv.org/abs/2601.09211v1  
-  <details><summary>Abstract</summary>
-
-  This paper addresses the problem of affordance grounding from RGBD images of an object, which aims to localize surface regions corresponding to a text query that describes an action on the object. While existing methods predict affordance regions only on visible surfaces, we propose Affostruction, a generative framework that reconstructs complete geometry from partial observations and grounds affordances on the full shape including unobserved regions. We make three core contributions: generative multi-view reconstruction via sparse voxel fusion that extrapolates unseen geometry while maintaining constant token complexity, flow-based affordance grounding that captures inherent ambiguity in affordance distributions, and affordance-driven active view selection that leverages predicted affordances for intelligent viewpoint sampling. Affostruction achieves 19.1 aIoU on affordance grounding (40.4\% improvement) and 32.67 IoU for 3D reconstruction (67.7\% improvement), enabling accurate affordance prediction on complete shapes.
-
-  </details>
-
-
-
-- **Comprehensive Machine Learning Benchmarking for Fringe Projection Profilometry with Photorealistic Synthetic Data**  
-  Anush Lakshman S, Adam Haroon, Beiwen Li  
-  _2026-01-13_ · https://arxiv.org/abs/2601.08900v1  
-  <details><summary>Abstract</summary>
-
-  Machine learning approaches for fringe projection profilometry (FPP) are hindered by the lack of large, diverse datasets and comprehensive benchmarking protocols. This paper introduces the first open-source, photorealistic synthetic dataset for FPP, generated using NVIDIA Isaac Sim with 15,600 fringe images and 300 depth reconstructions across 50 diverse objects. We benchmark four neural network architectures (UNet, Hformer, ResUNet, Pix2Pix) on single-shot depth reconstruction, revealing that all models achieve similar performance (58-77 mm RMSE) despite substantial architectural differences. Our results demonstrate fundamental limitations of direct fringe-to-depth mapping without explicit phase information, with reconstruction errors approaching 75-95\% of the typical object depth range. This resource provides standardized evaluation protocols enabling systematic comparison and development of learning-based FPP approaches.
-
-  </details>
-
-
-
-- **REVNET: Rotation-Equivariant Point Cloud Completion via Vector Neuron Anchor Transformer**  
-  Zhifan Ni, Eckehard Steinbach  
-  _2026-01-13_ · https://arxiv.org/abs/2601.08558v1  
-  <details><summary>Abstract</summary>
-
-  Incomplete point clouds captured by 3D sensors often result in the loss of both geometric and semantic information. Most existing point cloud completion methods are built on rotation-variant frameworks trained with data in canonical poses, limiting their applicability in real-world scenarios. While data augmentation with random rotations can partially mitigate this issue, it significantly increases the learning burden and still fails to guarantee robust performance under arbitrary poses. To address this challenge, we propose the Rotation-Equivariant Anchor Transformer (REVNET), a novel framework built upon the Vector Neuron (VN) network for robust point cloud completion under arbitrary rotations. To preserve local details, we represent partial point clouds as sets of equivariant anchors and design a VN Missing Anchor Transformer to predict the positions and features of missing anchors. Furthermore, we extend VN networks with a rotation-equivariant bias formulation and a ZCA-based layer normalization to improve feature expressiveness. Leveraging the flexible conversion between equivariant and invariant VN features, our model can generate point coordinates with greater stability. Experimental results show that our method outperforms state-of-the-art approaches on the synthetic MVP dataset in the equivariant setting. On the real-world KITTI dataset, REVNET delivers competitive results compared to non-equivariant networks, without requiring input pose alignment. The source code will be released on GitHub under URL: https://github.com/nizhf/REVNET.
 
   </details>
 

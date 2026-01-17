@@ -1,6 +1,6 @@
 # Gaussian Splatting & 3DGS
 
-_Updated: 2026-01-16 13:08 UTC_
+_Updated: 2026-01-17 06:45 UTC_
 
 Total papers shown: **6**
 
