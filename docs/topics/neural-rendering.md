@@ -1,8 +1,8 @@
 # Neural Rendering & View Synthesis
 
-_Updated: 2026-01-17 06:45 UTC_
+_Updated: 2026-01-18 06:46 UTC_
 
-Total papers shown: **3**
+Total papers shown: **2**
 
 
 ---
@@ -24,17 +24,6 @@ Total papers shown: **3**
   <details><summary>Abstract</summary>
 
   We address the problem of estimating realistic, spatially varying reflectance for complex planetary surfaces such as the lunar regolith, which is critical for high-fidelity rendering and vision-based navigation. Existing lunar rendering pipelines rely on simplified or spatially uniform BRDF models whose parameters are difficult to estimate and fail to capture local reflectance variations, limiting photometric realism. We propose Lunar-G2R, a geometry-to-reflectance learning framework that predicts spatially varying BRDF parameters directly from a lunar digital elevation model (DEM), without requiring multi-view imagery, controlled illumination, or dedicated reflectance-capture hardware at inference time. The method leverages a U-Net trained with differentiable rendering to minimize photometric discrepancies between real orbital images and physically based renderings under known viewing and illumination geometry. Experiments on a geographically held-out region of the Tycho crater show that our approach reduces photometric error by 38 % compared to a state-of-the-art baseline, while achieving higher PSNR and SSIM and improved perceptual similarity, capturing fine-scale reflectance variations absent from spatially uniform models. To our knowledge, this is the first method to infer a spatially varying reflectance model directly from terrain geometry.
-
-  </details>
-
-
-
-- **A$^2$TG: Adaptive Anisotropic Textured Gaussians for Efficient 3D Scene Representation**  
-  Sheng-Chi Hsu, Ting-Yu Yen, Shih-Hsuan Hung, Hung-Kuo Chu  
-  _2026-01-14_ · https://arxiv.org/abs/2601.09243v1  
-  <details><summary>Abstract</summary>
-
-  Gaussian Splatting has emerged as a powerful representation for high-quality, real-time 3D scene rendering. While recent works extend Gaussians with learnable textures to enrich visual appearance, existing approaches allocate a fixed square texture per primitive, leading to inefficient memory usage and limited adaptability to scene variability. In this paper, we introduce adaptive anisotropic textured Gaussians (A$^2$TG), a novel representation that generalizes textured Gaussians by equipping each primitive with an anisotropic texture. Our method employs a gradient-guided adaptive rule to jointly determine texture resolution and aspect ratio, enabling non-uniform, detail-aware allocation that aligns with the anisotropic nature of Gaussian splats. This design significantly improves texture efficiency, reducing memory consumption while enhancing image quality. Experiments on multiple benchmark datasets demonstrate that A TG consistently outperforms fixed-texture Gaussian Splatting methods, achieving comparable rendering fidelity with substantially lower memory requirements.
 
   </details>
 
