@@ -1,29 +1,29 @@
 # SLAM & Localization
 
-_Updated: 2026-01-18 06:46 UTC_
+_Updated: 2026-01-19 06:56 UTC_
 
 Total papers shown: **2**
 
 
 ---
 
-- **A Unified Framework for Kinematic Simulation of Rigid Foldable Structures**  
-  Dongwook Kwak, Geonhee Cho, Jiook Chung, Jinkyu Yang  
-  _2026-01-15_ · https://arxiv.org/abs/2601.10225v1  
+- **ShapeR: Robust Conditional 3D Shape Generation from Casual Captures**  
+  Yawar Siddiqui, Duncan Frost, Samir Aroudj, Armen Avetisyan, Henry Howard-Jenkins, Daniel DeTone, Pierre Moulon, Qirui Wu, Zhengqin Li, Julian Straub, et al.  
+  _2026-01-16_ · https://arxiv.org/abs/2601.11514v1  
   <details><summary>Abstract</summary>
 
-  Origami-inspired structures with rigid panels now span thick, kirigami, and multi-sheet realizations, making unified kinematic analysis essential. Yet a general method that consolidates their loop constraints has been lacking. We present an automated approach that generates the Pfaffian constraint matrix for arbitrary rigid foldable structures (RFS). From a minimally extended data schema, the tool constructs the facet-hinge graph, extracts a minimum cycle basis that captures all constraints, and assembles a velocity-level constraint matrix via screw theory that encodes coupled rotation and translation loop closure. The framework computes and visualizes deploy and fold motions across diverse RFS while eliminating tedious and error-prone constraint calculations.
+  Recent advances in 3D shape generation have achieved impressive results, but most existing methods rely on clean, unoccluded, and well-segmented inputs. Such conditions are rarely met in real-world scenarios. We present ShapeR, a novel approach for conditional 3D object shape generation from casually captured sequences. Given an image sequence, we leverage off-the-shelf visual-inertial SLAM, 3D detection algorithms, and vision-language models to extract, for each object, a set of sparse SLAM points, posed multi-view images, and machine-generated captions. A rectified flow transformer trained to effectively condition on these modalities then generates high-fidelity metric 3D shapes. To ensure robustness to the challenges of casually captured data, we employ a range of techniques including on-the-fly compositional augmentations, a curriculum training scheme spanning object- and scene-level datasets, and strategies to handle background clutter. Additionally, we introduce a new evaluation benchmark comprising 178 in-the-wild objects across 7 real-world scenes with geometry annotations. Experiments show that ShapeR significantly outperforms existing approaches in this challenging setting, achieving an improvement of 2.7x in Chamfer distance compared to state of the art.
 
   </details>
 
 
 
-- **Terrain-Adaptive Mobile 3D Printing with Hierarchical Control**  
-  Shuangshan Nors Li, J. Nathan Kutz  
-  _2026-01-15_ · https://arxiv.org/abs/2601.10208v1  
+- **The Mini Wheelbot Dataset: High-Fidelity Data for Robot Learning**  
+  Henrik Hose, Paul Brunzema, Devdutt Subhasish, Sebastian Trimpe  
+  _2026-01-16_ · https://arxiv.org/abs/2601.11394v1  
   <details><summary>Abstract</summary>
 
-  Mobile 3D printing on unstructured terrain remains challenging due to the conflict between platform mobility and deposition precision. Existing gantry-based systems achieve high accuracy but lack mobility, while mobile platforms struggle to maintain print quality on uneven ground. We present a framework that tightly integrates AI-driven disturbance prediction with multi-modal sensor fusion and hierarchical hardware control, forming a closed-loop perception-learning-actuation system. The AI module learns terrain-to-perturbation mappings from IMU, vision, and depth sensors, enabling proactive compensation rather than reactive correction. This intelligence is embedded into a three-layer control architecture: path planning, predictive chassis-manipulator coordination, and precision hardware execution. Through outdoor experiments on terrain with slopes and surface irregularities, we demonstrate sub-centimeter printing accuracy while maintaining full platform mobility. This AI-hardware integration establishes a practical foundation for autonomous construction in unstructured environments.
+  The development of robust learning-based control algorithms for unstable systems requires high-quality, real-world data, yet access to specialized robotic hardware remains a significant barrier for many researchers. This paper introduces a comprehensive dynamics dataset for the Mini Wheelbot, an open-source, quasi-symmetric balancing reaction wheel unicycle. The dataset provides 1 kHz synchronized data encompassing all onboard sensor readings, state estimates, ground-truth poses from a motion capture system, and third-person video logs. To ensure data diversity, we include experiments across multiple hardware instances and surfaces using various control paradigms, including pseudo-random binary excitation, nonlinear model predictive control, and reinforcement learning agents. We include several example applications in dynamics model learning, state estimation, and time-series classification to illustrate common robotics algorithms that can be benchmarked on our dataset.
 
   </details>
 
