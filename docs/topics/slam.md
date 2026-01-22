@@ -1,11 +1,33 @@
 # SLAM & Localization
 
-_Updated: 2026-01-21 06:54 UTC_
+_Updated: 2026-01-22 06:52 UTC_
 
-Total papers shown: **8**
+Total papers shown: **6**
 
 
 ---
+
+- **MonoRace: Winning Champion-Level Drone Racing with Robust Monocular AI**  
+  Stavrow A. Bahnam, Robin Ferede, Till M. Blaha, Anton E. Lang, Erin Lucassen, Quentin Missinne, Aderik E. C. Verraest, Christophe De Wagter, Guido C. H. E. de Croon  
+  _2026-01-21_ · https://arxiv.org/abs/2601.15222v1  
+  <details><summary>Abstract</summary>
+
+  Autonomous drone racing represents a major frontier in robotics research. It requires an Artificial Intelligence (AI) that can run on board light-weight flying robots under tight resource and time constraints, while pushing the physical system to its limits. The state of the art in this area consists of a system with a stereo camera and an inertial measurement unit (IMU) that beat human drone racing champions in a controlled indoor environment. Here, we present MonoRace: an onboard drone racing approach that uses a monocular, rolling-shutter camera and IMU that generalizes to a competition environment without any external motion tracking system. The approach features robust state estimation that combines neural-network-based gate segmentation with a drone model. Moreover, it includes an offline optimization procedure that leverages the known geometry of gates to refine any state estimation parameter. This offline optimization is based purely on onboard flight data and is important for fine-tuning the vital external camera calibration parameters. Furthermore, the guidance and control are performed by a neural network that foregoes inner loop controllers by directly sending motor commands. This small network runs on the flight controller at 500Hz. The proposed approach won the 2025 Abu Dhabi Autonomous Drone Racing Competition (A2RL), outperforming all competing AI teams and three human world champion pilots in a direct knockout tournament. It set a new milestone in autonomous drone racing research, reaching speeds up to 100 km/h on the competition track and successfully coping with problems such as camera interference and IMU saturation.
+
+  </details>
+
+
+
+- **LaVR: Scene Latent Conditioned Generative Video Trajectory Re-Rendering using Large 4D Reconstruction Models**  
+  Mingyang Xie, Numair Khan, Tianfu Wang, Naina Dhingra, Seonghyeon Nam, Haitao Yang, Zhuo Hui, Christopher Metzler, Andrea Vedaldi, Hamed Pirsiavash, et al.  
+  _2026-01-21_ · https://arxiv.org/abs/2601.14674v1  
+  <details><summary>Abstract</summary>
+
+  Given a monocular video, the goal of video re-rendering is to generate views of the scene from a novel camera trajectory. Existing methods face two distinct challenges. Geometrically unconditioned models lack spatial awareness, leading to drift and deformation under viewpoint changes. On the other hand, geometrically-conditioned models depend on estimated depth and explicit reconstruction, making them susceptible to depth inaccuracies and calibration errors. We propose to address these challenges by using the implicit geometric knowledge embedded in the latent space of a large 4D reconstruction model to condition the video generation process. These latents capture scene structure in a continuous space without explicit reconstruction. Therefore, they provide a flexible representation that allows the pretrained diffusion prior to regularize errors more effectively. By jointly conditioning on these latents and source camera poses, we demonstrate that our model achieves state-of-the-art results on the video re-rendering task. Project webpage is https://lavr-4d-scene-rerender.github.io/
+
+  </details>
+
+
 
 - **SUNSET -- A Sensor-fUsioN based semantic SegmEnTation exemplar for ROS-based self-adaptation**  
   Andreas Wiedholz, Rafael Paintner, Julian Gleißner, Alwin Hoffmann, Tobias Huber  
@@ -46,50 +68,6 @@ Total papers shown: **8**
   <details><summary>Abstract</summary>
 
   Understanding and reasoning about the physical world requires spatial intelligence: the ability to interpret geometry, perspective, and spatial relations beyond 2D perception. While recent vision large models (VLMs) excel at visual understanding, they remain fundamentally 2D perceivers and struggle with genuine 3D reasoning. We introduce Think3D, a framework that enables VLM agents to think with 3D space. By leveraging 3D reconstruction models that recover point clouds and camera poses from images or videos, Think3D allows the agent to actively manipulate space through camera-based operations and ego/global-view switching, transforming spatial reasoning into an interactive 3D chain-of-thought process. Without additional training, Think3D significantly improves the spatial reasoning performance of advanced models such as GPT-4.1 and Gemini 2.5 Pro, yielding average gains of +7.8% on BLINK Multi-view and MindCube, and +4.7% on VSI-Bench. We further show that smaller models, which struggle with spatial exploration, benefit significantly from a reinforcement learning policy that enables the model to select informative viewpoints and operations. With RL, the benefit from tool usage increases from +0.7% to +6.8%. Our findings demonstrate that training-free, tool-augmented spatial exploration is a viable path toward more flexible and human-like 3D reasoning in multimodal agents, establishing a new dimension of multimodal intelligence. Code and weights are released at https://github.com/zhangzaibin/spagent.
-
-  </details>
-
-
-
-- **Generalizable and Animatable 3D Full-Head Gaussian Avatar from a Single Image**  
-  Shuling Zhao, Dan Xu  
-  _2026-01-19_ · https://arxiv.org/abs/2601.12770v1  
-  <details><summary>Abstract</summary>
-
-  Building 3D animatable head avatars from a single image is an important yet challenging problem. Existing methods generally collapse under large camera pose variations, compromising the realism of 3D avatars. In this work, we propose a new framework to tackle the novel setting of one-shot 3D full-head animatable avatar reconstruction in a single feed-forward pass, enabling real-time animation and simultaneous 360$^\circ$ rendering views. To facilitate efficient animation control, we model 3D head avatars with Gaussian primitives embedded on the surface of a parametric face model within the UV space. To obtain knowledge of full-head geometry and textures, we leverage rich 3D full-head priors within a pretrained 3D generative adversarial network (GAN) for global full-head feature extraction and multi-view supervision. To increase the fidelity of the 3D reconstruction of the input image, we take advantage of the symmetric nature of the UV space and human faces to fuse local fine-grained input image features with the global full-head textures. Extensive experiments demonstrate the effectiveness of our method, achieving high-quality 3D full-head modeling as well as real-time animation, thereby improving the realism of 3D talking avatars.
-
-  </details>
-
-
-
-- **DC-VLAQ: Query-Residual Aggregation for Robust Visual Place Recognition**  
-  Hanyu Zhu, Zhihao Zhan, Yuhang Ming, Liang Li, Dibo Hou, Javier Civera, Wanzeng Kong  
-  _2026-01-19_ · https://arxiv.org/abs/2601.12729v1  
-  <details><summary>Abstract</summary>
-
-  One of the central challenges in visual place recognition (VPR) is learning a robust global representation that remains discriminative under large viewpoint changes, illumination variations, and severe domain shifts. While visual foundation models (VFMs) provide strong local features, most existing methods rely on a single model, overlooking the complementary cues offered by different VFMs. However, exploiting such complementary information inevitably alters token distributions, which challenges the stability of existing query-based global aggregation schemes. To address these challenges, we propose DC-VLAQ, a representation-centric framework that integrates the fusion of complementary VFMs and robust global aggregation. Specifically, we first introduce a lightweight residual-guided complementary fusion that anchors representations in the DINOv2 feature space while injecting complementary semantics from CLIP through a learned residual correction. In addition, we propose the Vector of Local Aggregated Queries (VLAQ), a query--residual global aggregation scheme that encodes local tokens by their residual responses to learnable queries, resulting in improved stability and the preservation of fine-grained discriminative cues. Extensive experiments on standard VPR benchmarks, including Pitts30k, Tokyo24/7, MSLS, Nordland, SPED, and AmsterTime, demonstrate that DC-VLAQ consistently outperforms strong baselines and achieves state-of-the-art performance, particularly under challenging domain shifts and long-term appearance changes.
-
-  </details>
-
-
-
-- **Camera Pose Revisited**  
-  Władysław Skarbek, Michał Salomonowicz, Michał Król  
-  _2026-01-18_ · https://arxiv.org/abs/2601.12567v1  
-  <details><summary>Abstract</summary>
-
-  Estimating the position and orientation of a camera with respect to an observed scene is one of the central problems in computer vision, particularly in the context of camera calibration and multi-sensor systems. This paper addresses the planar Perspective--$n$--Point problem, with special emphasis on the initial estimation of the pose of a calibration object. As a solution, we propose the \texttt{PnP-ProCay78} algorithm, which combines the classical quadratic formulation of the reconstruction error with a Cayley parameterization of rotations and least-squares optimization. The key component of the method is a deterministic selection of starting points based on an analysis of the reconstruction error for two canonical vectors, allowing costly solution-space search procedures to be avoided. Experimental validation is performed using data acquired also from high-resolution RGB cameras and very low-resolution thermal cameras in an integrated RGB--IR setup. The results demonstrate that the proposed algorithm achieves practically the same projection accuracy as optimal \texttt{SQPnP} and slightly higher than \texttt{IPPE}, both prominent \texttt{PnP-OpenCV} procedures. However, \texttt{PnP-ProCay78} maintains a significantly simpler algorithmic structure. Moreover, the analysis of optimization trajectories in Cayley space provides an intuitive insight into the convergence process, making the method attractive also from a didactic perspective. Unlike existing PnP solvers, the proposed \texttt{PnP-ProCay78} algorithm combines projection error minimization with an analytically eliminated reconstruction-error surrogate for translation, yielding a hybrid cost formulation that is both geometrically transparent and computationally efficient.
-
-  </details>
-
-
-
-- **R-VoxelMap: Accurate Voxel Mapping with Recursive Plane Fitting for Online LiDAR Odometry**  
-  Haobo Xi, Shiyong Zhang, Qianli Dong, Yunze Tong, Songyang Wu, Jing Yuan, Xuebo Zhang  
-  _2026-01-18_ · https://arxiv.org/abs/2601.12377v1  
-  <details><summary>Abstract</summary>
-
-  This paper proposes R-VoxelMap, a novel voxel mapping method that constructs accurate voxel maps using a geometry-driven recursive plane fitting strategy to enhance the localization accuracy of online LiDAR odometry. VoxelMap and its variants typically fit and check planes using all points in a voxel, which may lead to plane parameter deviation caused by outliers, over segmentation of large planes, and incorrect merging across different physical planes. To address these issues, R-VoxelMap utilizes a geometry-driven recursive construction strategy based on an outlier detect-and-reuse pipeline. Specifically, for each voxel, accurate planes are first fitted while separating outliers using random sample consensus (RANSAC). The remaining outliers are then propagated to deeper octree levels for recursive processing, ensuring a detailed representation of the environment. In addition, a point distribution-based validity check algorithm is devised to prevent erroneous plane merging. Extensive experiments on diverse open-source LiDAR(-inertial) simultaneous localization and mapping (SLAM) datasets validate that our method achieves higher accuracy than other state-of-the-art approaches, with comparable efficiency and memory usage. Code will be available on GitHub.
 
   </details>
 

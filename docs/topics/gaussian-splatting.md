@@ -1,11 +1,66 @@
 # Gaussian Splatting & 3DGS
 
-_Updated: 2026-01-21 06:54 UTC_
+_Updated: 2026-01-22 06:52 UTC_
 
-Total papers shown: **10**
+Total papers shown: **13**
 
 
 ---
+
+- **LuxRemix: Lighting Decomposition and Remixing for Indoor Scenes**  
+  Ruofan Liang, Norman Müller, Ethan Weber, Duncan Zauss, Nandita Vijaykumar, Peter Kontschieder, Christian Richardt  
+  _2026-01-21_ · https://arxiv.org/abs/2601.15283v1  
+  <details><summary>Abstract</summary>
+
+  We present a novel approach for interactive light editing in indoor scenes from a single multi-view scene capture. Our method leverages a generative image-based light decomposition model that factorizes complex indoor scene illumination into its constituent light sources. This factorization enables independent manipulation of individual light sources, specifically allowing control over their state (on/off), chromaticity, and intensity. We further introduce multi-view lighting harmonization to ensure consistent propagation of the lighting decomposition across all scene views. This is integrated into a relightable 3D Gaussian splatting representation, providing real-time interactive control over the individual light sources. Our results demonstrate highly photorealistic lighting decomposition and relighting outcomes across diverse indoor scenes. We evaluate our method on both synthetic and real-world datasets and provide a quantitative and qualitative comparison to state-of-the-art techniques. For video results and interactive demos, see https://luxremix.github.io.
+
+  </details>
+
+
+
+- **ScenDi: 3D-to-2D Scene Diffusion Cascades for Urban Generation**  
+  Hanlei Guo, Jiahao Shao, Xinya Chen, Xiyang Tan, Sheng Miao, Yujun Shen, Yiyi Liao  
+  _2026-01-21_ · https://arxiv.org/abs/2601.15221v1  
+  <details><summary>Abstract</summary>
+
+  Recent advancements in 3D object generation using diffusion models have achieved remarkable success, but generating realistic 3D urban scenes remains challenging. Existing methods relying solely on 3D diffusion models tend to suffer a degradation in appearance details, while those utilizing only 2D diffusion models typically compromise camera controllability. To overcome this limitation, we propose ScenDi, a method for urban scene generation that integrates both 3D and 2D diffusion models. We first train a 3D latent diffusion model to generate 3D Gaussians, enabling the rendering of images at a relatively low resolution. To enable controllable synthesis, this 3DGS generation process can be optionally conditioned by specifying inputs such as 3d bounding boxes, road maps, or text prompts. Then, we train a 2D video diffusion model to enhance appearance details conditioned on rendered images from the 3D Gaussians. By leveraging the coarse 3D scene as guidance for 2D video diffusion, ScenDi generates desired scenes based on input conditions and successfully adheres to accurate camera trajectories. Experiments on two challenging real-world datasets, Waymo and KITTI-360, demonstrate the effectiveness of our approach.
+
+  </details>
+
+
+
+- **CAG-Avatar: Cross-Attention Guided Gaussian Avatars for High-Fidelity Head Reconstruction**  
+  Zhe Chang, Haodong Jin, Yan Song, Hui Yu  
+  _2026-01-21_ · https://arxiv.org/abs/2601.14844v1  
+  <details><summary>Abstract</summary>
+
+  Creating high-fidelity, real-time drivable 3D head avatars is a core challenge in digital animation. While 3D Gaussian Splashing (3D-GS) offers unprecedented rendering speed and quality, current animation techniques often rely on a "one-size-fits-all" global tuning approach, where all Gaussian primitives are uniformly driven by a single expression code. This simplistic approach fails to unravel the distinct dynamics of different facial regions, such as deformable skin versus rigid teeth, leading to significant blurring and distortion artifacts. We introduce Conditionally-Adaptive Gaussian Avatars (CAG-Avatar), a framework that resolves this key limitation. At its core is a Conditionally Adaptive Fusion Module built on cross-attention. This mechanism empowers each 3D Gaussian to act as a query, adaptively extracting relevant driving signals from the global expression code based on its canonical position. This "tailor-made" conditioning strategy drastically enhances the modeling of fine-grained, localized dynamics. Our experiments confirm a significant improvement in reconstruction fidelity, particularly for challenging regions such as teeth, while preserving real-time rendering performance.
+
+  </details>
+
+
+
+- **POTR: Post-Training 3DGS Compression**  
+  Bert Ramlot, Martijn Courteaux, Peter Lambert, Glenn Van Wallendael  
+  _2026-01-21_ · https://arxiv.org/abs/2601.14821v1  
+  <details><summary>Abstract</summary>
+
+  3D Gaussian Splatting (3DGS) has recently emerged as a promising contender to Neural Radiance Fields (NeRF) in 3D scene reconstruction and real-time novel view synthesis. 3DGS outperforms NeRF in training and inference speed but has substantially higher storage requirements. To remedy this downside, we propose POTR, a post-training 3DGS codec built on two novel techniques. First, POTR introduces a novel pruning approach that uses a modified 3DGS rasterizer to efficiently calculate every splat's individual removal effect simultaneously. This technique results in 2-4x fewer splats than other post-training pruning techniques and as a result also significantly accelerates inference with experiments demonstrating 1.5-2x faster inference than other compressed models. Second, we propose a novel method to recompute lighting coefficients, significantly reducing their entropy without using any form of training. Our fast and highly parallel approach especially increases AC lighting coefficient sparsity, with experiments demonstrating increases from 70% to 97%, with minimal loss in quality. Finally, we extend POTR with a simple fine-tuning scheme to further enhance pruning, inference, and rate-distortion performance. Experiments demonstrate that POTR, even without fine-tuning, consistently outperforms all other post-training compression techniques in both rate-distortion performance and inference speed.
+
+  </details>
+
+
+
+- **Gaussian Based Adaptive Multi-Modal 3D Semantic Occupancy Prediction**  
+  A. Enes Doruk  
+  _2026-01-20_ · https://arxiv.org/abs/2601.14448v1  
+  <details><summary>Abstract</summary>
+
+  The sparse object detection paradigm shift towards dense 3D semantic occupancy prediction is necessary for dealing with long-tail safety challenges for autonomous vehicles. Nonetheless, the current voxelization methods commonly suffer from excessive computation complexity demands, where the fusion process is brittle, static, and breaks down under dynamic environmental settings. To this end, this research work enhances a novel Gaussian-based adaptive camera-LiDAR multimodal 3D occupancy prediction model that seamlessly bridges the semantic strengths of camera modality with the geometric strengths of LiDAR modality through a memory-efficient 3D Gaussian model. The proposed solution has four key components: (1) LiDAR Depth Feature Aggregation (LDFA), where depth-wise deformable sampling is employed for dealing with geometric sparsity, (2) Entropy-Based Feature Smoothing, where cross-entropy is employed for handling domain-specific noise, (3) Adaptive Camera-LiDAR Fusion, where dynamic recalibration of sensor outputs is performed based on model outputs, and (4) Gauss-Mamba Head that uses Selective State Space Models for global context decoding that enjoys linear computation complexity.
+
+  </details>
+
+
 
 - **Rig-Aware 3D Reconstruction of Vehicle Undercarriages using Gaussian Splatting**  
   Nitin Kulkarni, Akhil Devarashetti, Charlie Cluss, Livio Forte, Dan Buckmaster, Philip Schneider, Chunming Qiao, Alina Vereshchaka  
@@ -90,28 +145,6 @@ Total papers shown: **10**
   <details><summary>Abstract</summary>
 
   Building 3D animatable head avatars from a single image is an important yet challenging problem. Existing methods generally collapse under large camera pose variations, compromising the realism of 3D avatars. In this work, we propose a new framework to tackle the novel setting of one-shot 3D full-head animatable avatar reconstruction in a single feed-forward pass, enabling real-time animation and simultaneous 360$^\circ$ rendering views. To facilitate efficient animation control, we model 3D head avatars with Gaussian primitives embedded on the surface of a parametric face model within the UV space. To obtain knowledge of full-head geometry and textures, we leverage rich 3D full-head priors within a pretrained 3D generative adversarial network (GAN) for global full-head feature extraction and multi-view supervision. To increase the fidelity of the 3D reconstruction of the input image, we take advantage of the symmetric nature of the UV space and human faces to fuse local fine-grained input image features with the global full-head textures. Extensive experiments demonstrate the effectiveness of our method, achieving high-quality 3D full-head modeling as well as real-time animation, thereby improving the realism of 3D talking avatars.
-
-  </details>
-
-
-
-- **KaoLRM: Repurposing Pre-trained Large Reconstruction Models for Parametric 3D Face Reconstruction**  
-  Qingtian Zhu, Xu Cao, Zhixiang Wang, Yinqiang Zheng, Takafumi Taketomi  
-  _2026-01-19_ · https://arxiv.org/abs/2601.12736v1  
-  <details><summary>Abstract</summary>
-
-  We propose KaoLRM to re-target the learned prior of the Large Reconstruction Model (LRM) for parametric 3D face reconstruction from single-view images. Parametric 3D Morphable Models (3DMMs) have been widely used for facial reconstruction due to their compact and interpretable parameterization, yet existing 3DMM regressors often exhibit poor consistency across varying viewpoints. To address this, we harness the pre-trained 3D prior of LRM and incorporate FLAME-based 2D Gaussian Splatting into LRM's rendering pipeline. Specifically, KaoLRM projects LRM's pre-trained triplane features into the FLAME parameter space to recover geometry, and models appearance via 2D Gaussian primitives that are tightly coupled to the FLAME mesh. The rich prior enables the FLAME regressor to be aware of the 3D structure, leading to accurate and robust reconstructions under self-occlusions and diverse viewpoints. Experiments on both controlled and in-the-wild benchmarks demonstrate that KaoLRM achieves superior reconstruction accuracy and cross-view consistency, while existing methods remain sensitive to viewpoint variations. The code is released at https://github.com/CyberAgentAILab/KaoLRM.
-
-  </details>
-
-
-
-- **GaussianTrimmer: Online Trimming Boundaries for 3DGS Segmentation**  
-  Liwei Liao, Ronggang Wang  
-  _2026-01-19_ · https://arxiv.org/abs/2601.12683v1  
-  <details><summary>Abstract</summary>
-
-  With the widespread application of 3D Gaussians in 3D scene representation, 3D scene segmentation methods based on 3D Gaussians have also gradually emerged. However, existing 3D Gaussian segmentation methods basically segment on the basis of Gaussian primitives. Due to the large variation range of the scale of 3D Gaussians, large-sized Gaussians that often span the foreground and background lead to jagged boundaries of segmented objects. To this end, we propose an online boundary trimming method, GaussianTrimmer, which is an efficient and plug-and-play post-processing method capable of trimming coarse boundaries for existing 3D Gaussian segmentation methods. Our method consists of two core steps: 1. Generating uniformly and well-covered virtual cameras; 2. Trimming Gaussian at the primitive level based on 2D segmentation results on virtual cameras. Extensive quantitative and qualitative experiments demonstrate that our method can improve the segmentation quality of existing 3D Gaussian segmentation methods as a plug-and-play method.
 
   </details>
 

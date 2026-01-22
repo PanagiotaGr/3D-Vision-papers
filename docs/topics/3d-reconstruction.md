@@ -1,11 +1,44 @@
 # 3D Reconstruction
 
-_Updated: 2026-01-21 06:54 UTC_
+_Updated: 2026-01-22 06:52 UTC_
 
 Total papers shown: **9**
 
 
 ---
+
+- **RayRoPE: Projective Ray Positional Encoding for Multi-view Attention**  
+  Yu Wu, Minsik Jeon, Jen-Hao Rick Chang, Oncel Tuzel, Shubham Tulsiani  
+  _2026-01-21_ · https://arxiv.org/abs/2601.15275v1  
+  <details><summary>Abstract</summary>
+
+  We study positional encodings for multi-view transformers that process tokens from a set of posed input images, and seek a mechanism that encodes patches uniquely, allows SE(3)-invariant attention with multi-frequency similarity, and can be adaptive to the geometry of the underlying scene. We find that prior (absolute or relative) encoding schemes for multi-view attention do not meet the above desiderata, and present RayRoPE to address this gap. RayRoPE represents patch positions based on associated rays but leverages a predicted point along the ray instead of the direction for a geometry-aware encoding. To achieve SE(3) invariance, RayRoPE computes query-frame projective coordinates for computing multi-frequency similarity. Lastly, as the 'predicted' 3D point along a ray may not be precise, RayRoPE presents a mechanism to analytically compute the expected position encoding under uncertainty. We validate RayRoPE on the tasks of novel-view synthesis and stereo depth estimation and show that it consistently improves over alternate position encoding schemes (e.g. 15% relative improvement on LPIPS in CO3D). We also show that RayRoPE can seamlessly incorporate RGB-D input, resulting in even larger gains over alternatives that cannot positionally encode this information.
+
+  </details>
+
+
+
+- **Three-dimensional visualization of X-ray micro-CT with large-scale datasets: Efficiency and accuracy for real-time interaction**  
+  Yipeng Yin, Rao Yao, Qingying Li, Dazhong Wang, Hong Zhou, Zhijun Fang, Jianing Chen, Longjie Qian, Mingyue Wu  
+  _2026-01-21_ · https://arxiv.org/abs/2601.15098v1  
+  <details><summary>Abstract</summary>
+
+  As Micro-CT technology continues to refine its characterization of material microstructures, industrial CT ultra-precision inspection is generating increasingly large datasets, necessitating solutions to the trade-off between accuracy and efficiency in the 3D characterization of defects during ultra-precise detection. This article provides a unique perspective on recent advances in accurate and efficient 3D visualization using Micro-CT, tracing its evolution from medical imaging to industrial non-destructive testing (NDT). Among the numerous CT reconstruction and volume rendering methods, this article selectively reviews and analyzes approaches that balance accuracy and efficiency, offering a comprehensive analysis to help researchers quickly grasp highly efficient and accurate 3D reconstruction methods for microscopic features. By comparing the principles of computed tomography with advancements in microstructural technology, this article examines the evolution of CT reconstruction algorithms from analytical methods to deep learning techniques, as well as improvements in volume rendering algorithms, acceleration, and data reduction. Additionally, it explores advanced lighting models for high-accuracy, photorealistic, and efficient volume rendering. Furthermore, this article envisions potential directions in CT reconstruction and volume rendering. It aims to guide future research in quickly selecting efficient and precise methods and developing new ideas and approaches for real-time online monitoring of internal material defects through virtual-physical interaction, for applying digital twin model to structural health monitoring (SHM).
+
+  </details>
+
+
+
+- **Symmetry Informative and Agnostic Feature Disentanglement for 3D Shapes**  
+  Tobias Weißberg, Weikang Wang, Paul Roetzer, Nafie El Amrani, Florian Bernard  
+  _2026-01-21_ · https://arxiv.org/abs/2601.14804v1  
+  <details><summary>Abstract</summary>
+
+  Shape descriptors, i.e., per-vertex features of 3D meshes or point clouds, are fundamental to shape analysis. Historically, various handcrafted geometry-aware descriptors and feature refinement techniques have been proposed. Recently, several studies have initiated a new research direction by leveraging features from image foundation models to create semantics-aware descriptors, demonstrating advantages across tasks like shape matching, editing, and segmentation. Symmetry, another key concept in shape analysis, has also attracted increasing attention. Consequently, constructing symmetry-aware shape descriptors is a natural progression. Although the recent method $χ$ (Wang et al., 2025) successfully extracted symmetry-informative features from semantic-aware descriptors, its features are only one-dimensional, neglecting other valuable semantic information. Furthermore, the extracted symmetry-informative feature is usually noisy and yields small misclassified patches. To address these gaps, we propose a feature disentanglement approach which is simultaneously symmetry informative and symmetry agnostic. Further, we propose a feature refinement technique to improve the robustness of predicted symmetry informative features. Extensive experiments, including intrinsic symmetry detection, left/right classification, and shape matching, demonstrate the effectiveness of our proposed framework compared to various state-of-the-art methods, both qualitatively and quantitatively.
+
+  </details>
+
+
 
 - **Rig-Aware 3D Reconstruction of Vehicle Undercarriages using Gaussian Splatting**  
   Nitin Kulkarni, Akhil Devarashetti, Charlie Cluss, Livio Forte, Dan Buckmaster, Philip Schneider, Chunming Qiao, Alina Vereshchaka  
@@ -68,39 +101,6 @@ Total papers shown: **9**
   <details><summary>Abstract</summary>
 
   Building 3D animatable head avatars from a single image is an important yet challenging problem. Existing methods generally collapse under large camera pose variations, compromising the realism of 3D avatars. In this work, we propose a new framework to tackle the novel setting of one-shot 3D full-head animatable avatar reconstruction in a single feed-forward pass, enabling real-time animation and simultaneous 360$^\circ$ rendering views. To facilitate efficient animation control, we model 3D head avatars with Gaussian primitives embedded on the surface of a parametric face model within the UV space. To obtain knowledge of full-head geometry and textures, we leverage rich 3D full-head priors within a pretrained 3D generative adversarial network (GAN) for global full-head feature extraction and multi-view supervision. To increase the fidelity of the 3D reconstruction of the input image, we take advantage of the symmetric nature of the UV space and human faces to fuse local fine-grained input image features with the global full-head textures. Extensive experiments demonstrate the effectiveness of our method, achieving high-quality 3D full-head modeling as well as real-time animation, thereby improving the realism of 3D talking avatars.
-
-  </details>
-
-
-
-- **Near-Light Color Photometric Stereo for mono-Chromaticity non-lambertian surface**  
-  Zonglin Li, Jieji Ren, Shuangfan Zhou, Heng Guo, Jinnuo Zhang, Jiang Zhou, Boxin Shi, Zhanyu Ma, Guoying Gu  
-  _2026-01-19_ · https://arxiv.org/abs/2601.12666v1  
-  <details><summary>Abstract</summary>
-
-  Color photometric stereo enables single-shot surface reconstruction, extending conventional photometric stereo that requires multiple images of a static scene under varying illumination to dynamic scenarios. However, most existing approaches assume ideal distant lighting and Lambertian reflectance, leaving more practical near-light conditions and non-Lambertian surfaces underexplored. To overcome this limitation, we propose a framework that leverages neural implicit representations for depth and BRDF modeling under the assumption of mono-chromaticity (uniform chromaticity and homogeneous material), which alleviates the inherent ill-posedness of color photometric stereo and allows for detailed surface recovery from just one image. Furthermore, we design a compact optical tactile sensor to validate our approach. Experiments on both synthetic and real-world datasets demonstrate that our method achieves accurate and robust surface reconstruction.
-
-  </details>
-
-
-
-- **NeuralFur: Animal Fur Reconstruction From Multi-View Images**  
-  Vanessa Sklyarova, Berna Kabadayi, Anastasios Yiannakidis, Giorgio Becherini, Michael J. Black, Justus Thies  
-  _2026-01-18_ · https://arxiv.org/abs/2601.12481v1  
-  <details><summary>Abstract</summary>
-
-  Reconstructing realistic animal fur geometry from images is a challenging task due to the fine-scale details, self-occlusion, and view-dependent appearance of fur. In contrast to human hairstyle reconstruction, there are also no datasets that can be leveraged to learn a fur prior for different animals. In this work, we present a first multi-view-based method for high-fidelity 3D fur modeling of animals using a strand-based representation, leveraging the general knowledge of a vision language model. Given multi-view RGB images, we first reconstruct a coarse surface geometry using traditional multi-view stereo techniques. We then use a vision language model (VLM) system to retrieve information about the realistic length structure of the fur for each part of the body. We use this knowledge to construct the animal's furless geometry and grow strands atop it. The fur reconstruction is supervised with both geometric and photometric losses computed from multi-view images. To mitigate orientation ambiguities stemming from the Gabor filters that are applied to the input images, we additionally utilize the VLM to guide the strands' growth direction and their relation to the gravity vector that we incorporate as a loss. With this new schema of using a VLM to guide 3D reconstruction from multi-view inputs, we show generalization across a variety of animals with different fur types. For additional results and code, please refer to https://neuralfur.is.tue.mpg.de.
-
-  </details>
-
-
-
-- **Class-Partitioned VQ-VAE and Latent Flow Matching for Point Cloud Scene Generation**  
-  Dasith de Silva Edirimuni, Ajmal Saeed Mian  
-  _2026-01-18_ · https://arxiv.org/abs/2601.12391v1  
-  <details><summary>Abstract</summary>
-
-  Most 3D scene generation methods are limited to only generating object bounding box parameters while newer diffusion methods also generate class labels and latent features. Using object size or latent feature, they then retrieve objects from a predefined database. For complex scenes of varied, multi-categorical objects, diffusion-based latents cannot be effectively decoded by current autoencoders into the correct point cloud objects which agree with target classes. We introduce a Class-Partitioned Vector Quantized Variational Autoencoder (CPVQ-VAE) that is trained to effectively decode object latent features, by employing a pioneering $\textit{class-partitioned codebook}$ where codevectors are labeled by class. To address the problem of $\textit{codebook collapse}$, we propose a $\textit{class-aware}$ running average update which reinitializes dead codevectors within each partition. During inference, object features and class labels, both generated by a Latent-space Flow Matching Model (LFMM) designed specifically for scene generation, are consumed by the CPVQ-VAE. The CPVQ-VAE's class-aware inverse look-up then maps generated latents to codebook entries that are decoded to class-specific point cloud shapes. Thereby, we achieve pure point cloud generation without relying on an external objects database for retrieval. Extensive experiments reveal that our method reliably recovers plausible point cloud scenes, with up to 70.4% and 72.3% reduction in Chamfer and Point2Mesh errors on complex living room scenes.
 
   </details>
 

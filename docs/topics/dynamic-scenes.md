@@ -1,11 +1,44 @@
 # Dynamic Scenes & 4D Reconstruction
 
-_Updated: 2026-01-21 06:54 UTC_
+_Updated: 2026-01-22 06:52 UTC_
 
-Total papers shown: **8**
+Total papers shown: **9**
 
 
 ---
+
+- **UBATrack: Spatio-Temporal State Space Model for General Multi-Modal Tracking**  
+  Qihua Liang, Liang Chen, Yaozong Zheng, Jian Nong, Zhiyi Mo, Bineng Zhong  
+  _2026-01-21_ · https://arxiv.org/abs/2601.14799v1  
+  <details><summary>Abstract</summary>
+
+  Multi-modal object tracking has attracted considerable attention by integrating multiple complementary inputs (e.g., thermal, depth, and event data) to achieve outstanding performance. Although current general-purpose multi-modal trackers primarily unify various modal tracking tasks (i.e., RGB-Thermal infrared, RGB-Depth or RGB-Event tracking) through prompt learning, they still overlook the effective capture of spatio-temporal cues. In this work, we introduce a novel multi-modal tracking framework based on a mamba-style state space model, termed UBATrack. Our UBATrack comprises two simple yet effective modules: a Spatio-temporal Mamba Adapter (STMA) and a Dynamic Multi-modal Feature Mixer. The former leverages Mamba's long-sequence modeling capability to jointly model cross-modal dependencies and spatio-temporal visual cues in an adapter-tuning manner. The latter further enhances multi-modal representation capacity across multiple feature dimensions to improve tracking robustness. In this way, UBATrack eliminates the need for costly full-parameter fine-tuning, thereby improving the training efficiency of multi-modal tracking algorithms. Experiments show that UBATrack outperforms state-of-the-art methods on RGB-T, RGB-D, and RGB-E tracking benchmarks, achieving outstanding results on the LasHeR, RGBT234, RGBT210, DepthTrack, VOT-RGBD22, and VisEvent datasets.
+
+  </details>
+
+
+
+- **FeedbackSTS-Det: Sparse Frames-Based Spatio-Temporal Semantic Feedback Network for Infrared Small Target Detection**  
+  Yian Huang, Qing Qin, Aji Mao, Xiangyu Qiu, Liang Xu, Xian Zhang, Zhenming Peng  
+  _2026-01-21_ · https://arxiv.org/abs/2601.14690v1  
+  <details><summary>Abstract</summary>
+
+  Infrared small target detection (ISTD) under complex backgrounds remains a critical yet challenging task, primarily due to the extremely low signal-to-clutter ratio, persistent dynamic interference, and the lack of distinct target features. While multi-frame detection methods leverages temporal cues to improve upon single-frame approaches, existing methods still struggle with inefficient long-range dependency modeling and insufficient robustness. To overcome these issues, we propose a novel scheme for ISTD, realized through a sparse frames-based spatio-temporal semantic feedback network named FeedbackSTS-Det. The core of our approach is a novel spatio-temporal semantic feedback strategy with a closed-loop semantic association mechanism, which consists of paired forward and backward refinement modules that work cooperatively across the encoder and decoder. Moreover, both modules incorporate an embedded sparse semantic module (SSM), which performs structured sparse temporal modeling to capture long-range dependencies with low computational cost. This integrated design facilitates robust implicit inter-frame registration and continuous semantic refinement, effectively suppressing false alarms. Furthermore, our overall procedure maintains a consistent training-inference pipeline, which ensures reliable performance transfer and increases model robustness. Extensive experiments on multiple benchmark datasets confirm the effectiveness of FeedbackSTS-Det. Code and models are available at: https://github.com/IDIP-Lab/FeedbackSTS-Det.
+
+  </details>
+
+
+
+- **LaVR: Scene Latent Conditioned Generative Video Trajectory Re-Rendering using Large 4D Reconstruction Models**  
+  Mingyang Xie, Numair Khan, Tianfu Wang, Naina Dhingra, Seonghyeon Nam, Haitao Yang, Zhuo Hui, Christopher Metzler, Andrea Vedaldi, Hamed Pirsiavash, et al.  
+  _2026-01-21_ · https://arxiv.org/abs/2601.14674v1  
+  <details><summary>Abstract</summary>
+
+  Given a monocular video, the goal of video re-rendering is to generate views of the scene from a novel camera trajectory. Existing methods face two distinct challenges. Geometrically unconditioned models lack spatial awareness, leading to drift and deformation under viewpoint changes. On the other hand, geometrically-conditioned models depend on estimated depth and explicit reconstruction, making them susceptible to depth inaccuracies and calibration errors. We propose to address these challenges by using the implicit geometric knowledge embedded in the latent space of a large 4D reconstruction model to condition the video generation process. These latents capture scene structure in a continuous space without explicit reconstruction. Therefore, they provide a flexible representation that allows the pretrained diffusion prior to regularize errors more effectively. By jointly conditioning on these latents and source camera poses, we demonstrate that our model achieves state-of-the-art results on the video re-rendering task. Project webpage is https://lavr-4d-scene-rerender.github.io/
+
+  </details>
+
+
 
 - **OmniTransfer: All-in-one Framework for Spatio-temporal Video Transfer**  
   Pengze Zhang, Yanze Wu, Mengtian Li, Xu Bai, Songtao Zhao, Fulong Ye, Chong Mou, Xinghui Li, Zhuowei Chen, Qian He, et al.  
@@ -68,28 +101,6 @@ Total papers shown: **8**
   <details><summary>Abstract</summary>
 
   In autonomous driving, multi-modal perception tasks like 3D object detection typically rely on well-synchronized sensors, both at training and inference. However, despite the use of hardware- or software-based synchronization algorithms, perfect synchrony is rarely guaranteed: Sensors may operate at different frequencies, and real-world factors such as network latency, hardware failures, or processing bottlenecks often introduce time offsets between sensors. Such asynchrony degrades perception performance, especially for dynamic objects. To address this challenge, we propose AsyncBEV, a trainable lightweight and generic module to improve the robustness of 3D Birds' Eye View (BEV) object detection models against sensor asynchrony. Inspired by scene flow estimation, AsyncBEV first estimates the 2D flow from the BEV features of two different sensor modalities, taking into account the known time offset between these sensor measurements. The predicted feature flow is then used to warp and spatially align the feature maps, which we show can easily be integrated into different current BEV detector architectures (e.g., BEV grid-based and token-based). Extensive experiments demonstrate AsyncBEV improves robustness against both small and large asynchrony between LiDAR or camera sensors in both the token-based CMT and grid-based UniBEV, especially for dynamic objects. We significantly outperform the ego motion compensated CMT and UniBEV baselines, notably by $16.6$ % and $11.9$ % NDS on dynamic objects in the worst-case scenario of a $0.5 s$ time offset. Code will be released upon acceptance.
-
-  </details>
-
-
-
-- **Linear Mechanisms for Spatiotemporal Reasoning in Vision Language Models**  
-  Raphi Kang, Hongqiao Chen, Georgia Gkioxari, Pietro Perona  
-  _2026-01-18_ · https://arxiv.org/abs/2601.12626v1  
-  <details><summary>Abstract</summary>
-
-  Spatio-temporal reasoning is a remarkable capability of Vision Language Models (VLMs), but the underlying mechanisms of such abilities remain largely opaque. We postulate that visual/geometrical and textual representations of spatial structure must be combined at some point in VLM computations. We search for such confluence, and ask whether the identified representation can causally explain aspects of input-output model behavior through a linear model. We show empirically that VLMs encode object locations by linearly binding \textit{spatial IDs} to textual activations, then perform reasoning via language tokens. Through rigorous causal interventions we demonstrate that these IDs, which are ubiquitous across the model, can systematically mediate model beliefs at intermediate VLM layers. Additionally, we find that spatial IDs serve as a diagnostic tool for identifying limitations in existing VLMs, and as a valuable learning signal. We extend our analysis to video VLMs and identify an analogous linear temporal ID mechanism. By characterizing our proposed spatiotemporal ID mechanism, we elucidate a previously underexplored internal reasoning process in VLMs, toward improved interpretability and the principled design of more aligned and capable models. We release our code for reproducibility: https://github.com/Raphoo/linear-mech-vlms.
-
-  </details>
-
-
-
-- **CurConMix+: A Unified Spatio-Temporal Framework for Hierarchical Surgical Workflow Understanding**  
-  Yongjun Jeon, Jongmin Shin, Kanggil Park, Seonmin Park, Soyoung Lim, Jung Yong Kim, Jinsoo Rhu, Jongman Kim, Gyu-Seong Choi, Namkee Oh, et al.  
-  _2026-01-18_ · https://arxiv.org/abs/2601.12312v1  
-  <details><summary>Abstract</summary>
-
-  Surgical action triplet recognition aims to understand fine-grained surgical behaviors by modeling the interactions among instruments, actions, and anatomical targets. Despite its clinical importance for workflow analysis and skill assessment, progress has been hindered by severe class imbalance, subtle visual variations, and the semantic interdependence among triplet components. Existing approaches often address only a subset of these challenges rather than tackling them jointly, which limits their ability to form a holistic understanding. This study builds upon CurConMix, a spatial representation framework. At its core, a curriculum-guided contrastive learning strategy learns discriminative and progressively correlated features, further enhanced by structured hard-pair sampling and feature-level mixup. Its temporal extension, CurConMix+, integrates a Multi-Resolution Temporal Transformer (MRTT) that achieves robust, context-aware understanding by adaptively fusing multi-scale temporal features and dynamically balancing spatio-temporal cues. Furthermore, we introduce LLS48, a new, hierarchically annotated benchmark for complex laparoscopic left lateral sectionectomy, providing step-, task-, and action-level annotations. Extensive experiments on CholecT45 and LLS48 demonstrate that CurConMix+ not only outperforms state-of-the-art approaches in triplet recognition, but also exhibits strong cross-level generalization, as its fine-grained features effectively transfer to higher-level phase and step recognition tasks. Together, the framework and dataset provide a unified foundation for hierarchy-aware, reproducible, and interpretable surgical workflow understanding. The code and dataset will be publicly released on GitHub to facilitate reproducibility and further research.
 
   </details>
 
