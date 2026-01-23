@@ -1,11 +1,33 @@
 # Dynamic Scenes & 4D Reconstruction
 
-_Updated: 2026-01-22 06:52 UTC_
+_Updated: 2026-01-23 06:52 UTC_
 
 Total papers shown: **9**
 
 
 ---
+
+- **ActionMesh: Animated 3D Mesh Generation with Temporal 3D Diffusion**  
+  Remy Sabathier, David Novotny, Niloy J. Mitra, Tom Monnier  
+  _2026-01-22_ · https://arxiv.org/abs/2601.16148v1  
+  <details><summary>Abstract</summary>
+
+  Generating animated 3D objects is at the heart of many applications, yet most advanced works are typically difficult to apply in practice because of their limited setup, their long runtime, or their limited quality. We introduce ActionMesh, a generative model that predicts production-ready 3D meshes "in action" in a feed-forward manner. Drawing inspiration from early video models, our key insight is to modify existing 3D diffusion models to include a temporal axis, resulting in a framework we dubbed "temporal 3D diffusion". Specifically, we first adapt the 3D diffusion stage to generate a sequence of synchronized latents representing time-varying and independent 3D shapes. Second, we design a temporal 3D autoencoder that translates a sequence of independent shapes into the corresponding deformations of a pre-defined reference shape, allowing us to build an animation. Combining these two components, ActionMesh generates animated 3D meshes from different inputs like a monocular video, a text description, or even a 3D mesh with a text prompt describing its animation. Besides, compared to previous approaches, our method is fast and produces results that are rig-free and topology consistent, hence enabling rapid iteration and seamless applications like texturing and retargeting. We evaluate our model on standard video-to-4D benchmarks (Consistent4D, Objaverse) and report state-of-the-art performances on both geometric accuracy and temporal consistency, demonstrating that our model can deliver animated 3D meshes with unprecedented speed and quality.
+
+  </details>
+
+
+
+- **EVolSplat4D: Efficient Volume-based Gaussian Splatting for 4D Urban Scene Synthesis**  
+  Sheng Miao, Sijin Li, Pan Wang, Dongfeng Bai, Bingbing Liu, Yue Wang, Andreas Geiger, Yiyi Liao  
+  _2026-01-22_ · https://arxiv.org/abs/2601.15951v1  
+  <details><summary>Abstract</summary>
+
+  Novel view synthesis (NVS) of static and dynamic urban scenes is essential for autonomous driving simulation, yet existing methods often struggle to balance reconstruction time with quality. While state-of-the-art neural radiance fields and 3D Gaussian Splatting approaches achieve photorealism, they often rely on time-consuming per-scene optimization. Conversely, emerging feed-forward methods frequently adopt per-pixel Gaussian representations, which lead to 3D inconsistencies when aggregating multi-view predictions in complex, dynamic environments. We propose EvolSplat4D, a feed-forward framework that moves beyond existing per-pixel paradigms by unifying volume-based and pixel-based Gaussian prediction across three specialized branches. For close-range static regions, we predict consistent geometry of 3D Gaussians over multiple frames directly from a 3D feature volume, complemented by a semantically-enhanced image-based rendering module for predicting their appearance. For dynamic actors, we utilize object-centric canonical spaces and a motion-adjusted rendering module to aggregate temporal features, ensuring stable 4D reconstruction despite noisy motion priors. Far-Field scenery is handled by an efficient per-pixel Gaussian branch to ensure full-scene coverage. Experimental results on the KITTI-360, KITTI, Waymo, and PandaSet datasets show that EvolSplat4D reconstructs both static and dynamic environments with superior accuracy and consistency, outperforming both per-scene optimization and state-of-the-art feed-forward baselines.
+
+  </details>
+
+
 
 - **UBATrack: Spatio-Temporal State Space Model for General Multi-Modal Tracking**  
   Qihua Liang, Liang Chen, Yaozong Zheng, Jian Nong, Zhiyi Mo, Bineng Zhong  
@@ -79,28 +101,6 @@ Total papers shown: **9**
   <details><summary>Abstract</summary>
 
   Glass surface ubiquitous in both daily life and professional environments presents a potential threat to vision-based systems, such as robot and drone navigation. To solve this challenge, most recent studies have shown significant interest in Video Glass Surface Detection (VGSD). We observe that objects in the reflection (or transmission) layer appear farther from the glass surfaces. Consequently, in video motion scenarios, the notable reflected (or transmitted) objects on the glass surface move slower than objects in non-glass regions within the same spatial plane, and this motion inconsistency can effectively reveal the presence of glass surfaces. Based on this observation, we propose a novel network, named MVGD-Net, for detecting glass surfaces in videos by leveraging motion inconsistency cues. Our MVGD-Net features three novel modules: the Cross-scale Multimodal Fusion Module (CMFM) that integrates extracted spatial features and estimated optical flow maps, the History Guided Attention Module (HGAM) and Temporal Cross Attention Module (TCAM), both of which further enhances temporal features. A Temporal-Spatial Decoder (TSD) is also introduced to fuse the spatial and temporal features for generating the glass region mask. Furthermore, for learning our network, we also propose a large-scale dataset, which comprises 312 diverse glass scenarios with a total of 19,268 frames. Extensive experiments demonstrate that our MVGD-Net outperforms relevant state-of-the-art methods.
-
-  </details>
-
-
-
-- **Optical Linear Systems Framework for Event Sensing and Computational Neuromorphic Imaging**  
-  Nimrod Kruger, Nicholas Owen Ralph, Gregory Cohen, Paul Hurley  
-  _2026-01-20_ · https://arxiv.org/abs/2601.13498v1  
-  <details><summary>Abstract</summary>
-
-  Event vision sensors (neuromorphic cameras) output sparse, asynchronous ON/OFF events triggered by log-intensity threshold crossings, enabling microsecond-scale sensing with high dynamic range and low data bandwidth. As a nonlinear system, this event representation does not readily integrate with the linear forward models that underpin most computational imaging and optical system design. We present a physics-grounded processing pipeline that maps event streams to estimates of per-pixel log-intensity and intensity derivatives, and embeds these measurements in a dynamic linear systems model with a time-varying point spread function. This enables inverse filtering directly from event data, using frequency-domain Wiener deconvolution with a known (or parameterised) dynamic transfer function. We validate the approach in simulation for single and overlapping point sources under modulated defocus, and on real event data from a tunable-focus telescope imaging a star field, demonstrating source localisation and separability. The proposed framework provides a practical bridge between event sensing and model-based computational imaging for dynamic optical systems.
-
-  </details>
-
-
-
-- **AsyncBEV: Cross-modal Flow Alignment in Asynchronous 3D Object Detection**  
-  Shiming Wang, Holger Caesar, Liangliang Nan, Julian F. P. Kooij  
-  _2026-01-19_ · https://arxiv.org/abs/2601.12994v1  
-  <details><summary>Abstract</summary>
-
-  In autonomous driving, multi-modal perception tasks like 3D object detection typically rely on well-synchronized sensors, both at training and inference. However, despite the use of hardware- or software-based synchronization algorithms, perfect synchrony is rarely guaranteed: Sensors may operate at different frequencies, and real-world factors such as network latency, hardware failures, or processing bottlenecks often introduce time offsets between sensors. Such asynchrony degrades perception performance, especially for dynamic objects. To address this challenge, we propose AsyncBEV, a trainable lightweight and generic module to improve the robustness of 3D Birds' Eye View (BEV) object detection models against sensor asynchrony. Inspired by scene flow estimation, AsyncBEV first estimates the 2D flow from the BEV features of two different sensor modalities, taking into account the known time offset between these sensor measurements. The predicted feature flow is then used to warp and spatially align the feature maps, which we show can easily be integrated into different current BEV detector architectures (e.g., BEV grid-based and token-based). Extensive experiments demonstrate AsyncBEV improves robustness against both small and large asynchrony between LiDAR or camera sensors in both the token-based CMT and grid-based UniBEV, especially for dynamic objects. We significantly outperform the ego motion compensated CMT and UniBEV baselines, notably by $16.6$ % and $11.9$ % NDS on dynamic objects in the worst-case scenario of a $0.5 s$ time offset. Code will be released upon acceptance.
 
   </details>
 

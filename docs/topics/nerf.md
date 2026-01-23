@@ -1,11 +1,44 @@
 # NeRF & Neural Radiance Fields
 
-_Updated: 2026-01-22 06:52 UTC_
+_Updated: 2026-01-23 06:52 UTC_
 
-Total papers shown: **7**
+Total papers shown: **10**
 
 
 ---
+
+- **EVolSplat4D: Efficient Volume-based Gaussian Splatting for 4D Urban Scene Synthesis**  
+  Sheng Miao, Sijin Li, Pan Wang, Dongfeng Bai, Bingbing Liu, Yue Wang, Andreas Geiger, Yiyi Liao  
+  _2026-01-22_ · https://arxiv.org/abs/2601.15951v1  
+  <details><summary>Abstract</summary>
+
+  Novel view synthesis (NVS) of static and dynamic urban scenes is essential for autonomous driving simulation, yet existing methods often struggle to balance reconstruction time with quality. While state-of-the-art neural radiance fields and 3D Gaussian Splatting approaches achieve photorealism, they often rely on time-consuming per-scene optimization. Conversely, emerging feed-forward methods frequently adopt per-pixel Gaussian representations, which lead to 3D inconsistencies when aggregating multi-view predictions in complex, dynamic environments. We propose EvolSplat4D, a feed-forward framework that moves beyond existing per-pixel paradigms by unifying volume-based and pixel-based Gaussian prediction across three specialized branches. For close-range static regions, we predict consistent geometry of 3D Gaussians over multiple frames directly from a 3D feature volume, complemented by a semantically-enhanced image-based rendering module for predicting their appearance. For dynamic actors, we utilize object-centric canonical spaces and a motion-adjusted rendering module to aggregate temporal features, ensuring stable 4D reconstruction despite noisy motion priors. Far-Field scenery is handled by an efficient per-pixel Gaussian branch to ensure full-scene coverage. Experimental results on the KITTI-360, KITTI, Waymo, and PandaSet datasets show that EvolSplat4D reconstructs both static and dynamic environments with superior accuracy and consistency, outperforming both per-scene optimization and state-of-the-art feed-forward baselines.
+
+  </details>
+
+
+
+- **Seeing through Light and Darkness: Sensor-Physics Grounded Deblurring HDR NeRF from Single-Exposure Images and Events**  
+  Yunshan Qi, Lin Zhu, Nan Bao, Yifan Zhao, Jia Li  
+  _2026-01-21_ · https://arxiv.org/abs/2601.15475v1  
+  <details><summary>Abstract</summary>
+
+  Novel view synthesis from low dynamic range (LDR) blurry images, which are common in the wild, struggles to recover high dynamic range (HDR) and sharp 3D representations in extreme lighting conditions. Although existing methods employ event data to address this issue, they ignore the sensor-physics mismatches between the camera output and physical world radiance, resulting in suboptimal HDR and deblurring results. To cope with this problem, we propose a unified sensor-physics grounded NeRF framework for sharp HDR novel view synthesis from single-exposure blurry LDR images and corresponding events. We employ NeRF to directly represent the actual radiance of the 3D scene in the HDR domain and model raw HDR scene rays hitting the sensor pixels as in the physical world. A pixel-wise RGB mapping field is introduced to align the above rendered pixel values with the sensor-recorded LDR pixel values of the input images. A novel event mapping field is also designed to bridge the physical scene dynamics and actual event sensor output. The two mapping fields are jointly optimized with the NeRF network, leveraging the spatial and temporal dynamic information in events to enhance the sharp HDR 3D representation learning. Experiments on the collected and public datasets demonstrate that our method can achieve state-of-the-art deblurring HDR novel view synthesis results with single-exposure blurry LDR images and corresponding events.
+
+  </details>
+
+
+
+- **SplatBus: A Gaussian Splatting Viewer Framework via GPU Interprocess Communication**  
+  Yinghan Xu, Théo Morales, John Dingliana  
+  _2026-01-21_ · https://arxiv.org/abs/2601.15431v1  
+  <details><summary>Abstract</summary>
+
+  Radiance field-based rendering methods have attracted significant interest from the computer vision and computer graphics communities. They enable high-fidelity rendering with complex real-world lighting effects, but at the cost of high rendering time. 3D Gaussian Splatting solves this issue with a rasterisation-based approach for real-time rendering, enabling applications such as autonomous driving, robotics, virtual reality, and extended reality. However, current 3DGS implementations are difficult to integrate into traditional mesh-based rendering pipelines, which is a common use case for interactive applications and artistic exploration. To address this limitation, this software solution uses Nvidia's interprocess communication (IPC) APIs to easily integrate into implementations and allow the results to be viewed in external clients such as Unity, Blender, Unreal Engine, and OpenGL viewers. The code is available at https://github.com/RockyXu66/splatbus.
+
+  </details>
+
+
 
 - **RayRoPE: Projective Ray Positional Encoding for Multi-view Attention**  
   Yu Wu, Minsik Jeon, Jen-Hao Rick Chang, Oncel Tuzel, Shubham Tulsiani  
@@ -51,6 +84,17 @@ Total papers shown: **7**
 
 
 
+- **High-Fidelity 3D Tooth Reconstruction by Fusing Intraoral Scans and CBCT Data via a Deep Implicit Representation**  
+  Yi Zhu, Razmig Kechichian, Raphaël Richert, Satoshi Ikehata, Sébastien Valette  
+  _2026-01-21_ · https://arxiv.org/abs/2601.15358v1  
+  <details><summary>Abstract</summary>
+
+  High-fidelity 3D tooth models are essential for digital dentistry, but must capture both the detailed crown and the complete root. Clinical imaging modalities are limited: Cone-Beam Computed Tomography (CBCT) captures the root but has a noisy, low-resolution crown, while Intraoral Scanners (IOS) provide a high-fidelity crown but no root information. A naive fusion of these sources results in unnatural seams and artifacts. We propose a novel, fully-automated pipeline that fuses CBCT and IOS data using a deep implicit representation. Our method first segments and robustly registers the tooth instances, then creates a hybrid proxy mesh combining the IOS crown and the CBCT root. The core of our approach is to use this noisy proxy to guide a class-specific DeepSDF network. This optimization process projects the input onto a learned manifold of ideal tooth shapes, generating a seamless, watertight, and anatomically coherent model. Qualitative and quantitative evaluations show our method uniquely preserves both the high-fidelity crown from IOS and the patient-specific root morphology from CBCT, overcoming the limitations of each modality and naive stitching.
+
+  </details>
+
+
+
 - **One-Shot Refiner: Boosting Feed-forward Novel View Synthesis via One-Step Diffusion**  
   Yitong Dong, Qi Zhang, Minchao Jiang, Zhiqiang Wu, Qingnan Fan, Ying Feng, Huaqi Zhang, Hujun Bao, Guofeng Zhang  
   _2026-01-20_ · https://arxiv.org/abs/2601.14161v1  
@@ -68,17 +112,6 @@ Total papers shown: **7**
   <details><summary>Abstract</summary>
 
   Inverse rendering is an ill-posed problem, but priors like illumination priors, can simplify it. Existing work either disregards the spherical and rotation-equivariant nature of illumination environments or does not provide a well-behaved latent space. We propose a rotation-equivariant variational autoencoder that models natural illumination on the sphere without relying on 2D projections. To preserve the SO(2)-equivariance of environment maps, we use a novel Vector Neuron Vision Transformer (VN-ViT) as encoder and a rotation-equivariant conditional neural field as decoder. In the encoder, we reduce the equivariance from SO(3) to SO(2) using a novel SO(2)-equivariant fully connected layer, an extension of Vector Neurons. We show that our SO(2)-equivariant fully connected layer outperforms standard Vector Neurons when used in our SO(2)-equivariant model. Compared to previous methods, our variational autoencoder enables smoother interpolation in latent space and offers a more well-behaved latent space.
-
-  </details>
-
-
-
-- **CSGaussian: Progressive Rate-Distortion Compression and Segmentation for 3D Gaussian Splatting**  
-  Yu-Jen Tseng, Chia-Hao Kao, Jing-Zhong Chen, Alessandro Gnutti, Shao-Yuan Lo, Yen-Yu Lin, Wen-Hsiao Peng  
-  _2026-01-19_ · https://arxiv.org/abs/2601.12814v1  
-  <details><summary>Abstract</summary>
-
-  We present the first unified framework for rate-distortion-optimized compression and segmentation of 3D Gaussian Splatting (3DGS). While 3DGS has proven effective for both real-time rendering and semantic scene understanding, prior works have largely treated these tasks independently, leaving their joint consideration unexplored. Inspired by recent advances in rate-distortion-optimized 3DGS compression, this work integrates semantic learning into the compression pipeline to support decoder-side applications--such as scene editing and manipulation--that extend beyond traditional scene reconstruction and view synthesis. Our scheme features a lightweight implicit neural representation-based hyperprior, enabling efficient entropy coding of both color and semantic attributes while avoiding costly grid-based hyperprior as seen in many prior works. To facilitate compression and segmentation, we further develop compression-guided segmentation learning, consisting of quantization-aware training to enhance feature separability and a quality-aware weighting mechanism to suppress unreliable Gaussian primitives. Extensive experiments on the LERF and 3D-OVS datasets demonstrate that our approach significantly reduces transmission cost while preserving high rendering quality and strong segmentation performance.
 
   </details>
 

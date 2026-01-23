@@ -1,8 +1,8 @@
 # 3D Reconstruction
 
-_Updated: 2026-01-22 06:52 UTC_
+_Updated: 2026-01-23 06:52 UTC_
 
-Total papers shown: **9**
+Total papers shown: **5**
 
 
 ---
@@ -57,50 +57,6 @@ Total papers shown: **9**
   <details><summary>Abstract</summary>
 
   High-fidelity parking-lot digital twins provide essential priors for path planning, collision checking, and perception validation in Automated Valet Parking (AVP). Yet robot-oriented reconstruction faces a trilemma: sparse forward-facing views cause weak parallax and ill-posed geometry; dynamic occlusions and extreme lighting hinder stable texture fusion; and neural rendering typically needs expensive offline optimization, violating edge-side streaming constraints. We propose ParkingTwin, a training-free, lightweight system for online streaming 3D reconstruction. First, OSM-prior-driven geometric construction uses OpenStreetMap semantic topology to directly generate a metric-consistent TSDF, replacing blind geometric search with deterministic mapping and avoiding costly optimization. Second, geometry-aware dynamic filtering employs a quad-modal constraint field (normal/height/depth consistency) to reject moving vehicles and transient occlusions in real time. Third, illumination-robust fusion in CIELAB decouples luminance and chromaticity via adaptive L-channel weighting and depth-gradient suppression, reducing seams under abrupt lighting changes. ParkingTwin runs at 30+ FPS on an entry-level GTX 1660. On a 68,000 m^2 real-world dataset, it achieves SSIM 0.87 (+16.0%), delivers about 15x end-to-end speedup, and reduces GPU memory by 83.3% compared with state-of-the-art 3D Gaussian Splatting (3DGS) that typically requires high-end GPUs (RTX 4090D). The system outputs explicit triangle meshes compatible with Unity/Unreal digital-twin pipelines. Project page: https://mihoutao-liu.github.io/ParkingTwin/
-
-  </details>
-
-
-
-- **A Lightweight Model-Driven 4D Radar Framework for Pervasive Human Detection in Harsh Conditions**  
-  Zhenan Liu, Amir Khajepour, George Shaker  
-  _2026-01-19_ · https://arxiv.org/abs/2601.13373v1  
-  <details><summary>Abstract</summary>
-
-  Pervasive sensing in industrial and underground environments is severely constrained by airborne dust, smoke, confined geometry, and metallic structures, which rapidly degrade optical and LiDAR based perception. Elevation resolved 4D mmWave radar offers strong resilience to such conditions, yet there remains a limited understanding of how to process its sparse and anisotropic point clouds for reliable human detection in enclosed, visibility degraded spaces. This paper presents a fully model-driven 4D radar perception framework designed for real-time execution on embedded edge hardware. The system uses radar as its sole perception modality and integrates domain aware multi threshold filtering, ego motion compensated temporal accumulation, KD tree Euclidean clustering with Doppler aware refinement, and a rule based 3D classifier. The framework is evaluated in a dust filled enclosed trailer and in real underground mining tunnels, and in the tested scenarios the radar based detector maintains stable pedestrian identification as camera and LiDAR modalities fail under severe visibility degradation. These results suggest that the proposed model-driven approach provides robust, interpretable, and computationally efficient perception for safety-critical applications in harsh industrial and subterranean environments.
-
-  </details>
-
-
-
-- **Real-Time 4D Radar Perception for Robust Human Detection in Harsh Enclosed Environments**  
-  Zhenan Liu, Yaodong Cui, Amir Khajepour, George Shaker  
-  _2026-01-19_ · https://arxiv.org/abs/2601.13364v1  
-  <details><summary>Abstract</summary>
-
-  This paper introduces a novel methodology for generating controlled, multi-level dust concentrations in a highly cluttered environment representative of harsh, enclosed environments, such as underground mines, road tunnels, or collapsed buildings, enabling repeatable mm-wave propagation studies under severe electromagnetic constraints. We also present a new 4D mmWave radar dataset, augmented by camera and LiDAR, illustrating how dust particles and reflective surfaces jointly impact the sensing functionality. To address these challenges, we develop a threshold-based noise filtering framework leveraging key radar parameters (RCS, velocity, azimuth, elevation) to suppress ghost targets and mitigate strong multipath reflections at the raw data level. Building on the filtered point clouds, a cluster-level, rule-based classification pipeline exploits radar semantics-velocity, RCS, and volumetric spread-to achieve reliable, real-time pedestrian detection without extensive domainspecific training. Experimental results confirm that this integrated approach significantly enhances clutter mitigation, detection robustness, and overall system resilience in dust-laden mining environments.
-
-  </details>
-
-
-
-- **Think3D: Thinking with Space for Spatial Reasoning**  
-  Zaibin Zhang, Yuhan Wu, Lianjie Jia, Yifan Wang, Zhongbo Zhang, Yijiang Li, Binghao Ran, Fuxi Zhang, Zhuohan Sun, Zhenfei Yin, et al.  
-  _2026-01-19_ · https://arxiv.org/abs/2601.13029v1  
-  <details><summary>Abstract</summary>
-
-  Understanding and reasoning about the physical world requires spatial intelligence: the ability to interpret geometry, perspective, and spatial relations beyond 2D perception. While recent vision large models (VLMs) excel at visual understanding, they remain fundamentally 2D perceivers and struggle with genuine 3D reasoning. We introduce Think3D, a framework that enables VLM agents to think with 3D space. By leveraging 3D reconstruction models that recover point clouds and camera poses from images or videos, Think3D allows the agent to actively manipulate space through camera-based operations and ego/global-view switching, transforming spatial reasoning into an interactive 3D chain-of-thought process. Without additional training, Think3D significantly improves the spatial reasoning performance of advanced models such as GPT-4.1 and Gemini 2.5 Pro, yielding average gains of +7.8% on BLINK Multi-view and MindCube, and +4.7% on VSI-Bench. We further show that smaller models, which struggle with spatial exploration, benefit significantly from a reinforcement learning policy that enables the model to select informative viewpoints and operations. With RL, the benefit from tool usage increases from +0.7% to +6.8%. Our findings demonstrate that training-free, tool-augmented spatial exploration is a viable path toward more flexible and human-like 3D reasoning in multimodal agents, establishing a new dimension of multimodal intelligence. Code and weights are released at https://github.com/zhangzaibin/spagent.
-
-  </details>
-
-
-
-- **Generalizable and Animatable 3D Full-Head Gaussian Avatar from a Single Image**  
-  Shuling Zhao, Dan Xu  
-  _2026-01-19_ · https://arxiv.org/abs/2601.12770v1  
-  <details><summary>Abstract</summary>
-
-  Building 3D animatable head avatars from a single image is an important yet challenging problem. Existing methods generally collapse under large camera pose variations, compromising the realism of 3D avatars. In this work, we propose a new framework to tackle the novel setting of one-shot 3D full-head animatable avatar reconstruction in a single feed-forward pass, enabling real-time animation and simultaneous 360$^\circ$ rendering views. To facilitate efficient animation control, we model 3D head avatars with Gaussian primitives embedded on the surface of a parametric face model within the UV space. To obtain knowledge of full-head geometry and textures, we leverage rich 3D full-head priors within a pretrained 3D generative adversarial network (GAN) for global full-head feature extraction and multi-view supervision. To increase the fidelity of the 3D reconstruction of the input image, we take advantage of the symmetric nature of the UV space and human faces to fuse local fine-grained input image features with the global full-head textures. Extensive experiments demonstrate the effectiveness of our method, achieving high-quality 3D full-head modeling as well as real-time animation, thereby improving the realism of 3D talking avatars.
 
   </details>
 
