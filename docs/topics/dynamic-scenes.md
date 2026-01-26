@@ -1,29 +1,29 @@
 # Dynamic Scenes & 4D Reconstruction
 
-_Updated: 2026-01-25 06:48 UTC_
+_Updated: 2026-01-26 06:54 UTC_
 
 Total papers shown: **2**
 
 
 ---
 
-- **ActionMesh: Animated 3D Mesh Generation with Temporal 3D Diffusion**  
-  Remy Sabathier, David Novotny, Niloy J. Mitra, Tom Monnier  
-  _2026-01-22_ · https://arxiv.org/abs/2601.16148v1  
+- **AnyView: Synthesizing Any Novel View in Dynamic Scenes**  
+  Basile Van Hoorick, Dian Chen, Shun Iwase, Pavel Tokmakov, Muhammad Zubair Irshad, Igor Vasiljevic, Swati Gupta, Fangzhou Cheng, Sergey Zakharov, Vitor Campagnolo Guizilini  
+  _2026-01-23_ · https://arxiv.org/abs/2601.16982v1  
   <details><summary>Abstract</summary>
 
-  Generating animated 3D objects is at the heart of many applications, yet most advanced works are typically difficult to apply in practice because of their limited setup, their long runtime, or their limited quality. We introduce ActionMesh, a generative model that predicts production-ready 3D meshes "in action" in a feed-forward manner. Drawing inspiration from early video models, our key insight is to modify existing 3D diffusion models to include a temporal axis, resulting in a framework we dubbed "temporal 3D diffusion". Specifically, we first adapt the 3D diffusion stage to generate a sequence of synchronized latents representing time-varying and independent 3D shapes. Second, we design a temporal 3D autoencoder that translates a sequence of independent shapes into the corresponding deformations of a pre-defined reference shape, allowing us to build an animation. Combining these two components, ActionMesh generates animated 3D meshes from different inputs like a monocular video, a text description, or even a 3D mesh with a text prompt describing its animation. Besides, compared to previous approaches, our method is fast and produces results that are rig-free and topology consistent, hence enabling rapid iteration and seamless applications like texturing and retargeting. We evaluate our model on standard video-to-4D benchmarks (Consistent4D, Objaverse) and report state-of-the-art performances on both geometric accuracy and temporal consistency, demonstrating that our model can deliver animated 3D meshes with unprecedented speed and quality.
+  Modern generative video models excel at producing convincing, high-quality outputs, but struggle to maintain multi-view and spatiotemporal consistency in highly dynamic real-world environments. In this work, we introduce \textbf{AnyView}, a diffusion-based video generation framework for \emph{dynamic view synthesis} with minimal inductive biases or geometric assumptions. We leverage multiple data sources with various levels of supervision, including monocular (2D), multi-view static (3D) and multi-view dynamic (4D) datasets, to train a generalist spatiotemporal implicit representation capable of producing zero-shot novel videos from arbitrary camera locations and trajectories. We evaluate AnyView on standard benchmarks, showing competitive results with the current state of the art, and propose \textbf{AnyViewBench}, a challenging new benchmark tailored towards \emph{extreme} dynamic view synthesis in diverse real-world scenarios. In this more dramatic setting, we find that most baselines drastically degrade in performance, as they require significant overlap between viewpoints, while AnyView maintains the ability to produce realistic, plausible, and spatiotemporally consistent videos when prompted from \emph{any} viewpoint. Results, data, code, and models can be viewed at: https://tri-ml.github.io/AnyView/
 
   </details>
 
 
 
-- **EVolSplat4D: Efficient Volume-based Gaussian Splatting for 4D Urban Scene Synthesis**  
-  Sheng Miao, Sijin Li, Pan Wang, Dongfeng Bai, Bingbing Liu, Yue Wang, Andreas Geiger, Yiyi Liao  
-  _2026-01-22_ · https://arxiv.org/abs/2601.15951v1  
+- **HA2F: Dual-module Collaboration-Guided Hierarchical Adaptive Aggregation Framework for Remote Sensing Change Detection**  
+  Shuying Li, Yuchen Wang, San Zhang, Chuang Yang  
+  _2026-01-23_ · https://arxiv.org/abs/2601.16573v1  
   <details><summary>Abstract</summary>
 
-  Novel view synthesis (NVS) of static and dynamic urban scenes is essential for autonomous driving simulation, yet existing methods often struggle to balance reconstruction time with quality. While state-of-the-art neural radiance fields and 3D Gaussian Splatting approaches achieve photorealism, they often rely on time-consuming per-scene optimization. Conversely, emerging feed-forward methods frequently adopt per-pixel Gaussian representations, which lead to 3D inconsistencies when aggregating multi-view predictions in complex, dynamic environments. We propose EvolSplat4D, a feed-forward framework that moves beyond existing per-pixel paradigms by unifying volume-based and pixel-based Gaussian prediction across three specialized branches. For close-range static regions, we predict consistent geometry of 3D Gaussians over multiple frames directly from a 3D feature volume, complemented by a semantically-enhanced image-based rendering module for predicting their appearance. For dynamic actors, we utilize object-centric canonical spaces and a motion-adjusted rendering module to aggregate temporal features, ensuring stable 4D reconstruction despite noisy motion priors. Far-Field scenery is handled by an efficient per-pixel Gaussian branch to ensure full-scene coverage. Experimental results on the KITTI-360, KITTI, Waymo, and PandaSet datasets show that EvolSplat4D reconstructs both static and dynamic environments with superior accuracy and consistency, outperforming both per-scene optimization and state-of-the-art feed-forward baselines.
+  Remote sensing change detection (RSCD) aims to identify the spatio-temporal changes of land cover, providing critical support for multi-disciplinary applications (e.g., environmental monitoring, disaster assessment, and climate change studies). Existing methods focus either on extracting features from localized patches, or pursue processing entire images holistically, which leads to the cross temporal feature matching deviation and exhibiting sensitivity to radiometric and geometric noise. Following the above issues, we propose a dual-module collaboration guided hierarchical adaptive aggregation framework, namely HA2F, which consists of dynamic hierarchical feature calibration module (DHFCM) and noise-adaptive feature refinement module (NAFRM). The former dynamically fuses adjacent-level features through perceptual feature selection, suppressing irrelevant discrepancies to address multi-temporal feature alignment deviations. The NAFRM utilizes the dual feature selection mechanism to highlight the change sensitive regions and generate spatial masks, suppressing the interference of irrelevant regions or shadows. Extensive experiments verify the effectiveness of the proposed HA2F, which achieves state-of-the-art performance on LEVIR-CD, WHU-CD, and SYSU-CD datasets, surpassing existing comparative methods in terms of both precision metrics and computational efficiency. In addition, ablation experiments show that DHFCM and NAFRM are effective. \href{https://huggingface.co/InPeerReview/RemoteSensingChangeDetection-RSCD.HA2F}{HA2F Official Code is Available Here!}
 
   </details>
 
