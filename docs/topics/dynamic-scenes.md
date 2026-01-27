@@ -1,29 +1,29 @@
 # Dynamic Scenes & 4D Reconstruction
 
-_Updated: 2026-01-26 06:54 UTC_
+_Updated: 2026-01-27 06:53 UTC_
 
 Total papers shown: **2**
 
 
 ---
 
-- **AnyView: Synthesizing Any Novel View in Dynamic Scenes**  
-  Basile Van Hoorick, Dian Chen, Shun Iwase, Pavel Tokmakov, Muhammad Zubair Irshad, Igor Vasiljevic, Swati Gupta, Fangzhou Cheng, Sergey Zakharov, Vitor Campagnolo Guizilini  
-  _2026-01-23_ · https://arxiv.org/abs/2601.16982v1  
+- **Semi-Supervised Hyperspectral Image Classification with Edge-Aware Superpixel Label Propagation and Adaptive Pseudo-Labeling**  
+  Yunfei Qiu, Qiqiong Ma, Tianhua Lv, Li Fang, Shudong Zhou, Wei Yao  
+  _2026-01-26_ · https://arxiv.org/abs/2601.18049v1  
   <details><summary>Abstract</summary>
 
-  Modern generative video models excel at producing convincing, high-quality outputs, but struggle to maintain multi-view and spatiotemporal consistency in highly dynamic real-world environments. In this work, we introduce \textbf{AnyView}, a diffusion-based video generation framework for \emph{dynamic view synthesis} with minimal inductive biases or geometric assumptions. We leverage multiple data sources with various levels of supervision, including monocular (2D), multi-view static (3D) and multi-view dynamic (4D) datasets, to train a generalist spatiotemporal implicit representation capable of producing zero-shot novel videos from arbitrary camera locations and trajectories. We evaluate AnyView on standard benchmarks, showing competitive results with the current state of the art, and propose \textbf{AnyViewBench}, a challenging new benchmark tailored towards \emph{extreme} dynamic view synthesis in diverse real-world scenarios. In this more dramatic setting, we find that most baselines drastically degrade in performance, as they require significant overlap between viewpoints, while AnyView maintains the ability to produce realistic, plausible, and spatiotemporally consistent videos when prompted from \emph{any} viewpoint. Results, data, code, and models can be viewed at: https://tri-ml.github.io/AnyView/
+  Significant progress has been made in semi-supervised hyperspectral image (HSI) classification regarding feature extraction and classification performance. However, due to high annotation costs and limited sample availability, semi-supervised learning still faces challenges such as boundary label diffusion and pseudo-label instability. To address these issues, this paper proposes a novel semi-supervised hyperspectral classification framework integrating spatial prior information with a dynamic learning mechanism. First, we design an Edge-Aware Superpixel Label Propagation (EASLP) module. By integrating edge intensity penalty with neighborhood correction strategy, it mitigates label diffusion from superpixel segmentation while enhancing classification robustness in boundary regions. Second, we introduce a Dynamic History-Fused Prediction (DHP) method. By maintaining historical predictions and dynamically weighting them with current results, DHP smoothens pseudo-label fluctuations and improves temporal consistency and noise resistance. Concurrently, incorporating condifence and consistency measures, the Adaptive Tripartite Sample Categorization (ATSC) strategy implements hierarchical utilization of easy, ambiguous, and hard samples, leading to enhanced pseudo-label quality and learning efficiency. The Dynamic Reliability-Enhanced Pseudo-Label Framework (DREPL), composed of DHP and ATSC, strengthens pseudo-label stability across temporal and sample domains. Through synergizes operation with EASLP, it achieves spatio-temporal consistency optimization. Evaluations on four benchmark datasets demonstrate its capability to maintain superior classification performance.
 
   </details>
 
 
 
-- **HA2F: Dual-module Collaboration-Guided Hierarchical Adaptive Aggregation Framework for Remote Sensing Change Detection**  
-  Shuying Li, Yuchen Wang, San Zhang, Chuang Yang  
-  _2026-01-23_ · https://arxiv.org/abs/2601.16573v1  
+- **AVMeme Exam: A Multimodal Multilingual Multicultural Benchmark for LLMs' Contextual and Cultural Knowledge and Thinking**  
+  Xilin Jiang, Qiaolin Wang, Junkai Wu, Xiaomin He, Zhongweiyang Xu, Yinghao Ma, Minshuo Piao, Kaiyi Yang, Xiuwen Zheng, Riki Shimizu, et al.  
+  _2026-01-25_ · https://arxiv.org/abs/2601.17645v1  
   <details><summary>Abstract</summary>
 
-  Remote sensing change detection (RSCD) aims to identify the spatio-temporal changes of land cover, providing critical support for multi-disciplinary applications (e.g., environmental monitoring, disaster assessment, and climate change studies). Existing methods focus either on extracting features from localized patches, or pursue processing entire images holistically, which leads to the cross temporal feature matching deviation and exhibiting sensitivity to radiometric and geometric noise. Following the above issues, we propose a dual-module collaboration guided hierarchical adaptive aggregation framework, namely HA2F, which consists of dynamic hierarchical feature calibration module (DHFCM) and noise-adaptive feature refinement module (NAFRM). The former dynamically fuses adjacent-level features through perceptual feature selection, suppressing irrelevant discrepancies to address multi-temporal feature alignment deviations. The NAFRM utilizes the dual feature selection mechanism to highlight the change sensitive regions and generate spatial masks, suppressing the interference of irrelevant regions or shadows. Extensive experiments verify the effectiveness of the proposed HA2F, which achieves state-of-the-art performance on LEVIR-CD, WHU-CD, and SYSU-CD datasets, surpassing existing comparative methods in terms of both precision metrics and computational efficiency. In addition, ablation experiments show that DHFCM and NAFRM are effective. \href{https://huggingface.co/InPeerReview/RemoteSensingChangeDetection-RSCD.HA2F}{HA2F Official Code is Available Here!}
+  Internet audio-visual clips convey meaning through time-varying sound and motion, which extend beyond what text alone can represent. To examine whether AI models can understand such signals in human cultural contexts, we introduce AVMeme Exam, a human-curated benchmark of over one thousand iconic Internet sounds and videos spanning speech, songs, music, and sound effects. Each meme is paired with a unique Q&A assessing levels of understanding from surface content to context and emotion to usage and world knowledge, along with metadata such as original year, transcript, summary, and sensitivity. We systematically evaluate state-of-the-art multimodal large language models (MLLMs) alongside human participants using this benchmark. Our results reveal a consistent limitation: current models perform poorly on textless music and sound effects, and struggle to think in context and in culture compared to surface content. These findings highlight a key gap in human-aligned multimodal intelligence and call for models that can perceive contextually and culturally beyond the surface of what they hear and see. Project page: avmemeexam.github.io/public
 
   </details>
 
