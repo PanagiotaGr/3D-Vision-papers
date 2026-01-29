@@ -1,15 +1,59 @@
 # 3D Reconstruction
 
-_Updated: 2026-01-28 06:53 UTC_
+_Updated: 2026-01-29 07:04 UTC_
 
-Total papers shown: **18**
+Total papers shown: **19**
 
 
 ---
 
+- **Quartet of Diffusions: Structure-Aware Point Cloud Generation through Part and Symmetry Guidance**  
+  Chenliang Zhou, Fangcheng Zhong, Weihao Xia, Albert Miao, Canberk Baykal, Cengiz Oztireli  
+  _2026-01-28_ · https://arxiv.org/abs/2601.20425v1  
+  <details><summary>Abstract</summary>
+
+  We introduce the Quartet of Diffusions, a structure-aware point cloud generation framework that explicitly models part composition and symmetry. Unlike prior methods that treat shape generation as a holistic process or only support part composition, our approach leverages four coordinated diffusion models to learn distributions of global shape latents, symmetries, semantic parts, and their spatial assembly. This structured pipeline ensures guaranteed symmetry, coherent part placement, and diverse, high-quality outputs. By disentangling the generative process into interpretable components, our method supports fine-grained control over shape attributes, enabling targeted manipulation of individual parts while preserving global consistency. A central global latent further reinforces structural coherence across assembled parts. Our experiments show that the Quartet achieves state-of-the-art performance. To our best knowledge, this is the first 3D point cloud generation framework that fully integrates and enforces both symmetry and part priors throughout the generative process.
+
+  </details>
+
+
+
+- **GVGS: Gaussian Visibility-Aware Multi-View Geometry for Accurate Surface Reconstruction**  
+  Mai Su, Qihan Yu, Zhongtao Wang, Yilong Li, Chengwei Pan, Yisong Chen, Guoping Wang  
+  _2026-01-28_ · https://arxiv.org/abs/2601.20331v1  
+  <details><summary>Abstract</summary>
+
+  3D Gaussian Splatting enables efficient optimization and high-quality rendering, yet accurate surface reconstruction remains challenging. Prior methods improve surface reconstruction by refining Gaussian depth estimates, either via multi-view geometric consistency or through monocular depth priors. However, multi-view constraints become unreliable under large geometric discrepancies, while monocular priors suffer from scale ambiguity and local inconsistency, ultimately leading to inaccurate Gaussian depth supervision. To address these limitations, we introduce a Gaussian visibility-aware multi-view geometric consistency constraint that aggregates the visibility of shared Gaussian primitives across views, enabling more accurate and stable geometric supervision. In addition, we propose a progressive quadtree-calibrated Monocular depth constraint that performs block-wise affine calibration from coarse to fine spatial scales, mitigating the scale ambiguity of depth priors while preserving fine-grained surface details. Extensive experiments on DTU and TNT datasets demonstrate consistent improvements in geometric accuracy over prior Gaussian-based and implicit surface reconstruction methods. Codes are available at an anonymous repository: https://github.com/GVGScode/GVGS.
+
+  </details>
+
+
+
+- **Physically Guided Visual Mass Estimation from a Single RGB Image**  
+  Sungjae Lee, Junhan Jeong, Yeonjoo Hong, Kwang In Kim  
+  _2026-01-28_ · https://arxiv.org/abs/2601.20303v1  
+  <details><summary>Abstract</summary>
+
+  Estimating object mass from visual input is challenging because mass depends jointly on geometric volume and material-dependent density, neither of which is directly observable from RGB appearance. Consequently, mass prediction from pixels is ill-posed and therefore benefits from physically meaningful representations to constrain the space of plausible solutions. We propose a physically structured framework for single-image mass estimation that addresses this ambiguity by aligning visual cues with the physical factors governing mass. From a single RGB image, we recover object-centric three-dimensional geometry via monocular depth estimation to inform volume and extract coarse material semantics using a vision-language model to guide density-related reasoning. These geometry, semantic, and appearance representations are fused through an instance-adaptive gating mechanism, and two physically guided latent factors (volume- and density-related) are predicted through separate regression heads under mass-only supervision. Experiments on image2mass and ABO-500 show that the proposed method consistently outperforms state-of-the-art methods.
+
+  </details>
+
+
+
+- **Size Matters: Reconstructing Real-Scale 3D Models from Monocular Images for Food Portion Estimation**  
+  Gautham Vinod, Bruce Coburn, Siddeshwar Raghavan, Jiangpeng He, Fengqing Zhu  
+  _2026-01-27_ · https://arxiv.org/abs/2601.20051v1  
+  <details><summary>Abstract</summary>
+
+  The rise of chronic diseases related to diet, such as obesity and diabetes, emphasizes the need for accurate monitoring of food intake. While AI-driven dietary assessment has made strides in recent years, the ill-posed nature of recovering size (portion) information from monocular images for accurate estimation of ``how much did you eat?'' is a pressing challenge. Some 3D reconstruction methods have achieved impressive geometric reconstruction but fail to recover the crucial real-world scale of the reconstructed object, limiting its usage in precision nutrition. In this paper, we bridge the gap between 3D computer vision and digital health by proposing a method that recovers a true-to-scale 3D reconstructed object from a monocular image. Our approach leverages rich visual features extracted from models trained on large-scale datasets to estimate the scale of the reconstructed object. This learned scale enables us to convert single-view 3D reconstructions into true-to-life, physically meaningful models. Extensive experiments and ablation studies on two publicly available datasets show that our method consistently outperforms existing techniques, achieving nearly a 30% reduction in mean absolute volume-estimation error, showcasing its potential to enhance the domain of precision nutrition. Code: https://gitlab.com/viper-purdue/size-matters
+
+  </details>
+
+
+
 - **GeoDiff3D: Self-Supervised 3D Scene Generation with Geometry-Constrained 2D Diffusion Guidance**  
   Haozhi Zhu, Miaomiao Zhao, Dingyao Liu, Runze Tian, Yan Zhang, Jie Guo, Fenggen Yu  
-  _2026-01-27_ · https://arxiv.org/abs/2601.19785v1  
+  _2026-01-27_ · https://arxiv.org/abs/2601.19785v2  
   <details><summary>Abstract</summary>
 
   3D scene generation is a core technology for gaming, film/VFX, and VR/AR. Growing demand for rapid iteration, high-fidelity detail, and accessible content creation has further increased interest in this area. Existing methods broadly follow two paradigms - indirect 2D-to-3D reconstruction and direct 3D generation - but both are limited by weak structural modeling and heavy reliance on large-scale ground-truth supervision, often producing structural artifacts, geometric inconsistencies, and degraded high-frequency details in complex scenes. We propose GeoDiff3D, an efficient self-supervised framework that uses coarse geometry as a structural anchor and a geometry-constrained 2D diffusion model to provide texture-rich reference images. Importantly, GeoDiff3D does not require strict multi-view consistency of the diffusion-generated references and remains robust to the resulting noisy, inconsistent guidance. We further introduce voxel-aligned 3D feature aggregation and dual self-supervision to maintain scene coherence and fine details while substantially reducing dependence on labeled data. GeoDiff3D also trains with low computational cost and enables fast, high-quality 3D scene generation. Extensive experiments on challenging scenes show improved generalization and generation quality over existing baselines, offering a practical solution for accessible and efficient 3D scene construction.
@@ -167,39 +211,6 @@ Total papers shown: **18**
   <details><summary>Abstract</summary>
 
   Automated patient positioning plays an important role in optimizing scanning procedure and improving patient throughput. Leveraging depth information captured by RGB-D cameras presents a promising approach for estimating internal organ positions, thereby enabling more accurate and efficient positioning. In this work, we propose a learning-based framework that directly predicts the 3D locations and shapes of multiple internal organs from single 2D depth images of the body surface. Utilizing a large-scale dataset of full-body MRI scans, we synthesize depth images paired with corresponding anatomical segmentations to train a unified convolutional neural network architecture. Our method accurately localizes a diverse set of anatomical structures, including bones and soft tissues, without requiring explicit surface reconstruction. Experimental results demonstrate the potential of integrating depth sensors into radiology workflows to streamline scanning procedures and enhance patient experience through automated patient positioning.
-
-  </details>
-
-
-
-- **Revisiting 3D Reconstruction Kernels as Low-Pass Filters**  
-  Shengjun Zhang, Min Chen, Yibo Wei, Mingyu Dong, Yueqi Duan  
-  _2026-01-25_ · https://arxiv.org/abs/2601.17900v1  
-  <details><summary>Abstract</summary>
-
-  3D reconstruction is to recover 3D signals from the sampled discrete 2D pixels, with the goal to converge continuous 3D spaces. In this paper, we revisit 3D reconstruction from the perspective of signal processing, identifying the periodic spectral extension induced by discrete sampling as the fundamental challenge. Previous 3D reconstruction kernels, such as Gaussians, Exponential functions, and Student's t distributions, serve as the low pass filters to isolate the baseband spectrum. However, their unideal low-pass property results in the overlap of high-frequency components with low-frequency components in the discrete-time signal's spectrum. To this end, we introduce Jinc kernel with an instantaneous drop to zero magnitude exactly at the cutoff frequency, which is corresponding to the ideal low pass filters. As Jinc kernel suffers from low decay speed in the spatial domain, we further propose modulated kernels to strick an effective balance, and achieves superior rendering performance by reconciling spatial efficiency and frequency-domain fidelity. Experimental results have demonstrated the effectiveness of our Jinc and modulated kernels.
-
-  </details>
-
-
-
-- **Agreement-Driven Multi-View 3D Reconstruction for Live Cattle Weight Estimation**  
-  Rabin Dulal, Wenfeng Jia, Lihong Zheng, Jane Quinn  
-  _2026-01-25_ · https://arxiv.org/abs/2601.17791v1  
-  <details><summary>Abstract</summary>
-
-  Accurate cattle live weight estimation is vital for livestock management, welfare, and productivity. Traditional methods, such as manual weighing using a walk-over weighing system or proximate measurements using body condition scoring, involve manual handling of stock and can impact productivity from both a stock and economic perspective. To address these issues, this study investigated a cost-effective, non-contact method for live weight calculation in cattle using 3D reconstruction. The proposed pipeline utilized multi-view RGB images with SAM 3D-based agreement-guided fusion, followed by ensemble regression. Our approach generates a single 3D point cloud per animal and compares classical ensemble models with deep learning models under low-data conditions. Results show that SAM 3D with multi-view agreement fusion outperforms other 3D generation methods, while classical ensemble models provide the most consistent performance for practical farm scenarios (R$^2$ = 0.69 $\pm$ 0.10, MAPE = 2.22 $\pm$ 0.56 \%), making this practical for on-farm implementation. These findings demonstrate that improving reconstruction quality is more critical than increasing model complexity for scalable deployment on farms where producing a large volume of 3D data is challenging.
-
-  </details>
-
-
-
-- **Flatten The Complex: Joint B-Rep Generation via Compositional $k$-Cell Particles**  
-  Junran Lu, Yuanqi Li, Hengji Li, Jie Guo, Yanwen Guo  
-  _2026-01-25_ · https://arxiv.org/abs/2601.17733v1  
-  <details><summary>Abstract</summary>
-
-  Boundary Representation (B-Rep) is the widely adopted standard in Computer-Aided Design (CAD) and manufacturing. However, generative modeling of B-Reps remains a formidable challenge due to their inherent heterogeneity as geometric cell complexes, which entangles topology with geometry across cells of varying orders (i.e., $k$-cells such as vertices, edges, faces). Previous methods typically rely on cascaded sequences to handle this hierarchy, which fails to fully exploit the geometric relationships between cells, such as adjacency and sharing, limiting context awareness and error recovery. To fill this gap, we introduce a novel paradigm that reformulates B-Reps into sets of compositional $k$-cell particles. Our approach encodes each topological entity as a composition of particles, where adjacent cells share identical latents at their interfaces, thereby promoting geometric coupling along shared boundaries. By decoupling the rigid hierarchy, our representation unifies vertices, edges, and faces, enabling the joint generation of topology and geometry with global context awareness. We synthesize these particle sets using a multi-modal flow matching framework to handle unconditional generation as well as precise conditional tasks, such as 3D reconstruction from single-view or point cloud. Furthermore, the explicit and localized nature of our representation naturally extends to downstream tasks like local in-painting and enables the direct synthesis of non-manifold structures (e.g., wireframes). Extensive experiments demonstrate that our method produces high-fidelity CAD models with superior validity and editability compared to state-of-the-art methods.
 
   </details>
 

@@ -1,6 +1,6 @@
 # SLAM & Localization
 
-_Updated: 2026-01-28 06:53 UTC_
+_Updated: 2026-01-29 07:04 UTC_
 
 Total papers shown: **6**
 
@@ -31,7 +31,7 @@ Total papers shown: **6**
 
 - **Fast Converging 3D Gaussian Splatting for 1-Minute Reconstruction**  
   Ziyu Zhang, Tianle Liu, Diantao Tu, Shuhan Shen  
-  _2026-01-27_ · https://arxiv.org/abs/2601.19489v1  
+  _2026-01-27_ · https://arxiv.org/abs/2601.19489v2  
   <details><summary>Abstract</summary>
 
   We present a fast 3DGS reconstruction pipeline designed to converge within one minute, developed for the SIGGRAPH Asia 3DGS Fast Reconstruction Challenge. The challenge consists of an initial round using SLAM-generated camera poses (with noisy trajectories) and a final round using COLMAP poses (highly accurate). To robustly handle these heterogeneous settings, we develop a two-stage solution. In the first round, we use reverse per-Gaussian parallel optimization and compact forward splatting based on Taming-GS and Speedy-splat, load-balanced tiling, an anchor-based Neural-Gaussian representation enabling rapid convergence with fewer learnable parameters, initialization from monocular depth and partially from feed-forward 3DGS models, and a global pose refinement module for noisy SLAM trajectories. In the final round, the accurate COLMAP poses change the optimization landscape; we disable pose refinement, revert from Neural-Gaussians back to standard 3DGS to eliminate MLP inference overhead, introduce multi-view consistency-guided Gaussian splitting inspired by Fast-GS, and introduce a depth estimator to supervise the rendered depth. Together, these techniques enable high-fidelity reconstruction under a strict one-minute budget. Our method achieved the top performance with a PSNR of 28.43 and ranked first in the competition.
