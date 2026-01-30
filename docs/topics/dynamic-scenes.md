@@ -1,6 +1,6 @@
 # Dynamic Scenes & 4D Reconstruction
 
-_Updated: 2026-01-29 07:04 UTC_
+_Updated: 2026-01-30 07:06 UTC_
 
 Total papers shown: **8**
 
@@ -84,12 +84,12 @@ Total papers shown: **8**
 
 
 
-- **FreeOrbit4D: Training-Free Arbitrary Camera Redirection for Monocular Videos via Geometry-Complete 4D Reconstruction**  
-  Wei Cao, Hao Zhang, Fengrui Tian, Yulun Wu, Yingying Li, Shenlong Wang, Ning Yu, Yaoyao Liu  
-  _2026-01-26_ · https://arxiv.org/abs/2601.18993v1  
+- **MA-LipNet: Multi-Dimensional Attention Networks for Robust Lipreading**  
+  Matteo Rossi  
+  _2026-01-27_ · https://arxiv.org/abs/2601.20881v1  
   <details><summary>Abstract</summary>
 
-  Camera redirection aims to replay a dynamic scene from a single monocular video under a user-specified camera trajectory. However, large-angle redirection is inherently ill-posed: a monocular video captures only a narrow spatio-temporal view of a dynamic 3D scene, providing highly partial observations of the underlying 4D world. The key challenge is therefore to recover a complete and coherent representation from this limited input, with consistent geometry and motion. While recent diffusion-based methods achieve impressive results, they often break down under large-angle viewpoint changes far from the original trajectory, where missing visual grounding leads to severe geometric ambiguity and temporal inconsistency. To address this, we present FreeOrbit4D, an effective training-free framework that tackles this geometric ambiguity by recovering a geometry-complete 4D proxy as structural grounding for video generation. We obtain this proxy by decoupling foreground and background reconstructions: we unproject the monocular video into a static background and geometry-incomplete foreground point clouds in a unified global space, then leverage an object-centric multi-view diffusion model to synthesize multi-view images and reconstruct geometry-complete foreground point clouds in canonical object space. By aligning the canonical foreground point cloud to the global scene space via dense pixel-synchronized 3D--3D correspondences and projecting the geometry-complete 4D proxy onto target camera viewpoints, we provide geometric scaffolds that guide a conditional video diffusion model. Extensive experiments show that FreeOrbit4D produces more faithful redirected videos under challenging large-angle trajectories, and our geometry-complete 4D proxy further opens a potential avenue for practical applications such as edit propagation and 4D data generation. Project page and code will be released soon.
+  Lipreading, the technology of decoding spoken content from silent videos of lip movements, holds significant application value in fields such as public security. However, due to the subtle nature of articulatory gestures, existing lipreading methods often suffer from limited feature discriminability and poor generalization capabilities. To address these challenges, this paper delves into the purification of visual features from temporal, spatial, and channel dimensions. We propose a novel method named Multi-Attention Lipreading Network(MA-LipNet). The core of MA-LipNet lies in its sequential application of three dedicated attention modules. Firstly, a \textit{Channel Attention (CA)} module is employed to adaptively recalibrate channel-wise features, thereby mitigating interference from less informative channels. Subsequently, two spatio-temporal attention modules with distinct granularities-\textit{Joint Spatial-Temporal Attention (JSTA)} and \textit{Separate Spatial-Temporal Attention (SSTA)}-are leveraged to suppress the influence of irrelevant pixels and video frames. The JSTA module performs a coarse-grained filtering by computing a unified weight map across the spatio-temporal dimensions, while the SSTA module conducts a more fine-grained refinement by separately modeling temporal and spatial attentions. Extensive experiments conducted on the CMLR and GRID datasets demonstrate that MA-LipNet significantly reduces the Character Error Rate (CER) and Word Error Rate (WER), validating its effectiveness and superiority over several state-of-the-art methods. Our work highlights the importance of multi-dimensional feature refinement for robust visual speech recognition.
 
   </details>
 
