@@ -1,8 +1,19 @@
 # Neural Rendering & View Synthesis
 
-_Updated: 2026-02-02 07:16 UTC_
+_Updated: 2026-02-03 07:08 UTC_
 
-Total papers shown: **0**
+Total papers shown: **1**
 
 
 ---
+
+- **Radioactive 3D Gaussian Ray Tracing for Tomographic Reconstruction**  
+  Ling Chen, Bao Yang  
+  _2026-02-01_ · https://arxiv.org/abs/2602.01057v1  
+  <details><summary>Abstract</summary>
+
+  3D Gaussian Splatting (3DGS) has recently emerged in computer vision as a promising rendering technique. By adapting the principles of Elliptical Weighted Average (EWA) splatting to a modern differentiable pipeline, 3DGS enables real-time, high-quality novel view synthesis. Building upon this, R2-Gaussian extended the 3DGS paradigm to tomographic reconstruction by rectifying integration bias, achieving state-of-the-art performance in computed tomography (CT). To enable differentiability, R2-Gaussian adopts a local affine approximation: each 3D Gaussian is locally mapped to a 2D Gaussian on the detector and composed via alpha blending to form projections. However, the affine approximation can degrade reconstruction quantitative accuracy and complicate the incorporation of nonlinear geometric corrections. To address these limitations, we propose a tomographic reconstruction framework based on 3D Gaussian ray tracing. Our approach provides two key advantages over splatting-based models: (i) it computes the line integral through 3D Gaussian primitives analytically, avoiding the local affine collapse and thus yielding a more physically consistent forward projection model; and (ii) the ray-tracing formulation gives explicit control over ray origins and directions, which facilitates the precise application of nonlinear geometric corrections, e.g., arc-correction used in positron emission tomography (PET). These properties extend the applicability of Gaussian-based reconstruction to a wider range of realistic tomography systems while improving projection accuracy.
+
+  </details>
+
+
