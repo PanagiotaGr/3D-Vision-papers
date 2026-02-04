@@ -1,11 +1,66 @@
 # Dynamic Scenes & 4D Reconstruction
 
-_Updated: 2026-02-03 07:08 UTC_
+_Updated: 2026-02-04 07:08 UTC_
 
-Total papers shown: **6**
+Total papers shown: **8**
 
 
 ---
+
+- **Occlusion-Free Conformal Lensing for Spatiotemporal Visualization in 3D Urban Analytics**  
+  Roberta Mota, Julio D. Silva, Fabio Miranda, Usman Alim, Ehud Sharlin, Nivan Ferreira  
+  _2026-02-03_ · https://arxiv.org/abs/2602.03743v1  
+  <details><summary>Abstract</summary>
+
+  The visualization of temporal data on urban buildings, such as shadows, noise, and solar potential, plays a critical role in the analysis of dynamic urban phenomena. However, in dense and geographically constrained 3D urban environments, visual representations of time-varying building data often suffer from occlusion and visual clutter. To address these two challenges, we introduce an immersive lens visualization that integrates a view-dependent cutaway de-occlusion technique and a temporal display derived from a conformal mapping algorithm. The mapping process first partitions irregular building footprints into smaller, sufficiently regular subregions that serve as structural primitives. These subregions are then seamlessly recombined to form a conformal, layered layout for our temporal lens visualization. The view-responsive cutaway is inspired by traditional architectural illustrations, preserving the overall layout of the building and its surroundings to maintain users' sense of spatial orientation. This lens design enables the occlusion-free embedding of shape-adaptive temporal displays across building facades on demand, supporting rapid time-space association for the discovery, access and interpretation of spatiotemporal urban patterns. Guided by domain and design goals, we outline the rationale behind the lens visual and interaction design choices, such as the encoding of time progression and temporal values in the conforming lens image. A user study compares our approach against conventional juxtaposition and x-ray spatiotemporal designs. Results validate the usage and utility of our lens, showing that it improves task accuracy and completion time, reduces navigation effort, and increases user confidence. From these findings, we distill design recommendations and promising directions for future research on spatially-embedded lenses in 3D visualization and urban analytics.
+
+  </details>
+
+
+
+- **Constrained Dynamic Gaussian Splatting**  
+  Zihan Zheng, Zhenglong Wu, Xuanxuan Wang, Houqiang Zhong, Xiaoyun Zhang, Qiang Hu, Guangtao Zhai, Wenjun Zhang  
+  _2026-02-03_ · https://arxiv.org/abs/2602.03538v1  
+  <details><summary>Abstract</summary>
+
+  While Dynamic Gaussian Splatting enables high-fidelity 4D reconstruction, its deployment is severely hindered by a fundamental dilemma: unconstrained densification leads to excessive memory consumption incompatible with edge devices, whereas heuristic pruning fails to achieve optimal rendering quality under preset Gaussian budgets. In this work, we propose Constrained Dynamic Gaussian Splatting (CDGS), a novel framework that formulates dynamic scene reconstruction as a budget-constrained optimization problem to enforce a strict, user-defined Gaussian budget during training. Our key insight is to introduce a differentiable budget controller as the core optimization driver. Guided by a multi-modal unified importance score, this controller fuses geometric, motion, and perceptual cues for precise capacity regulation. To maximize the utility of this fixed budget, we further decouple the optimization of static and dynamic elements, employing an adaptive allocation mechanism that dynamically distributes capacity based on motion complexity. Furthermore, we implement a three-phase training strategy to seamlessly integrate these constraints, ensuring precise adherence to the target count. Coupled with a dual-mode hybrid compression scheme, CDGS not only strictly adheres to hardware constraints (error < 2%}) but also pushes the Pareto frontier of rate-distortion performance. Extensive experiments demonstrate that CDGS delivers optimal rendering quality under varying capacity limits, achieving over 3x compression compared to state-of-the-art methods.
+
+  </details>
+
+
+
+- **From Single Scan to Sequential Consistency: A New Paradigm for LIDAR Relocalization**  
+  Minghang Zhu, Zhijing Wang, Yuxin Guo, Wen Li, Sheng Ao, Cheng Wang  
+  _2026-02-03_ · https://arxiv.org/abs/2602.03198v1  
+  <details><summary>Abstract</summary>
+
+  LiDAR relocalization aims to estimate the global 6-DoF pose of a sensor in the environment. However, existing regression-based approaches are prone to dynamic or ambiguous scenarios, as they either solely rely on single-frame inference or neglect the spatio-temporal consistency across scans. In this paper, we propose TempLoc, a new LiDAR relocalization framework that enhances the robustness of localization by effectively modeling sequential consistency. Specifically, a Global Coordinate Estimation module is first introduced to predict point-wise global coordinates and associated uncertainties for each LiDAR scan. A Prior Coordinate Generation module is then presented to estimate inter-frame point correspondences by the attention mechanism. Lastly, an Uncertainty-Guided Coordinate Fusion module is deployed to integrate both predictions of point correspondence in an end-to-end fashion, yielding a more temporally consistent and accurate global 6-DoF pose. Experimental results on the NCLT and Oxford Robot-Car benchmarks show that our TempLoc outperforms stateof-the-art methods by a large margin, demonstrating the effectiveness of temporal-aware correspondence modeling in LiDAR relocalization. Our code will be released soon.
+
+  </details>
+
+
+
+- **JRDB-Pose3D: A Multi-person 3D Human Pose and Shape Estimation Dataset for Robotics**  
+  Sandika Biswas, Kian Izadpanah, Hamid Rezatofighi  
+  _2026-02-03_ · https://arxiv.org/abs/2602.03064v1  
+  <details><summary>Abstract</summary>
+
+  Real-world scenes are inherently crowded. Hence, estimating 3D poses of all nearby humans, tracking their movements over time, and understanding their activities within social and environmental contexts are essential for many applications, such as autonomous driving, robot perception, robot navigation, and human-robot interaction. However, most existing 3D human pose estimation datasets primarily focus on single-person scenes or are collected in controlled laboratory environments, which restricts their relevance to real-world applications. To bridge this gap, we introduce JRDB-Pose3D, which captures multi-human indoor and outdoor environments from a mobile robotic platform. JRDB-Pose3D provides rich 3D human pose annotations for such complex and dynamic scenes, including SMPL-based pose annotations with consistent body-shape parameters and track IDs for each individual over time. JRDB-Pose3D contains, on average, 5-10 human poses per frame, with some scenes featuring up to 35 individuals simultaneously. The proposed dataset presents unique challenges, including frequent occlusions, truncated bodies, and out-of-frame body parts, which closely reflect real-world environments. Moreover, JRDB-Pose3D inherits all available annotations from the JRDB dataset, such as 2D pose, information about social grouping, activities, and interactions, full-scene semantic masks with consistent human- and object-level tracking, and detailed annotations for each individual, such as age, gender, and race, making it a holistic dataset for a wide range of downstream perception and human-centric understanding tasks.
+
+  </details>
+
+
+
+- **SharpTimeGS: Sharp and Stable Dynamic Gaussian Splatting via Lifespan Modulation**  
+  Zhanfeng Liao, Jiajun Zhang, Hanzhang Tu, Zhixi Wang, Yunqi Gao, Hongwen Zhang, Yebin Liu  
+  _2026-02-03_ · https://arxiv.org/abs/2602.02989v1  
+  <details><summary>Abstract</summary>
+
+  Novel view synthesis of dynamic scenes is fundamental to achieving photorealistic 4D reconstruction and immersive visual experiences. Recent progress in Gaussian-based representations has significantly improved real-time rendering quality, yet existing methods still struggle to maintain a balance between long-term static and short-term dynamic regions in both representation and optimization. To address this, we present SharpTimeGS, a lifespan-aware 4D Gaussian framework that achieves temporally adaptive modeling of both static and dynamic regions under a unified representation. Specifically, we introduce a learnable lifespan parameter that reformulates temporal visibility from a Gaussian-shaped decay into a flat-top profile, allowing primitives to remain consistently active over their intended duration and avoiding redundant densification. In addition, the learned lifespan modulates each primitives' motion, reducing drift in long-lived static points while retaining unrestricted motion for short-lived dynamic ones. This effectively decouples motion magnitude from temporal duration, improving long-term stability without compromising dynamic fidelity. Moreover, we design a lifespan-velocity-aware densification strategy that mitigates optimization imbalance between static and dynamic regions by allocating more capacity to regions with pronounced motion while keeping static areas compact and stable. Extensive experiments on multiple benchmarks demonstrate that our method achieves state-of-the-art performance while supporting real-time rendering up to 4K resolution at 100 FPS on one RTX 4090.
+
+  </details>
+
+
 
 - **Spatio-Temporal Transformers for Long-Term NDVI Forecasting**  
   Ido Faran, Nathan S. Netanyahu, Maxim Shoshany  
@@ -35,39 +90,6 @@ Total papers shown: **6**
   <details><summary>Abstract</summary>
 
   Achieving reliable and efficient planning in complex driving environments requires a model that can reason over the scene's geometry, appearance, and dynamics. We present UniDWM, a unified driving world model that advances autonomous driving through multifaceted representation learning. UniDWM constructs a structure- and dynamic-aware latent world representation that serves as a physically grounded state space, enabling consistent reasoning across perception, prediction, and planning. Specifically, a joint reconstruction pathway learns to recover the scene's structure, including geometry and visual texture, while a collaborative generation framework leverages a conditional diffusion transformer to forecast future world evolution within the latent space. Furthermore, we show that our UniDWM can be deemed as a variation of VAE, which provides theoretical guidance for the multifaceted representation learning. Extensive experiments demonstrate the effectiveness of UniDWM in trajectory planning, 4D reconstruction and generation, highlighting the potential of multifaceted world representations as a foundation for unified driving intelligence. The code will be publicly available at https://github.com/Say2L/UniDWM.
-
-  </details>
-
-
-
-- **Q-DiT4SR: Exploration of Detail-Preserving Diffusion Transformer Quantization for Real-World Image Super-Resolution**  
-  Xun Zhang, Kaicheng Yang, Hongliang Lu, Haotong Qin, Yong Guo, Yulun Zhang  
-  _2026-02-01_ · https://arxiv.org/abs/2602.01273v1  
-  <details><summary>Abstract</summary>
-
-  Recently, Diffusion Transformers (DiTs) have emerged in Real-World Image Super-Resolution (Real-ISR) to generate high-quality textures, yet their heavy inference burden hinders real-world deployment. While Post-Training Quantization (PTQ) is a promising solution for acceleration, existing methods in super-resolution mostly focus on U-Net architectures, whereas generic DiT quantization is typically designed for text-to-image tasks. Directly applying these methods to DiT-based super-resolution models leads to severe degradation of local textures. Therefore, we propose Q-DiT4SR, the first PTQ framework specifically tailored for DiT-based Real-ISR. We propose H-SVD, a hierarchical SVD that integrates a global low-rank branch with a local block-wise rank-1 branch under a matched parameter budget. We further propose Variance-aware Spatio-Temporal Mixed Precision: VaSMP allocates cross-layer weight bit-widths in a data-free manner based on rate-distortion theory, while VaTMP schedules intra-layer activation precision across diffusion timesteps via dynamic programming (DP) with minimal calibration. Experiments on multiple real-world datasets demonstrate that our Q-DiT4SR achieves SOTA performance under both W4A6 and W4A4 settings. Notably, the W4A4 quantization configuration reduces model size by 5.8$\times$ and computational operations by over 60$\times$. Our code and models will be available at https://github.com/xunzhang1128/Q-DiT4SR.
-
-  </details>
-
-
-
-- **FUSE-Flow: Scalable Real-Time Multi-View Point Cloud Reconstruction Using Confidence**  
-  Chentian Sun  
-  _2026-02-01_ · https://arxiv.org/abs/2602.01035v1  
-  <details><summary>Abstract</summary>
-
-  Real-time multi-view point cloud reconstruction is a core problem in 3D vision and immersive perception, with wide applications in VR, AR, robotic navigation, digital twins, and computer interaction. Despite advances in multi-camera systems and high-resolution depth sensors, fusing large-scale multi-view depth observations into high-quality point clouds under strict real-time constraints remains challenging. Existing methods relying on voxel-based fusion, temporal accumulation, or global optimization suffer from high computational complexity, excessive memory usage, and limited scalability, failing to simultaneously achieve real-time performance, reconstruction quality, and multi-camera extensibility. We propose FUSE-Flow, a frame-wise, stateless, and linearly scalable point cloud streaming reconstruction framework. Each frame independently generates point cloud fragments, fused via two weights, measurement confidence and 3D distance consistency to suppress noise while preserving geometric details. For large-scale multi-camera efficiency, we introduce an adaptive spatial hashing-based weighted aggregation method: 3D space is adaptively partitioned by local point cloud density, representative points are selected per cell, and weighted fusion is performed to handle both sparse and dense regions. With GPU parallelization, FUSE-Flow achieves high-throughput, low-latency point cloud generation and fusion with linear complexity. Experiments demonstrate that the framework improves reconstruction stability and geometric fidelity in overlapping, depth-discontinuous, and dynamic scenes, while maintaining real-time frame rates on modern GPUs, verifying its effectiveness, robustness, and scalability.
-
-  </details>
-
-
-
-- **Schrödinger-Inspired Time-Evolution for 4D Deformation Forecasting**  
-  Ahsan Raza Siyal, Markus Haltmeier, Ruth Steiger, Elke Ruth Gizewski, Astrid Ellen Grams  
-  _2026-01-31_ · https://arxiv.org/abs/2602.00661v1  
-  <details><summary>Abstract</summary>
-
-  Spatiotemporal forecasting of complex three-dimensional phenomena (4D: 3D + time) is fundamental to applications in medical imaging, fluid and material dynamics, and geophysics. In contrast to unconstrained neural forecasting models, we propose a Schrödinger-inspired, physics-guided neural architecture that embeds an explicit time-evolution operator within a deep convolutional framework for 4D prediction. From observed volumetric sequences, the model learns voxelwise amplitude, phase, and potential fields that define a complex-valued wavefunction $ψ= A e^{iφ}$, which is evolved forward in time using a differentiable, unrolled Schrödinger time stepper. This physics-guided formulation yields several key advantages: (i) temporal stability arising from the structured evolution operator, which mitigates drift and error accumulation in long-horizon forecasting; (ii) an interpretable latent representation, where phase encodes transport dynamics, amplitude captures structural intensity, and the learned potential governs spatiotemporal interactions; and (iii) natural compatibility with deformation-based synthesis, which is critical for preserving anatomical fidelity in medical imaging applications. By integrating physical priors directly into the learning process, the proposed approach combines the expressivity of deep networks with the robustness and interpretability of physics-based modeling. We demonstrate accurate and stable prediction of future 4D states, including volumetric intensities and deformation fields, on synthetic benchmarks that emulate realistic shape deformations and topological changes. To our knowledge, this is the first end-to-end 4D neural forecasting framework to incorporate a Schrödinger-type evolution operator, offering a principled pathway toward interpretable, stable, and anatomically consistent spatiotemporal prediction.
 
   </details>
 

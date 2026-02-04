@@ -1,11 +1,66 @@
 # 3D Reconstruction
 
-_Updated: 2026-02-03 07:08 UTC_
+_Updated: 2026-02-04 07:08 UTC_
 
-Total papers shown: **17**
+Total papers shown: **13**
 
 
 ---
+
+- **EventNeuS: 3D Mesh Reconstruction from a Single Event Camera**  
+  Shreyas Sachan, Viktor Rudnev, Mohamed Elgharib, Christian Theobalt, Vladislav Golyanik  
+  _2026-02-03_ · https://arxiv.org/abs/2602.03847v1  
+  <details><summary>Abstract</summary>
+
+  Event cameras offer a considerable alternative to RGB cameras in many scenarios. While there are recent works on event-based novel-view synthesis, dense 3D mesh reconstruction remains scarcely explored and existing event-based techniques are severely limited in their 3D reconstruction accuracy. To address this limitation, we present EventNeuS, a self-supervised neural model for learning 3D representations from monocular colour event streams. Our approach, for the first time, combines 3D signed distance function and density field learning with event-based supervision. Furthermore, we introduce spherical harmonics encodings into our model for enhanced handling of view-dependent effects. EventNeuS outperforms existing approaches by a significant margin, achieving 34% lower Chamfer distance and 31% lower mean absolute error on average compared to the best previous method.
+
+  </details>
+
+
+
+- **AffordanceGrasp-R1:Leveraging Reasoning-Based Affordance Segmentation with Reinforcement Learning for Robotic Grasping**  
+  Dingyi Zhou, Mu He, Zhuowei Fang, Xiangtong Yao, Yinlong Liu, Alois Knoll, Hu Cao  
+  _2026-02-03_ · https://arxiv.org/abs/2602.03547v1  
+  <details><summary>Abstract</summary>
+
+  We introduce AffordanceGrasp-R1, a reasoning-driven affordance segmentation framework for robotic grasping that combines a chain-of-thought (CoT) cold-start strategy with reinforcement learning to enhance deduction and spatial grounding. In addition, we redesign the grasping pipeline to be more context-aware by generating grasp candidates from the global scene point cloud and subsequently filtering them using instruction-conditioned affordance masks. Extensive experiments demonstrate that AffordanceGrasp-R1 consistently outperforms state-of-the-art (SOTA) methods on benchmark datasets, and real-world robotic grasping evaluations further validate its robustness and generalization under complex language-conditioned manipulation scenarios.
+
+  </details>
+
+
+
+- **PWAVEP: Purifying Imperceptible Adversarial Perturbations in 3D Point Clouds via Spectral Graph Wavelets**  
+  Haoran Li, Renyang Liu, Hongjia Liu, Chen Wang, Long Yin, Jian Xu  
+  _2026-02-03_ · https://arxiv.org/abs/2602.03333v1  
+  <details><summary>Abstract</summary>
+
+  Recent progress in adversarial attacks on 3D point clouds, particularly in achieving spatial imperceptibility and high attack performance, presents significant challenges for defenders. Current defensive approaches remain cumbersome, often requiring invasive model modifications, expensive training procedures or auxiliary data access. To address these threats, in this paper, we propose a plug-and-play and non-invasive defense mechanism in the spectral domain, grounded in a theoretical and empirical analysis of the relationship between imperceptible perturbations and high-frequency spectral components. Building upon these insights, we introduce a novel purification framework, termed PWAVEP, which begins by computing a spectral graph wavelet domain saliency score and local sparsity score for each point. Guided by these values, PWAVEP adopts a hierarchical strategy, it eliminates the most salient points, which are identified as hardly recoverable adversarial outliers. Simultaneously, it applies a spectral filtering process to a broader set of moderately salient points. This process leverages a graph wavelet transform to attenuate high-frequency coefficients associated with the targeted points, thereby effectively suppressing adversarial noise. Extensive evaluations demonstrate that the proposed PWAVEP achieves superior accuracy and robustness compared to existing approaches, advancing the state-of-the-art in 3D point cloud purification. Code and datasets are available at https://github.com/a772316182/pwavep
+
+  </details>
+
+
+
+- **Pi-GS: Sparse-View Gaussian Splatting with Dense π^3 Initialization**  
+  Manuel Hofer, Markus Steinberger, Thomas Köhler  
+  _2026-02-03_ · https://arxiv.org/abs/2602.03327v1  
+  <details><summary>Abstract</summary>
+
+  Novel view synthesis has evolved rapidly, advancing from Neural Radiance Fields to 3D Gaussian Splatting (3DGS), which offers real-time rendering and rapid training without compromising visual fidelity. However, 3DGS relies heavily on accurate camera poses and high-quality point cloud initialization, which are difficult to obtain in sparse-view scenarios. While traditional Structure from Motion (SfM) pipelines often fail in these settings, existing learning-based point estimation alternatives typically require reliable reference views and remain sensitive to pose or depth errors. In this work, we propose a robust method utilizing π^3, a reference-free point cloud estimation network. We integrate dense initialization from π^3 with a regularization scheme designed to mitigate geometric inaccuracies. Specifically, we employ uncertainty-guided depth supervision, normal consistency loss, and depth warping. Experimental results demonstrate that our approach achieves state-of-the-art performance on the Tanks and Temples, LLFF, DTU, and MipNeRF360 datasets.
+
+  </details>
+
+
+
+- **LmPT: Conditional Point Transformer for Anatomical Landmark Detection on 3D Point Clouds**  
+  Matteo Bastico, Pierre Onghena, David Ryckelynck, Beatriz Marcotegui, Santiago Velasco-Forero, Laurent Corté, Caroline Robine--Decourcelle, Etienne Decencière  
+  _2026-02-02_ · https://arxiv.org/abs/2602.02808v1  
+  <details><summary>Abstract</summary>
+
+  Accurate identification of anatomical landmarks is crucial for various medical applications. Traditional manual landmarking is time-consuming and prone to inter-observer variability, while rule-based methods are often tailored to specific geometries or limited sets of landmarks. In recent years, anatomical surfaces have been effectively represented as point clouds, which are lightweight structures composed of spatial coordinates. Following this strategy and to overcome the limitations of existing landmarking techniques, we propose Landmark Point Transformer (LmPT), a method for automatic anatomical landmark detection on point clouds that can leverage homologous bones from different species for translational research. The LmPT model incorporates a conditioning mechanism that enables adaptability to different input types to conduct cross-species learning. We focus the evaluation of our approach on femoral landmarking using both human and newly annotated dog femurs, demonstrating its generalization and effectiveness across species. The code and dog femur dataset will be publicly available at: https://github.com/Pierreoo/LandmarkPointTransformer.
+
+  </details>
+
+
 
 - **LiFlow: Flow Matching for 3D LiDAR Scene Completion**  
   Andrea Matteazzi, Dietmar Tutsch  
@@ -31,7 +86,7 @@ Total papers shown: **17**
 
 - **SurfSplat: Conquering Feedforward 2D Gaussian Splatting with Surface Continuity Priors**  
   Bing He, Jingnan Gao, Yunuo Chen, Ning Cao, Gang Chen, Zhengxue Cheng, Li Song, Wenjun Zhang  
-  _2026-02-02_ · https://arxiv.org/abs/2602.02000v1  
+  _2026-02-02_ · https://arxiv.org/abs/2602.02000v2  
   <details><summary>Abstract</summary>
 
   Reconstructing 3D scenes from sparse images remains a challenging task due to the difficulty of recovering accurate geometry and texture without optimization. Recent approaches leverage generalizable models to generate 3D scenes using 3D Gaussian Splatting (3DGS) primitive. However, they often fail to produce continuous surfaces and instead yield discrete, color-biased point clouds that appear plausible at normal resolution but reveal severe artifacts under close-up views. To address this issue, we present SurfSplat, a feedforward framework based on 2D Gaussian Splatting (2DGS) primitive, which provides stronger anisotropy and higher geometric precision. By incorporating a surface continuity prior and a forced alpha blending strategy, SurfSplat reconstructs coherent geometry together with faithful textures. Furthermore, we introduce High-Resolution Rendering Consistency (HRRC), a new evaluation metric designed to evaluate high-resolution reconstruction quality. Extensive experiments on RealEstate10K, DL3DV, and ScanNet demonstrate that SurfSplat consistently outperforms prior methods on both standard metrics and HRRC, establishing a robust solution for high-fidelity 3D reconstruction from sparse inputs. Project page: https://hebing-sjtu.github.io/SurfSplat-website/
@@ -90,105 +145,6 @@ Total papers shown: **17**
   <details><summary>Abstract</summary>
 
   We propose Parabolic Position Encoding (PaPE), a parabola-based position encoding for vision modalities in attention-based architectures. Given a set of vision tokens-such as images, point clouds, videos, or event camera streams-our objective is to encode their positions while accounting for the characteristics of vision modalities. Prior works have largely extended position encodings from 1D-sequences in language to nD-structures in vision, but only with partial account of vision characteristics. We address this gap by designing PaPE from principles distilled from prior work: translation invariance, rotation invariance (PaPE-RI), distance decay, directionality, and context awareness. We evaluate PaPE on 8 datasets that span 4 modalities. We find that either PaPE or PaPE-RI achieves the top performance on 7 out of 8 datasets. Extrapolation experiments on ImageNet-1K show that PaPE extrapolates remarkably well, improving in absolute terms by up to 10.5% over the next-best position encoding. Code is available at https://github.com/DTU-PAS/parabolic-position-encoding.
-
-  </details>
-
-
-
-- **OASIS-DC: Generalizable Depth Completion via Output-level Alignment of Sparse-Integrated Monocular Pseudo Depth**  
-  Jaehyeon Cho, Jhonghyun An  
-  _2026-02-01_ · https://arxiv.org/abs/2602.01268v1  
-  <details><summary>Abstract</summary>
-
-  Recent monocular foundation models excel at zero-shot depth estimation, yet their outputs are inherently relative rather than metric, limiting direct use in robotics and autonomous driving. We leverage the fact that relative depth preserves global layout and boundaries: by calibrating it with sparse range measurements, we transform it into a pseudo metric depth prior. Building on this prior, we design a refinement network that follows the prior where reliable and deviates where necessary, enabling accurate metric predictions from very few labeled samples. The resulting system is particularly effective when curated validation data are unavailable, sustaining stable scale and sharp edges across few-shot regimes. These findings suggest that coupling foundation priors with sparse anchors is a practical route to robust, deployment-ready depth completion under real-world label scarcity.
-
-  </details>
-
-
-
-- **LightCity: An Urban Dataset for Outdoor Inverse Rendering and Reconstruction under Multi-illumination Conditions**  
-  Jingjing Wang, Qirui Hu, Chong Bao, Yuke Zhu, Hujun Bao, Zhaopeng Cui, Guofeng Zhang  
-  _2026-02-01_ · https://arxiv.org/abs/2602.01118v1  
-  <details><summary>Abstract</summary>
-
-  Inverse rendering in urban scenes is pivotal for applications like autonomous driving and digital twins. Yet, it faces significant challenges due to complex illumination conditions, including multi-illumination and indirect light and shadow effects. However, the effects of these challenges on intrinsic decomposition and 3D reconstruction have not been explored due to the lack of appropriate datasets. In this paper, we present LightCity, a novel high-quality synthetic urban dataset featuring diverse illumination conditions with realistic indirect light and shadow effects. LightCity encompasses over 300 sky maps with highly controllable illumination, varying scales with street-level and aerial perspectives over 50K images, and rich properties such as depth, normal, material components, light and indirect light, etc. Besides, we leverage LightCity to benchmark three fundamental tasks in the urban environments and conduct a comprehensive analysis of these benchmarks, laying a robust foundation for advancing related research.
-
-  </details>
-
-
-
-- **FUSE-Flow: Scalable Real-Time Multi-View Point Cloud Reconstruction Using Confidence**  
-  Chentian Sun  
-  _2026-02-01_ · https://arxiv.org/abs/2602.01035v1  
-  <details><summary>Abstract</summary>
-
-  Real-time multi-view point cloud reconstruction is a core problem in 3D vision and immersive perception, with wide applications in VR, AR, robotic navigation, digital twins, and computer interaction. Despite advances in multi-camera systems and high-resolution depth sensors, fusing large-scale multi-view depth observations into high-quality point clouds under strict real-time constraints remains challenging. Existing methods relying on voxel-based fusion, temporal accumulation, or global optimization suffer from high computational complexity, excessive memory usage, and limited scalability, failing to simultaneously achieve real-time performance, reconstruction quality, and multi-camera extensibility. We propose FUSE-Flow, a frame-wise, stateless, and linearly scalable point cloud streaming reconstruction framework. Each frame independently generates point cloud fragments, fused via two weights, measurement confidence and 3D distance consistency to suppress noise while preserving geometric details. For large-scale multi-camera efficiency, we introduce an adaptive spatial hashing-based weighted aggregation method: 3D space is adaptively partitioned by local point cloud density, representative points are selected per cell, and weighted fusion is performed to handle both sparse and dense regions. With GPU parallelization, FUSE-Flow achieves high-throughput, low-latency point cloud generation and fusion with linear complexity. Experiments demonstrate that the framework improves reconstruction stability and geometric fidelity in overlapping, depth-discontinuous, and dynamic scenes, while maintaining real-time frame rates on modern GPUs, verifying its effectiveness, robustness, and scalability.
-
-  </details>
-
-
-
-- **GMAC: Global Multi-View Constraint for Automatic Multi-Camera Extrinsic Calibration**  
-  Chentian Sun  
-  _2026-02-01_ · https://arxiv.org/abs/2602.01033v1  
-  <details><summary>Abstract</summary>
-
-  Automatic calibration of multi-camera systems, namely the accurate estimation of spatial extrinsic parameters, is fundamental for 3D reconstruction, panoramic perception, and multi-view data fusion. Existing methods typically rely on calibration targets, explicit geometric modeling, or task-specific neural networks. Such approaches often exhibit limited robustness and applicability in complex dynamic environments or online scenarios, making them difficult to deploy in practical applications. To address this, this paper proposes GMAC, a multi-camera extrinsic estimation framework based on the implicit geometric representations learned by multi-view reconstruction networks. GMAC models extrinsics as global variables constrained by the latent multi-view geometric structure and prunes and structurally reconfigures existing networks so that their latent features can directly support extrinsic prediction through a lightweight regression head, without requiring a completely new network design. Furthermore, GMAC jointly optimizes cross-view reprojection consistency and multi-view cycle consistency, ensuring geometric coherence across cameras while improving prediction accuracy and optimization stability. Experiments on both synthetic and real-world multi-camera datasets demonstrate that GMAC achieves accurate and stable extrinsic estimation without explicit 3D reconstruction or manual calibration, providing a new solution for efficient deployment and online calibration of multi-camera systems.
-
-  </details>
-
-
-
-- **CLAMP: Contrastive Learning for 3D Multi-View Action-Conditioned Robotic Manipulation Pretraining**  
-  I-Chun Arthur Liu, Krzysztof Choromanski, Sandy Huang, Connor Schenck  
-  _2026-01-31_ · https://arxiv.org/abs/2602.00937v1  
-  <details><summary>Abstract</summary>
-
-  Leveraging pre-trained 2D image representations in behavior cloning policies has achieved great success and has become a standard approach for robotic manipulation. However, such representations fail to capture the 3D spatial information about objects and scenes that is essential for precise manipulation. In this work, we introduce Contrastive Learning for 3D Multi-View Action-Conditioned Robotic Manipulation Pretraining (CLAMP), a novel 3D pre-training framework that utilizes point clouds and robot actions. From the merged point cloud computed from RGB-D images and camera extrinsics, we re-render multi-view four-channel image observations with depth and 3D coordinates, including dynamic wrist views, to provide clearer views of target objects for high-precision manipulation tasks. The pre-trained encoders learn to associate the 3D geometric and positional information of objects with robot action patterns via contrastive learning on large-scale simulated robot trajectories. During encoder pre-training, we pre-train a Diffusion Policy to initialize the policy weights for fine-tuning, which is essential for improving fine-tuning sample efficiency and performance. After pre-training, we fine-tune the policy on a limited amount of task demonstrations using the learned image and action representations. We demonstrate that this pre-training and fine-tuning design substantially improves learning efficiency and policy performance on unseen tasks. Furthermore, we show that CLAMP outperforms state-of-the-art baselines across six simulated tasks and five real-world tasks.
-
-  </details>
-
-
-
-- **Distill3R: A Pipeline for Democratizing 3D Foundation Models on Commodity Hardware**  
-  Brandon Leblanc, Charalambos Poullis  
-  _2026-01-31_ · https://arxiv.org/abs/2602.00865v1  
-  <details><summary>Abstract</summary>
-
-  While multi-view 3D reconstruction has shifted toward large-scale foundation models capable of inferring globally consistent geometry, their reliance on massive computational clusters for training has created a significant barrier to entry for most academic laboratories. To bridge this compute divide, we introduce Distill3R, a framework designed to distill the geometric reasoning of 3D foundation models into compact students fully trainable on a single workstation. Our methodology centers on two primary innovations: (1) an offline caching pipeline that decouples heavy teacher inference from the training loop through compressed supervision signals, and (2) a confidence-aware distillation loss that leverages teacher uncertainty to enable training on commodity hardware. We propose a 72M-parameter student model which achieves a 9x reduction in parameters and a 5x inference speedup compared to its 650M-parameter teacher. The student is fully trainable in under 3 days on a single workstation, whereas its teacher requires massive GPU clusters for up to a week. We demonstrate that the student preserves the structural consistency and qualitative geometric understanding required for functional 3D awareness. By providing a reproducible, single-workstation training recipe, Distill3R serves as an exploratory entry point for democratized 3D vision research and efficient edge deployment. This work is not intended to compete with state-of-the-art foundation models, but to provide an accessible research baseline for laboratories without access to large-scale compute to train and specialize models on their own domain-specific data at minimal cost.
-
-  </details>
-
-
-
-- **Any3D-VLA: Enhancing VLA Robustness via Diverse Point Clouds**  
-  Xianzhe Fan, Shengliang Deng, Xiaoyang Wu, Yuxiang Lu, Zhuoling Li, Mi Yan, Yujia Zhang, Zhizheng Zhang, He Wang, Hengshuang Zhao  
-  _2026-01-31_ · https://arxiv.org/abs/2602.00807v1  
-  <details><summary>Abstract</summary>
-
-  Existing Vision-Language-Action (VLA) models typically take 2D images as visual input, which limits their spatial understanding in complex scenes. How can we incorporate 3D information to enhance VLA capabilities? We conduct a pilot study across different observation spaces and visual representations. The results show that explicitly lifting visual input into point clouds yields representations that better complement their corresponding 2D representations. To address the challenges of (1) scarce 3D data and (2) the domain gap induced by cross-environment differences and depth-scale biases, we propose Any3D-VLA. It unifies the simulator, sensor, and model-estimated point clouds within a training pipeline, constructs diverse inputs, and learns domain-agnostic 3D representations that are fused with the corresponding 2D representations. Simulation and real-world experiments demonstrate Any3D-VLA's advantages in improving performance and mitigating the domain gap. Our project homepage is available at https://xianzhefan.github.io/Any3D-VLA.github.io.
-
-  </details>
-
-
-
-- **Diffusion-Driven Inter-Outer Surface Separation for Point Clouds with Open Boundaries**  
-  Zhengyan Qin, Liyuan Qiu  
-  _2026-01-31_ · https://arxiv.org/abs/2602.00739v1  
-  <details><summary>Abstract</summary>
-
-  We propose a diffusion-based algorithm for separating the inter and outer layer surfaces from double-layered point clouds, particularly those exhibiting the "double surface artifact" caused by truncation in Truncated Signed Distance Function (TSDF) fusion during indoor or medical 3D reconstruction. This artifact arises from asymmetric truncation thresholds, leading to erroneous inter and outer shells in the fused volume, which our method addresses by extracting the true inter layer to mitigate challenges like overlapping surfaces and disordered normals. We focus on point clouds with \emph{open boundaries} (i.e., sampled surfaces with topological openings/holes through which particles may escape), rather than point clouds with \emph{missing surface regions} where no samples exist. Our approach enables robust processing of both watertight and open-boundary models, achieving extraction of the inter layer from 20,000 inter and 20,000 outer points in approximately 10 seconds. This solution is particularly effective for applications requiring accurate surface representations, such as indoor scene modeling and medical imaging, where double-layered point clouds are prevalent, and it accommodates both closed (watertight) and open-boundary surface geometries. Our goal is \emph{post-hoc} inter/outer shell separation as a lightweight module after TSDF fusion; we do not aim to replace full variational or learning-based reconstruction pipelines.
-
-  </details>
-
-
-
-- **Improving Neuropathological Reconstruction Fidelity via AI Slice Imputation**  
-  Marina Crespo Aguirre, Jonathan Williams-Ramirez, Dina Zemlyanker, Xiaoling Hu, Lucas J. Deden-Binder, Rogeny Herisse, Mark Montine, Theresa R. Connors, Christopher Mount, Christine L. MacDonald, et al.  
-  _2026-01-31_ · https://arxiv.org/abs/2602.00669v1  
-  <details><summary>Abstract</summary>
-
-  Neuropathological analyses benefit from spatially precise volumetric reconstructions that enhance anatomical delineation and improve morphometric accuracy. Our prior work has shown the feasibility of reconstructing 3D brain volumes from 2D dissection photographs. However these outputs sometimes exhibit coarse, overly smooth reconstructions of structures, especially under high anisotropy (i.e., reconstructions from thick slabs). Here, we introduce a computationally efficient super-resolution step that imputes slices to generate anatomically consistent isotropic volumes from anisotropic 3D reconstructions of dissection photographs. By training on domain-randomized synthetic data, we ensure that our method generalizes across dissection protocols and remains robust to large slab thicknesses. The imputed volumes yield improved automated segmentations, achieving higher Dice scores, particularly in cortical and white matter regions. Validation on surface reconstruction and atlas registration tasks demonstrates more accurate cortical surfaces and MRI registration. By enhancing the resolution and anatomical fidelity of photograph-based reconstructions, our approach strengthens the bridge between neuropathology and neuroimaging. Our method is publicly available at https://surfer.nmr.mgh.harvard.edu/fswiki/mri_3d_photo_recon
 
   </details>
 
