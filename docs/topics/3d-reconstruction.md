@@ -1,11 +1,121 @@
 # 3D Reconstruction
 
-_Updated: 2026-02-04 07:08 UTC_
+_Updated: 2026-02-05 07:14 UTC_
 
-Total papers shown: **13**
+Total papers shown: **19**
 
 
 ---
+
+- **LitS: A novel Neighborhood Descriptor for Point Clouds**  
+  Jonatan B. Bastos, Francisco F. Rivera, Oscar G. Lorenzo, David L. Vilariño, José C. Cabaleiro, Alberto M. Esmorís, Tomás F. Pena  
+  _2026-02-04_ · https://arxiv.org/abs/2602.04838v1  
+  <details><summary>Abstract</summary>
+
+  With the advancement of 3D scanning technologies, point clouds have become fundamental for representing 3D spatial data, with applications that span across various scientific and technological fields. Practical analysis of this data depends crucially on available neighborhood descriptors to accurately characterize the local geometries of the point cloud. This paper introduces LitS, a novel neighborhood descriptor for 2D and 3D point clouds. LitS are piecewise constant functions on the unit circle that allow points to keep track of their surroundings. Each element in LitS' domain represents a direction with respect to a local reference system. Once constructed, evaluating LitS at any given direction gives us information about the number of neighbors in a cone-like region centered around that same direction. Thus, LitS conveys a lot of information about the local neighborhood of a point, which can be leveraged to gain global structural understanding by analyzing how LitS changes between close points. In addition, LitS comes in two versions ('regular' and 'cumulative') and has two parameters, allowing them to adapt to various contexts and types of point clouds. Overall, they are a versatile neighborhood descriptor, capable of capturing the nuances of local point arrangements and resilient to common point cloud data issues such as variable density and noise.
+
+  </details>
+
+
+
+- **How to rewrite the stars: Mapping your orchard over time through constellations of fruits**  
+  Gonçalo P. Matos, Carlos Santiago, João P. Costeira, Ricardo L. Saldanha, Ernesto M. Morgado  
+  _2026-02-04_ · https://arxiv.org/abs/2602.04722v1  
+  <details><summary>Abstract</summary>
+
+  Following crop growth through the vegetative cycle allows farmers to predict fruit setting and yield in early stages, but it is a laborious and non-scalable task if performed by a human who has to manually measure fruit sizes with a caliper or dendrometers. In recent years, computer vision has been used to automate several tasks in precision agriculture, such as detecting and counting fruits, and estimating their size. However, the fundamental problem of matching the exact same fruits from one video, collected on a given date, to the fruits visible in another video, collected on a later date, which is needed to track fruits' growth through time, remains to be solved. Few attempts were made, but they either assume that the camera always starts from the same known position and that there are sufficiently distinct features to match, or they used other sources of data like GPS. Here we propose a new paradigm to tackle this problem, based on constellations of 3D centroids, and introduce a descriptor for very sparse 3D point clouds that can be used to match fruits across videos. Matching constellations instead of individual fruits is key to deal with non-rigidity, occlusions and challenging imagery with few distinct visual features to track. The results show that the proposed method can be successfully used to match fruits across videos and through time, and also to build an orchard map and later use it to locate the camera pose in 6DoF, thus providing a method for autonomous navigation of robots in the orchard and for selective fruit picking, for example.
+
+  </details>
+
+
+
+- **AGILE: Hand-Object Interaction Reconstruction from Video via Agentic Generation**  
+  Jin-Chuan Shi, Binhong Ye, Tao Liu, Junzhe He, Yangjinhui Xu, Xiaoyang Liu, Zeju Li, Hao Chen, Chunhua Shen  
+  _2026-02-04_ · https://arxiv.org/abs/2602.04672v1  
+  <details><summary>Abstract</summary>
+
+  Reconstructing dynamic hand-object interactions from monocular videos is critical for dexterous manipulation data collection and creating realistic digital twins for robotics and VR. However, current methods face two prohibitive barriers: (1) reliance on neural rendering often yields fragmented, non-simulation-ready geometries under heavy occlusion, and (2) dependence on brittle Structure-from-Motion (SfM) initialization leads to frequent failures on in-the-wild footage. To overcome these limitations, we introduce AGILE, a robust framework that shifts the paradigm from reconstruction to agentic generation for interaction learning. First, we employ an agentic pipeline where a Vision-Language Model (VLM) guides a generative model to synthesize a complete, watertight object mesh with high-fidelity texture, independent of video occlusions. Second, bypassing fragile SfM entirely, we propose a robust anchor-and-track strategy. We initialize the object pose at a single interaction onset frame using a foundation model and propagate it temporally by leveraging the strong visual similarity between our generated asset and video observations. Finally, a contact-aware optimization integrates semantic, geometric, and interaction stability constraints to enforce physical plausibility. Extensive experiments on HO3D, DexYCB, and in-the-wild videos reveal that AGILE outperforms baselines in global geometric accuracy while demonstrating exceptional robustness on challenging sequences where prior art frequently collapses. By prioritizing physical validity, our method produces simulation-ready assets validated via real-to-sim retargeting for robotic applications.
+
+  </details>
+
+
+
+- **S-MUSt3R: Sliding Multi-view 3D Reconstruction**  
+  Leonid Antsfeld, Boris Chidlovskii, Yohann Cabon, Vincent Leroy, Jerome Revaud  
+  _2026-02-04_ · https://arxiv.org/abs/2602.04517v1  
+  <details><summary>Abstract</summary>
+
+  The recent paradigm shift in 3D vision led to the rise of foundation models with remarkable capabilities in 3D perception from uncalibrated images. However, extending these models to large-scale RGB stream 3D reconstruction remains challenging due to memory limitations. This work proposes S-MUSt3R, a simple and efficient pipeline that extends the limits of foundation models for monocular 3D reconstruction. Our approach addresses the scalability bottleneck of foundation models through a simple strategy of sequence segmentation followed by segment alignment and lightweight loop closure optimization. Without model retraining, we benefit from remarkable 3D reconstruction capacities of MUSt3R model and achieve trajectory and reconstruction performance comparable to traditional methods with more complex architecture. We evaluate S-MUSt3R on TUM, 7-Scenes and proprietary robot navigation datasets and show that S-MUSt3R runs successfully on long RGB sequences and produces accurate and consistent 3D reconstruction. Our results highlight the potential of leveraging the MUSt3R model for scalable monocular 3D scene in real-world settings, with an important advantage of making predictions directly in the metric space.
+
+  </details>
+
+
+
+- **TrajVG: 3D Trajectory-Coupled Visual Geometry Learning**  
+  Xingyu Miao, Weiguang Zhao, Tao Lu, Linning Yu, Mulin Yu, Yang Long, Jiangmiao Pang, Junting Dong  
+  _2026-02-04_ · https://arxiv.org/abs/2602.04439v1  
+  <details><summary>Abstract</summary>
+
+  Feed-forward multi-frame 3D reconstruction models often degrade on videos with object motion. Global-reference becomes ambiguous under multiple motions, while the local pointmap relies heavily on estimated relative poses and can drift, causing cross-frame misalignment and duplicated structures. We propose TrajVG, a reconstruction framework that makes cross-frame 3D correspondence an explicit prediction by estimating camera-coordinate 3D trajectories. We couple sparse trajectories, per-frame local point maps, and relative camera poses with geometric consistency objectives: (i) bidirectional trajectory-pointmap consistency with controlled gradient flow, and (ii) a pose consistency objective driven by static track anchors that suppresses gradients from dynamic regions. To scale training to in-the-wild videos where 3D trajectory labels are scarce, we reformulate the same coupling constraints into self-supervised objectives using only pseudo 2D tracks, enabling unified training with mixed supervision. Extensive experiments across 3D tracking, pose estimation, pointmap reconstruction, and video depth show that TrajVG surpasses the current feedforward performance baseline.
+
+  </details>
+
+
+
+- **Finding NeMO: A Geometry-Aware Representation of Template Views for Few-Shot Perception**  
+  Sebastian Jung, Leonard Klüpfel, Rudolph Triebel, Maximilian Durner  
+  _2026-02-04_ · https://arxiv.org/abs/2602.04343v1  
+  <details><summary>Abstract</summary>
+
+  We present Neural Memory Object (NeMO), a novel object-centric representation that can be used to detect, segment and estimate the 6DoF pose of objects unseen during training using RGB images. Our method consists of an encoder that requires only a few RGB template views depicting an object to generate a sparse object-like point cloud using a learned UDF containing semantic and geometric information. Next, a decoder takes the object encoding together with a query image to generate a variety of dense predictions. Through extensive experiments, we show that our method can be used for few-shot object perception without requiring any camera-specific parameters or retraining on target data. Our proposed concept of outsourcing object information in a NeMO and using a single network for multiple perception tasks enhances interaction with novel objects, improving scalability and efficiency by enabling quick object onboarding without retraining or extensive pre-processing. We report competitive and state-of-the-art results on various datasets and perception tasks of the BOP benchmark, demonstrating the versatility of our approach. https://github.com/DLR-RM/nemo
+
+  </details>
+
+
+
+- **Improving 2D Diffusion Models for 3D Medical Imaging with Inter-Slice Consistent Stochasticity**  
+  Chenhe Du, Qing Wu, Xuanyu Tian, Jingyi Yu, Hongjiang Wei, Yuyao Zhang  
+  _2026-02-04_ · https://arxiv.org/abs/2602.04162v1  
+  <details><summary>Abstract</summary>
+
+  3D medical imaging is in high demand and essential for clinical diagnosis and scientific research. Currently, diffusion models (DMs) have become an effective tool for medical imaging reconstruction thanks to their ability to learn rich, high-quality data priors. However, learning the 3D data distribution with DMs in medical imaging is challenging, not only due to the difficulties in data collection but also because of the significant computational burden during model training. A common compromise is to train the DMs on 2D data priors and reconstruct stacked 2D slices to address 3D medical inverse problems. However, the intrinsic randomness of diffusion sampling causes severe inter-slice discontinuities of reconstructed 3D volumes. Existing methods often enforce continuity regularizations along the z-axis, which introduces sensitive hyper-parameters and may lead to over-smoothing results. In this work, we revisit the origin of stochasticity in diffusion sampling and introduce Inter-Slice Consistent Stochasticity (ISCS), a simple yet effective strategy that encourages interslice consistency during diffusion sampling. Our key idea is to control the consistency of stochastic noise components during diffusion sampling, thereby aligning their sampling trajectories without adding any new loss terms or optimization steps. Importantly, the proposed ISCS is plug-and-play and can be dropped into any 2D trained diffusion based 3D reconstruction pipeline without additional computational cost. Experiments on several medical imaging problems show that our method can effectively improve the performance of medical 3D imaging problems based on 2D diffusion models. Our findings suggest that controlling inter-slice stochasticity is a principled and practically attractive route toward high-fidelity 3D medical imaging with 2D diffusion priors. The code is available at: https://github.com/duchenhe/ISCS
+
+  </details>
+
+
+
+- **SuperPoint-E: local features for 3D reconstruction via tracking adaptation in endoscopy**  
+  O. Leon Barbed, José M. M. Montiel, Pascal Fua, Ana C. Murillo  
+  _2026-02-04_ · https://arxiv.org/abs/2602.04108v1  
+  <details><summary>Abstract</summary>
+
+  In this work, we focus on boosting the feature extraction to improve the performance of Structure-from-Motion (SfM) in endoscopy videos. We present SuperPoint-E, a new local feature extraction method that, using our proposed Tracking Adaptation supervision strategy, significantly improves the quality of feature detection and description in endoscopy. Extensive experimentation on real endoscopy recordings studies our approach's most suitable configuration and evaluates SuperPoint-E feature quality. The comparison with other baselines also shows that our 3D reconstructions are denser and cover more and longer video segments because our detector fires more densely and our features are more likely to survive (i.e. higher detection precision). In addition, our descriptor is more discriminative, making the guided matching step almost redundant. The presented approach brings significant improvements in the 3D reconstructions obtained, via SfM on endoscopy videos, compared to the original SuperPoint and the gold standard SfM COLMAP pipeline.
+
+  </details>
+
+
+
+- **Seeing Through Clutter: Structured 3D Scene Reconstruction via Iterative Object Removal**  
+  Rio Aguina-Kang, Kevin James Blackburn-Matzen, Thibault Groueix, Vladimir Kim, Matheus Gadelha  
+  _2026-02-03_ · https://arxiv.org/abs/2602.04053v1  
+  <details><summary>Abstract</summary>
+
+  We present SeeingThroughClutter, a method for reconstructing structured 3D representations from single images by segmenting and modeling objects individually. Prior approaches rely on intermediate tasks such as semantic segmentation and depth estimation, which often underperform in complex scenes, particularly in the presence of occlusion and clutter. We address this by introducing an iterative object removal and reconstruction pipeline that decomposes complex scenes into a sequence of simpler subtasks. Using VLMs as orchestrators, foreground objects are removed one at a time via detection, segmentation, object removal, and 3D fitting. We show that removing objects allows for cleaner segmentations of subsequent objects, even in highly occluded scenes. Our method requires no task-specific training and benefits directly from ongoing advances in foundation models. We demonstrate stateof-the-art robustness on 3D-Front and ADE20K datasets. Project Page: https://rioak.github.io/seeingthroughclutter/
+
+  </details>
+
+
+
+- **AnyStyle: Single-Pass Multimodal Stylization for 3D Gaussian Splatting**  
+  Joanna Kaleta, Bartosz Świrta, Kacper Kania, Przemysław Spurek, Marek Kowalski  
+  _2026-02-03_ · https://arxiv.org/abs/2602.04043v1  
+  <details><summary>Abstract</summary>
+
+  The growing demand for rapid and scalable 3D asset creation has driven interest in feed-forward 3D reconstruction methods, with 3D Gaussian Splatting (3DGS) emerging as an effective scene representation. While recent approaches have demonstrated pose-free reconstruction from unposed image collections, integrating stylization or appearance control into such pipelines remains underexplored. Existing attempts largely rely on image-based conditioning, which limits both controllability and flexibility. In this work, we introduce AnyStyle, a feed-forward 3D reconstruction and stylization framework that enables pose-free, zero-shot stylization through multimodal conditioning. Our method supports both textual and visual style inputs, allowing users to control the scene appearance using natural language descriptions or reference images. We propose a modular stylization architecture that requires only minimal architectural modifications and can be integrated into existing feed-forward 3D reconstruction backbones. Experiments demonstrate that AnyStyle improves style controllability over prior feed-forward stylization methods while preserving high-quality geometric reconstruction. A user study further confirms that AnyStyle achieves superior stylization quality compared to an existing state-of-the-art approach. Repository: https://github.com/joaxkal/AnyStyle.
+
+  </details>
+
+
 
 - **EventNeuS: 3D Mesh Reconstruction from a Single Event Camera**  
   Shreyas Sachan, Viktor Rudnev, Mohamed Elgharib, Christian Theobalt, Vladislav Golyanik  
@@ -13,6 +123,17 @@ Total papers shown: **13**
   <details><summary>Abstract</summary>
 
   Event cameras offer a considerable alternative to RGB cameras in many scenarios. While there are recent works on event-based novel-view synthesis, dense 3D mesh reconstruction remains scarcely explored and existing event-based techniques are severely limited in their 3D reconstruction accuracy. To address this limitation, we present EventNeuS, a self-supervised neural model for learning 3D representations from monocular colour event streams. Our approach, for the first time, combines 3D signed distance function and density field learning with event-based supervision. Furthermore, we introduce spherical harmonics encodings into our model for enhanced handling of view-dependent effects. EventNeuS outperforms existing approaches by a significant margin, achieving 34% lower Chamfer distance and 31% lower mean absolute error on average compared to the best previous method.
+
+  </details>
+
+
+
+- **Beyond the Vehicle: Cooperative Localization by Fusing Point Clouds for GPS-Challenged Urban Scenarios**  
+  Kuo-Yi Chao, Ralph Rasshofer, Alois Christian Knoll  
+  _2026-02-03_ · https://arxiv.org/abs/2602.03908v1  
+  <details><summary>Abstract</summary>
+
+  Accurate vehicle localization is a critical challenge in urban environments where GPS signals are often unreliable. This paper presents a cooperative multi-sensor and multi-modal localization approach to address this issue by fusing data from vehicle-to-vehicle (V2V) and vehicle-to-infrastructure (V2I) systems. Our approach integrates cooperative data with a point cloud registration-based simultaneous localization and mapping (SLAM) algorithm. The system processes point clouds generated from diverse sensor modalities, including vehicle-mounted LiDAR and stereo cameras, as well as sensors deployed at intersections. By leveraging shared data from infrastructure, our method significantly improves localization accuracy and robustness in complex, GPS-noisy urban scenarios.
 
   </details>
 
@@ -51,6 +172,17 @@ Total papers shown: **13**
 
 
 
+- **4DPC$^2$hat: Towards Dynamic Point Cloud Understanding with Failure-Aware Bootstrapping**  
+  Xindan Zhang, Weilong Yan, Yufei Shi, Xuerui Qiu, Tao He, Ying Li, Ming Li, Hehe Fan  
+  _2026-02-03_ · https://arxiv.org/abs/2602.03890v1  
+  <details><summary>Abstract</summary>
+
+  Point clouds provide a compact and expressive representation of 3D objects, and have recently been integrated into multimodal large language models (MLLMs). However, existing methods primarily focus on static objects, while understanding dynamic point cloud sequences remains largely unexplored. This limitation is mainly caused by the lack of large-scale cross-modal datasets and the difficulty of modeling motions in spatio-temporal contexts. To bridge this gap, we present 4DPC$^2$hat, the first MLLM tailored for dynamic point cloud understanding. To this end, we construct a large-scale cross-modal dataset 4DPC$^2$hat-200K via a meticulous two-stage pipeline consisting of topology-consistent 4D point construction and two-level captioning. The dataset contains over 44K dynamic object sequences, 700K point cloud frames, and 200K curated question-answer (QA) pairs, supporting inquiries about counting, temporal relationship, action, spatial relationship, and appearance. At the core of the framework, we introduce a Mamba-enhanced temporal reasoning MLLM to capture long-range dependencies and dynamic patterns among a point cloud sequence. Furthermore, we propose a failure-aware bootstrapping learning strategy that iteratively identifies model deficiencies and generates targeted QA supervision to continuously strengthen corresponding reasoning capabilities. Extensive experiments demonstrate that our 4DPC$^2$hat significantly improves action understanding and temporal reasoning compared with existing models, establishing a strong foundation for 4D dynamic point cloud understanding.
+
+  </details>
+
+
+
 - **LmPT: Conditional Point Transformer for Anatomical Landmark Detection on 3D Point Clouds**  
   Matteo Bastico, Pierre Onghena, David Ryckelynck, Beatriz Marcotegui, Santiago Velasco-Forero, Laurent Corté, Caroline Robine--Decourcelle, Etienne Decencière  
   _2026-02-02_ · https://arxiv.org/abs/2602.02808v1  
@@ -79,72 +211,6 @@ Total papers shown: **13**
   <details><summary>Abstract</summary>
 
   Pulmonary trees extracted from CT images frequently exhibit topological incompleteness, such as missing or disconnected branches, which substantially degrades downstream anatomical analysis and limits the applicability of existing pulmonary tree modeling pipelines. Current approaches typically rely on dense volumetric processing or explicit graph reasoning, leading to limited efficiency and reduced robustness under realistic structural corruption. We propose TopoField, a topology-aware implicit modeling framework that treats topology repair as a first-class modeling problem and enables unified multi-task inference for pulmonary tree analysis. TopoField represents pulmonary anatomy using sparse surface and skeleton point clouds and learns a continuous implicit field that supports topology repair without relying on complete or explicit disconnection annotations, by training on synthetically introduced structural disruptions over \textit{already} incomplete trees. Building upon the repaired implicit representation, anatomical labeling and lung segment reconstruction are jointly inferred through task-specific implicit functions within a single forward pass.Extensive experiments on the Lung3D+ dataset demonstrate that TopoField consistently improves topological completeness and achieves accurate anatomical labeling and lung segment reconstruction under challenging incomplete scenarios. Owing to its implicit formulation, TopoField attains high computational efficiency, completing all tasks in just over one second per case, highlighting its practicality for large-scale and time-sensitive clinical applications. Code and data will be available at https://github.com/HINTLab/TopoField.
-
-  </details>
-
-
-
-- **SurfSplat: Conquering Feedforward 2D Gaussian Splatting with Surface Continuity Priors**  
-  Bing He, Jingnan Gao, Yunuo Chen, Ning Cao, Gang Chen, Zhengxue Cheng, Li Song, Wenjun Zhang  
-  _2026-02-02_ · https://arxiv.org/abs/2602.02000v2  
-  <details><summary>Abstract</summary>
-
-  Reconstructing 3D scenes from sparse images remains a challenging task due to the difficulty of recovering accurate geometry and texture without optimization. Recent approaches leverage generalizable models to generate 3D scenes using 3D Gaussian Splatting (3DGS) primitive. However, they often fail to produce continuous surfaces and instead yield discrete, color-biased point clouds that appear plausible at normal resolution but reveal severe artifacts under close-up views. To address this issue, we present SurfSplat, a feedforward framework based on 2D Gaussian Splatting (2DGS) primitive, which provides stronger anisotropy and higher geometric precision. By incorporating a surface continuity prior and a forced alpha blending strategy, SurfSplat reconstructs coherent geometry together with faithful textures. Furthermore, we introduce High-Resolution Rendering Consistency (HRRC), a new evaluation metric designed to evaluate high-resolution reconstruction quality. Extensive experiments on RealEstate10K, DL3DV, and ScanNet demonstrate that SurfSplat consistently outperforms prior methods on both standard metrics and HRRC, establishing a robust solution for high-fidelity 3D reconstruction from sparse inputs. Project page: https://hebing-sjtu.github.io/SurfSplat-website/
-
-  </details>
-
-
-
-- **Multi-Task Learning for Robot Perception with Imbalanced Data**  
-  Ozgur Erkent  
-  _2026-02-02_ · https://arxiv.org/abs/2602.01899v1  
-  <details><summary>Abstract</summary>
-
-  Multi-task problem solving has been shown to improve the accuracy of the individual tasks, which is an important feature for robots, as they have a limited resource. However, when the number of labels for each task is not equal, namely imbalanced data exist, a problem may arise due to insufficient number of samples, and labeling is not very easy for mobile robots in every environment. We propose a method that can learn tasks even in the absence of the ground truth labels for some of the tasks. We also provide a detailed analysis of the proposed method. An interesting finding is related to the interaction of the tasks. We show a methodology to find out which tasks can improve the performance of other tasks. We investigate this by training the teacher network with the task outputs such as depth as inputs. We further provide empirical evidence when trained with a small amount of data. We use semantic segmentation and depth estimation tasks on different datasets, NYUDv2 and Cityscapes.
-
-  </details>
-
-
-
-- **Automated Discontinuity Set Characterisation in Enclosed Rock Face Point Clouds Using Single-Shot Filtering and Cyclic Orientation Transformation**  
-  Dibyayan Patra, Pasindu Ranasinghe, Bikram Banerjee, Simit Raval  
-  _2026-02-02_ · https://arxiv.org/abs/2602.01783v1  
-  <details><summary>Abstract</summary>
-
-  Characterisation of structural discontinuity sets in exposed rock faces of underground mine cavities is essential for assessing rock-mass stability, excavation safety, and operational efficiency. UAV and other mobile laser-scanning techniques provide efficient means of collecting point clouds from rock faces. However, the development of a robust and efficient approach for automatic characterisation of discontinuity sets in real-world scenarios, like fully enclosed rock faces in cavities, remains an open research problem. In this study, a new approach is proposed for automatic discontinuity set characterisation that uses a single-shot filtering strategy, an innovative cyclic orientation transformation scheme and a hierarchical clustering technique. The single-shot filtering step isolates planar regions while robustly suppressing noise and high-curvature artefacts in one pass using a signal-processing technique. To address the limitations of Cartesian clustering on polar orientation data, a cyclic orientation transformation scheme is developed, enabling accurate representation of dip angle and dip direction in Cartesian space. The transformed orientations are then characterised into sets using a hierarchical clustering technique, which handles varying density distributions and identifies clusters without requiring user-defined set numbers. The accuracy of the method is validated on real-world mine stope and against ground truth obtained using manually handpicked discontinuity planes identified with the Virtual Compass tool, as well as widely used automated structure mapping techniques. The proposed approach outperforms the other techniques by exhibiting the lowest mean absolute error in estimating discontinuity set orientations in real-world stope data with errors of 1.95° and 2.20° in nominal dip angle and dip direction, respectively, and dispersion errors lying below 3°.
-
-  </details>
-
-
-
-- **GDPR-Compliant Person Recognition in Industrial Environments Using MEMS-LiDAR and Hybrid Data**  
-  Dennis Basile, Dennis Sprute, Helene Dörksen, Holger Flatt  
-  _2026-02-02_ · https://arxiv.org/abs/2602.01764v1  
-  <details><summary>Abstract</summary>
-
-  The reliable detection of unauthorized individuals in safety-critical industrial indoor spaces is crucial to avoid plant shutdowns, property damage, and personal hazards. Conventional vision-based methods that use deep-learning approaches for person recognition provide image information but are sensitive to lighting and visibility conditions and often violate privacy regulations, such as the General Data Protection Regulation (GDPR) in the European Union. Typically, detection systems based on deep learning require annotated data for training. Collecting and annotating such data, however, is highly time-consuming and due to manual treatments not necessarily error free. Therefore, this paper presents a privacy-compliant approach based on Micro-Electro-Mechanical Systems LiDAR (MEMS-LiDAR), which exclusively captures anonymized 3D point clouds and avoids personal identification features. To compensate for the large amount of time required to record real LiDAR data and for post-processing and annotation, real recordings are augmented with synthetically generated scenes from the CARLA simulation framework. The results demonstrate that the hybrid data improves the average precision by 44 percentage points compared to a model trained exclusively with real data while reducing the manual annotation effort by 50 %. Thus, the proposed approach provides a scalable, cost-efficient alternative to purely real-data-based methods and systematically shows how synthetic LiDAR data can combine high performance in person detection with GDPR compliance in an industrial environment.
-
-  </details>
-
-
-
-- **HandMCM: Multi-modal Point Cloud-based Correspondence State Space Model for 3D Hand Pose Estimation**  
-  Wencan Cheng, Gim Hee Lee  
-  _2026-02-02_ · https://arxiv.org/abs/2602.01586v1  
-  <details><summary>Abstract</summary>
-
-  3D hand pose estimation that involves accurate estimation of 3D human hand keypoint locations is crucial for many human-computer interaction applications such as augmented reality. However, this task poses significant challenges due to self-occlusion of the hands and occlusions caused by interactions with objects. In this paper, we propose HandMCM to address these challenges. Our HandMCM is a novel method based on the powerful state space model (Mamba). By incorporating modules for local information injection/filtering and correspondence modeling, the proposed correspondence Mamba effectively learns the highly dynamic kinematic topology of keypoints across various occlusion scenarios. Moreover, by integrating multi-modal image features, we enhance the robustness and representational capacity of the input, leading to more accurate hand pose estimation. Empirical evaluations on three benchmark datasets demonstrate that our model significantly outperforms current state-of-the-art methods, particularly in challenging scenarios involving severe occlusions. These results highlight the potential of our approach to advance the accuracy and reliability of 3D hand pose estimation in practical applications.
-
-  </details>
-
-
-
-- **Where to Attend: A Principled Vision-Centric Position Encoding with Parabolas**  
-  Christoffer Koo Øhrstrøm, Rafael I. Cabral Muchacho, Yifei Dong, Filippos Moumtzidellis, Ronja Güldenring, Florian T. Pokorny, Lazaros Nalpantidis  
-  _2026-02-01_ · https://arxiv.org/abs/2602.01418v1  
-  <details><summary>Abstract</summary>
-
-  We propose Parabolic Position Encoding (PaPE), a parabola-based position encoding for vision modalities in attention-based architectures. Given a set of vision tokens-such as images, point clouds, videos, or event camera streams-our objective is to encode their positions while accounting for the characteristics of vision modalities. Prior works have largely extended position encodings from 1D-sequences in language to nD-structures in vision, but only with partial account of vision characteristics. We address this gap by designing PaPE from principles distilled from prior work: translation invariance, rotation invariance (PaPE-RI), distance decay, directionality, and context awareness. We evaluate PaPE on 8 datasets that span 4 modalities. We find that either PaPE or PaPE-RI achieves the top performance on 7 out of 8 datasets. Extrapolation experiments on ImageNet-1K show that PaPE extrapolates remarkably well, improving in absolute terms by up to 10.5% over the next-best position encoding. Code is available at https://github.com/DTU-PAS/parabolic-position-encoding.
 
   </details>
 

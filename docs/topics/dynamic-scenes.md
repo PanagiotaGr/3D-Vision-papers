@@ -1,11 +1,33 @@
 # Dynamic Scenes & 4D Reconstruction
 
-_Updated: 2026-02-04 07:08 UTC_
+_Updated: 2026-02-05 07:14 UTC_
 
 Total papers shown: **8**
 
 
 ---
+
+- **Event-T2M: Event-level Conditioning for Complex Text-to-Motion Synthesis**  
+  Seong-Eun Hong, JaeYoung Seon, JuYeong Hwang, JongHwan Shin, HyeongYeop Kang  
+  _2026-02-04_ · https://arxiv.org/abs/2602.04292v1  
+  <details><summary>Abstract</summary>
+
+  Text-to-motion generation has advanced with diffusion models, yet existing systems often collapse complex multi-action prompts into a single embedding, leading to omissions, reordering, or unnatural transitions. In this work, we shift perspective by introducing a principled definition of an event as the smallest semantically self-contained action or state change in a text prompt that can be temporally aligned with a motion segment. Building on this definition, we propose Event-T2M, a diffusion-based framework that decomposes prompts into events, encodes each with a motion-aware retrieval model, and integrates them through event-based cross-attention in Conformer blocks. Existing benchmarks mix simple and multi-event prompts, making it unclear whether models that succeed on single actions generalize to multi-action cases. To address this, we construct HumanML3D-E, the first benchmark stratified by event count. Experiments on HumanML3D, KIT-ML, and HumanML3D-E show that Event-T2M matches state-of-the-art baselines on standard tests while outperforming them as event complexity increases. Human studies validate the plausibility of our event definition, the reliability of HumanML3D-E, and the superiority of Event-T2M in generating multi-event motions that preserve order and naturalness close to ground-truth. These results establish event-level conditioning as a generalizable principle for advancing text-to-motion generation beyond single-action prompts.
+
+  </details>
+
+
+
+- **SkeletonGaussian: Editable 4D Generation through Gaussian Skeletonization**  
+  Lifan Wu, Ruijie Zhu, Yubo Ai, Tianzhu Zhang  
+  _2026-02-04_ · https://arxiv.org/abs/2602.04271v1  
+  <details><summary>Abstract</summary>
+
+  4D generation has made remarkable progress in synthesizing dynamic 3D objects from input text, images, or videos. However, existing methods often represent motion as an implicit deformation field, which limits direct control and editability. To address this issue, we propose SkeletonGaussian, a novel framework for generating editable dynamic 3D Gaussians from monocular video input. Our approach introduces a hierarchical articulated representation that decomposes motion into sparse rigid motion explicitly driven by a skeleton and fine-grained non-rigid motion. Concretely, we extract a robust skeleton and drive rigid motion via linear blend skinning, followed by a hexplane-based refinement for non-rigid deformations, enhancing interpretability and editability. Experimental results demonstrate that SkeletonGaussian surpasses existing methods in generation quality while enabling intuitive motion editing, establishing a new paradigm for editable 4D generation. Project page: https://wusar.github.io/projects/skeletongaussian/
+
+  </details>
+
+
 
 - **Occlusion-Free Conformal Lensing for Spatiotemporal Visualization in 3D Urban Analytics**  
   Roberta Mota, Julio D. Silva, Fabio Miranda, Usman Alim, Ehud Sharlin, Nivan Ferreira  
@@ -40,6 +62,17 @@ Total papers shown: **8**
 
 
 
+- **4DPC$^2$hat: Towards Dynamic Point Cloud Understanding with Failure-Aware Bootstrapping**  
+  Xindan Zhang, Weilong Yan, Yufei Shi, Xuerui Qiu, Tao He, Ying Li, Ming Li, Hehe Fan  
+  _2026-02-03_ · https://arxiv.org/abs/2602.03890v1  
+  <details><summary>Abstract</summary>
+
+  Point clouds provide a compact and expressive representation of 3D objects, and have recently been integrated into multimodal large language models (MLLMs). However, existing methods primarily focus on static objects, while understanding dynamic point cloud sequences remains largely unexplored. This limitation is mainly caused by the lack of large-scale cross-modal datasets and the difficulty of modeling motions in spatio-temporal contexts. To bridge this gap, we present 4DPC$^2$hat, the first MLLM tailored for dynamic point cloud understanding. To this end, we construct a large-scale cross-modal dataset 4DPC$^2$hat-200K via a meticulous two-stage pipeline consisting of topology-consistent 4D point construction and two-level captioning. The dataset contains over 44K dynamic object sequences, 700K point cloud frames, and 200K curated question-answer (QA) pairs, supporting inquiries about counting, temporal relationship, action, spatial relationship, and appearance. At the core of the framework, we introduce a Mamba-enhanced temporal reasoning MLLM to capture long-range dependencies and dynamic patterns among a point cloud sequence. Furthermore, we propose a failure-aware bootstrapping learning strategy that iteratively identifies model deficiencies and generates targeted QA supervision to continuously strengthen corresponding reasoning capabilities. Extensive experiments demonstrate that our 4DPC$^2$hat significantly improves action understanding and temporal reasoning compared with existing models, establishing a strong foundation for 4D dynamic point cloud understanding.
+
+  </details>
+
+
+
 - **JRDB-Pose3D: A Multi-person 3D Human Pose and Shape Estimation Dataset for Robotics**  
   Sandika Biswas, Kian Izadpanah, Hamid Rezatofighi  
   _2026-02-03_ · https://arxiv.org/abs/2602.03064v1  
@@ -57,39 +90,6 @@ Total papers shown: **8**
   <details><summary>Abstract</summary>
 
   Novel view synthesis of dynamic scenes is fundamental to achieving photorealistic 4D reconstruction and immersive visual experiences. Recent progress in Gaussian-based representations has significantly improved real-time rendering quality, yet existing methods still struggle to maintain a balance between long-term static and short-term dynamic regions in both representation and optimization. To address this, we present SharpTimeGS, a lifespan-aware 4D Gaussian framework that achieves temporally adaptive modeling of both static and dynamic regions under a unified representation. Specifically, we introduce a learnable lifespan parameter that reformulates temporal visibility from a Gaussian-shaped decay into a flat-top profile, allowing primitives to remain consistently active over their intended duration and avoiding redundant densification. In addition, the learned lifespan modulates each primitives' motion, reducing drift in long-lived static points while retaining unrestricted motion for short-lived dynamic ones. This effectively decouples motion magnitude from temporal duration, improving long-term stability without compromising dynamic fidelity. Moreover, we design a lifespan-velocity-aware densification strategy that mitigates optimization imbalance between static and dynamic regions by allocating more capacity to regions with pronounced motion while keeping static areas compact and stable. Extensive experiments on multiple benchmarks demonstrate that our method achieves state-of-the-art performance while supporting real-time rendering up to 4K resolution at 100 FPS on one RTX 4090.
-
-  </details>
-
-
-
-- **Spatio-Temporal Transformers for Long-Term NDVI Forecasting**  
-  Ido Faran, Nathan S. Netanyahu, Maxim Shoshany  
-  _2026-02-02_ · https://arxiv.org/abs/2602.01799v1  
-  <details><summary>Abstract</summary>
-
-  Long-term satellite image time series (SITS) analysis in heterogeneous landscapes faces significant challenges, particularly in Mediterranean regions where complex spatial patterns, seasonal variations, and multi-decade environmental changes interact across different scales. This paper presents the Spatio-Temporal Transformer for Long Term Forecasting (STT-LTF ), an extended framework that advances beyond purely temporal analysis to integrate spatial context modeling with temporal sequence prediction. STT-LTF processes multi-scale spatial patches alongside temporal sequences (up to 20 years) through a unified transformer architecture, capturing both local neighborhood relationships and regional climate influences. The framework employs comprehensive self-supervised learning with spatial masking, temporal masking, and horizon sampling strategies, enabling robust model training from 40 years of unlabeled Landsat imagery. Unlike autoregressive approaches, STT-LTF directly predicts arbitrary future time points without error accumulation, incorporating spatial patch embeddings, cyclical temporal encoding, and geographic coordinates to learn complex dependencies across heterogeneous Mediterranean ecosystems. Experimental evaluation on Landsat data (1984-2024) demonstrates that STT-LTF achieves a Mean Absolute Error (MAE) of 0.0328 and R^2 of 0.8412 for next-year predictions, outperforming traditional statistical methods, CNN-based approaches, LSTM networks, and standard transformers. The framework's ability to handle irregular temporal sampling and variable prediction horizons makes it particularly suitable for analysis of heterogeneous landscapes experiencing rapid ecological transitions.
-
-  </details>
-
-
-
-- **PISCES: Annotation-free Text-to-Video Post-Training via Optimal Transport-Aligned Rewards**  
-  Minh-Quan Le, Gaurav Mittal, Cheng Zhao, David Gu, Dimitris Samaras, Mei Chen  
-  _2026-02-02_ · https://arxiv.org/abs/2602.01624v1  
-  <details><summary>Abstract</summary>
-
-  Text-to-video (T2V) generation aims to synthesize videos with high visual quality and temporal consistency that are semantically aligned with input text. Reward-based post-training has emerged as a promising direction to improve the quality and semantic alignment of generated videos. However, recent methods either rely on large-scale human preference annotations or operate on misaligned embeddings from pre-trained vision-language models, leading to limited scalability or suboptimal supervision. We present $\texttt{PISCES}$, an annotation-free post-training algorithm that addresses these limitations via a novel Dual Optimal Transport (OT)-aligned Rewards module. To align reward signals with human judgment, $\texttt{PISCES}$ uses OT to bridge text and video embeddings at both distributional and discrete token levels, enabling reward supervision to fulfill two objectives: (i) a Distributional OT-aligned Quality Reward that captures overall visual quality and temporal coherence; and (ii) a Discrete Token-level OT-aligned Semantic Reward that enforces semantic, spatio-temporal correspondence between text and video tokens. To our knowledge, $\texttt{PISCES}$ is the first to improve annotation-free reward supervision in generative post-training through the lens of OT. Experiments on both short- and long-video generation show that $\texttt{PISCES}$ outperforms both annotation-based and annotation-free methods on VBench across Quality and Semantic scores, with human preference studies further validating its effectiveness. We show that the Dual OT-aligned Rewards module is compatible with multiple optimization paradigms, including direct backpropagation and reinforcement learning fine-tuning.
-
-  </details>
-
-
-
-- **UniDWM: Towards a Unified Driving World Model via Multifaceted Representation Learning**  
-  Shuai Liu, Siheng Ren, Xiaoyao Zhu, Quanmin Liang, Zefeng Li, Qiang Li, Xin Hu, Kai Huang  
-  _2026-02-02_ · https://arxiv.org/abs/2602.01536v1  
-  <details><summary>Abstract</summary>
-
-  Achieving reliable and efficient planning in complex driving environments requires a model that can reason over the scene's geometry, appearance, and dynamics. We present UniDWM, a unified driving world model that advances autonomous driving through multifaceted representation learning. UniDWM constructs a structure- and dynamic-aware latent world representation that serves as a physically grounded state space, enabling consistent reasoning across perception, prediction, and planning. Specifically, a joint reconstruction pathway learns to recover the scene's structure, including geometry and visual texture, while a collaborative generation framework leverages a conditional diffusion transformer to forecast future world evolution within the latent space. Furthermore, we show that our UniDWM can be deemed as a variation of VAE, which provides theoretical guidance for the multifaceted representation learning. Extensive experiments demonstrate the effectiveness of UniDWM in trajectory planning, 4D reconstruction and generation, highlighting the potential of multifaceted world representations as a foundation for unified driving intelligence. The code will be publicly available at https://github.com/Say2L/UniDWM.
 
   </details>
 
