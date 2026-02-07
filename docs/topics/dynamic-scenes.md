@@ -1,8 +1,8 @@
 # Dynamic Scenes & 4D Reconstruction
 
-_Updated: 2026-02-06 07:11 UTC_
+_Updated: 2026-02-07 06:59 UTC_
 
-Total papers shown: **7**
+Total papers shown: **5**
 
 
 ---
@@ -57,28 +57,6 @@ Total papers shown: **7**
   <details><summary>Abstract</summary>
 
   4D generation has made remarkable progress in synthesizing dynamic 3D objects from input text, images, or videos. However, existing methods often represent motion as an implicit deformation field, which limits direct control and editability. To address this issue, we propose SkeletonGaussian, a novel framework for generating editable dynamic 3D Gaussians from monocular video input. Our approach introduces a hierarchical articulated representation that decomposes motion into sparse rigid motion explicitly driven by a skeleton and fine-grained non-rigid motion. Concretely, we extract a robust skeleton and drive rigid motion via linear blend skinning, followed by a hexplane-based refinement for non-rigid deformations, enhancing interpretability and editability. Experimental results demonstrate that SkeletonGaussian surpasses existing methods in generation quality while enabling intuitive motion editing, establishing a new paradigm for editable 4D generation. Project page: https://wusar.github.io/projects/skeletongaussian/
-
-  </details>
-
-
-
-- **Occlusion-Free Conformal Lensing for Spatiotemporal Visualization in 3D Urban Analytics**  
-  Roberta Mota, Julio D. Silva, Fabio Miranda, Usman Alim, Ehud Sharlin, Nivan Ferreira  
-  _2026-02-03_ · https://arxiv.org/abs/2602.03743v1  
-  <details><summary>Abstract</summary>
-
-  The visualization of temporal data on urban buildings, such as shadows, noise, and solar potential, plays a critical role in the analysis of dynamic urban phenomena. However, in dense and geographically constrained 3D urban environments, visual representations of time-varying building data often suffer from occlusion and visual clutter. To address these two challenges, we introduce an immersive lens visualization that integrates a view-dependent cutaway de-occlusion technique and a temporal display derived from a conformal mapping algorithm. The mapping process first partitions irregular building footprints into smaller, sufficiently regular subregions that serve as structural primitives. These subregions are then seamlessly recombined to form a conformal, layered layout for our temporal lens visualization. The view-responsive cutaway is inspired by traditional architectural illustrations, preserving the overall layout of the building and its surroundings to maintain users' sense of spatial orientation. This lens design enables the occlusion-free embedding of shape-adaptive temporal displays across building facades on demand, supporting rapid time-space association for the discovery, access and interpretation of spatiotemporal urban patterns. Guided by domain and design goals, we outline the rationale behind the lens visual and interaction design choices, such as the encoding of time progression and temporal values in the conforming lens image. A user study compares our approach against conventional juxtaposition and x-ray spatiotemporal designs. Results validate the usage and utility of our lens, showing that it improves task accuracy and completion time, reduces navigation effort, and increases user confidence. From these findings, we distill design recommendations and promising directions for future research on spatially-embedded lenses in 3D visualization and urban analytics.
-
-  </details>
-
-
-
-- **Constrained Dynamic Gaussian Splatting**  
-  Zihan Zheng, Zhenglong Wu, Xuanxuan Wang, Houqiang Zhong, Xiaoyun Zhang, Qiang Hu, Guangtao Zhai, Wenjun Zhang  
-  _2026-02-03_ · https://arxiv.org/abs/2602.03538v1  
-  <details><summary>Abstract</summary>
-
-  While Dynamic Gaussian Splatting enables high-fidelity 4D reconstruction, its deployment is severely hindered by a fundamental dilemma: unconstrained densification leads to excessive memory consumption incompatible with edge devices, whereas heuristic pruning fails to achieve optimal rendering quality under preset Gaussian budgets. In this work, we propose Constrained Dynamic Gaussian Splatting (CDGS), a novel framework that formulates dynamic scene reconstruction as a budget-constrained optimization problem to enforce a strict, user-defined Gaussian budget during training. Our key insight is to introduce a differentiable budget controller as the core optimization driver. Guided by a multi-modal unified importance score, this controller fuses geometric, motion, and perceptual cues for precise capacity regulation. To maximize the utility of this fixed budget, we further decouple the optimization of static and dynamic elements, employing an adaptive allocation mechanism that dynamically distributes capacity based on motion complexity. Furthermore, we implement a three-phase training strategy to seamlessly integrate these constraints, ensuring precise adherence to the target count. Coupled with a dual-mode hybrid compression scheme, CDGS not only strictly adheres to hardware constraints (error < 2%}) but also pushes the Pareto frontier of rate-distortion performance. Extensive experiments demonstrate that CDGS delivers optimal rendering quality under varying capacity limits, achieving over 3x compression compared to state-of-the-art methods.
 
   </details>
 

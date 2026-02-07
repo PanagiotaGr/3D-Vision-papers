@@ -1,8 +1,8 @@
 # SLAM & Localization
 
-_Updated: 2026-02-06 07:11 UTC_
+_Updated: 2026-02-07 06:59 UTC_
 
-Total papers shown: **15**
+Total papers shown: **13**
 
 
 ---
@@ -145,28 +145,6 @@ Total papers shown: **15**
   <details><summary>Abstract</summary>
 
   Large Vision-Language Models (LVLMs) have advanced rapidly by aligning visual patches with the text embedding space, but a fixed visual-token budget forces images to be resized to a uniform pretraining resolution, often erasing fine-grained details and causing hallucinations via over-reliance on language priors. Recent attention-guided enhancement (e.g., cropping or region-focused attention allocation) alleviates this, yet it commonly hinges on a static "magic layer" empirically chosen on simple recognition benchmarks and thus may not transfer to complex reasoning tasks. In contrast to this static assumption, we propose a dynamic perspective on visual grounding. Through a layer-wise sensitivity analysis, we demonstrate that visual grounding is a dynamic process: while simple object recognition tasks rely on middle layers, complex visual search and reasoning tasks require visual information to be reactivated at deeper layers. Based on this observation, we introduce Visual Activation by Query (VAQ), a metric that identifies the layer whose attention map is most relevant to query-specific visual grounding by measuring attention sensitivity to the input query. Building on VAQ, we further propose LASER (Layer-adaptive Attention-guided Selective visual and decoding Enhancement for Reasoning), a training-free inference procedure that adaptively selects task-appropriate layers for visual localization and question answering. Experiments across diverse VQA benchmarks show that LASER significantly improves VQA accuracy across tasks with varying levels of complexity.
-
-  </details>
-
-
-
-- **Control and State Estimation of Vehicle-Mounted Aerial Systems in GPS-Denied, Non-Inertial Environments**  
-  Riming Xu, Obadah Wali, Yasmine Marani, Eric Feron  
-  _2026-02-03_ · https://arxiv.org/abs/2602.04057v1  
-  <details><summary>Abstract</summary>
-
-  We present a robust control and estimation framework for quadrotors operating in Global Navigation Satellite System(GNSS)-denied, non-inertial environments where inertial sensors such as Inertial Measurement Units (IMUs) become unreliable due to platform-induced accelerations. In such settings, conventional estimators fail to distinguish whether the measured accelerations arise from the quadrotor itself or from the non-inertial platform, leading to drift and control degradation. Unlike conventional approaches that depend heavily on IMU and GNSS, our method relies exclusively on external position measurements combined with a Extended Kalman Filter with Unknown Inputs (EKF-UI) to account for platform motion. The estimator is paired with a cascaded PID controller for full 3D tracking. To isolate estimator performance from localization errors, all tests are conducted using high-precision motion capture systems. Experimental results in a moving-cart testbed validate our approach under both translational in X-axis and Y-axis dissonance. Compared to standard EKF, the proposed method significantly improves stability and trajectory tracking without requiring inertial feedback, enabling practical deployment on moving platforms such as trucks or elevators.
-
-  </details>
-
-
-
-- **DADP: Domain Adaptive Diffusion Policy**  
-  Pengcheng Wang, Qinghang Liu, Haotian Lin, Yiheng Li, Guojian Zhan, Masayoshi Tomizuka, Yixiao Wang  
-  _2026-02-03_ · https://arxiv.org/abs/2602.04037v1  
-  <details><summary>Abstract</summary>
-
-  Learning domain adaptive policies that can generalize to unseen transition dynamics, remains a fundamental challenge in learning-based control. Substantial progress has been made through domain representation learning to capture domain-specific information, thus enabling domain-aware decision making. We analyze the process of learning domain representations through dynamical prediction and find that selecting contexts adjacent to the current step causes the learned representations to entangle static domain information with varying dynamical properties. Such mixture can confuse the conditioned policy, thereby constraining zero-shot adaptation. To tackle the challenge, we propose DADP (Domain Adaptive Diffusion Policy), which achieves robust adaptation through unsupervised disentanglement and domain-aware diffusion injection. First, we introduce Lagged Context Dynamical Prediction, a strategy that conditions future state estimation on a historical offset context; by increasing this temporal gap, we unsupervisedly disentangle static domain representations by filtering out transient properties. Second, we integrate the learned domain representations directly into the generative process by biasing the prior distribution and reformulating the diffusion target. Extensive experiments on challenging benchmarks across locomotion and manipulation demonstrate the superior performance, and the generalizability of DADP over prior methods. More visualization results are available on the https://outsider86.github.io/DomainAdaptiveDiffusionPolicy/.
 
   </details>
 
