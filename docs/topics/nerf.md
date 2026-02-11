@@ -1,11 +1,22 @@
 # NeRF & Neural Radiance Fields
 
-_Updated: 2026-02-10 07:20 UTC_
+_Updated: 2026-02-11 07:17 UTC_
 
-Total papers shown: **4**
+Total papers shown: **5**
 
 
 ---
+
+- **CompSplat: Compression-aware 3D Gaussian Splatting for Real-world Video**  
+  Hojun Song, Heejung Choi, Aro Kim, Chae-yeong Song, Gahyeon Kim, Soo Ye Kim, Jaehyup Lee, Sang-hyo Park  
+  _2026-02-10_ · https://arxiv.org/abs/2602.09816v1  
+  <details><summary>Abstract</summary>
+
+  High-quality novel view synthesis (NVS) from real-world videos is crucial for applications such as cultural heritage preservation, digital twins, and immersive media. However, real-world videos typically contain long sequences with irregular camera trajectories and unknown poses, leading to pose drift, feature misalignment, and geometric distortion during reconstruction. Moreover, lossy compression amplifies these issues by introducing inconsistencies that gradually degrade geometry and rendering quality. While recent studies have addressed either long-sequence NVS or unposed reconstruction, compression-aware approaches still focus on specific artifacts or limited scenarios, leaving diverse compression patterns in long videos insufficiently explored. In this paper, we propose CompSplat, a compression-aware training framework that explicitly models frame-wise compression characteristics to mitigate inter-frame inconsistency and accumulated geometric errors. CompSplat incorporates compression-aware frame weighting and an adaptive pruning strategy to enhance robustness and geometric consistency, particularly under heavy compression. Extensive experiments on challenging benchmarks, including Tanks and Temples, Free, and Hike, demonstrate that CompSplat achieves state-of-the-art rendering quality and pose accuracy, significantly surpassing most recent state-of-the-art NVS approaches under severe compression conditions.
+
+  </details>
+
+
 
 - **Analysis of Converged 3D Gaussian Splatting Solutions: Density Effects and Prediction Limit**  
   Zhendong Wang, Cihan Ruan, Jingchuan Xiao, Chuqing Shi, Wei Jiang, Wei Wang, Wenjie Liu, Nam Ling  

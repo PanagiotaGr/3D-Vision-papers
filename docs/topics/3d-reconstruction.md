@@ -1,11 +1,77 @@
 # 3D Reconstruction
 
-_Updated: 2026-02-10 07:20 UTC_
+_Updated: 2026-02-11 07:17 UTC_
 
-Total papers shown: **11**
+Total papers shown: **15**
 
 
 ---
+
+- **VersaViT: Enhancing MLLM Vision Backbones via Task-Guided Optimization**  
+  Yikun Liu, Yuan Liu, Shangzhe Di, Haicheng Wang, Zhongyin Zhao, Le Tian, Xiao Zhou, Jie Zhou, Jiangchao Yao, Yanfeng Wang, et al.  
+  _2026-02-10_ · https://arxiv.org/abs/2602.09934v1  
+  <details><summary>Abstract</summary>
+
+  Multimodal Large Language Models (MLLMs) have recently achieved remarkable success in visual-language understanding, demonstrating superior high-level semantic alignment within their vision encoders. An important question thus arises: Can these encoders serve as versatile vision backbones, capable of reliably performing classic vision-centric tasks as well? To address the question, we make the following contributions: (i) we identify that the vision encoders within MLLMs exhibit deficiencies in their dense feature representations, as evidenced by their suboptimal performance on dense prediction tasks (e.g., semantic segmentation, depth estimation); (ii) we propose VersaViT, a well-rounded vision transformer that instantiates a novel multi-task framework for collaborative post-training. This framework facilitates the optimization of the vision backbone via lightweight task heads with multi-granularity supervision; (iii) extensive experiments across various downstream tasks demonstrate the effectiveness of our method, yielding a versatile vision backbone suited for both language-mediated reasoning and pixel-level understanding.
+
+  </details>
+
+
+
+- **SARS: A Novel Face and Body Shape and Appearance Aware 3D Reconstruction System extends Morphable Models**  
+  Gulraiz Khan, Kenneth Y. Wertheim, Kevin Pimbblet, Waqas Ahmed  
+  _2026-02-10_ · https://arxiv.org/abs/2602.09918v1  
+  <details><summary>Abstract</summary>
+
+  Morphable Models (3DMMs) are a type of morphable model that takes 2D images as inputs and recreates the structure and physical appearance of 3D objects, especially human faces and bodies. 3DMM combines identity and expression blendshapes with a basic face mesh to create a detailed 3D model. The variability in the 3D Morphable models can be controlled by tuning diverse parameters. They are high-level image descriptors, such as shape, texture, illumination, and camera parameters. Previous research in 3D human reconstruction concentrated solely on global face structure or geometry, ignoring face semantic features such as age, gender, and facial landmarks characterizing facial boundaries, curves, dips, and wrinkles. In order to accommodate changes in these high-level facial characteristics, this work introduces a shape and appearance-aware 3D reconstruction system (named SARS by us), a c modular pipeline that extracts body and face information from a single image to properly rebuild the 3D model of the human full body.
+
+  </details>
+
+
+
+- **VideoAfford: Grounding 3D Affordance from Human-Object-Interaction Videos via Multimodal Large Language Model**  
+  Hanqing Wang, Mingyu Liu, Xiaoyu Chen, Chengwei MA, Yiming Zhong, Wenti Yin, Yuhao Liu, Zhiqing Cui, Jiahao Yuan, Lu Dai, et al.  
+  _2026-02-10_ · https://arxiv.org/abs/2602.09638v1  
+  <details><summary>Abstract</summary>
+
+  3D affordance grounding aims to highlight the actionable regions on 3D objects, which is crucial for robotic manipulation. Previous research primarily focused on learning affordance knowledge from static cues such as language and images, which struggle to provide sufficient dynamic interaction context that can reveal temporal and causal cues. To alleviate this predicament, we collect a comprehensive video-based 3D affordance dataset, \textit{VIDA}, which contains 38K human-object-interaction videos covering 16 affordance types, 38 object categories, and 22K point clouds. Based on \textit{VIDA}, we propose a strong baseline: VideoAfford, which activates multimodal large language models with additional affordance segmentation capabilities, enabling both world knowledge reasoning and fine-grained affordance grounding within a unified framework. To enhance action understanding capability, we leverage a latent action encoder to extract dynamic interaction priors from HOI videos. Moreover, we introduce a \textit{spatial-aware} loss function to enable VideoAfford to obtain comprehensive 3D spatial knowledge. Extensive experimental evaluations demonstrate that our model significantly outperforms well-established methods and exhibits strong open-world generalization with affordance reasoning abilities. All datasets and code will be publicly released to advance research in this area.
+
+  </details>
+
+
+
+- **RAD: Retrieval-Augmented Monocular Metric Depth Estimation for Underrepresented Classes**  
+  Michael Baltaxe, Dan Levi, Sagie Benaim  
+  _2026-02-10_ · https://arxiv.org/abs/2602.09532v1  
+  <details><summary>Abstract</summary>
+
+  Monocular Metric Depth Estimation (MMDE) is essential for physically intelligent systems, yet accurate depth estimation for underrepresented classes in complex scenes remains a persistent challenge. To address this, we propose RAD, a retrieval-augmented framework that approximates the benefits of multi-view stereo by utilizing retrieved neighbors as structural geometric proxies. Our method first employs an uncertainty-aware retrieval mechanism to identify low-confidence regions in the input and retrieve RGB-D context samples containing semantically similar content. We then process both the input and retrieved context via a dual-stream network and fuse them using a matched cross-attention module, which transfers geometric information only at reliable point correspondences. Evaluations on NYU Depth v2, KITTI, and Cityscapes demonstrate that RAD significantly outperforms state-of-the-art baselines on underrepresented classes, reducing relative absolute error by 29.2% on NYU Depth v2, 13.3% on KITTI, and 7.2% on Cityscapes, while maintaining competitive performance on standard in-domain benchmarks.
+
+  </details>
+
+
+
+- **Bridging the Modality Gap in Roadside LiDAR: A Training-Free Vision-Language Model Framework for Vehicle Classification**  
+  Yiqiao Li, Bo Shang, Jie Wei  
+  _2026-02-10_ · https://arxiv.org/abs/2602.09425v1  
+  <details><summary>Abstract</summary>
+
+  Fine-grained truck classification is critical for intelligent transportation systems (ITS), yet current LiDAR-based methods face scalability challenges due to their reliance on supervised deep learning and labor-intensive manual annotation. Vision-Language Models (VLMs) offer promising few-shot generalization, but their application to roadside LiDAR is limited by a modality gap between sparse 3D point clouds and dense 2D imagery. We propose a framework that bridges this gap by adapting off-the-shelf VLMs for fine-grained truck classification without parameter fine-tuning. Our new depth-aware image generation pipeline applies noise removal, spatial and temporal registration, orientation rectification, morphological operations, and anisotropic smoothing to transform sparse, occluded LiDAR scans into depth-encoded 2D visual proxies. Validated on a real-world dataset of 20 vehicle classes, our approach achieves competitive classification accuracy with as few as 16-30 examples per class, offering a scalable alternative to data-intensive supervised baselines. We further observe a "Semantic Anchor" effect: text-based guidance regularizes performance in ultra-low-shot regimes $k < 4$, but degrades accuracy in more-shot settings due to semantic mismatch. Furthermore, we demonstrate the efficacy of this framework as a Cold Start strategy, using VLM-generated labels to bootstrap lightweight supervised models. Notably, the few-shot VLM-based model achieves over correct classification rate of 75 percent for specific drayage categories (20ft, 40ft, and 53ft containers) entirely without the costly training or fine-tuning, significantly reducing the intensive demands of initial manual labeling, thus achieving a method of practical use in ITS applications.
+
+  </details>
+
+
+
+- **Single-Slice-to-3D Reconstruction in Medical Imaging and Natural Objects: A Comparative Benchmark with SAM 3D**  
+  Yan Luo, Advaith Ravishankar, Serena Liu, Yutong Yang, Mengyu Wang  
+  _2026-02-10_ · https://arxiv.org/abs/2602.09407v1  
+  <details><summary>Abstract</summary>
+
+  A 3D understanding of anatomy is central to diagnosis and treatment planning, yet volumetric imaging remains costly with long wait times. Image-to-3D foundations models can solve this issue by reconstructing 3D data from 2D modalites. Current foundation models are trained on natural image distributions to reconstruct naturalistic objects from a single image by leveraging geometric priors across pixels. However, it is unclear whether these learned geometric priors transfer to medical data. In this study, we present a controlled zero-shot benchmark of single slice medical image-to-3D reconstruction across five state-of-the-art image-to-3D models: SAM3D, Hunyuan3D-2.1, Direct3D, Hi3DGen, and TripoSG. These are evaluated across six medical datasets spanning anatomical and pathological structures and two natrual datasets, using voxel based metrics and point cloud distance metrics. Across medical datasets, voxel based overlap remains moderate for all models, consistent with a depth reconstruction failure mode when inferring volume from a single slice. In contrast, global distance metrics show more separation between methods: SAM3D achieves the strongest overall topological similarity to ground truth medical 3D data, while alternative models are more prone to over-simplication of reconstruction. Our results quantify the limits of single-slice medical reconstruction and highlight depth ambiguity caused by the planar nature of 2D medical data, motivating multi-view image-to-3D reconstruction to enable reliable medical 3D inference.
+
+  </details>
+
+
 
 - **Analysis of Converged 3D Gaussian Splatting Solutions: Density Effects and Prediction Limit**  
   Zhendong Wang, Cihan Ruan, Jingchuan Xiao, Chuqing Shi, Wei Jiang, Wei Wang, Wenjie Liu, Nam Ling  
@@ -101,28 +167,6 @@ Total papers shown: **11**
   <details><summary>Abstract</summary>
 
   We consider the problem of 3D shape recovery from ultra-fast motion-blurred images. While 3D reconstruction from static images has been extensively studied, recovering geometry from extreme motion-blurred images remains challenging. Such scenarios frequently occur in both natural and industrial settings, such as fast-moving objects in sports (e.g., balls) or rotating machinery, where rapid motion distorts object appearance and makes traditional 3D reconstruction techniques like Multi-View Stereo (MVS) ineffective. In this paper, we propose a novel inverse rendering approach for shape recovery from ultra-fast motion-blurred images. While conventional rendering techniques typically synthesize blur by averaging across multiple frames, we identify a major computational bottleneck in the repeated computation of barycentric weights. To address this, we propose a fast barycentric coordinate solver, which significantly reduces computational overhead and achieves a speedup of up to 4.57x, enabling efficient and photorealistic simulation of high-speed motion. Crucially, our method is fully differentiable, allowing gradients to propagate from rendered images to the underlying 3D shape, thereby facilitating shape recovery through inverse rendering. We validate our approach on two representative motion types: rapid translation and rotation. Experimental results demonstrate that our method enables efficient and realistic modeling of ultra-fast moving objects in the forward simulation. Moreover, it successfully recovers 3D shapes from 2D imagery of objects undergoing extreme translational and rotational motion, advancing the boundaries of vision-based 3D reconstruction. Project page: https://maxmilite.github.io/rec-from-ultrafast-blur/
-
-  </details>
-
-
-
-- **Influence of Geometry, Class Imbalance and Alignment on Reconstruction Accuracy -- A Micro-CT Phantom-Based Evaluation**  
-  Avinash Kumar K M, Samarth S. Raut  
-  _2026-02-07_ · https://arxiv.org/abs/2602.07658v1  
-  <details><summary>Abstract</summary>
-
-  The accuracy of the 3D models created from medical scans depends on imaging hardware, segmentation methods and mesh processing techniques etc. The effects of geometry type, class imbalance, voxel and point cloud alignment on accuracy remain to be thoroughly explored. This work evaluates the errors across the reconstruction pipeline and explores the use of voxel and surface-based accuracy metrics for different segmentation algorithms and geometry types. A sphere, a facemask, and an AAA were printed using the SLA technique and scanned using a micro-CT machine. Segmentation was performed using GMM, Otsu and RG based methods. Segmented and reference models aligned using the KU algorithm, were quantitatively compared to evaluate metrics like Dice and Jaccard scores, precision. Surface meshes were registered with reference meshes using an ICP-based alignment process. Metrics like chamfer distance, and average Hausdorff distance were evaluated. The Otsu method was found to be the most suitable method for all the geometries. AAA yielded low overlap scores due to its small wall thickness and misalignment. The effect of class imbalance on specificity was observed the most for AAA. Surface-based accuracy metrics differed from the voxel-based trends. The RG method performed best for sphere, while GMM and Otsu perform better for AAA. The facemask surface was most error-prone, possibly due to misalignment during the ICP process. Segmentation accuracy is a cumulative sum of errors across different stages of the reconstruction process. High voxel-based accuracy metrics may be misleading in cases of high class imbalance and sensitivity to alignment. The Jaccard index is found to be more stringent than the Dice and more suitable for accuracy assessment for thin-walled structures. Voxel and point cloud alignment should be ensured to make any reliable assessment of the reconstruction pipeline.
-
-  </details>
-
-
-
-- **Perspective-aware fusion of incomplete depth maps and surface normals for accurate 3D reconstruction**  
-  Ondrej Hlinka, Georg Kaniak, Christian Kapeller  
-  _2026-02-07_ · https://arxiv.org/abs/2602.07444v1  
-  <details><summary>Abstract</summary>
-
-  We address the problem of reconstructing 3D surfaces from depth and surface normal maps acquired by a sensor system based on a single perspective camera. Depth and normal maps can be obtained through techniques such as structured-light scanning and photometric stereo, respectively. We propose a perspective-aware log-depth fusion approach that extends existing orthographic gradient-based depth-normals fusion methods by explicitly accounting for perspective projection, leading to metrically accurate 3D reconstructions. Additionally, the method handles missing depth measurements by leveraging available surface normal information to inpaint gaps. Experiments on the DiLiGenT-MV data set demonstrate the effectiveness of our approach and highlight the importance of perspective-aware depth-normals fusion.
 
   </details>
 

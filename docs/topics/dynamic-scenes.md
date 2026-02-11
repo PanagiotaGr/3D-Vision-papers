@@ -1,11 +1,44 @@
 # Dynamic Scenes & 4D Reconstruction
 
-_Updated: 2026-02-10 07:20 UTC_
+_Updated: 2026-02-11 07:17 UTC_
 
-Total papers shown: **10**
+Total papers shown: **13**
 
 
 ---
+
+- **4RC: 4D Reconstruction via Conditional Querying Anytime and Anywhere**  
+  Yihang Luo, Shangchen Zhou, Yushi Lan, Xingang Pan, Chen Change Loy  
+  _2026-02-10_ · https://arxiv.org/abs/2602.10094v1  
+  <details><summary>Abstract</summary>
+
+  We present 4RC, a unified feed-forward framework for 4D reconstruction from monocular videos. Unlike existing approaches that typically decouple motion from geometry or produce limited 4D attributes such as sparse trajectories or two-view scene flow, 4RC learns a holistic 4D representation that jointly captures dense scene geometry and motion dynamics. At its core, 4RC introduces a novel encode-once, query-anywhere and anytime paradigm: a transformer backbone encodes the entire video into a compact spatio-temporal latent space, from which a conditional decoder can efficiently query 3D geometry and motion for any query frame at any target timestamp. To facilitate learning, we represent per-view 4D attributes in a minimally factorized form by decomposing them into base geometry and time-dependent relative motion. Extensive experiments demonstrate that 4RC outperforms prior and concurrent methods across a wide range of 4D reconstruction tasks.
+
+  </details>
+
+
+
+- **Spatio-Temporal Attention for Consistent Video Semantic Segmentation in Automated Driving**  
+  Serin Varghese, Kevin Ross, Fabian Hueger, Kira Maag  
+  _2026-02-10_ · https://arxiv.org/abs/2602.10052v1  
+  <details><summary>Abstract</summary>
+
+  Deep neural networks, especially transformer-based architectures, have achieved remarkable success in semantic segmentation for environmental perception. However, existing models process video frames independently, thus failing to leverage temporal consistency, which could significantly improve both accuracy and stability in dynamic scenes. In this work, we propose a Spatio-Temporal Attention (STA) mechanism that extends transformer attention blocks to incorporate multi-frame context, enabling robust temporal feature representations for video semantic segmentation. Our approach modifies standard self-attention to process spatio-temporal feature sequences while maintaining computational efficiency and requiring minimal changes to existing architectures. STA demonstrates broad applicability across diverse transformer architectures and remains effective across both lightweight and larger-scale models. A comprehensive evaluation on the Cityscapes and BDD100k datasets shows substantial improvements of 9.20 percentage points in temporal consistency metrics and up to 1.76 percentage points in mean intersection over union compared to single-frame baselines. These results demonstrate STA as an effective architectural enhancement for video-based semantic segmentation applications.
+
+  </details>
+
+
+
+- **Time2General: Learning Spatiotemporal Invariant Representations for Domain-Generalization Video Semantic Segmentation**  
+  Siyu Chen, Ting Han, Haoling Huang, Chaolei Wang, Chengzheng Fu, Duxin Zhu, Guorong Cai, Jinhe Su  
+  _2026-02-10_ · https://arxiv.org/abs/2602.09648v1  
+  <details><summary>Abstract</summary>
+
+  Domain Generalized Video Semantic Segmentation (DGVSS) is trained on a single labeled driving domain and is directly deployed on unseen domains without target labels and test-time adaptation while maintaining temporally consistent predictions over video streams. In practice, both domain shift and temporal-sampling shift break correspondence-based propagation and fixed-stride temporal aggregation, causing severe frame-to-frame flicker even in label-stable regions. We propose Time2General, a DGVSS framework built on Stability Queries. Time2General introduces a Spatio-Temporal Memory Decoder that aggregates multi-frame context into a clip-level spatio-temporal memory and decodes temporally consistent per-frame masks without explicit correspondence propagation. To further suppress flicker and improve robustness to varying sampling rates, the Masked Temporal Consistency Loss is proposed to regularize temporal prediction discrepancies across different strides, and randomize training strides to expose the model to diverse temporal gaps. Extensive experiments on multiple driving benchmarks show that Time2General achieves a substantial improvement in cross-domain accuracy and temporal stability over prior DGSS and VSS baselines while running at up to 18 FPS. Code will be released after the review process.
+
+  </details>
+
+
 
 - **$χ_{0}$: Resource-Aware Robust Manipulation via Taming Distributional Inconsistencies**  
   Checheng Yu, Chonghao Sima, Gangcheng Jiang, Hai Zhang, Haoguang Mai, Hongyang Li, Huijie Wang, Jin Chen, Kaiyang Wu, Li Chen, et al.  
@@ -31,7 +64,7 @@ Total papers shown: **10**
 
 - **Grow with the Flow: 4D Reconstruction of Growing Plants with Gaussian Flow Fields**  
   Weihan Luo, Lily Goli, Sherwin Bahmani, Felix Taubner, Andrea Tagliasacchi, David B. Lindell  
-  _2026-02-09_ · https://arxiv.org/abs/2602.08958v1  
+  _2026-02-09_ · https://arxiv.org/abs/2602.08958v2  
   <details><summary>Abstract</summary>
 
   Modeling the time-varying 3D appearance of plants during their growth poses unique challenges: unlike many dynamic scenes, plants generate new geometry over time as they expand, branch, and differentiate. Recent motion modeling techniques are ill-suited to this problem setting. For example, deformation fields cannot introduce new geometry, and 4D Gaussian splatting constrains motion to a linear trajectory in space and time and cannot track the same set of Gaussians over time. Here, we introduce a 3D Gaussian flow field representation that models plant growth as a time-varying derivative over Gaussian parameters -- position, scale, orientation, color, and opacity -- enabling nonlinear and continuous-time growth dynamics. To initialize a sufficient set of Gaussian primitives, we reconstruct the mature plant and learn a process of reverse growth, effectively simulating the plant's developmental history in reverse. Our approach achieves superior image quality and geometric accuracy compared to prior methods on multi-view timelapse datasets of plant growth, providing a new approach for appearance modeling of growing 3D structures.
