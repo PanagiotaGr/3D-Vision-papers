@@ -1,11 +1,44 @@
 # Dynamic Scenes & 4D Reconstruction
 
-_Updated: 2026-02-11 07:17 UTC_
+_Updated: 2026-02-12 07:16 UTC_
 
-Total papers shown: **13**
+Total papers shown: **12**
 
 
 ---
+
+- **From Steering to Pedalling: Do Autonomous Driving VLMs Generalize to Cyclist-Assistive Spatial Perception and Planning?**  
+  Krishna Kanth Nakka, Vedasri Nakka  
+  _2026-02-11_ · https://arxiv.org/abs/2602.10771v1  
+  <details><summary>Abstract</summary>
+
+  Cyclists often encounter safety-critical situations in urban traffic, highlighting the need for assistive systems that support safe and informed decision-making. Recently, vision-language models (VLMs) have demonstrated strong performance on autonomous driving benchmarks, suggesting their potential for general traffic understanding and navigation-related reasoning. However, existing evaluations are predominantly vehicle-centric and fail to assess perception and reasoning from a cyclist-centric viewpoint. To address this gap, we introduce CyclingVQA, a diagnostic benchmark designed to probe perception, spatio-temporal understanding, and traffic-rule-to-lane reasoning from a cyclist's perspective. Evaluating 31+ recent VLMs spanning general-purpose, spatially enhanced, and autonomous-driving-specialized models, we find that current models demonstrate encouraging capabilities, while also revealing clear areas for improvement in cyclist-centric perception and reasoning, particularly in interpreting cyclist-specific traffic cues and associating signs with the correct navigational lanes. Notably, several driving-specialized models underperform strong generalist VLMs, indicating limited transfer from vehicle-centric training to cyclist-assistive scenarios. Finally, through systematic error analysis, we identify recurring failure modes to guide the development of more effective cyclist-assistive intelligent systems.
+
+  </details>
+
+
+
+- **C^2ROPE: Causal Continuous Rotary Positional Encoding for 3D Large Multimodal-Models Reasoning**  
+  Guanting Ye, Qiyan Zhao, Wenhao Yu, Xiaofeng Zhang, Jianmin Ji, Yanyong Zhang, Ka-Veng Yuen  
+  _2026-02-11_ · https://arxiv.org/abs/2602.10551v1  
+  <details><summary>Abstract</summary>
+
+  Recent advances in 3D Large Multimodal Models (LMMs) built on Large Language Models (LLMs) have established the alignment of 3D visual features with LLM representations as the dominant paradigm. However, the inherited Rotary Position Embedding (RoPE) introduces limitations for multimodal processing. Specifically, applying 1D temporal positional indices disrupts the continuity of visual features along the column dimension, resulting in spatial locality loss. Moreover, RoPE follows the prior that temporally closer image tokens are more causally related, leading to long-term decay in attention allocation and causing the model to progressively neglect earlier visual tokens as the sequence length increases. To address these issues, we propose C^2RoPE, an improved RoPE that explicitly models local spatial Continuity and spatial Causal relationships for visual processing. C^2RoPE introduces a spatio-temporal continuous positional embedding mechanism for visual tokens. It first integrates 1D temporal positions with Cartesian-based spatial coordinates to construct a triplet hybrid positional index, and then employs a frequency allocation strategy to encode spatio-temporal positional information across the three index components. Additionally, we introduce Chebyshev Causal Masking, which determines causal dependencies by computing the Chebyshev distance of image tokens in 2D space. Evaluation results across various benchmarks, including 3D scene reasoning and 3D visual question answering, demonstrate C^2RoPE's effectiveness. The code is be available at https://github.com/ErikZ719/C2RoPE.
+
+  </details>
+
+
+
+- **ENIGMA: EEG-to-Image in 15 Minutes Using Less Than 1% of the Parameters**  
+  Reese Kneeland, Wangshu Jiang, Ugo Bruzadin Nunes, Paul Steven Scotti, Arnaud Delorme, Jonathan Xu  
+  _2026-02-10_ · https://arxiv.org/abs/2602.10361v1  
+  <details><summary>Abstract</summary>
+
+  To be practical for real-life applications, models for brain-computer interfaces must be easily and quickly deployable on new subjects, effective on affordable scanning hardware, and small enough to run locally on accessible computing resources. To directly address these current limitations, we introduce ENIGMA, a multi-subject electroencephalography (EEG)-to-Image decoding model that reconstructs seen images from EEG recordings and achieves state-of-the-art (SOTA) performance on the research-grade THINGS-EEG2 and consumer-grade AllJoined-1.6M benchmarks, while fine-tuning effectively on new subjects with as little as 15 minutes of data. ENIGMA boasts a simpler architecture and requires less than 1% of the trainable parameters necessary for previous approaches. Our approach integrates a subject-unified spatio-temporal backbone along with a set of multi-subject latent alignment layers and an MLP projector to map raw EEG signals to a rich visual latent space. We evaluate our approach using a broad suite of image reconstruction metrics that have been standardized in the adjacent field of fMRI-to-Image research, and we describe the first EEG-to-Image study to conduct extensive behavioral evaluations of our reconstructions using human raters. Our simple and robust architecture provides a significant performance boost across both research-grade and consumer-grade EEG hardware, and a substantial improvement in fine-tuning efficiency and inference cost. Finally, we provide extensive ablations to determine the architectural choices most responsible for our performance gains in both single and multi-subject cases across multiple benchmark datasets. Collectively, our work provides a substantial step towards the development of practical brain-computer interface applications.
+
+  </details>
+
+
 
 - **4RC: 4D Reconstruction via Conditional Querying Anytime and Anywhere**  
   Yihang Luo, Shangchen Zhou, Yushi Lan, Xingang Pan, Chen Change Loy  
@@ -101,50 +134,6 @@ Total papers shown: **13**
   <details><summary>Abstract</summary>
 
   Multimodal Large Language Models (MLLMs) have significantly advanced embodied AI, and using them to benchmark robotic intelligence has become a pivotal trend. However, existing frameworks remain predominantly confined to single-arm manipulation, failing to capture the spatio-temporal coordination required for bimanual tasks like lifting a heavy pot. To address this, we introduce BiManiBench, a hierarchical benchmark evaluating MLLMs across three tiers: fundamental spatial reasoning, high-level action planning, and low-level end-effector control. Our framework isolates unique bimanual challenges, such as arm reachability and kinematic constraints, thereby distinguishing perceptual hallucinations from planning failures. Analysis of over 30 state-of-the-art models reveals that despite high-level reasoning proficiency, MLLMs struggle with dual-arm spatial grounding and control, frequently resulting in mutual interference and sequencing errors. These findings suggest the current paradigm lacks a deep understanding of mutual kinematic constraints, highlighting the need for future research to focus on inter-arm collision-avoidance and fine-grained temporal sequencing.
-
-  </details>
-
-
-
-- **CAE-AV: Improving Audio-Visual Learning via Cross-modal Interactive Enrichment**  
-  Yunzuo Hu, Wen Li, Jing Zhang  
-  _2026-02-09_ · https://arxiv.org/abs/2602.08309v1  
-  <details><summary>Abstract</summary>
-
-  Audio-visual learning suffers from modality misalignment caused by off-screen sources and background clutter, and current methods usually amplify irrelevant regions or moments, leading to unstable training and degraded representation quality. To address this challenge, we proposed a novel Caption-aligned and Agreement-guided Enhancement framework (CAE-AV) for audio-visual learning, which used two complementary modules: Cross-modal Agreement-guided Spatio-Temporal Enrichment (CASTE) and Caption-Aligned Saliency-guided Enrichment (CASE) to relieve audio-visual misalignment. CASTE dynamically balances spatial and temporal relations by evaluating frame-level audio-visual agreement, ensuring that key information is captured from both preceding and subsequent frames under misalignment. CASE injects cross-modal semantic guidance into selected spatio-temporal positions, leveraging high-level semantic cues to further alleviate misalignment. In addition, we design lightweight objectives, caption-to-modality InfoNCE, visual-audio consistency, and entropy regularization to guide token selection and strengthen cross-modal semantic alignment. With frozen backbones, CAE-AV achieves state-of-the-art performance on AVE, AVVP, AVS, and AVQA benchmarks, and qualitative analyses further validate its robustness against audio-visual misalignment.
-
-  </details>
-
-
-
-- **Generating Adversarial Events: A Motion-Aware Point Cloud Framework**  
-  Hongwei Ren, Youxin Jiang, Qifei Gu, Xiangqian Wu  
-  _2026-02-09_ · https://arxiv.org/abs/2602.08230v1  
-  <details><summary>Abstract</summary>
-
-  Event cameras have been widely adopted in safety-critical domains such as autonomous driving, robotics, and human-computer interaction. A pressing challenge arises from the vulnerability of deep neural networks to adversarial examples, which poses a significant threat to the reliability of event-based systems. Nevertheless, research into adversarial attacks on events is scarce. This is primarily due to the non-differentiable nature of mainstream event representations, which hinders the extension of gradient-based attack methods. In this paper, we propose MA-ADV, a novel \textbf{M}otion-\textbf{A}ware \textbf{Adv}ersarial framework. To the best of our knowledge, this is the first work to generate adversarial events by leveraging point cloud representations. MA-ADV accounts for high-frequency noise in events and employs a diffusion-based approach to smooth perturbations, while fully leveraging the spatial and temporal relationships among events. Finally, MA-ADV identifies the minimal-cost perturbation through a combination of sample-wise Adam optimization, iterative refinement, and binary search. Extensive experimental results validate that MA-ADV ensures a 100\% attack success rate with minimal perturbation cost, and also demonstrate enhanced robustness against defenses, underscoring the critical security challenges facing future event-based perception systems.
-
-  </details>
-
-
-
-- **ForecastOcc: Vision-based Semantic Occupancy Forecasting**  
-  Riya Mohan, Juana Valeria Hurtado, Rohit Mohan, Abhinav Valada  
-  _2026-02-08_ · https://arxiv.org/abs/2602.08006v1  
-  <details><summary>Abstract</summary>
-
-  Autonomous driving requires forecasting both geometry and semantics over time to effectively reason about future environment states. Existing vision-based occupancy forecasting methods focus on motion-related categories such as static and dynamic objects, while semantic information remains largely absent. Recent semantic occupancy forecasting approaches address this gap but rely on past occupancy predictions obtained from separate networks. This makes current methods sensitive to error accumulation and prevents learning spatio-temporal features directly from images. In this work, we present ForecastOcc, the first framework for vision-based semantic occupancy forecasting that jointly predicts future occupancy states and semantic categories. Our framework yields semantic occupancy forecasts for multiple horizons directly from past camera images, without relying on externally estimated maps. We evaluate ForecastOcc in two complementary settings: multi-view forecasting on the Occ3D-nuScenes dataset and monocular forecasting on SemanticKITTI, where we establish the first benchmark for this task. We introduce the first baselines by adapting two 2D forecasting modules within our framework. Importantly, we propose a novel architecture that incorporates a temporal cross-attention forecasting module, a 2D-to-3D view transformer, a 3D encoder for occupancy prediction, and a semantic occupancy head for voxel-level forecasts across multiple horizons. Extensive experiments on both datasets show that ForecastOcc consistently outperforms baselines, yielding semantically rich, future-aware predictions that capture scene dynamics and semantics critical for autonomous driving.
-
-  </details>
-
-
-
-- **Integrating Specialized and Generic Agent Motion Prediction with Dynamic Occupancy Grid Maps**  
-  Rabbia Asghar, Lukas Rummelhard, Wenqian Liu, Anne Spalanzani, Christian Laugier  
-  _2026-02-08_ · https://arxiv.org/abs/2602.07938v1  
-  <details><summary>Abstract</summary>
-
-  Accurate prediction of driving scene is a challenging task due to uncertainty in sensor data, the complex behaviors of agents, and the possibility of multiple feasible futures. Existing prediction methods using occupancy grid maps primarily focus on agent-agnostic scene predictions, while agent-specific predictions provide specialized behavior insights with the help of semantic information. However, both paradigms face distinct limitations: agent-agnostic models struggle to capture the behavioral complexities of dynamic actors, whereas agent-specific approaches fail to generalize to poorly perceived or unrecognized agents; combining both enables robust and safer motion forecasting. To address this, we propose a unified framework by leveraging Dynamic Occupancy Grid Maps within a streamlined temporal decoding pipeline to simultaneously predict future occupancy state grids, vehicle grids, and scene flow grids. Relying on a lightweight spatiotemporal backbone, our approach is centered on a tailored, interdependent loss function that captures inter-grid dependencies and enables diverse future predictions. By using occupancy state information to enforce flow-guided transitions, the loss function acts as a regularizer that directs occupancy evolution while accounting for obstacles and occlusions. Consequently, the model not only predicts the specific behaviors of vehicle agents, but also identifies other dynamic entities and anticipates their evolution within the complex scene. Evaluations on real-world nuScenes and Woven Planet datasets demonstrate superior prediction performances for dynamic vehicles and generic dynamic scene elements compared to baseline methods.
 
   </details>
 
