@@ -1,11 +1,88 @@
 # 3D Reconstruction
 
-_Updated: 2026-02-12 07:16 UTC_
+_Updated: 2026-02-13 07:13 UTC_
 
-Total papers shown: **20**
+Total papers shown: **22**
 
 
 ---
+
+- **UPDA: Unsupervised Progressive Domain Adaptation for No-Reference Point Cloud Quality Assessment**  
+  Bingxu Xie, Fang Zhou, Jincan Wu, Yonghui Liu, Weiqing Li, Zhiyong Su  
+  _2026-02-12_ · https://arxiv.org/abs/2602.11969v1  
+  <details><summary>Abstract</summary>
+
+  While no-reference point cloud quality assessment (NR-PCQA) approaches have achieved significant progress over the past decade, their performance often degrades substantially when a distribution gap exists between the training (source domain) and testing (target domain) data. However, to date, limited attention has been paid to transferring NR-PCQA models across domains. To address this challenge, we propose the first unsupervised progressive domain adaptation (UPDA) framework for NR-PCQA, which introduces a two-stage coarse-to-fine alignment paradigm to address domain shifts. At the coarse-grained stage, a discrepancy-aware coarse-grained alignment method is designed to capture relative quality relationships between cross-domain samples through a novel quality-discrepancy-aware hybrid loss, circumventing the challenges of direct absolute feature alignment. At the fine-grained stage, a perception fusion fine-grained alignment approach with symmetric feature fusion is developed to identify domain-invariant features, while a conditional discriminator selectively enhances the transfer of quality-relevant features. Extensive experiments demonstrate that the proposed UPDA effectively enhances the performance of NR-PCQA methods in cross-domain scenarios, validating its practical applicability. The code is available at https://github.com/yokeno1/UPDA-main.
+
+  </details>
+
+
+
+- **RI-Mamba: Rotation-Invariant Mamba for Robust Text-to-Shape Retrieval**  
+  Khanh Nguyen, Dasith de Silva Edirimuni, Ghulam Mubashar Hassan, Ajmal Mian  
+  _2026-02-12_ · https://arxiv.org/abs/2602.11673v1  
+  <details><summary>Abstract</summary>
+
+  3D assets have rapidly expanded in quantity and diversity due to the growing popularity of virtual reality and gaming. As a result, text-to-shape retrieval has become essential in facilitating intuitive search within large repositories. However, existing methods require canonical poses and support few object categories, limiting their real-world applicability where objects can belong to diverse classes and appear in random orientations. To address this challenge, we propose RI-Mamba, the first rotation-invariant state-space model for point clouds. RI-Mamba defines global and local reference frames to disentangle pose from geometry and uses Hilbert sorting to construct token sequences with meaningful geometric structure while maintaining rotation invariance. We further introduce a novel strategy to compute orientational embeddings and reintegrate them via feature-wise linear modulation, effectively recovering spatial context and enhancing model expressiveness. Our strategy is inherently compatible with state-space models and operates in linear time. To scale up retrieval, we adopt cross-modal contrastive learning with automated triplet generation, allowing training on diverse datasets without manual annotation. Extensive experiments demonstrate RI-Mamba's superior representational capacity and robustness, achieving state-of-the-art performance on the OmniObject3D benchmark across more than 200 object categories under arbitrary orientations. Our code will be made available at https://github.com/ndkhanh360/RI-Mamba.git.
+
+  </details>
+
+
+
+- **Electrostatics-Inspired Surface Reconstruction (EISR): Recovering 3D Shapes as a Superposition of Poisson's PDE Solutions**  
+  Diego Patiño, Knut Peterson, Kostas Daniilidis, David K. Han  
+  _2026-02-12_ · https://arxiv.org/abs/2602.11642v1  
+  <details><summary>Abstract</summary>
+
+  Implicit shape representation, such as SDFs, is a popular approach to recover the surface of a 3D shape as the level sets of a scalar field. Several methods approximate SDFs using machine learning strategies that exploit the knowledge that SDFs are solutions of the Eikonal partial differential equation (PDEs). In this work, we present a novel approach to surface reconstruction by encoding it as a solution to a proxy PDE, namely Poisson's equation. Then, we explore the connection between Poisson's equation and physics, e.g., the electrostatic potential due to a positive charge density. We employ Green's functions to obtain a closed-form parametric expression for the PDE's solution, and leverage the linearity of our proxy PDE to find the target shape's implicit field as a superposition of solutions. Our method shows improved results in approximating high-frequency details, even with a small number of shape priors.
+
+  </details>
+
+
+
+- **HyperDet: 3D Object Detection with Hyper 4D Radar Point Clouds**  
+  Yichun Xiao, Runwei Guan, Fangqiang Ding  
+  _2026-02-12_ · https://arxiv.org/abs/2602.11554v1  
+  <details><summary>Abstract</summary>
+
+  4D mmWave radar provides weather-robust, velocity-aware measurements and is more cost-effective than LiDAR. However, radar-only 3D detection still trails LiDAR-based systems because radar point clouds are sparse, irregular, and often corrupted by multipath noise, yielding weak and unstable geometry. We present HyperDet, a detector-agnostic radar-only 3D detection framework that constructs a task-aware hyper 4D radar point cloud for standard LiDAR-oriented detectors. HyperDet aggregates returns from multiple surround-view 4D radars over consecutive frames to improve coverage and density, then applies geometry-aware cross-sensor consensus validation with a lightweight self-consistency check outside overlap regions to suppress inconsistent returns. It further integrates a foreground-focused diffusion module with training-time mixed radar-LiDAR supervision to densify object structures while lifting radar attributes (e.g., Doppler, RCS); the model is distilled into a consistency model for single-step inference. On MAN TruckScenes, HyperDet consistently improves over raw radar inputs with VoxelNeXt and CenterPoint, partially narrowing the radar-LiDAR gap. These results show that input-level refinement enables radar to better leverage LiDAR-oriented detectors without architectural modifications.
+
+  </details>
+
+
+
+- **Ctrl&Shift: High-Quality Geometry-Aware Object Manipulation in Visual Generation**  
+  Penghui Ruan, Bojia Zi, Xianbiao Qi, Youze Huang, Rong Xiao, Pichao Wang, Jiannong Cao, Yuhui Shi  
+  _2026-02-11_ · https://arxiv.org/abs/2602.11440v1  
+  <details><summary>Abstract</summary>
+
+  Object-level manipulation, relocating or reorienting objects in images or videos while preserving scene realism, is central to film post-production, AR, and creative editing. Yet existing methods struggle to jointly achieve three core goals: background preservation, geometric consistency under viewpoint shifts, and user-controllable transformations. Geometry-based approaches offer precise control but require explicit 3D reconstruction and generalize poorly; diffusion-based methods generalize better but lack fine-grained geometric control. We present Ctrl&Shift, an end-to-end diffusion framework to achieve geometry-consistent object manipulation without explicit 3D representations. Our key insight is to decompose manipulation into two stages, object removal and reference-guided inpainting under explicit camera pose control, and encode both within a unified diffusion process. To enable precise, disentangled control, we design a multi-task, multi-stage training strategy that separates background, identity, and pose signals across tasks. To improve generalization, we introduce a scalable real-world dataset construction pipeline that generates paired image and video samples with estimated relative camera poses. Extensive experiments demonstrate that Ctrl&Shift achieves state-of-the-art results in fidelity, viewpoint consistency, and controllability. To our knowledge, this is the first framework to unify fine-grained geometric control and real-world generalization for object manipulation, without relying on any explicit 3D modeling.
+
+  </details>
+
+
+
+- **Filmsticking++: Rapid Film Sticking for Explicit Surface Reconstruction**  
+  Pengfei Wang, Jian Liu, Qiujie Dong, Shiqing Xin, Yuanfeng Zhou, Changhe Tu, Caiming Zhang, Wenping Wang  
+  _2026-02-11_ · https://arxiv.org/abs/2602.11433v1  
+  <details><summary>Abstract</summary>
+
+  Explicit surface reconstruction aims to generate a surface mesh that exactly interpolates a given point cloud. This requirement is crucial when the point cloud must lie non-negotiably on the final surface to preserve sharp features and fine geometric details. However, the task becomes substantially challenging with low-quality point clouds, due to inherent reconstruction ambiguities compounded by combinatorial complexity. A previous method using filmsticking technique by iteratively compute restricted Voronoi diagram to address these issues, ensures to produce a watertight manifold, setting a new benchmark as the state-of-the-art (SOTA) technique. Unfortunately, RVD-based filmsticking is inability to interpolate all points in the case of deep internal cavities, resulting in very likely is the generation of faulty topology. The cause of this issue is that RVD-based filmsticking has inherent limitations due to Euclidean distance metrics. In this paper, we extend the filmsticking technique, named Filmsticking++. Filmsticking++ reconstructing an explicit surface from points without normals. On one hand, Filmsticking++ break through the inherent limitations of Euclidean distance by employing a weighted-distance-based Restricted Power Diagram, which guarantees that all points are interpolated. On the other hand, we observe that as the guiding surface increasingly approximates the target shape, the external medial axis is gradually expelled outside the guiding surface. Building on this observation, we propose placing virtual sites inside the guiding surface to accelerate the expulsion of the external medial axis from its interior. To summarize, contrary to the SOTA method, Filmsticking++ demonstrates multiple benefits, including decreases computational cost, improved robustness and scalability.
+
+  </details>
+
+
+
+- **MDE-VIO: Enhancing Visual-Inertial Odometry Using Learned Depth Priors**  
+  Arda Alniak, Sinan Kalkan, Mustafa Mert Ankarali, Afsar Saranli, Abdullah Aydin Alatan  
+  _2026-02-11_ · https://arxiv.org/abs/2602.11323v1  
+  <details><summary>Abstract</summary>
+
+  Traditional monocular Visual-Inertial Odometry (VIO) systems struggle in low-texture environments where sparse visual features are insufficient for accurate pose estimation. To address this, dense Monocular Depth Estimation (MDE) has been widely explored as a complementary information source. While recent Vision Transformer (ViT) based complex foundational models offer dense, geometrically consistent depth, their computational demands typically preclude them from real-time edge deployment. Our work bridges this gap by integrating learned depth priors directly into the VINS-Mono optimization backend. We propose a novel framework that enforces affine-invariant depth consistency and pairwise ordinal constraints, explicitly filtering unstable artifacts via variance-based gating. This approach strictly adheres to the computational limits of edge devices while robustly recovering metric scale. Extensive experiments on the TartanGround and M3ED datasets demonstrate that our method prevents divergence in challenging scenarios and delivers significant accuracy gains, reducing Absolute Trajectory Error (ATE) by up to 28.3%. Code will be made available.
+
+  </details>
+
+
 
 - **From Circuits to Dynamics: Understanding and Stabilizing Failure in 3D Diffusion Transformers**  
   Maximilian Plattner, Fabian Paischer, Johannes Brandstetter, Arturs Berzins  
@@ -24,6 +101,17 @@ Total papers shown: **20**
   <details><summary>Abstract</summary>
 
   We propose PuriLight, a lightweight and efficient framework for self-supervised monocular depth estimation, to address the dual challenges of computational efficiency and detail preservation. While recent advances in self-supervised depth estimation have reduced reliance on ground truth supervision, existing approaches remain constrained by either bulky architectures compromising practicality or lightweight models sacrificing structural precision. These dual limitations underscore the critical need to develop lightweight yet structurally precise architectures. Our framework addresses these limitations through a three-stage architecture incorporating three novel modules: the Shuffle-Dilation Convolution (SDC) module for local feature extraction, the Rotation-Adaptive Kernel Attention (RAKA) module for hierarchical feature enhancement, and the Deep Frequency Signal Purification (DFSP) module for global feature purification. Through effective collaboration, these modules enable PuriLight to achieve both lightweight and accurate feature extraction and processing. Extensive experiments demonstrate that PuriLight achieves state-of-the-art performance with minimal training parameters while maintaining exceptional computational efficiency. Codes will be available at https://github.com/ishrouder/PuriLight.
+
+  </details>
+
+
+
+- **ReTracing: An Archaeological Approach Through Body, Machine, and Generative Systems**  
+  Yitong Wang, Yue Yao  
+  _2026-02-11_ · https://arxiv.org/abs/2602.11242v1  
+  <details><summary>Abstract</summary>
+
+  We present ReTracing, a multi-agent embodied performance art that adopts an archaeological approach to examine how artificial intelligence shapes, constrains, and produces bodily movement. Drawing from science-fiction novels, the project extracts sentences that describe human-machine interaction. We use large language models (LLMs) to generate paired prompts "what to do" and "what not to do" for each excerpt. A diffusion-based text-to-video model transforms these prompts into choreographic guides for a human performer and motor commands for a quadruped robot. Both agents enact the actions on a mirrored floor, captured by multi-camera motion tracking and reconstructed into 3D point clouds and motion trails, forming a digital archive of motion traces. Through this process, ReTracing serves as a novel approach to reveal how generative systems encode socio-cultural biases through choreographed movements. Through an immersive interplay of AI, human, and robot, ReTracing confronts a critical question of our time: What does it mean to be human among AIs that also move, think, and leave traces behind?
 
   </details>
 
@@ -156,72 +244,6 @@ Total papers shown: **20**
   <details><summary>Abstract</summary>
 
   Monocular Metric Depth Estimation (MMDE) is essential for physically intelligent systems, yet accurate depth estimation for underrepresented classes in complex scenes remains a persistent challenge. To address this, we propose RAD, a retrieval-augmented framework that approximates the benefits of multi-view stereo by utilizing retrieved neighbors as structural geometric proxies. Our method first employs an uncertainty-aware retrieval mechanism to identify low-confidence regions in the input and retrieve RGB-D context samples containing semantically similar content. We then process both the input and retrieved context via a dual-stream network and fuse them using a matched cross-attention module, which transfers geometric information only at reliable point correspondences. Evaluations on NYU Depth v2, KITTI, and Cityscapes demonstrate that RAD significantly outperforms state-of-the-art baselines on underrepresented classes, reducing relative absolute error by 29.2% on NYU Depth v2, 13.3% on KITTI, and 7.2% on Cityscapes, while maintaining competitive performance on standard in-domain benchmarks.
-
-  </details>
-
-
-
-- **Bridging the Modality Gap in Roadside LiDAR: A Training-Free Vision-Language Model Framework for Vehicle Classification**  
-  Yiqiao Li, Bo Shang, Jie Wei  
-  _2026-02-10_ · https://arxiv.org/abs/2602.09425v1  
-  <details><summary>Abstract</summary>
-
-  Fine-grained truck classification is critical for intelligent transportation systems (ITS), yet current LiDAR-based methods face scalability challenges due to their reliance on supervised deep learning and labor-intensive manual annotation. Vision-Language Models (VLMs) offer promising few-shot generalization, but their application to roadside LiDAR is limited by a modality gap between sparse 3D point clouds and dense 2D imagery. We propose a framework that bridges this gap by adapting off-the-shelf VLMs for fine-grained truck classification without parameter fine-tuning. Our new depth-aware image generation pipeline applies noise removal, spatial and temporal registration, orientation rectification, morphological operations, and anisotropic smoothing to transform sparse, occluded LiDAR scans into depth-encoded 2D visual proxies. Validated on a real-world dataset of 20 vehicle classes, our approach achieves competitive classification accuracy with as few as 16-30 examples per class, offering a scalable alternative to data-intensive supervised baselines. We further observe a "Semantic Anchor" effect: text-based guidance regularizes performance in ultra-low-shot regimes $k < 4$, but degrades accuracy in more-shot settings due to semantic mismatch. Furthermore, we demonstrate the efficacy of this framework as a Cold Start strategy, using VLM-generated labels to bootstrap lightweight supervised models. Notably, the few-shot VLM-based model achieves over correct classification rate of 75 percent for specific drayage categories (20ft, 40ft, and 53ft containers) entirely without the costly training or fine-tuning, significantly reducing the intensive demands of initial manual labeling, thus achieving a method of practical use in ITS applications.
-
-  </details>
-
-
-
-- **Single-Slice-to-3D Reconstruction in Medical Imaging and Natural Objects: A Comparative Benchmark with SAM 3D**  
-  Yan Luo, Advaith Ravishankar, Serena Liu, Yutong Yang, Mengyu Wang  
-  _2026-02-10_ · https://arxiv.org/abs/2602.09407v1  
-  <details><summary>Abstract</summary>
-
-  A 3D understanding of anatomy is central to diagnosis and treatment planning, yet volumetric imaging remains costly with long wait times. Image-to-3D foundations models can solve this issue by reconstructing 3D data from 2D modalites. Current foundation models are trained on natural image distributions to reconstruct naturalistic objects from a single image by leveraging geometric priors across pixels. However, it is unclear whether these learned geometric priors transfer to medical data. In this study, we present a controlled zero-shot benchmark of single slice medical image-to-3D reconstruction across five state-of-the-art image-to-3D models: SAM3D, Hunyuan3D-2.1, Direct3D, Hi3DGen, and TripoSG. These are evaluated across six medical datasets spanning anatomical and pathological structures and two natrual datasets, using voxel based metrics and point cloud distance metrics. Across medical datasets, voxel based overlap remains moderate for all models, consistent with a depth reconstruction failure mode when inferring volume from a single slice. In contrast, global distance metrics show more separation between methods: SAM3D achieves the strongest overall topological similarity to ground truth medical 3D data, while alternative models are more prone to over-simplication of reconstruction. Our results quantify the limits of single-slice medical reconstruction and highlight depth ambiguity caused by the planar nature of 2D medical data, motivating multi-view image-to-3D reconstruction to enable reliable medical 3D inference.
-
-  </details>
-
-
-
-- **Analysis of Converged 3D Gaussian Splatting Solutions: Density Effects and Prediction Limit**  
-  Zhendong Wang, Cihan Ruan, Jingchuan Xiao, Chuqing Shi, Wei Jiang, Wei Wang, Wenjie Liu, Nam Ling  
-  _2026-02-09_ · https://arxiv.org/abs/2602.08909v1  
-  <details><summary>Abstract</summary>
-
-  We investigate what structure emerges in 3D Gaussian Splatting (3DGS) solutions from standard multi-view optimization. We term these Rendering-Optimal References (RORs) and analyze their statistical properties, revealing stable patterns: mixture-structured scales and bimodal radiance across diverse scenes. To understand what determines these parameters, we apply learnability probes by training predictors to reconstruct RORs from point clouds without rendering supervision. Our analysis uncovers fundamental density-stratification. Dense regions exhibit geometry-correlated parameters amenable to render-free prediction, while sparse regions show systematic failure across architectures. We formalize this through variance decomposition, demonstrating that visibility heterogeneity creates covariance-dominated coupling between geometric and appearance parameters in sparse regions. This reveals the dual character of RORs: geometric primitives where point clouds suffice, and view synthesis primitives where multi-view constraints are essential. We provide density-aware strategies that improve training robustness and discuss architectural implications for systems that adaptively balance feed-forward prediction and rendering-based refinement.
-
-  </details>
-
-
-
-- **Overview and Comparison of AVS Point Cloud Compression Standard**  
-  Wei Gao, Wenxu Gao, Xingming Mu, Changhao Peng, Ge Li  
-  _2026-02-09_ · https://arxiv.org/abs/2602.08613v1  
-  <details><summary>Abstract</summary>
-
-  Point cloud is a prevalent 3D data representation format with significant application values in immersive media, autonomous driving, digital heritage protection, etc. However, the large data size of point clouds poses challenges to transmission and storage, which influences the wide deployments. Therefore, point cloud compression plays a crucial role in practical applications for both human and machine perception optimization. To this end, the Moving Picture Experts Group (MPEG) has established two standards for point cloud compression, including Geometry-based Point Cloud Compression (G-PCC) and Video-based Point Cloud Compression (V-PCC). In the meantime, the Audio Video coding Standard (AVS) Workgroup of China also have launched and completed the development for its first generation point cloud compression standard, namely AVS PCC. This new standardization effort has adopted many new coding tools and techniques, which are different from the other counterpart standards. This paper reviews the AVS PCC standard from two perspectives, i.e., the related technologies and performance comparisons.
-
-  </details>
-
-
-
-- **TIBR4D: Tracing-Guided Iterative Boundary Refinement for Efficient 4D Gaussian Segmentation**  
-  He Wu, Xia Yan, Yanghui Xu, Liegang Xia, Jiazhou Chen  
-  _2026-02-09_ · https://arxiv.org/abs/2602.08540v1  
-  <details><summary>Abstract</summary>
-
-  Object-level segmentation in dynamic 4D Gaussian scenes remains challenging due to complex motion, occlusions, and ambiguous boundaries. In this paper, we present an efficient learning-free 4D Gaussian segmentation framework that lifts video segmentation masks to 4D spaces, whose core is a two-stage iterative boundary refinement, TIBR4D. The first stage is an Iterative Gaussian Instance Tracing (IGIT) at the temporal segment level. It progressively refines Gaussian-to-instance probabilities through iterative tracing, and extracts corresponding Gaussian point clouds that better handle occlusions and preserve completeness of object structures compared to existing one-shot threshold-based methods. The second stage is a frame-wise Gaussian Rendering Range Control (RCC) via suppressing highly uncertain Gaussians near object boundaries while retaining their core contributions for more accurate boundaries. Furthermore, a temporal segmentation merging strategy is proposed for IGIT to balance identity consistency and dynamic awareness. Longer segments enforce stronger multi-frame constraints for stable identities, while shorter segments allow identity changes to be captured promptly. Experiments on HyperNeRF and Neu3D demonstrate that our method produces accurate object Gaussian point clouds with clearer boundaries and higher efficiency compared to SOTA methods.
-
-  </details>
-
-
-
-- **RealSynCol: a high-fidelity synthetic colon dataset for 3D reconstruction applications**  
-  Chiara Lena, Davide Milesi, Alessandro Casella, Luca Carlini, Joseph C. Norton, James Martin, Bruno Scaglioni, Keith L. Obstein, Roberto De Sire, Marco Spadaccini, et al.  
-  _2026-02-09_ · https://arxiv.org/abs/2602.08397v1  
-  <details><summary>Abstract</summary>
-
-  Deep learning has the potential to improve colonoscopy by enabling 3D reconstruction of the colon, providing a comprehensive view of mucosal surfaces and lesions, and facilitating the identification of unexplored areas. However, the development of robust methods is limited by the scarcity of large-scale ground truth data. We propose RealSynCol, a highly realistic synthetic dataset designed to replicate the endoscopic environment. Colon geometries extracted from 10 CT scans were imported into a virtual environment that closely mimics intraoperative conditions and rendered with realistic vascular textures. The resulting dataset comprises 28\,130 frames, paired with ground truth depth maps, optical flow, 3D meshes, and camera trajectories. A benchmark study was conducted to evaluate the available synthetic colon datasets for the tasks of depth and pose estimation. Results demonstrate that the high realism and variability of RealSynCol significantly enhance generalization performance on clinical images, proving it to be a powerful tool for developing deep learning algorithms to support endoscopic diagnosis.
 
   </details>
 
