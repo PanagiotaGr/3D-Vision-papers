@@ -1,8 +1,8 @@
 # SLAM & Localization
 
-_Updated: 2026-02-14 07:02 UTC_
+_Updated: 2026-02-15 07:05 UTC_
 
-Total papers shown: **6**
+Total papers shown: **3**
 
 
 ---
@@ -35,39 +35,6 @@ Total papers shown: **6**
   <details><summary>Abstract</summary>
 
   We propose GSO-SLAM, a real-time monocular dense SLAM system that leverages Gaussian scene representation. Unlike existing methods that couple tracking and mapping with a unified scene, incurring computational costs, or loosely integrate them with well-structured tracking frameworks, introducing redundancies, our method bidirectionally couples Visual Odometry (VO) and Gaussian Splatting (GS). Specifically, our approach formulates joint optimization within an Expectation-Maximization (EM) framework, enabling the simultaneous refinement of VO-derived semi-dense depth estimates and the GS representation without additional computational overhead. Moreover, we present Gaussian Splat Initialization, which utilizes image information, keyframe poses, and pixel associations from VO to produce close approximations to the final Gaussian scene, thereby eliminating the need for heuristic methods. Through extensive experiments, we validate the effectiveness of our method, showing that it not only operates in real time but also achieves state-of-the-art geometric/photometric fidelity of the reconstructed scene and tracking accuracy.
-
-  </details>
-
-
-
-- **Ctrl&Shift: High-Quality Geometry-Aware Object Manipulation in Visual Generation**  
-  Penghui Ruan, Bojia Zi, Xianbiao Qi, Youze Huang, Rong Xiao, Pichao Wang, Jiannong Cao, Yuhui Shi  
-  _2026-02-11_ · https://arxiv.org/abs/2602.11440v1  
-  <details><summary>Abstract</summary>
-
-  Object-level manipulation, relocating or reorienting objects in images or videos while preserving scene realism, is central to film post-production, AR, and creative editing. Yet existing methods struggle to jointly achieve three core goals: background preservation, geometric consistency under viewpoint shifts, and user-controllable transformations. Geometry-based approaches offer precise control but require explicit 3D reconstruction and generalize poorly; diffusion-based methods generalize better but lack fine-grained geometric control. We present Ctrl&Shift, an end-to-end diffusion framework to achieve geometry-consistent object manipulation without explicit 3D representations. Our key insight is to decompose manipulation into two stages, object removal and reference-guided inpainting under explicit camera pose control, and encode both within a unified diffusion process. To enable precise, disentangled control, we design a multi-task, multi-stage training strategy that separates background, identity, and pose signals across tasks. To improve generalization, we introduce a scalable real-world dataset construction pipeline that generates paired image and video samples with estimated relative camera poses. Extensive experiments demonstrate that Ctrl&Shift achieves state-of-the-art results in fidelity, viewpoint consistency, and controllability. To our knowledge, this is the first framework to unify fine-grained geometric control and real-world generalization for object manipulation, without relying on any explicit 3D modeling.
-
-  </details>
-
-
-
-- **Advancing Digital Twin Generation Through a Novel Simulation Framework and Quantitative Benchmarking**  
-  Jacob Rubinstein, Avi Donaty, Don Engel  
-  _2026-02-11_ · https://arxiv.org/abs/2602.11314v1  
-  <details><summary>Abstract</summary>
-
-  The generation of 3D models from real-world objects has often been accomplished through photogrammetry, i.e., by taking 2D photos from a variety of perspectives and then triangulating matched point-based features to create a textured mesh. Many design choices exist within this framework for the generation of digital twins, and differences between such approaches are largely judged qualitatively. Here, we present and test a novel pipeline for generating synthetic images from high-quality 3D models and programmatically generated camera poses. This enables a wide variety of repeatable, quantifiable experiments which can compare ground-truth knowledge of virtual camera parameters and of virtual objects against the reconstructed estimations of those perspectives and subjects.
-
-  </details>
-
-
-
-- **Pitch Angle Control of a Magnetically Actuated Capsule Robot with Nonlinear FEA-based MPC and EKF Multisensory Fusion**  
-  Chongxun Wang, Zikang Shen, Apoorav Rathore, Akanimoh Udombeh, Harrison Teng, Fangzhou Xia  
-  _2026-02-11_ · https://arxiv.org/abs/2602.10610v1  
-  <details><summary>Abstract</summary>
-
-  Magnetically actuated capsule robots promise minimally invasive diagnosis and therapy in the gastrointestinal (GI) tract, but existing systems largely neglect control of capsule pitch, a degree of freedom critical for contact-rich interaction with inclined gastric walls. This paper presents a nonlinear, model-based framework for magnetic pitch control of an ingestible capsule robot actuated by a four-coil electromagnetic array. Angle-dependent magnetic forces and torques acting on embedded permanent magnets are characterized using three-dimensional finite-element simulations and embedded as lookup tables in a control-oriented rigid-body pitching model with rolling contact and actuator dynamics. A constrained model predictive controller (MPC) is designed to regulate pitch while respecting hardware-imposed current and slew-rate limits. Experiments on a compliant stomach-inspired surface demonstrate robust pitch reorientation from both horizontal and upright configurations, achieving about three to five times faster settling and reduced oscillatory motion than on-off control. Furthermore, an extended Kalman filter (EKF) fusing inertial sensing with intermittent visual measurements enables stable closed-loop control when the camera update rate is reduced from 30 Hz to 1 Hz, emulating clinically realistic imaging constraints. These results establish finite-element-informed MPC with sensor fusion as a scalable strategy for pitch regulation, controlled docking, and future multi-degree-of-freedom capsule locomotion.
 
   </details>
 
