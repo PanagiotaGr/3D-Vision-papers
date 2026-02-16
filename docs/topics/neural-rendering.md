@@ -1,18 +1,18 @@
 # Neural Rendering & View Synthesis
 
-_Updated: 2026-02-15 07:05 UTC_
+_Updated: 2026-02-16 07:19 UTC_
 
 Total papers shown: **1**
 
 
 ---
 
-- **Projected Representation Conditioning for High-fidelity Novel View Synthesis**  
-  Min-Seop Kwak, Minkyung Kwon, Jinhyeok Choi, Jiho Park, Seungryong Kim  
-  _2026-02-12_ · https://arxiv.org/abs/2602.12003v1  
+- **Real-time Rendering with a Neural Irradiance Volume**  
+  Arno Coomans, Giacomo Nazzaro, Edoardo A. Dominici, Christian Döring, Floor Verhoeven, Konstantinos Vardis, Markus Steinberger  
+  _2026-02-13_ · https://arxiv.org/abs/2602.12949v1  
   <details><summary>Abstract</summary>
 
-  We propose a novel framework for diffusion-based novel view synthesis in which we leverage external representations as conditions, harnessing their geometric and semantic correspondence properties for enhanced geometric consistency in generated novel viewpoints. First, we provide a detailed analysis exploring the correspondence capabilities emergent in the spatial attention of external visual representations. Building from these insights, we propose a representation-guided novel view synthesis through dedicated representation projection modules that inject external representations into the diffusion process, a methodology named ReNoV, short for representation-guided novel view synthesis. Our experiments show that this design yields marked improvements in both reconstruction fidelity and inpainting quality, outperforming prior diffusion-based novel-view methods on standard benchmarks and enabling robust synthesis from sparse, unposed image collections.
+  Rendering diffuse global illumination in real-time is often approximated by pre-computing and storing irradiance in a 3D grid of probes. As long as most of the scene remains static, probes approximate irradiance for all surfaces immersed in the irradiance volume, including novel dynamic objects. This approach, however, suffers from aliasing artifacts and high memory consumption. We propose Neural Irradiance Volume (NIV), a neural-based technique that allows accurate real-time rendering of diffuse global illumination via a compact pre-computed model, overcoming the limitations of traditional probe-based methods, such as the expensive memory footprint, aliasing artifacts, and scene-specific heuristics. The key insight is that neural compression creates an adaptive and amortized representation of irradiance, circumventing the cubic scaling of grid-based methods. Our superior memory-scaling improves quality by at least 10x at the same memory budget, and enables a straightforward representation of higher-dimensional irradiance fields, allowing rendering of time-varying or dynamic effects without requiring additional computation at runtime. Unlike other neural rendering techniques, our method works within strict real-time constraints, providing fast inference (around 1 ms per frame on consumer GPUs at full HD resolution), reduced memory usage (1-5 MB for medium-sized scenes), and only requires a G-buffer as input, without expensive ray tracing or denoising.
 
   </details>
 
