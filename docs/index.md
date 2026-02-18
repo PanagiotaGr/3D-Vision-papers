@@ -2,7 +2,7 @@
 
 Daily arXiv digest covering NeRF, Gaussian Splatting, SLAM, 3D Reconstruction & Neural Rendering
 
-_Updated: 2026-02-17 07:13 UTC_
+_Updated: 2026-02-18 07:15 UTC_
 
 
 ## Topics
@@ -11,11 +11,11 @@ _Updated: 2026-02-17 07:13 UTC_
 
 - [Gaussian Splatting & 3DGS](topics/gaussian-splatting.md) — **6** papers (last 3 days)
 
-- [SLAM & Localization](topics/slam.md) — **6** papers (last 3 days)
+- [SLAM & Localization](topics/slam.md) — **5** papers (last 3 days)
 
 - [3D Reconstruction](topics/3d-reconstruction.md) — **12** papers (last 3 days)
 
-- [Neural Rendering & View Synthesis](topics/neural-rendering.md) — **3** papers (last 3 days)
+- [Neural Rendering & View Synthesis](topics/neural-rendering.md) — **5** papers (last 3 days)
 
 - [Dynamic Scenes & 4D Reconstruction](topics/dynamic-scenes.md) — **3** papers (last 3 days)
 

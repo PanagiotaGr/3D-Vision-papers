@@ -1,11 +1,44 @@
 # 3D Reconstruction
 
-_Updated: 2026-02-17 07:13 UTC_
+_Updated: 2026-02-18 07:15 UTC_
 
 Total papers shown: **12**
 
 
 ---
+
+- **NeRFscopy: Neural Radiance Fields for in-vivo Time-Varying Tissues from Endoscopy**  
+  Laura Salort-Benejam, Antonio Agudo  
+  _2026-02-17_ · https://arxiv.org/abs/2602.15775v1  
+  <details><summary>Abstract</summary>
+
+  Endoscopy is essential in medical imaging, used for diagnosis, prognosis and treatment. Developing a robust dynamic 3D reconstruction pipeline for endoscopic videos could enhance visualization, improve diagnostic accuracy, aid in treatment planning, and guide surgery procedures. However, challenges arise due to the deformable nature of the tissues, the use of monocular cameras, illumination changes, occlusions and unknown camera trajectories. Inspired by neural rendering, we introduce NeRFscopy, a self-supervised pipeline for novel view synthesis and 3D reconstruction of deformable endoscopic tissues from a monocular video. NeRFscopy includes a deformable model with a canonical radiance field and a time-dependent deformation field parameterized by SE(3) transformations. In addition, the color images are efficiently exploited by introducing sophisticated terms to learn a 3D implicit model without assuming any template or pre-trained model, solely from data. NeRFscopy achieves accurate results in terms of novel view synthesis, outperforming competing methods across various challenging endoscopy scenes.
+
+  </details>
+
+
+
+- **An Industrial Dataset for Scene Acquisitions and Functional Schematics Alignment**  
+  Flavien Armangeon, Thibaud Ehret, Enric Meinhardt-Llopis, Rafael Grompone von Gioi, Guillaume Thibault, Marc Petit, Gabriele Facciolo  
+  _2026-02-17_ · https://arxiv.org/abs/2602.15584v1  
+  <details><summary>Abstract</summary>
+
+  Aligning functional schematics with 2D and 3D scene acquisitions is crucial for building digital twins, especially for old industrial facilities that lack native digital models. Current manual alignment using images and LiDAR data does not scale due to tediousness and complexity of industrial sites. Inconsistencies between schematics and reality, and the scarcity of public industrial datasets, make the problem both challenging and underexplored. This paper introduces IRIS-v2, a comprehensive dataset to support further research. It includes images, point clouds, 2D annotated boxes and segmentation masks, a CAD model, 3D pipe routing information, and the P&ID (Piping and Instrumentation Diagram). The alignment is experimented on a practical case study, aiming at reducing the time required for this task by combining segmentation and graph matching.
+
+  </details>
+
+
+
+- **Time-Archival Camera Virtualization for Sports and Visual Performances**  
+  Yunxiao Zhang, William Stone, Suryansh Kumar  
+  _2026-02-16_ · https://arxiv.org/abs/2602.15181v1  
+  <details><summary>Abstract</summary>
+
+  Camera virtualization -- an emerging solution to novel view synthesis -- holds transformative potential for visual entertainment, live performances, and sports broadcasting by enabling the generation of photorealistic images from novel viewpoints using images from a limited set of calibrated multiple static physical cameras. Despite recent advances, achieving spatially and temporally coherent and photorealistic rendering of dynamic scenes with efficient time-archival capabilities, particularly in fast-paced sports and stage performances, remains challenging for existing approaches. Recent methods based on 3D Gaussian Splatting (3DGS) for dynamic scenes could offer real-time view-synthesis results. Yet, they are hindered by their dependence on accurate 3D point clouds from the structure-from-motion method and their inability to handle large, non-rigid, rapid motions of different subjects (e.g., flips, jumps, articulations, sudden player-to-player transitions). Moreover, independent motions of multiple subjects can break the Gaussian-tracking assumptions commonly used in 4DGS, ST-GS, and other dynamic splatting variants. This paper advocates reconsidering a neural volume rendering formulation for camera virtualization and efficient time-archival capabilities, making it useful for sports broadcasting and related applications. By modeling a dynamic scene as rigid transformations across multiple synchronized camera views at a given time, our method performs neural representation learning, providing enhanced visual rendering quality at test time. A key contribution of our approach is its support for time-archival, i.e., users can revisit any past temporal instance of a dynamic scene and can perform novel view synthesis, enabling retrospective rendering for replay, analysis, and archival of live events, a functionality absent in existing neural rendering approaches and novel view synthesis...
+
+  </details>
+
+
 
 - **AnchorWeave: World-Consistent Video Generation with Retrieved Local Spatial Memories**  
   Zun Wang, Han Lin, Jaehong Yoon, Jaemin Cho, Yue Zhang, Mohit Bansal  
@@ -101,39 +134,6 @@ Total papers shown: **12**
   <details><summary>Abstract</summary>
 
   Single-image 3D reconstruction with large reconstruction models (LRMs) has advanced rapidly, yet reconstructions often exhibit geometric inconsistencies and misaligned details that limit fidelity. We introduce GeoFusionLRM, a geometry-aware self-correction framework that leverages the model's own normal and depth predictions to refine structural accuracy. Unlike prior approaches that rely solely on features extracted from the input image, GeoFusionLRM feeds back geometric cues through a dedicated transformer and fusion module, enabling the model to correct errors and enforce consistency with the conditioning image. This design improves the alignment between the reconstructed mesh and the input views without additional supervision or external signals. Extensive experiments demonstrate that GeoFusionLRM achieves sharper geometry, more consistent normals, and higher fidelity than state-of-the-art LRM baselines.
-
-  </details>
-
-
-
-- **High-fidelity 3D reconstruction for planetary exploration**  
-  Alfonso Martínez-Petersen, Levin Gerdes, David Rodríguez-Martínez, C. J. Pérez-del-Pulgar  
-  _2026-02-14_ · https://arxiv.org/abs/2602.13909v1  
-  <details><summary>Abstract</summary>
-
-  Planetary exploration increasingly relies on autonomous robotic systems capable of perceiving, interpreting, and reconstructing their surroundings in the absence of global positioning or real-time communication with Earth. Rovers operating on planetary surfaces must navigate under sever environmental constraints, limited visual redundancy, and communication delays, making onboard spatial awareness and visual localization key components for mission success. Traditional techniques based on Structure-from-Motion (SfM) and Simultaneous Localization and Mapping (SLAM) provide geometric consistency but struggle to capture radiometric detail or to scale efficiently in unstructured, low-texture terrains typical of extraterrestrial environments. This work explores the integration of radiance field-based methods - specifically Neural Radiance Fields (NeRF) and Gaussian Splatting - into a unified, automated environment reconstruction pipeline for planetary robotics. Our system combines the Nerfstudio and COLMAP frameworks with a ROS2-compatible workflow capable of processing raw rover data directly from rosbag recordings. This approach enables the generation of dense, photorealistic, and metrically consistent 3D representations from minimal visual input, supporting improved perception and planning for autonomous systems operating in planetary-like conditions. The resulting pipeline established a foundation for future research in radiance field-based mapping, bridging the gap between geometric and neural representations in planetary exploration.
-
-  </details>
-
-
-
-- **Synthetic Dataset Generation and Validation for Robotic Surgery Instrument Segmentation**  
-  Giorgio Chiesa, Rossella Borra, Vittorio Lauro, Sabrina De Cillis, Daniele Amparore, Cristian Fiori, Riccardo Renzulli, Marco Grangetto  
-  _2026-02-14_ · https://arxiv.org/abs/2602.13844v1  
-  <details><summary>Abstract</summary>
-
-  This paper presents a comprehensive workflow for generating and validating a synthetic dataset designed for robotic surgery instrument segmentation. A 3D reconstruction of the Da Vinci robotic arms was refined and animated in Autodesk Maya through a fully automated Python-based pipeline capable of producing photorealistic, labeled video sequences. Each scene integrates randomized motion patterns, lighting variations, and synthetic blood textures to mimic intraoperative variability while preserving pixel-accurate ground truth masks. To validate the realism and effectiveness of the generated data, several segmentation models were trained under controlled ratios of real and synthetic data. Results demonstrate that a balanced composition of real and synthetic samples significantly improves model generalization compared to training on real data only, while excessive reliance on synthetic data introduces a measurable domain shift. The proposed framework provides a reproducible and scalable tool for surgical computer vision, supporting future research in data augmentation, domain adaptation, and simulation-based pretraining for robotic-assisted surgery. Data and code are available at https://github.com/EIDOSLAB/Sintetic-dataset-DaVinci.
-
-  </details>
-
-
-
-- **Joint Orientation and Weight Optimization for Robust Watertight Surface Reconstruction via Dirichlet-Regularized Winding Fields**  
-  Jiaze Li, Daisheng Jin, Fei Hou, Junhui Hou, Zheng Liu, Shiqing Xin, Wenping Wang, Ying He  
-  _2026-02-14_ · https://arxiv.org/abs/2602.13801v1  
-  <details><summary>Abstract</summary>
-
-  We propose Dirichlet Winding Reconstruction (DiWR), a robust method for reconstructing watertight surfaces from unoriented point clouds with non-uniform sampling, noise, and outliers. Our method uses the generalized winding number (GWN) field as the target implicit representation and jointly optimizes point orientations, per-point area weights, and confidence coefficients in a single pipeline. The optimization minimizes the Dirichlet energy of the induced winding field together with additional GWN-based constraints, allowing DiWR to compensate for non-uniform sampling, reduce the impact of noise, and downweight outliers during reconstruction, with no reliance on separate preprocessing. We evaluate DiWR on point clouds from 3D Gaussian Splatting, a computer-vision pipeline, and corrupted graphics benchmarks. Experiments show that DiWR produces plausible watertight surfaces on these challenging inputs and outperforms both traditional multi-stage pipelines and recent joint orientation-reconstruction methods.
 
   </details>
 
