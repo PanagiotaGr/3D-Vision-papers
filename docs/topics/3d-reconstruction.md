@@ -1,11 +1,22 @@
 # 3D Reconstruction
 
-_Updated: 2026-02-18 07:15 UTC_
+_Updated: 2026-02-19 07:14 UTC_
 
-Total papers shown: **12**
+Total papers shown: **7**
 
 
 ---
+
+- **Breaking the Sub-Millimeter Barrier: Eyeframe Acquisition from Color Images**  
+  Manel Guzmán, Antonio Agudo  
+  _2026-02-18_ · https://arxiv.org/abs/2602.16281v1  
+  <details><summary>Abstract</summary>
+
+  Eyeframe lens tracing is an important process in the optical industry that requires sub-millimeter precision to ensure proper lens fitting and optimal vision correction. Traditional frame tracers rely on mechanical tools that need precise positioning and calibration, which are time-consuming and require additional equipment, creating an inefficient workflow for opticians. This work presents a novel approach based on artificial vision that utilizes multi-view information. The proposed algorithm operates on images captured from an InVision system. The full pipeline includes image acquisition, frame segmentation to isolate the eyeframe from background, depth estimation to obtain 3D spatial information, and multi-view processing that integrates segmented RGB images with depth data for precise frame contour measurement. To this end, different configurations and variants are proposed and analyzed on real data, providing competitive measurements from still color images with respect to other solutions, while eliminating the need for specialized tracing equipment and reducing workflow complexity for optical technicians.
+
+  </details>
+
+
 
 - **NeRFscopy: Neural Radiance Fields for in-vivo Time-Varying Tissues from Endoscopy**  
   Laura Salort-Benejam, Antonio Agudo  
@@ -68,72 +79,6 @@ Total papers shown: **12**
   <details><summary>Abstract</summary>
 
   Domain-generalized LiDAR semantic segmentation (LSS) seeks to train models on source-domain point clouds that generalize reliably to multiple unseen target domains, which is essential for real-world LiDAR applications. However, existing approaches assume similar acquisition views (e.g., vehicle-mounted) and struggle in cross-view scenarios, where observations differ substantially due to viewpoint-dependent structural incompleteness and non-uniform point density. Accordingly, we formulate cross-view domain generalization for LiDAR semantic segmentation and propose a novel framework, termed CVGC (Cross-View Geometric Consistency). Specifically, we introduce a cross-view geometric augmentation module that models viewpoint-induced variations in visibility and sampling density, generating multiple cross-view observations of the same scene. Subsequently, a geometric consistency module enforces consistent semantic and occupancy predictions across geometrically augmented point clouds of the same scene. Extensive experiments on six public LiDAR datasets establish the first systematic evaluation of cross-view domain generalization for LiDAR semantic segmentation, demonstrating that CVGC consistently outperforms state-of-the-art methods when generalizing from a single source domain to multiple target domains with heterogeneous acquisition viewpoints. The source code will be publicly available at https://github.com/KintomZi/CVGC-DG
-
-  </details>
-
-
-
-- **Gaussian Mesh Renderer for Lightweight Differentiable Rendering**  
-  Xinpeng Liu, Fumio Okura  
-  _2026-02-16_ · https://arxiv.org/abs/2602.14493v1  
-  <details><summary>Abstract</summary>
-
-  3D Gaussian Splatting (3DGS) has enabled high-fidelity virtualization with fast rendering and optimization for novel view synthesis. On the other hand, triangle mesh models still remain a popular choice for surface reconstruction but suffer from slow or heavy optimization in traditional mesh-based differentiable renderers. To address this problem, we propose a new lightweight differentiable mesh renderer leveraging the efficient rasterization process of 3DGS, named Gaussian Mesh Renderer (GMR), which tightly integrates the Gaussian and mesh representations. Each Gaussian primitive is analytically derived from the corresponding mesh triangle, preserving structural fidelity and enabling the gradient flow. Compared to the traditional mesh renderers, our method achieves smoother gradients, which especially contributes to better optimization using smaller batch sizes with limited memory. Our implementation is available in the public GitHub repository at https://github.com/huntorochi/Gaussian-Mesh-Renderer.
-
-  </details>
-
-
-
-- **Learning Significant Persistent Homology Features for 3D Shape Understanding**  
-  Prachi Kudeshia, Jiju Poovvancheri  
-  _2026-02-15_ · https://arxiv.org/abs/2602.14228v1  
-  <details><summary>Abstract</summary>
-
-  Geometry and topology constitute complementary descriptors of three-dimensional shape, yet existing benchmark datasets primarily capture geometric information while neglecting topological structure. This work addresses this limitation by introducing topologically-enriched versions of ModelNet40 and ShapeNet, where each point cloud is augmented with its corresponding persistent homology features. These benchmarks with the topological signatures establish a foundation for unified geometry-topology learning and enable systematic evaluation of topology-aware deep learning architectures for 3D shape analysis. Building on this foundation, we propose a deep learning-based significant persistent point selection method, \textit{TopoGAT}, that learns to identify the most informative topological features directly from input data and the corresponding topological signatures, circumventing the limitations of hand-crafted statistical selection criteria. A comparative study verifies the superiority of the proposed method over traditional statistical approaches in terms of stability and discriminative power. Integrating the selected significant persistent points into standard point cloud classification and part-segmentation pipelines yields improvements in both classification accuracy and segmentation metrics. The presented topologically-enriched datasets, coupled with our learnable significant feature selection approach, enable the broader integration of persistent homology into the practical deep learning workflows for 3D point cloud analysis.
-
-  </details>
-
-
-
-- **Learnable Multi-level Discrete Wavelet Transforms for 3D Gaussian Splatting Frequency Modulation**  
-  Hung Nguyen, An Le, Truong Nguyen  
-  _2026-02-15_ · https://arxiv.org/abs/2602.14199v1  
-  <details><summary>Abstract</summary>
-
-  3D Gaussian Splatting (3DGS) has emerged as a powerful approach for novel view synthesis. However, the number of Gaussian primitives often grows substantially during training as finer scene details are reconstructed, leading to increased memory and storage costs. Recent coarse-to-fine strategies regulate Gaussian growth by modulating the frequency content of the ground-truth images. In particular, AutoOpti3DGS employs the learnable Discrete Wavelet Transform (DWT) to enable data-adaptive frequency modulation. Nevertheless, its modulation depth is limited by the 1-level DWT, and jointly optimizing wavelet regularization with 3D reconstruction introduces gradient competition that promotes excessive Gaussian densification. In this paper, we propose a multi-level DWT-based frequency modulation framework for 3DGS. By recursively decomposing the low-frequency subband, we construct a deeper curriculum that provides progressively coarser supervision during early training, consistently reducing Gaussian counts. Furthermore, we show that the modulation can be performed using only a single scaling parameter, rather than learning the full 2-tap high-pass filter. Experimental results on standard benchmarks demonstrate that our method further reduces Gaussian counts while maintaining competitive rendering quality.
-
-  </details>
-
-
-
-- **Learning Part-Aware Dense 3D Feature Field for Generalizable Articulated Object Manipulation**  
-  Yue Chen, Muqing Jiang, Kaifeng Zheng, Jiaqi Liang, Chenrui Tie, Haoran Lu, Ruihai Wu, Hao Dong  
-  _2026-02-15_ · https://arxiv.org/abs/2602.14193v1  
-  <details><summary>Abstract</summary>
-
-  Articulated object manipulation is essential for various real-world robotic tasks, yet generalizing across diverse objects remains a major challenge. A key to generalization lies in understanding functional parts (e.g., door handles and knobs), which indicate where and how to manipulate across diverse object categories and shapes. Previous works attempted to achieve generalization by introducing foundation features, while these features are mostly 2D-based and do not specifically consider functional parts. When lifting these 2D features to geometry-profound 3D space, challenges arise, such as long runtimes, multi-view inconsistencies, and low spatial resolution with insufficient geometric information. To address these issues, we propose Part-Aware 3D Feature Field (PA3FF), a novel dense 3D feature with part awareness for generalizable articulated object manipulation. PA3FF is trained by 3D part proposals from a large-scale labeled dataset, via a contrastive learning formulation. Given point clouds as input, PA3FF predicts a continuous 3D feature field in a feedforward manner, where the distance between point features reflects the proximity of functional parts: points with similar features are more likely to belong to the same part. Building on this feature, we introduce the Part-Aware Diffusion Policy (PADP), an imitation learning framework aimed at enhancing sample efficiency and generalization for robotic manipulation. We evaluate PADP on several simulated and real-world tasks, demonstrating that PA3FF consistently outperforms a range of 2D and 3D representations in manipulation scenarios, including CLIP, DINOv2, and Grounded-SAM. Beyond imitation learning, PA3FF enables diverse downstream methods, including correspondence learning and segmentation tasks, making it a versatile foundation for robotic manipulation. Project page: https://pa3ff.github.io
-
-  </details>
-
-
-
-- **DenseMLLM: Standard Multimodal LLMs are Intrinsic Dense Predictors**  
-  Yi Li, Hongze Shen, Lexiang Tang, Xin Li, Xinpeng Ding, Yinsong Liu, Deqiang Jiang, Xing Sun, Xiaomeng Li  
-  _2026-02-15_ · https://arxiv.org/abs/2602.14134v1  
-  <details><summary>Abstract</summary>
-
-  Multimodal Large Language Models (MLLMs) have demonstrated exceptional capabilities in high-level visual understanding. However, extending these models to fine-grained dense prediction tasks, such as semantic segmentation and depth estimation, typically necessitates the incorporation of complex, task-specific decoders and other customizations. This architectural fragmentation increases model complexity and deviates from the generalist design of MLLMs, ultimately limiting their practicality. In this work, we challenge this paradigm by accommodating standard MLLMs to perform dense predictions without requiring additional task-specific decoders. The proposed model is called DenseMLLM, grounded in the standard architecture with a novel vision token supervision strategy for multiple labels and tasks. Despite its minimalist design, our model achieves highly competitive performance across a wide range of dense prediction and vision-language benchmarks, demonstrating that a standard, general-purpose MLLM can effectively support dense perception without architectural specialization.
-
-  </details>
-
-
-
-- **GeoFusionLRM: Geometry-Aware Self-Correction for Consistent 3D Reconstruction**  
-  Ahmet Burak Yildirim, Tuna Saygin, Duygu Ceylan, Aysegul Dundar  
-  _2026-02-15_ · https://arxiv.org/abs/2602.14119v1  
-  <details><summary>Abstract</summary>
-
-  Single-image 3D reconstruction with large reconstruction models (LRMs) has advanced rapidly, yet reconstructions often exhibit geometric inconsistencies and misaligned details that limit fidelity. We introduce GeoFusionLRM, a geometry-aware self-correction framework that leverages the model's own normal and depth predictions to refine structural accuracy. Unlike prior approaches that rely solely on features extracted from the input image, GeoFusionLRM feeds back geometric cues through a dedicated transformer and fusion module, enabling the model to correct errors and enforce consistency with the conditioning image. This design improves the alignment between the reconstructed mesh and the input views without additional supervision or external signals. Extensive experiments demonstrate that GeoFusionLRM achieves sharper geometry, more consistent normals, and higher fidelity than state-of-the-art LRM baselines.
 
   </details>
 
