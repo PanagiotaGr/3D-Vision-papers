@@ -1,11 +1,44 @@
 # Neural Rendering & View Synthesis
 
-_Updated: 2026-02-24 07:14 UTC_
+_Updated: 2026-02-25 07:15 UTC_
 
-Total papers shown: **5**
+Total papers shown: **7**
 
 
 ---
+
+- **RAYNOVA: 3D-Geometry-Free Auto-Regressive Driving World Modeling with Unified Spatio-Temporal Representation**  
+  Yichen Xie, Chensheng Peng, Mazen Abdelfattah, Yihan Hu, Jiezhi Yang, Eric Higgins, Ryan Brigden, Masayoshi Tomizuka, Wei Zhan  
+  _2026-02-24_ · https://arxiv.org/abs/2602.20685v1  
+  <details><summary>Abstract</summary>
+
+  World foundation models aim to simulate the evolution of the real world with physically plausible behavior. Unlike prior methods that handle spatial and temporal correlations separately, we propose RAYNOVA, a geometry-free world model that employs a dual-causal autoregressive framework. It follows both scale-wise and temporal topological orders in the autoregressive process, and leverages global attention for unified 4D spatio-temporal reasoning. Different from existing works that impose strong 3D geometric priors, RAYNOVA constructs an isotropic spatio-temporal representation across views, frames, and scales based on relative Plücker-ray positional encoding, enabling robust generalization to diverse camera setups and ego motions. We further introduce a recurrent training paradigm to alleviate distribution drift in long-horizon video generation. RAYNOVA achieves state-of-the-art multi-view video generation results on nuScenes, while offering higher throughput and strong controllability under diverse input conditions, generalizing to novel views and camera configurations without explicit 3D scene representation. Our code will be released at http://yichen928.github.io/raynova.
+
+  </details>
+
+
+
+- **Aesthetic Camera Viewpoint Suggestion with 3D Aesthetic Field**  
+  Sheyang Tang, Armin Shafiee Sarvestani, Jialu Xu, Xiaoyu Xu, Zhou Wang  
+  _2026-02-23_ · https://arxiv.org/abs/2602.20363v1  
+  <details><summary>Abstract</summary>
+
+  The aesthetic quality of a scene depends strongly on camera viewpoint. Existing approaches for aesthetic viewpoint suggestion are either single-view adjustments, predicting limited camera adjustments from a single image without understanding scene geometry, or 3D exploration approaches, which rely on dense captures or prebuilt 3D environments coupled with costly reinforcement learning (RL) searches. In this work, we introduce the notion of 3D aesthetic field that enables geometry-grounded aesthetic reasoning in 3D with sparse captures, allowing efficient viewpoint suggestions in contrast to costly RL searches. We opt to learn this 3D aesthetic field using a feedforward 3D Gaussian Splatting network that distills high-level aesthetic knowledge from a pretrained 2D aesthetic model into 3D space, enabling aesthetic prediction for novel viewpoints from only sparse input views. Building on this field, we propose a two-stage search pipeline that combines coarse viewpoint sampling with gradient-based refinement, efficiently identifying aesthetically appealing viewpoints without dense captures or RL exploration. Extensive experiments show that our method consistently suggests viewpoints with superior framing and composition compared to existing approaches, establishing a new direction toward 3D-aware aesthetic modeling.
+
+  </details>
+
+
+
+- **Large-scale Photorealistic Outdoor 3D Scene Reconstruction from UAV Imagery Using Gaussian Splatting Techniques**  
+  Christos Maikos, Georgios Angelidis, Georgios Th. Papadopoulos  
+  _2026-02-23_ · https://arxiv.org/abs/2602.20342v1  
+  <details><summary>Abstract</summary>
+
+  In this study, we present an end-to-end pipeline capable of converting drone-captured video streams into high-fidelity 3D reconstructions with minimal latency. Unmanned aerial vehicles (UAVs) are extensively used in aerial real-time perception applications. Moreover, recent advances in 3D Gaussian Splatting (3DGS) have demonstrated significant potential for real-time neural rendering. However, their integration into end-to-end UAV-based reconstruction and visualization systems remains underexplored. Our goal is to propose an efficient architecture that combines live video acquisition via RTMP streaming, synchronized sensor fusion, camera pose estimation, and 3DGS optimization, achieving continuous model updates and low-latency deployment within interactive visualization environments that supports immersive augmented and virtual reality (AR/VR) applications. Experimental results demonstrate that the proposed method achieves competitive visual fidelity, while delivering significantly higher rendering performance and substantially reduced end-to-end latency, compared to NeRF-based approaches. Reconstruction quality remains within 4-7\% of high-fidelity offline references, confirming the suitability of the proposed system for real-time, scalable augmented perception from aerial platforms.
+
+  </details>
+
+
 
 - **tttLRM: Test-Time Training for Long Context and Autoregressive 3D Reconstruction**  
   Chen Wang, Hao Tan, Wang Yifan, Zhiqin Chen, Yuheng Liu, Kalyan Sunkavalli, Sai Bi, Lingjie Liu, Yiwei Hu  
@@ -46,17 +79,6 @@ Total papers shown: **5**
   <details><summary>Abstract</summary>
 
   Generating explorable 3D scenes from a single image is a highly challenging problem in 3D vision. Existing methods struggle to support free exploration, often producing severe geometric distortions and noisy artifacts when the viewpoint moves far from the original perspective. We introduce \textbf{One2Scene}, an effective framework that decomposes this ill-posed problem into three tractable sub-tasks to enable immersive explorable scene generation. We first use a panorama generator to produce anchor views from a single input image as initialization. Then, we lift these 2D anchors into an explicit 3D geometric scaffold via a generalizable, feed-forward Gaussian Splatting network. Instead of treating the panorama as a single image for reconstruction, we project it into multiple sparse anchor views and reformulate the reconstruction task as multi-view stereo matching, which allows us to leverage robust geometric priors learned from large-scale multi-view datasets. A bidirectional feature fusion module is used to enforce cross-view consistency, yielding an efficient and geometrically reliable scaffold. Finally, the scaffold serves as a strong prior for a novel view generator to produce photorealistic and geometrically accurate views at arbitrary cameras. By explicitly conditioning on a 3D-consistent scaffold to perform reconstruction, One2Scene works stably under large camera motions, supporting immersive scene exploration. Extensive experiments show that One2Scene substantially outperforms state-of-the-art methods in panorama depth estimation, feed-forward 360° reconstruction, and explorable 3D scene generation. Code and models will be released.
-
-  </details>
-
-
-
-- **SceneTok: A Compressed, Diffusable Token Space for 3D Scenes**  
-  Mohammad Asim, Christopher Wewer, Jan Eric Lenssen  
-  _2026-02-21_ · https://arxiv.org/abs/2602.18882v1  
-  <details><summary>Abstract</summary>
-
-  We present SceneTok, a novel tokenizer for encoding view sets of scenes into a compressed and diffusable set of unstructured tokens. Existing approaches for 3D scene representation and generation commonly use 3D data structures or view-aligned fields. In contrast, we introduce the first method that encodes scene information into a small set of permutation-invariant tokens that is disentangled from the spatial grid. The scene tokens are predicted by a multi-view tokenizer given many context views and rendered into novel views by employing a light-weight rectified flow decoder. We show that the compression is 1-3 orders of magnitude stronger than for other representations while still reaching state-of-the-art reconstruction quality. Further, our representation can be rendered from novel trajectories, including ones deviating from the input trajectory, and we show that the decoder gracefully handles uncertainty. Finally, the highly-compressed set of unstructured latent scene tokens enables simple and efficient scene generation in 5 seconds, achieving a much better quality-speed trade-off than previous paradigms.
 
   </details>
 
