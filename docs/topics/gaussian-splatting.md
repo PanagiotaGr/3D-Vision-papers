@@ -1,11 +1,33 @@
 # Gaussian Splatting & 3DGS
 
-_Updated: 2026-02-25 07:15 UTC_
+_Updated: 2026-02-26 07:14 UTC_
 
-Total papers shown: **12**
+Total papers shown: **13**
 
 
 ---
+
+- **Space-Time Forecasting of Dynamic Scenes with Motion-aware Gaussian Grouping**  
+  Junmyeong Lee, Hoseung Choi, Minsu Cho  
+  _2026-02-25_ · https://arxiv.org/abs/2602.21668v1  
+  <details><summary>Abstract</summary>
+
+  Forecasting dynamic scenes remains a fundamental challenge in computer vision, as limited observations make it difficult to capture coherent object-level motion and long-term temporal evolution. We present Motion Group-aware Gaussian Forecasting (MoGaF), a framework for long-term scene extrapolation built upon the 4D Gaussian Splatting representation. MoGaF introduces motion-aware Gaussian grouping and group-wise optimization to enforce physically consistent motion across both rigid and non-rigid regions, yielding spatially coherent dynamic representations. Leveraging this structured space-time representation, a lightweight forecasting module predicts future motion, enabling realistic and temporally stable scene evolution. Experiments on synthetic and real-world datasets demonstrate that MoGaF consistently outperforms existing baselines in rendering quality, motion plausibility, and long-term forecasting stability. Our project page is available at https://slime0519.github.io/mogaf
+
+  </details>
+
+
+
+- **Generalizing Visual Geometry Priors to Sparse Gaussian Occupancy Prediction**  
+  Changqing Zhou, Yueru Luo, Changhao Chen  
+  _2026-02-25_ · https://arxiv.org/abs/2602.21552v1  
+  <details><summary>Abstract</summary>
+
+  Accurate 3D scene understanding is essential for embodied intelligence, with occupancy prediction emerging as a key task for reasoning about both objects and free space. Existing approaches largely rely on depth priors (e.g., DepthAnything) but make only limited use of 3D cues, restricting performance and generalization. Recently, visual geometry models such as VGGT have shown strong capability in providing rich 3D priors, but similar to monocular depth foundation models, they still operate at the level of visible surfaces rather than volumetric interiors, motivating us to explore how to more effectively leverage these increasingly powerful geometry priors for 3D occupancy prediction. We present GPOcc, a framework that leverages generalizable visual geometry priors (GPs) for monocular occupancy prediction. Our method extends surface points inward along camera rays to generate volumetric samples, which are represented as Gaussian primitives for probabilistic occupancy inference. To handle streaming input, we further design a training-free incremental update strategy that fuses per-frame Gaussians into a unified global representation. Experiments on Occ-ScanNet and EmbodiedOcc-ScanNet demonstrate significant gains: GPOcc improves mIoU by +9.99 in the monocular setting and +11.79 in the streaming setting over prior state of the art. Under the same depth prior, it achieves +6.73 mIoU while running 2.65$\times$ faster. These results highlight that GPOcc leverages geometry priors more effectively and efficiently. Code will be released at https://github.com/JuIvyy/GPOcc.
+
+  </details>
+
+
 
 - **BrepGaussian: CAD reconstruction from Multi-View Images with Gaussian Splatting**  
   Jiaxing Yu, Dongyang Ren, Hangyu Xu, Zhouyuxiao Yang, Yuanqi Li, Jie Guo, Zhengkang Zhou, Yanwen Guo  
@@ -123,17 +145,6 @@ Total papers shown: **12**
   <details><summary>Abstract</summary>
 
   3D Gaussian Splatting (3DGS) has emerged as a leading technology for high-quality 3D scene reconstruction. However, the iterative refinement and densification process leads to the generation of a large number of primitives, each contributing to the reconstruction to a substantially different extent. Estimating primitive importance is thus crucial, both for removing redundancy during reconstruction and for enabling efficient compression and transmission. Existing methods typically rely on rendering-based analyses, where each primitive is evaluated through its contribution across multiple camera viewpoints. However, such methods are sensitive to the number and selection of views, rely on specialized differentiable rasterizers, and have long calculation times that grow linearly with view count, making them difficult to integrate as plug-and-play modules and limiting scalability and generalization. To address these issues, we propose RAP, a fast feedforward rendering-free attribute-guided method for efficient importance score prediction in 3DGS. RAP infers primitive significance directly from intrinsic Gaussian attributes and local neighborhood statistics, avoiding rendering-based or visibility-dependent computations. A compact MLP predicts per-primitive importance scores using rendering loss, pruning-aware loss, and significance distribution regularization. After training on a small set of scenes, RAP generalizes effectively to unseen data and can be seamlessly integrated into reconstruction, compression, and transmission pipelines. Our code is publicly available at https://github.com/yyyykf/RAP.
-
-  </details>
-
-
-
-- **DefenseSplat: Enhancing the Robustness of 3D Gaussian Splatting via Frequency-Aware Filtering**  
-  Yiran Qiao, Yiren Lu, Yunlai Zhou, Rui Yang, Linlin Hou, Yu Yin, Jing Ma  
-  _2026-02-22_ · https://arxiv.org/abs/2602.19323v1  
-  <details><summary>Abstract</summary>
-
-  3D Gaussian Splatting (3DGS) has emerged as a powerful paradigm for real-time and high-fidelity 3D reconstruction from posed images. However, recent studies reveal its vulnerability to adversarial corruptions in input views, where imperceptible yet consistent perturbations can drastically degrade rendering quality, increase training and rendering time, and inflate memory usage, even leading to server denial-of-service. In our work, to mitigate this issue, we begin by analyzing the distinct behaviors of adversarial perturbations in the low- and high-frequency components of input images using wavelet transforms. Based on this observation, we design a simple yet effective frequency-aware defense strategy that reconstructs training views by filtering high-frequency noise while preserving low-frequency content. This approach effectively suppresses adversarial artifacts while maintaining the authenticity of the original scene. Notably, it does not significantly impair training on clean data, achieving a desirable trade-off between robustness and performance on clean inputs. Through extensive experiments under a wide range of attack intensities on multiple benchmarks, we demonstrate that our method substantially enhances the robustness of 3DGS without access to clean ground-truth supervision. By highlighting and addressing the overlooked vulnerabilities of 3D Gaussian Splatting, our work paves the way for more robust and secure 3D reconstructions.
 
   </details>
 
