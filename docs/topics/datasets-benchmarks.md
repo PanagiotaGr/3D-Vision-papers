@@ -1,8 +1,8 @@
 # Datasets & Benchmarks (3D / Vision)
 
-_Updated: 2026-02-28 06:55 UTC_
+_Updated: 2026-03-01 07:02 UTC_
 
-Total papers shown: **50**
+Total papers shown: **42**
 
 
 ---
@@ -464,94 +464,6 @@ Total papers shown: **50**
   <details><summary>Abstract</summary>
 
   Most text-to-video (T2V) generators prioritize aesthetic quality, but often ignoring the spatial constraints in the generated videos. In this work, we present SPATIALALIGN, a self-improvement framework that enhances T2V models capabilities to depict Dynamic Spatial Relationships (DSR) specified in text prompts. We present a zeroth-order regularized Direct Preference Optimization (DPO) to fine-tune T2V models towards better alignment with DSR. Specifically, we design DSR-SCORE, a geometry-based metric that quantitatively measures the alignment between generated videos and the specified DSRs in prompts, which is a step forward from prior works that rely on VLM for evaluation. We also conduct a dataset of text-video pairs with diverse DSRs to facilitate the study. Extensive experiments demonstrate that our fine-tuned model significantly out performs the baseline in spatial relationships. The code will be released in Link.
-
-  </details>
-
-
-
-- **SUPERGLASSES: Benchmarking Vision Language Models as Intelligent Agents for AI Smart Glasses**  
-  Zhuohang Jiang, Xu Yuan, Haohao Qu, Shanru Lin, Kanglong Liu, Wenqi Fan, Qing Li  
-  _2026-02-26_ · https://arxiv.org/abs/2602.22683v1  
-  <details><summary>Abstract</summary>
-
-  The rapid advancement of AI-powered smart glasses, one of the hottest wearable devices, has unlocked new frontiers for multimodal interaction, with Visual Question Answering (VQA) over external knowledge sources emerging as a core application. Existing Vision Language Models (VLMs) adapted to smart glasses are typically trained and evaluated on traditional multimodal datasets; however, these datasets lack the variety and realism needed to reflect smart glasses usage scenarios and diverge from their specific challenges, where accurately identifying the object of interest must precede any external knowledge retrieval. To bridge this gap, we introduce SUPERGLASSES, the first comprehensive VQA benchmark built on real-world data entirely collected by smart glasses devices. SUPERGLASSES comprises 2,422 egocentric image-question pairs spanning 14 image domains and 8 query categories, enriched with full search trajectories and reasoning annotations. We evaluate 26 representative VLMs on this benchmark, revealing significant performance gaps. To address the limitations of existing models, we further propose SUPERLENS, a multimodal smart glasses agent that enables retrieval-augmented answer generation by integrating automatic object detection, query decoupling, and multimodal web search. Our agent achieves state-of-the-art performance, surpassing GPT-4o by 2.19 percent, and highlights the need for task-specific solutions in smart glasses VQA scenarios.
-
-  </details>
-
-
-
-- **SPMamba-YOLO: An Underwater Object Detection Network Based on Multi-Scale Feature Enhancement and Global Context Modeling**  
-  Guanghao Liao, Zhen Liu, Liyuan Cao, Yonghui Yang, Qi Li  
-  _2026-02-26_ · https://arxiv.org/abs/2602.22674v1  
-  <details><summary>Abstract</summary>
-
-  Underwater object detection is a critical yet challenging research problem owing to severe light attenuation, color distortion, background clutter, and the small scale of underwater targets. To address these challenges, we propose SPMamba-YOLO, a novel underwater object detection network that integrates multi-scale feature enhancement with global context modeling. Specifically, a Spatial Pyramid Pooling Enhanced Layer Aggregation Network (SPPELAN) module is introduced to strengthen multi-scale feature aggregation and expand the receptive field, while a Pyramid Split Attention (PSA) mechanism enhances feature discrimination by emphasizing informative regions and suppressing background interference. In addition, a Mamba-based state space modeling module is incorporated to efficiently capture long-range dependencies and global contextual information, thereby improving detection robustness in complex underwater environments. Extensive experiments on the URPC2022 dataset demonstrate that SPMamba-YOLO outperforms the YOLOv8n baseline by more than 4.9\% in mAP@0.5, particularly for small and densely distributed underwater objects, while maintaining a favorable balance between detection accuracy and computational cost.
-
-  </details>
-
-
-
-- **Rethinking the Practicality of Vision-language-action Model: A Comprehensive Benchmark and An Improved Baseline**  
-  Wenxuan Song, Jiayi Chen, Xiaoquan Sun, Huashuo Lei, Yikai Qin, Wei Zhao, Pengxiang Ding, Han Zhao, Tongxin Wang, Pengxu Hou, et al.  
-  _2026-02-26_ · https://arxiv.org/abs/2602.22663v1  
-  <details><summary>Abstract</summary>
-
-  Vision-Language-Action (VLA) models have emerged as a generalist robotic agent. However, existing VLAs are hindered by excessive parameter scales, prohibitive pre-training requirements, and limited applicability to diverse embodiments. To improve the practicality of VLAs, we propose a comprehensive benchmark and an improved baseline. First, we propose CEBench, a new benchmark spanning diverse embodiments in both simulation and the real world with consideration of domain randomization. We collect 14.4k simulated trajectories and 1.6k real-world expert-curated trajectories to support training on CEBench. Second, using CEBench as our testbed, we study three critical aspects of VLAs' practicality and offer several key findings. Informed by these findings, we introduce LLaVA-VLA, a lightweight yet powerful VLA designed for practical deployment on consumer-grade GPUs. Architecturally, it integrates a compact VLM backbone with multi-view perception, proprioceptive tokenization, and action chunking. To eliminate reliance on costly pre-training, LLaVA-VLA adopts a two-stage training paradigm including post-training and fine-tuning. Furthermore, LLaVA-VLA extends the action space to unify navigation and manipulation. Experiments across embodiments demonstrate the capabilities of generalization and versatility of LLaVA-VLA , while real-world mobile manipulation experiments establish it as the first end-to-end VLA model for mobile manipulation. We will open-source all datasets, codes, and checkpoints upon acceptance to foster reproducibility and future research.
-
-  </details>
-
-
-
-- **Scaling Audio-Visual Quality Assessment Dataset via Crowdsourcing**  
-  Renyu Yang, Jian Jin, Lili Meng, Meiqin Liu, Yilin Wang, Balu Adsumilli, Weisi Lin  
-  _2026-02-26_ · https://arxiv.org/abs/2602.22659v1  
-  <details><summary>Abstract</summary>
-
-  Audio-visual quality assessment (AVQA) research has been stalled by limitations of existing datasets: they are typically small in scale, with insufficient diversity in content and quality, and annotated only with overall scores. These shortcomings provide limited support for model development and multimodal perception research. We propose a practical approach for AVQA dataset construction. First, we design a crowdsourced subjective experiment framework for AVQA, breaks the constraints of in-lab settings and achieves reliable annotation across varied environments. Second, a systematic data preparation strategy is further employed to ensure broad coverage of both quality levels and semantic scenarios. Third, we extend the dataset with additional annotations, enabling research on multimodal perception mechanisms and their relation to content. Finally, we validate this approach through YT-NTU-AVQ, the largest and most diverse AVQA dataset to date, consisting of 1,620 user-generated audio and video (A/V) sequences. The dataset and platform code are available at https://github.com/renyu12/YT-NTU-AVQ
-
-  </details>
-
-
-
-- **Interactive Medical-SAM2 GUI: A Napari-based semi-automatic annotation tool for medical images**  
-  Woojae Hong, Jong Ha Hwang, Jiyong Chung, Joongyeon Choi, Hyunngun Kim, Yong Hwy Kim  
-  _2026-02-26_ · https://arxiv.org/abs/2602.22649v1  
-  <details><summary>Abstract</summary>
-
-  Interactive Medical-SAM2 GUI is an open-source desktop application for semi-automatic annotation of 2D and 3D medical images. Built on the Napari multi-dimensional viewer, box/point prompting is integrated with SAM2-style propagation by treating a 3D volume as a slice sequence, enabling mask propagation from sparse prompts using Medical-SAM2 on top of SAM2. Voxel-level annotation remains essential for developing and validating medical imaging algorithms, yet manual labeling is slow and expensive for 3D scans, and existing integrations frequently emphasize per-slice interaction without providing a unified, cohort-oriented workflow for navigation, propagation, interactive correction, and quantitative export in a single local pipeline. To address this practical limitation, a local-first Napari workflow is provided for efficient 3D annotation across multiple studies using standard DICOM series and/or NIfTI volumes. Users can annotate cases sequentially under a single root folder with explicit proceed/skip actions, initialize objects via box-first prompting (including first/last-slice initialization for single-object propagation), refine predictions with point prompts, and finalize labels through prompt-first correction prior to saving. During export, per-object volumetry and 3D volume rendering are supported, and image geometry is preserved via SimpleITK. The GUI is implemented in Python using Napari and PyTorch, with optional N4 bias-field correction, and is intended exclusively for research annotation workflows. The code is released on the project page: https://github.com/SKKU-IBE/Medical-SAM2GUI/.
-
-  </details>
-
-
-
-- **DP-aware AdaLN-Zero: Taming Conditioning-Induced Heavy-Tailed Gradients in Differentially Private Diffusion**  
-  Tao Huang, Jiayang Meng, Xu Yang, Chen Hou, Hong Chen  
-  _2026-02-26_ · https://arxiv.org/abs/2602.22610v1  
-  <details><summary>Abstract</summary>
-
-  Condition injection enables diffusion models to generate context-aware outputs, which is essential for many time-series tasks. However, heterogeneous conditional contexts (e.g., observed history, missingness patterns or outlier covariates) can induce heavy-tailed per-example gradients. Under Differentially Private Stochastic Gradient Descent (DP-SGD), these rare conditioning-driven heavy-tailed gradients disproportionately trigger global clipping, resulting in outlier-dominated updates, larger clipping bias, and degraded utility under a fixed privacy budget. In this paper, we propose DP-aware AdaLN-Zero, a drop-in sensitivity-aware conditioning mechanism for conditional diffusion transformers that limits conditioning-induced gain without modifying the DP-SGD mechanism. DP-aware AdaLN-Zero jointly constrains conditioning representation magnitude and AdaLN modulation parameters via bounded re-parameterization, suppressing extreme gradient tail events before gradient clipping and noise injection. Empirically, DP-SGD equipped with DP-aware AdaLN-Zero improves interpolation/imputation and forecasting under matched privacy settings. We observe consistent gains on a real-world power dataset and two public ETT benchmarks over vanilla DP-SGD. Moreover, gradient diagnostics attribute these improvements to conditioning-specific tail reshaping and reduced clipping distortion, while preserving expressiveness in non-private training. Overall, these results show that sensitivity-aware conditioning can substantially improve private conditional diffusion training without sacrificing standard performance.
-
-  </details>
-
-
-
-- **LoR-LUT: Learning Compact 3D Lookup Tables via Low-Rank Residuals**  
-  Ziqi Zhao, Abhijit Mishra, Shounak Roychowdhury  
-  _2026-02-26_ · https://arxiv.org/abs/2602.22607v1  
-  <details><summary>Abstract</summary>
-
-  We present LoR-LUT, a unified low-rank formulation for compact and interpretable 3D lookup table (LUT) generation. Unlike conventional 3D-LUT-based techniques that rely on fusion of basis LUTs, which are usually dense tensors, our unified approach extends the current framework by jointly using residual corrections, which are in fact low-rank tensors, together with a set of basis LUTs. The approach described here improves the existing perceptual quality of an image, which is primarily due to the technique's novel use of residual corrections. At the same time, we achieve the same level of trilinear interpolation complexity, using a significantly smaller number of network, residual corrections, and LUT parameters. The experimental results obtained from LoR-LUT, which is trained on the MIT-Adobe FiveK dataset, reproduce expert-level retouching characteristics with high perceptual fidelity and a sub-megabyte model size. Furthermore, we introduce an interactive visualization tool, termed LoR-LUT Viewer, which transforms an input image into the LUT-adjusted output image, via a number of slidebars that control different parameters. The tool provides an effective way to enhance interpretability and user confidence in the visual results. Overall, our proposed formulation offers a compact, interpretable, and efficient direction for future LUT-based image enhancement and style transfer.
-
-  </details>
-
-
-
-- **BetterScene: 3D Scene Synthesis with Representation-Aligned Generative Model**  
-  Yuci Han, Charles Toth, John E. Anderson, William J. Shuart, Alper Yilmaz  
-  _2026-02-26_ · https://arxiv.org/abs/2602.22596v1  
-  <details><summary>Abstract</summary>
-
-  We present BetterScene, an approach to enhance novel view synthesis (NVS) quality for diverse real-world scenes using extremely sparse, unconstrained photos. BetterScene leverages the production-ready Stable Video Diffusion (SVD) model pretrained on billions of frames as a strong backbone, aiming to mitigate artifacts and recover view-consistent details at inference time. Conventional methods have developed similar diffusion-based solutions to address these challenges of novel view synthesis. Despite significant improvements, these methods typically rely on off-the-shelf pretrained diffusion priors and fine-tune only the UNet module while keeping other components frozen, which still leads to inconsistent details and artifacts even when incorporating geometry-aware regularizations like depth or semantic conditions. To address this, we investigate the latent space of the diffusion model and introduce two components: (1) temporal equivariance regularization and (2) vision foundation model-aligned representation, both applied to the variational autoencoder (VAE) module within the SVD pipeline. BetterScene integrates a feed-forward 3D Gaussian Splatting (3DGS) model to render features as inputs for the SVD enhancer and generate continuous, artifact-free, consistent novel views. We evaluate on the challenging DL3DV-10K dataset and demonstrate superior performance compared to state-of-the-art methods.
 
   </details>
 
