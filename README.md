@@ -6,7 +6,7 @@ Daily arXiv digest focused on **3D Computer Vision** research, including geometr
 
 ## Latest
 
-Updated on: **2026-03-01**
+Updated on: **2026-03-02**
 
 
 Generated pages are available under `docs/`.
@@ -16,13 +16,13 @@ Generated pages are available under `docs/`.
 
 | Topic | Papers | Link |
 |------|--------|------|
-| NeRF & Neural Radiance Fields | 2 | [NeRF & Neural Radiance Fields](docs/topics/nerf.md) |
-| Gaussian Splatting & 3DGS | 4 | [Gaussian Splatting & 3DGS](docs/topics/gaussian-splatting.md) |
-| SLAM & Localization | 5 | [SLAM & Localization](docs/topics/slam.md) |
-| 3D Reconstruction | 6 | [3D Reconstruction](docs/topics/3d-reconstruction.md) |
-| Neural Rendering & View Synthesis | 1 | [Neural Rendering & View Synthesis](docs/topics/neural-rendering.md) |
-| Dynamic Scenes & 4D Reconstruction | 7 | [Dynamic Scenes & 4D Reconstruction](docs/topics/dynamic-scenes.md) |
-| Datasets & Benchmarks (3D / Vision) | 42 | [Datasets & Benchmarks (3D / Vision)](docs/topics/datasets-benchmarks.md) |
+| NeRF & Neural Radiance Fields | 3 | [NeRF & Neural Radiance Fields](docs/topics/nerf.md) |
+| Gaussian Splatting & 3DGS | 5 | [Gaussian Splatting & 3DGS](docs/topics/gaussian-splatting.md) |
+| SLAM & Localization | 4 | [SLAM & Localization](docs/topics/slam.md) |
+| 3D Reconstruction | 9 | [3D Reconstruction](docs/topics/3d-reconstruction.md) |
+| Neural Rendering & View Synthesis | 3 | [Neural Rendering & View Synthesis](docs/topics/neural-rendering.md) |
+| Dynamic Scenes & 4D Reconstruction | 2 | [Dynamic Scenes & 4D Reconstruction](docs/topics/dynamic-scenes.md) |
+| Datasets & Benchmarks (3D / Vision) | 30 | [Datasets & Benchmarks (3D / Vision)](docs/topics/datasets-benchmarks.md) |
 
 <!-- AUTO-GENERATED:END -->
 
