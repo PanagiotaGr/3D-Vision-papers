@@ -1,84 +1,106 @@
 # SLAM & Localization
 
-_Updated: 2026-03-03 07:08 UTC_
+_Updated: 2026-03-04 07:04 UTC_
 
-Total papers shown: **7**
+Total papers shown: **9**
 
 
 ---
 
-- **WildCross: A Cross-Modal Large Scale Benchmark for Place Recognition and Metric Depth Estimation in Natural Environments**  
-  Joshua Knights, Joseph Reid, Kaushik Roy, David Hall, Mark Cox, Peyman Moghadam  
-  _2026-03-02_ · https://arxiv.org/abs/2603.01475v1  
+- **The Dresden Dataset for 4D Reconstruction of Non-Rigid Abdominal Surgical Scenes**  
+  Reuben Docea, Rayan Younis, Yonghao Long, Maxime Fleury, Jinjing Xu, Chenyang Li, André Schulze, Ann Wierick, Johannes Bender, Micha Pfeiffer, et al.  
+  _2026-03-03_ · https://arxiv.org/abs/2603.02985v1  
   <details><summary>Abstract</summary>
 
-  Recent years have seen a significant increase in demand for robotic solutions in unstructured natural environments, alongside growing interest in bridging 2D and 3D scene understanding. However, existing robotics datasets are predominantly captured in structured urban environments, making them inadequate for addressing the challenges posed by complex, unstructured natural settings. To address this gap, we propose WildCross, a cross-modal benchmark for place recognition and metric depth estimation in large-scale natural environments. WildCross comprises over 476K sequential RGB frames with semi-dense depth and surface normal annotations, each aligned with accurate 6DoF poses and synchronized dense lidar submaps. We conduct comprehensive experiments on visual, lidar, and cross-modal place recognition, as well as metric depth estimation, demonstrating the value of WildCross as a challenging benchmark for multi-modal robotic perception tasks. We provide access to the code repository and dataset at https://csiro-robotics.github.io/WildCross.
+  The D4D Dataset provides paired endoscopic video and high-quality structured-light geometry for evaluating 3D reconstruction of deforming abdominal soft tissue in realistic surgical conditions. Data were acquired from six porcine cadaver sessions using a da Vinci Xi stereo endoscope and a Zivid structured-light camera, registered via optical tracking and manually curated iterative alignment methods. Three sequence types - whole deformations, incremental deformations, and moved-camera clips - probe algorithm robustness to non-rigid motion, deformation magnitude, and out-of-view updates. Each clip provides rectified stereo images, per-frame instrument masks, stereo depth, start/end structured-light point clouds, curated camera poses and camera intrinsics. In postprocessing, ICP and semi-automatic registration techniques are used to register data, and instrument masks are created. The dataset enables quantitative geometric evaluation in both visible and occluded regions, alongside photometric view-synthesis baselines. Comprising over 300,000 frames and 369 point clouds across 98 curated recordings, this resource can serve as a comprehensive benchmark for developing and evaluating non-rigid SLAM, 4D reconstruction, and depth estimation methods.
 
   </details>
 
 
 
-- **D-GVIO: A Buffer-Driven and Efficient Decentralized GNSS-Visual-Inertial State Estimator for Multi-Agent Systems**  
-  Yarong Luo, Wentao Lu, Chi Guo  
-  _2026-03-02_ · https://arxiv.org/abs/2603.01404v1  
+- **Intrinsic Geometry-Appearance Consistency Optimization for Sparse-View Gaussian Splatting**  
+  Kaiqiang Xiong, Rui Peng, Jiahao Wu, Zhanke Wang, Jie Liang, Xiaoyun Zheng, Feng Gao, Ronggang Wang  
+  _2026-03-03_ · https://arxiv.org/abs/2603.02893v1  
   <details><summary>Abstract</summary>
 
-  Cooperative localization is essential for swarm applications like collaborative exploration and search-and-rescue missions. However, maintaining real-time capability, robustness, and computational efficiency on resource-constrained platforms presents significant challenges. To address these challenges, we propose D-GVIO, a buffer-driven and fully decentralized GNSS-Visual-Inertial Odometry (GVIO) framework that leverages a novel buffering strategy to support efficient and robust distributed state estimation. The proposed framework is characterized by four core mechanisms. Firstly, through covariance segmentation, covariance intersection and buffering strategy, we modularize propagation and update steps in distributed state estimation, significantly reducing computational and communication burdens. Secondly, the left-invariant extended Kalman filter (L-IEKF) is adopted for information fusion, which exhibits superior state estimation performance over the traditional extended Kalman filter (EKF) since its state transition matrix is independent of the system state. Thirdly, a buffer-based re-propagation strategy is employed to handle delayed measurements efficiently and accurately by leveraging the L-IEKF, eliminating the need for costly re-computation. Finally, an adaptive buffer-driven outlier detection method is proposed to dynamically cull GNSS outliers, enhancing robustness in GNSS-challenged environments.
+  3D human reconstruction from a single image is a challenging problem and has been exclusively studied in the literature. Recently, some methods have resorted to diffusion models for guidance, optimizing a 3D representation via Score Distillation Sampling(SDS) or generating a back-view image for facilitating reconstruction. However, these methods tend to produce unsatisfactory artifacts (\textit{e.g.} flattened human structure or over-smoothing results caused by inconsistent priors from multiple views) and struggle with real-world generalization in the wild. In this work, we present \emph{MVD-HuGaS}, enabling free-view 3D human rendering from a single image via a multi-view human diffusion model. We first generate multi-view images from the single reference image with an enhanced multi-view diffusion model, which is well fine-tuned on high-quality 3D human datasets to incorporate 3D geometry priors and human structure priors. To infer accurate camera poses from the sparse generated multi-view images for reconstruction, an alignment module is introduced to facilitate joint optimization of 3D Gaussians and camera poses. Furthermore, we propose a depth-based Facial Distortion Mitigation module to refine the generated facial regions, thereby improving the overall fidelity of the reconstruction. Finally, leveraging the refined multi-view images, along with their accurate camera poses, MVD-HuGaS optimizes the 3D Gaussians of the target human for high-fidelity free-view renderings. Extensive experiments on Thuman2.0 and 2K2K datasets show that the proposed MVD-HuGaS achieves state-of-the-art performance on single-view 3D human rendering.
 
   </details>
 
 
 
-- **Certifiable Estimation with Factor Graphs**  
-  Zhexin Xu, Nikolas R. Sanderson, Hanna Jiamei Zhang, David M. Rosen  
-  _2026-03-01_ · https://arxiv.org/abs/2603.01267v1  
+- **Emerging trends in Cislunar Space for Lunar Science Exploration and Space Robotics aiding Human Spaceflight Safety**  
+  Arsalan Muhammad, Yue Wang, Hai Huang, Hao Wang  
+  _2026-03-03_ · https://arxiv.org/abs/2603.02878v1  
   <details><summary>Abstract</summary>
 
-  Factor graphs provide a convenient modular modeling language that enables practitioners to design and deploy high-performance robotic state estimation systems by composing simple, reusable building blocks. However, inference in these models is typically performed using local optimization methods that can converge to suboptimal solutions, a serious reliability concern in safety-critical applications. Conversely, certifiable estimators based on convex relaxation can recover verifiably globally optimal solutions in many practical settings, but the computational cost of solving their large-scale relaxations necessitates specialized, structure-exploiting solvers that require substantial expertise to implement, significantly hampering practical deployment. In this paper, we show that these two paradigms, which have thus far been treated as independent in the literature, can be naturally synthesized into a unified framework for certifiable factor graph optimization. The key insight is that factor graph structure is preserved under Shor's relaxation and Burer-Monteiro factorization: applying these transformations to a QCQP with an associated factor graph representation yields a lifted problem admitting a factor graph model with identical connectivity, in which variables and factors are simple one-to-one algebraic transformations of those in the original QCQP. This structural preservation enables the Riemannian Staircase methodology for certifiable estimation to be implemented using the same mature, highly-performant factor graph libraries and workflows already ubiquitously employed throughout robotics and computer vision, making certifiable estimation as straightforward to design and deploy as conventional factor graph inference.
+  In recent years, the Moon has emerged as an unparalleled extraterrestrial testbed for advancing cuttingedge technological and scientific research critical to enabling sustained human presence on its surface and supporting future interplanetary exploration. This study identifies and investigates two pivotal research domains with substantial transformative potential for accelerating humanity interplanetary aspirations. First is Lunar Science Exploration with Artificial Intelligence and Space Robotics which focusses on AI and Space Robotics redefining the frontiers of space exploration. Second being Space Robotics aid in manned spaceflight to the Moon serving as critical assets for pre-deployment infrastructure development, In-Situ Resource Utilization, surface operations support, and astronaut safety assurance. By integrating autonomy, machine learning, and realtime sensor fusion, space robotics not only augment human capabilities but also serve as force multipliers in achieving sustainable lunar exploration, paving the way for future crewed missions to Mars and beyond.
 
   </details>
 
 
 
-- **riMESA: Consensus ADMM for Real-World Collaborative SLAM**  
-  Daniel McGann, Michael Kaess  
-  _2026-03-01_ · https://arxiv.org/abs/2603.01178v1  
+- **Agentic Self-Evolutionary Replanning for Embodied Navigation**  
+  Guoliang Li, Ruihua Han, Chengyang Li, He Li, Shuai Wang, Wenchao Ding, Hong Zhang, Chengzhong Xu  
+  _2026-03-03_ · https://arxiv.org/abs/2603.02772v1  
   <details><summary>Abstract</summary>
 
-  Collaborative Simultaneous Localization and Mapping (C-SLAM) is a fundamental capability for multi-robot teams as it enables downstream tasks like planning and navigation. However, existing C-SLAM back-end algorithms that are required to solve this problem struggle to address the practical realities of real-world deployments (i.e. communication limitations, outlier measurements, and online operation). In this paper we propose Robust Incremental Manifold Edge-based Separable ADMM (riMESA) -- a robust, incremental, and distributed C-SLAM back-end that is resilient to outliers, reliable in the face of limited communication, and can compute accurate state estimates for a multi-robot team in real-time. Through the development of riMESA, we, more broadly, make an argument for the use of Consensus Alternating Direction Method of Multipliers as a theoretical foundation for distributed optimization tasks in robotics like C-SLAM due to its flexibility, accuracy, and fast convergence. We conclude this work with an in-depth evaluation of riMESA on a variety of C-SLAM problem scenarios and communication network conditions using both synthetic and real-world C-SLAM data. These experiments demonstrate that riMESA is able to generalize across conditions, produce accurate state estimates, operate in real-time, and outperform the accuracy of prior works by a factor >7x on real-world datasets.
+  Failure is inevitable for embodied navigation in complex environments. To enhance the resilience, replanning (RP) is a viable option, where the robot is allowed to fail, but is capable of adjusting plan until success. However, existing RP approaches freeze the ego action model and miss the opportunities to explore better plans by upgrading the robot itself. To address this limitation, we propose Self-Evolutionary RePlanning, or SERP for short, which leads to a paradigm shift from frozen models towards evolving models by run-time learning from recent experiences. In contrast to existing model evolution approaches that often get stuck at predefined static parameters, we introduce agentic self-evolving action model that uses in-context learning with auto-differentiation (ILAD) for adaptive function adjustment and global parameter reset. To achieve token-efficient replanning for SERP, we also propose graph chain-of-thought (GCOT) replanning with large language model (LLM) inference over distilled graphs. Extensive simulation and real-world experiments demonstrate that SERP achieves higher success rate with lower token expenditure over various benchmarks, validating its superior robustness and efficiency across diverse environments.
 
   </details>
 
 
 
-- **Path Integral Particle Filtering for Hybrid Systems via Saltation Matrices**  
-  Karthik Shaji, Sreeranj Jayadevan, Bo Yuan, Hongzhe Yu, Yongxin Chen  
-  _2026-03-01_ · https://arxiv.org/abs/2603.01176v1  
+- **Robust Tightly-Coupled Filter-Based Monocular Visual-Inertial State Estimation and Graph-Based Evaluation for Autonomous Drone Racing**  
+  Maulana Bisyir Azhari, Donghun Han, SungJun Park, David Hyunchul Shim  
+  _2026-03-03_ · https://arxiv.org/abs/2603.02742v1  
   <details><summary>Abstract</summary>
 
-  We present an optimal-control-based particle filtering method for state estimation in hybrid systems that undergo intermittent contact with their environments. We follow the path integral filtering framework that exploits the duality between the smoothing problem and optimal control. We leverage saltation matrices to map out the uncertainty propagation during contact events for hybrid systems. The resulting path integral optimal control problem allows for a state estimation algorithm robust to outlier effects, flexible to non-Gaussian noise distributions, that also handles the challenging contact dynamics in hybrid systems. This work offers a computationally efficient and reliable estimation algorithm for hybrid systems with stochastic dynamics. We also present extensive experimental results demonstrating that our approach consistently outperforms strong baselines across multiple settings.
+  Autonomous drone racing (ADR) demands state estimation that is simultaneously computationally efficient and resilient to the perceptual degradation experienced during extreme velocity and maneuvers. Traditional frameworks typically rely on conventional visual-inertial pipelines with loosely-coupled gate-based Perspective-n-Points (PnP) corrections that suffer from a rigid requirement for four visible features and information loss in intermediate steps. Furthermore, the absence of GNSS and Motion Capture systems in uninstrumented, competitive racing environments makes the objective evaluation of such systems remarkably difficult. To address these limitations, we propose ADR-VINS, a robust, monocular visual-inertial state estimation framework based on an Error-State Kalman Filter (ESKF) tailored for autonomous drone racing. Our approach integrates direct pixel reprojection errors from gate corners features as innovation terms within the filter. By bypassing intermediate PnP solvers, ADR-VINS maintains valid state updates with as few as two visible corners and utilizes robust reweighting instead of RANSAC-based schemes to handle outliers, enhancing computational efficiency. Furthermore, we introduce ADR-FGO, an offline Factor-Graph Optimization framework to generate high-fidelity reference trajectories that facilitate post-flight performance evaluation and analysis on uninstrumented, GNSS-denied environments. The proposed system is validated using TII-RATM dataset, where ADR-VINS achieves an average RMS translation error of 0.134 m, while ADR-FGO yields 0.060 m as a smoothing-based reference. Finally, ADR-VINS was successfully deployed in the A2RL Drone Championship Season 2, maintaining stable and robust estimation despite noisy detections during high-agility flight at top speeds of 20.9 m/s. We further utilize ADR-FGO for post-flight evaluation in uninstrumented racing environments.
 
   </details>
 
 
 
-- **VGGT-Det: Mining VGGT Internal Priors for Sensor-Geometry-Free Multi-View Indoor 3D Object Detection**  
-  Yang Cao, Feize Wu, Dave Zhenyu Chen, Yingji Zhong, Lanqing Hong, Dan Xu  
-  _2026-03-01_ · https://arxiv.org/abs/2603.00912v1  
+- **Cross-view geo-localization, Image retrieval, Multiscale geometric modeling, Frequency domain enhancement**  
+  Hongying Zhang, ShuaiShuai Ma  
+  _2026-03-03_ · https://arxiv.org/abs/2603.02726v1  
   <details><summary>Abstract</summary>
 
-  Current multi-view indoor 3D object detectors rely on sensor geometry that is costly to obtain (i.e., precisely calibrated multi-view camera poses) to fuse multi-view information into a global scene representation, limiting deployment in real-world scenes. We target a more practical setting: Sensor-Geometry-Free (SG-Free) multi-view indoor 3D object detection, where there are no sensor-provided geometric inputs (multi-view poses or depth). Recent Visual Geometry Grounded Transformer (VGGT) shows that strong 3D cues can be inferred directly from images. Building on this insight, we present VGGT-Det, the first framework tailored for SG-Free multi-view indoor 3D object detection. Rather than merely consuming VGGT predictions, our method integrates VGGT encoder into a transformer-based pipeline. To effectively leverage both the semantic and geometric priors from inside VGGT, we introduce two novel key components: (i) Attention-Guided Query Generation (AG): exploits VGGT attention maps as semantic priors to initialize object queries, improving localization by focusing on object regions while preserving global spatial structure; (ii) Query-Driven Feature Aggregation (QD): a learnable See-Query interacts with object queries to 'see' what they need, and then dynamically aggregates multi-level geometric features across VGGT layers that progressively lift 2D features into 3D. Experiments show that VGGT-Det significantly surpasses the best-performing method in the SG-Free setting by 4.4 and 8.6 mAP@0.25 on ScanNet and ARKitScenes, respectively. Ablation study shows that VGGT's internally learned semantic and geometric priors can be effectively leveraged by our AG and QD.
+  Cross-view geo-localization (CVGL) aims to establish spatial correspondences between images captured from significantly different viewpoints and constitutes a fundamental technique for visual localization in GNSS-denied environments. Nevertheless, CVGL remains challenging due to severe geometric asymmetry, texture inconsistency across imaging domains, and the progressive degradation of discriminative local information. Existing methods predominantly rely on spatial domain feature alignment, which is inherently sensitive to large scale viewpoint variations and local disturbances. To alleviate these limitations, this paper proposes the Spatial and Frequency Domain Enhancement Network (SFDE), which leverages complementary representations from spatial and frequency domains. SFDE adopts a three branch parallel architecture to model global semantic context, local geometric structure, and statistical stability in the frequency domain, respectively, thereby characterizing consistency across domains from the perspectives of scene topology, multiscale structural patterns, and frequency invariance. The resulting complementary features are jointly optimized in a unified embedding space via progressive enhancement and coupled constraints, enabling the learning of cross-view representations with consistency across multiple granularities. Comprehensive experiments show that SFDE achieves competitive performance and in many cases even surpasses state-of-the-art methods, while maintaining a lightweight and computationally efficient design. {Our code is available at https://github.com/Mashuaishuai669/SFDE
 
   </details>
 
 
 
-- **TokenSplat: Token-aligned 3D Gaussian Splatting for Feed-forward Pose-free Reconstruction**  
-  Yihui Li, Chengxin Lv, Zichen Tang, Hongyu Yang, Di Huang  
-  _2026-02-28_ · https://arxiv.org/abs/2603.00697v1  
+- **Tensegrity Robot Endcap-Ground Contact Estimation with Symmetry-aware Heterogeneous Graph Neural Network**  
+  Wenzhe Tong, Yicheng Jiang, Chi Zhang, Maani Ghaffari, Xiaonan Huang  
+  _2026-03-03_ · https://arxiv.org/abs/2603.02596v1  
   <details><summary>Abstract</summary>
 
-  We present TokenSplat, a feed-forward framework for joint 3D Gaussian reconstruction and camera pose estimation from unposed multi-view images. At its core, TokenSplat introduces a Token-aligned Gaussian Prediction module that aligns semantically corresponding information across views directly in the feature space. Guided by coarse token positions and fusion confidence, it aggregates multi-scale contextual features to enable long-range cross-view reasoning and reduce redundancy from overlapping Gaussians. To further enhance pose robustness and disentangle viewpoint cues from scene semantics, TokenSplat employs learnable camera tokens and an Asymmetric Dual-Flow Decoder (ADF-Decoder) that enforces directionally constrained communication between camera and image tokens. This maintains clean factorization within a feed-forward architecture, enabling coherent reconstruction and stable pose estimation without iterative refinement. Extensive experiments demonstrate that TokenSplat achieves higher reconstruction fidelity and novel-view synthesis quality in pose-free settings, and significantly improves pose estimation accuracy compared to prior pose-free methods. Project page: https://kidleyh.github.io/tokensplat/.
+  Tensegrity robots possess lightweight and resilient structures but present significant challenges for state estimation due to compliant and distributed ground contacts. This paper introduces a symmetry-aware heterogeneous graph neural network (Sym-HGNN) that infers contact states directly from proprioceptive measurements, including IMU and cable-length histories, without dedicated contact sensors. The network incorporates the robot's dihedral symmetry $D_3$ into the message-passing process to enhance sample efficiency and generalization. The predicted contacts are integrated into a state-of-the-art contact-aided invariant extended Kalman filter (InEKF) for improved pose estimation. Simulation results demonstrate that the proposed method achieves up to 15% higher accuracy and 5% higher F1-score using only 20% of the training data compared to the CNN and MI-HGNN baselines, while maintaining low-drift and physically consistent state estimation results comparable to ground truth contacts. This work highlights the potential of fully proprioceptive sensing for accurate and robust state estimation in tensegrity robots. Code available at: https://github.com/Jonathan-Twz/Tensegrity-Sym-HGNN
+
+  </details>
+
+
+
+- **PathSpace: Rapid continuous map approximation for efficient SLAM using B-Splines in constrained environments**  
+  Aduen Benjumea, Andrew Bradley, Alexander Rast, Matthias Rolf  
+  _2026-03-03_ · https://arxiv.org/abs/2603.02538v1  
+  <details><summary>Abstract</summary>
+
+  Simultaneous Localization and Mapping (SLAM) plays a crucial role in enabling autonomous vehicles to navigate previously unknown environments. Semantic SLAM mostly extends visual SLAM, leveraging the higher density information available to reason about the environment in a more human-like manner. This allows for better decision making by exploiting prior structural knowledge of the environment, usually in the form of labels. Current semantic SLAM techniques still mostly rely on a dense geometric representation of the environment, limiting their ability to apply constraints based on context. We propose PathSpace, a novel semantic SLAM framework that uses continuous B-splines to represent the environment in a compact manner, while also maintaining and reasoning through the continuous probability density functions required for probabilistic reasoning. This system applies the multiple strengths of B-splines in the context of SLAM to interpolate and fit otherwise discrete sparse environments. We test this framework in the context of autonomous racing, where we exploit pre-specified track characteristics to produce significantly reduced representations at comparable levels of accuracy to traditional landmark based methods and demonstrate its potential in limiting the resources used by a system with minimal accuracy loss.
+
+  </details>
+
+
+
+- **MERG3R: A Divide-and-Conquer Approach to Large-Scale Neural Visual Geometry**  
+  Leo Kaixuan Cheng, Abdus Shaikh, Ruofan Liang, Zhijie Wu, Yushi Guan, Nandita Vijaykumar  
+  _2026-03-02_ · https://arxiv.org/abs/2603.02351v1  
+  <details><summary>Abstract</summary>
+
+  Recent advancements in neural visual geometry, including transformer-based models such as VGGT and Pi3, have achieved impressive accuracy on 3D reconstruction tasks. However, their reliance on full attention makes them fundamentally limited by GPU memory capacity, preventing them from scaling to large, unordered image collections. We introduce MERG3R, a training-free divide-and-conquer framework that enables geometric foundation models to operate far beyond their native memory limits. MERG3R first reorders and partitions unordered images into overlapping, geometrically diverse subsets that can be reconstructed independently. It then merges the resulting local reconstructions through an efficient global alignment and confidence-weighted bundle adjustment procedure, producing a globally consistent 3D model. Our framework is model-agnostic and can be paired with existing neural geometry models. Across large-scale datasets, including 7-Scenes, NRGBD, Tanks & Temples, and Cambridge Landmarks, MERG3R consistently improves reconstruction accuracy, memory efficiency, and scalability, enabling high-quality reconstruction when the dataset exceeds memory capacity limits.
 
   </details>
 

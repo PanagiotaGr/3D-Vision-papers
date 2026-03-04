@@ -1,11 +1,110 @@
 # 3D Reconstruction
 
-_Updated: 2026-03-03 07:08 UTC_
+_Updated: 2026-03-04 07:04 UTC_
 
-Total papers shown: **21**
+Total papers shown: **23**
 
 
 ---
+
+- **Utonia: Toward One Encoder for All Point Clouds**  
+  Yujia Zhang, Xiaoyang Wu, Yunhan Yang, Xianzhe Fan, Han Li, Yuechen Zhang, Zehao Huang, Naiyan Wang, Hengshuang Zhao  
+  _2026-03-03_ · https://arxiv.org/abs/2603.03283v1  
+  <details><summary>Abstract</summary>
+
+  We dream of a future where point clouds from all domains can come together to shape a single model that benefits them all. Toward this goal, we present Utonia, a first step toward training a single self-supervised point transformer encoder across diverse domains, spanning remote sensing, outdoor LiDAR, indoor RGB-D sequences, object-centric CAD models, and point clouds lifted from RGB-only videos. Despite their distinct sensing geometries, densities, and priors, Utonia learns a consistent representation space that transfers across domains. This unification improves perception capability while revealing intriguing emergent behaviors that arise only when domains are trained jointly. Beyond perception, we observe that Utonia representations can also benefit embodied and multimodal reasoning: conditioning vision-language-action policies on Utonia features improves robotic manipulation, and integrating them into vision-language models yields gains on spatial reasoning. We hope Utonia can serve as a step toward foundation models for sparse 3D data, and support downstream applications in AR/VR, robotics, and autonomous driving.
+
+  </details>
+
+
+
+- **LoGeR: Long-Context Geometric Reconstruction with Hybrid Memory**  
+  Junyi Zhang, Charles Herrmann, Junhwa Hur, Chen Sun, Ming-Hsuan Yang, Forrester Cole, Trevor Darrell, Deqing Sun  
+  _2026-03-03_ · https://arxiv.org/abs/2603.03269v1  
+  <details><summary>Abstract</summary>
+
+  Feedforward geometric foundation models achieve strong short-window reconstruction, yet scaling them to minutes-long videos is bottlenecked by quadratic attention complexity or limited effective memory in recurrent designs. We present LoGeR (Long-context Geometric Reconstruction), a novel architecture that scales dense 3D reconstruction to extremely long sequences without post-optimization. LoGeR processes video streams in chunks, leveraging strong bidirectional priors for high-fidelity intra-chunk reasoning. To manage the critical challenge of coherence across chunk boundaries, we propose a learning-based hybrid memory module. This dual-component system combines a parametric Test-Time Training (TTT) memory to anchor the global coordinate frame and prevent scale drift, alongside a non-parametric Sliding Window Attention (SWA) mechanism to preserve uncompressed context for high-precision adjacent alignment. Remarkably, this memory architecture enables LoGeR to be trained on sequences of 128 frames, and generalize up to thousands of frames during inference. Evaluated across standard benchmarks and a newly repurposed VBR dataset with sequences of up to 19k frames, LoGeR substantially outperforms prior state-of-the-art feedforward methods--reducing ATE on KITTI by over 74%--and achieves robust, globally consistent reconstruction over unprecedented horizons.
+
+  </details>
+
+
+
+- **VIRGi: View-dependent Instant Recoloring of 3D Gaussians Splats**  
+  Alessio Mazzucchelli, Ivan Ojeda-Martin, Fernando Rivas-Manzaneque, Elena Garces, Adrian Penate-Sanchez, Francesc Moreno-Noguer  
+  _2026-03-03_ · https://arxiv.org/abs/2603.02986v1  
+  <details><summary>Abstract</summary>
+
+  3D Gaussian Splatting (3DGS) has recently transformed the fields of novel view synthesis and 3D reconstruction due to its ability to accurately model complex 3D scenes and its unprecedented rendering performance. However, a significant challenge persists: the absence of an efficient and photorealistic method for editing the appearance of the scene's content. In this paper we introduce VIRGi, a novel approach for rapidly editing the color of scenes modeled by 3DGS while preserving view-dependent effects such as specular highlights. Key to our method are a novel architecture that separates color into diffuse and view-dependent components, and a multi-view training strategy that integrates image patches from multiple viewpoints. Improving over the conventional single-view batch training, our 3DGS representation provides more accurate reconstruction and serves as a solid representation for the recoloring task. For 3DGS recoloring, we then introduce a rapid scheme requiring only one manually edited image of the scene from the end-user. By fine-tuning the weights of a single MLP, alongside a module for single-shot segmentation of the editable area, the color edits are seamlessly propagated to the entire scene in just two seconds, facilitating real-time interaction and providing control over the strength of the view-dependent effects. An exhaustive validation on diverse datasets demonstrates significant quantitative and qualitative advancements over competitors based on Neural Radiance Fields representations.
+
+  </details>
+
+
+
+- **The Dresden Dataset for 4D Reconstruction of Non-Rigid Abdominal Surgical Scenes**  
+  Reuben Docea, Rayan Younis, Yonghao Long, Maxime Fleury, Jinjing Xu, Chenyang Li, André Schulze, Ann Wierick, Johannes Bender, Micha Pfeiffer, et al.  
+  _2026-03-03_ · https://arxiv.org/abs/2603.02985v1  
+  <details><summary>Abstract</summary>
+
+  The D4D Dataset provides paired endoscopic video and high-quality structured-light geometry for evaluating 3D reconstruction of deforming abdominal soft tissue in realistic surgical conditions. Data were acquired from six porcine cadaver sessions using a da Vinci Xi stereo endoscope and a Zivid structured-light camera, registered via optical tracking and manually curated iterative alignment methods. Three sequence types - whole deformations, incremental deformations, and moved-camera clips - probe algorithm robustness to non-rigid motion, deformation magnitude, and out-of-view updates. Each clip provides rectified stereo images, per-frame instrument masks, stereo depth, start/end structured-light point clouds, curated camera poses and camera intrinsics. In postprocessing, ICP and semi-automatic registration techniques are used to register data, and instrument masks are created. The dataset enables quantitative geometric evaluation in both visible and occluded regions, alongside photometric view-synthesis baselines. Comprising over 300,000 frames and 369 point clouds across 98 curated recordings, this resource can serve as a comprehensive benchmark for developing and evaluating non-rigid SLAM, 4D reconstruction, and depth estimation methods.
+
+  </details>
+
+
+
+- **R3GW: Relightable 3D Gaussians for Outdoor Scenes in the Wild**  
+  Margherita Lea Corona, Wieland Morgenstern, Peter Eisert, Anna Hilsmann  
+  _2026-03-03_ · https://arxiv.org/abs/2603.02801v1  
+  <details><summary>Abstract</summary>
+
+  3D Gaussian Splatting (3DGS) has established itself as a leading technique for 3D reconstruction and novel view synthesis of static scenes, achieving outstanding rendering quality and fast training. However, the method does not explicitly model the scene illumination, making it unsuitable for relighting tasks. Furthermore, 3DGS struggles to reconstruct scenes captured in the wild by unconstrained photo collections featuring changing lighting conditions. In this paper, we present R3GW, a novel method that learns a relightable 3DGS representation of an outdoor scene captured in the wild. Our approach separates the scene into a relightable foreground and a non-reflective background (the sky), using two distinct sets of Gaussians. R3GW models view-dependent lighting effects in the foreground reflections by combining Physically Based Rendering with the 3DGS scene representation in a varying illumination setting. We evaluate our method quantitatively and qualitatively on the NeRF-OSR dataset, offering state-of-the-art performance and enhanced support for physically-based relighting of unconstrained scenes. Our method synthesizes photorealistic novel views under arbitrary illumination conditions. Additionally, our representation of the sky mitigates depth reconstruction artifacts, improving rendering quality at the sky-foreground boundary
+
+  </details>
+
+
+
+- **DREAM: Where Visual Understanding Meets Text-to-Image Generation**  
+  Chao Li, Tianhong Li, Sai Vidyaranya Nuthalapati, Hong-You Chen, Satya Narayan Shukla, Yonghuan Yang, Jun Xiao, Xiangjun Fan, Aashu Singh, Dina Katabi, et al.  
+  _2026-03-03_ · https://arxiv.org/abs/2603.02667v1  
+  <details><summary>Abstract</summary>
+
+  Unifying visual representation learning and text-to-image (T2I) generation within a single model remains a central challenge in multimodal learning. We introduce DREAM, a unified framework that jointly optimizes discriminative and generative objectives, while learning strong visual representations. DREAM is built on two key techniques: During training, Masking Warmup, a progressive masking schedule, begins with minimal masking to establish the contrastive alignment necessary for representation learning, then gradually transitions to full masking for stable generative training. At inference, DREAM employs Semantically Aligned Decoding to align partially masked image candidates with the target text and select the best one for further decoding, improving text-image fidelity (+6.3%) without external rerankers. Trained solely on CC12M, DREAM achieves 72.7% ImageNet linear-probing accuracy (+1.1% over CLIP) and an FID of 4.25 (+6.2% over FLUID), with consistent gains in few-shot classification, semantic segmentation, and depth estimation. These results demonstrate that discriminative and generative objectives can be synergistic, allowing unified multimodal models that excel at both visual understanding and generation.
+
+  </details>
+
+
+
+- **VLMFusionOcc3D: VLM Assisted Multi-Modal 3D Semantic Occupancy Prediction**  
+  A. Enes Doruk, Hasan F. Ates  
+  _2026-03-03_ · https://arxiv.org/abs/2603.02609v1  
+  <details><summary>Abstract</summary>
+
+  This paper introduces VLMFusionOcc3D, a robust multimodal framework for dense 3D semantic occupancy prediction in autonomous driving. Current voxel-based occupancy models often struggle with semantic ambiguity in sparse geometric grids and performance degradation under adverse weather conditions. To address these challenges, we leverage the rich linguistic priors of Vision-Language Models (VLMs) to anchor ambiguous voxel features to stable semantic concepts. Our framework initiates with a dual-branch feature extraction pipeline that projects multi-view images and LiDAR point clouds into a unified voxel space. We propose Instance-driven VLM Attention (InstVLM), which utilizes gated cross-attention and LoRA-adapted CLIP embeddings to inject high-level semantic and geographic priors directly into the 3D voxels. Furthermore, we introduce Weather-Aware Adaptive Fusion (WeathFusion), a dynamic gating mechanism that utilizes vehicle metadata and weather-conditioned prompts to re-weight sensor contributions based on real-time environmental reliability. To ensure structural consistency, a Depth-Aware Geometric Alignment (DAGA) loss is employed to align dense camera-derived geometry with sparse, spatially accurate LiDAR returns. Extensive experiments on the nuScenes and SemanticKITTI datasets demonstrate that our plug-and-play modules consistently enhance the performance of state-of-the-art voxel-based baselines. Notably, our approach achieves significant improvements in challenging weather scenarios, offering a scalable and robust solution for complex urban navigation.
+
+  </details>
+
+
+
+- **TruckDrive: Long-Range Autonomous Highway Driving Dataset**  
+  Filippo Ghilotti, Edoardo Palladin, Samuel Brucker, Adam Sigal, Mario Bijelic, Felix Heide  
+  _2026-03-02_ · https://arxiv.org/abs/2603.02413v1  
+  <details><summary>Abstract</summary>
+
+  Safe highway autonomy for heavy trucks remains an open and unsolved challenge: due to long braking distances, scene understanding of hundreds of meters is required for anticipatory planning and to allow safe braking margins. However, existing driving datasets primarily cover urban scenes, with perception effectively limited to short ranges of only up to 100 meters. To address this gap, we introduce TruckDrive, a highway-scale multimodal driving dataset, captured with a sensor suite purpose-built for long range sensing: seven long-range FMCW LiDARs measuring range and radial velocity, three high-resolution short-range LiDARs, eleven 8MP surround cameras with varying focal lengths and ten 4D FMCW radars. The dataset offers 475 thousands samples with 165 thousands densely annotated frames for driving perception benchmarking up to 1,000 meters for 2D detection and 400 meters for 3D detection, depth estimation, tracking, planning and end to end driving over 20 seconds sequences at highway speeds. We find that state-of-the-art autonomous driving models do not generalize to ranges beyond 150 meters, with drops between 31% and 99% in 3D perception tasks, exposing a systematic long-range gap that current architectures and training signals cannot close.
+
+  </details>
+
+
+
+- **MERG3R: A Divide-and-Conquer Approach to Large-Scale Neural Visual Geometry**  
+  Leo Kaixuan Cheng, Abdus Shaikh, Ruofan Liang, Zhijie Wu, Yushi Guan, Nandita Vijaykumar  
+  _2026-03-02_ · https://arxiv.org/abs/2603.02351v1  
+  <details><summary>Abstract</summary>
+
+  Recent advancements in neural visual geometry, including transformer-based models such as VGGT and Pi3, have achieved impressive accuracy on 3D reconstruction tasks. However, their reliance on full attention makes them fundamentally limited by GPU memory capacity, preventing them from scaling to large, unordered image collections. We introduce MERG3R, a training-free divide-and-conquer framework that enables geometric foundation models to operate far beyond their native memory limits. MERG3R first reorders and partitions unordered images into overlapping, geometrically diverse subsets that can be reconstructed independently. It then merges the resulting local reconstructions through an efficient global alignment and confidence-weighted bundle adjustment procedure, producing a globally consistent 3D model. Our framework is model-agnostic and can be paired with existing neural geometry models. Across large-scale datasets, including 7-Scenes, NRGBD, Tanks & Temples, and Cambridge Landmarks, MERG3R consistently improves reconstruction accuracy, memory efficiency, and scalability, enabling high-quality reconstruction when the dataset exceeds memory capacity limits.
+
+  </details>
+
+
 
 - **3D Field of Junctions: A Noise-Robust, Training-Free Structural Prior for Volumetric Inverse Problems**  
   Namhoon Kim, Narges Moeini, Justin Romberg, Sara Fridovich-Keil  
@@ -20,7 +119,7 @@ Total papers shown: **21**
 
 - **OnlineX: Unified Online 3D Reconstruction and Understanding with Active-to-Stable State Evolution**  
   Chong Xia, Fangfu Liu, Yule Wang, Yize Pang, Yueqi Duan  
-  _2026-03-02_ · https://arxiv.org/abs/2603.02134v1  
+  _2026-03-02_ · https://arxiv.org/abs/2603.02134v2  
   <details><summary>Abstract</summary>
 
   Recent advances in generalizable 3D Gaussian Splatting (3DGS) have enabled rapid 3D scene reconstruction within seconds, eliminating the need for per-scene optimization. However, existing methods primarily follow an offline reconstruction paradigm, lacking the capacity for continuous reconstruction, which limits their applicability to online scenarios such as robotics and VR/AR. In this paper, we introduce OnlineX, a feed-forward framework that reconstructs both 3D visual appearance and language fields in an online manner using only streaming images. A key challenge in online formulation is the cumulative drift issue, which is rooted in the fundamental conflict between two opposing roles of the memory state: an active role that constantly refreshes to capture high-frequency local geometry, and a stable role that conservatively accumulates and preserves the long-term global structure. To address this, we introduce a decoupled active-to-stable state evolution paradigm. Our framework decouples the memory state into a dedicated active state and a persistent stable state, and then cohesively fuses the information from the former into the latter to achieve both fidelity and stability. Moreover, we jointly model visual appearance and language fields and incorporate an implicit Gaussian fusion module to enhance reconstruction quality. Experiments on mainstream datasets demonstrate that our method consistently outperforms prior work in novel view synthesis and semantic understanding, showcasing robust performance across input sequences of varying lengths with real-time inference speed.
@@ -156,83 +255,6 @@ Total papers shown: **21**
   <details><summary>Abstract</summary>
 
   Adverse weather conditions significantly degrade the performance of LiDAR point cloud semantic segmentation networks by introducing large distribution shifts. Existing augmentation-based methods attempt to enhance robustness by simulating weather interference during training. However, they struggle to fully exploit the potential of augmentations due to the trade-off between minor and aggressive augmentations. To address this, we propose A3Point, an adaptive augmentation-aware latent learning framework that effectively utilizes a diverse range of augmentations while mitigating the semantic shift, which refers to the change in the semantic meaning caused by augmentations. A3Point consists of two key components: semantic confusion prior (SCP) latent learning, which captures the model's inherent semantic confusion information, and semantic shift region (SSR) localization, which decouples semantic confusion and semantic shift, enabling adaptive optimization strategies for different disturbance levels. Extensive experiments on multiple standard generalized LiDAR segmentation benchmarks under adverse weather demonstrate the effectiveness of our method, setting new state-of-the-art results.
-
-  </details>
-
-
-
-- **Reparameterized Tensor Ring Functional Decomposition for Multi-Dimensional Data Recovery**  
-  Yangyang Xu, Junbo Ke, You-Wei Wen, Chao Wang  
-  _2026-03-01_ · https://arxiv.org/abs/2603.01034v1  
-  <details><summary>Abstract</summary>
-
-  Tensor Ring (TR) decomposition is a powerful tool for high-order data modeling, but is inherently restricted to discrete forms defined on fixed meshgrids. In this work, we propose a TR functional decomposition for both meshgrid and non-meshgrid data, where factors are parameterized by Implicit Neural Representations (INRs). However, optimizing this continuous framework to capture fine-scale details is intrinsically difficult. Through a frequency-domain analysis, we demonstrate that the spectral structure of TR factors determines the frequency composition of the reconstructed tensor and limits the high-frequency modeling capacity. To mitigate this, we propose a reparameterized TR functional decomposition, in which each TR factor is a structured combination of a learnable latent tensor and a fixed basis. This reparameterization is theoretically shown to improve the training dynamics of TR factor learning. We further derive a principled initialization scheme for the fixed basis and prove the Lipschitz continuity of our proposed model. Extensive experiments on image inpainting, denoising, super-resolution, and point cloud recovery demonstrate that our method achieves consistently superior performance over existing approaches. Code is available at https://github.com/YangyangXu2002/RepTRFD.
-
-  </details>
-
-
-
-- **Dr.Occ: Depth- and Region-Guided 3D Occupancy from Surround-View Cameras for Autonomous Driving**  
-  Xubo Zhu, Haoyang Zhang, Fei He, Rui Wu, Yanhu Shan, Wen Yang, Huai Yu  
-  _2026-03-01_ · https://arxiv.org/abs/2603.01007v1  
-  <details><summary>Abstract</summary>
-
-  3D semantic occupancy prediction is crucial for autonomous driving perception, offering comprehensive geometric scene understanding and semantic recognition. However, existing methods struggle with geometric misalignment in view transformation due to the lack of pixel-level accurate depth estimation, and severe spatial class imbalance where semantic categories exhibit strong spatial anisotropy. To address these challenges, we propose Dr.Occ, a depth- and region-guided occupancy prediction framework. Specifically, we introduce a depth-guided 2D-to-3D View Transformer (D$^2$-VFormer) that effectively leverages high-quality dense depth cues from MoGe-2 to construct reliable geometric priors, thereby enabling precise geometric alignment of voxel features. Moreover, inspired by the Mixture-of-Experts (MoE) framework, we propose a region-guided Expert Transformer (R/R$^2$-EFormer) that adaptively allocates region-specific experts to focus on different spatial regions, effectively addressing spatial semantic variations. Thus, the two components make complementary contributions: depth guidance ensures geometric alignment, while region experts enhance semantic learning. Experiments on the Occ3D-nuScenes benchmark demonstrate that \textbf{Dr.Occ} improves the strong baseline BEVDet4D by 7.43\% mIoU and 3.09\% IoU under the full vision-only setting.
-
-  </details>
-
-
-
-- **MLRecon: Robust Markerless Freehand 3D Ultrasound Reconstruction via Coarse-to-Fine Pose Estimation**  
-  Yi Zhang, Puxun Tu, Kun Wang, Yulin Yan, Tao Ying, Xiaojun Chen  
-  _2026-03-01_ · https://arxiv.org/abs/2603.00990v1  
-  <details><summary>Abstract</summary>
-
-  Freehand 3D ultrasound (US) reconstruction promises volumetric imaging with the flexibility of standard 2D probes, yet existing tracking paradigms face a restrictive trilemma: marker-based systems demand prohibitive costs, inside-out methods require intrusive sensor attachment, and sensorless approaches suffer from severe cumulative drift. To overcome these limitations, we present MLRecon, a robust markerless 3D US reconstruction framework delivering drift-resilient 6D probe pose tracking using a single commodity RGB-D camera. Leveraging the generalization power of vision foundation models, our pipeline enables continuous markerless tracking of the probe, augmented by a vision-guided divergence detector that autonomously monitors tracking integrity and triggers failure recovery to ensure uninterrupted scanning. Crucially, we further propose a dual-stage pose refinement network that explicitly disentangles high-frequency jitter from low-frequency bias, effectively denoising the trajectory while maintaining the kinematic fidelity of operator maneuvers. Experiments demonstrate that MLRecon significantly outperforms competing sensorless and sensor-aided methods, achieving average position errors as low as 0.88 mm on complex trajectories and yielding high-quality 3D reconstructions with sub-millimeter mean surface accuracy. This establishes a new benchmark for low-cost, accessible volumetric US imaging in resource-limited clinical settings.
-
-  </details>
-
-
-
-- **UD-SfPNet: An Underwater Descattering Shape-from-Polarization Network for 3D Normal Reconstruction**  
-  Puyun Wang, Kaimin Yu, Huayang He, Feng Huang, Xianyu Wu, Yating Chen  
-  _2026-03-01_ · https://arxiv.org/abs/2603.00908v1  
-  <details><summary>Abstract</summary>
-
-  Underwater optical imaging is severely hindered by scattering, but polarization imaging offers the unique dual advantages of descattering and shape-from-polarization (SfP) 3D reconstruction. To exploit these advantages, this paper proposes UD-SfPNet, an underwater descattering shape-from-polarization network that leverages polarization cues for improved 3D surface normal prediction. The framework jointly models polarization-based image descattering and SfP normal estimation in a unified pipeline, avoiding error accumulation from sequential processing and enabling global optimization across both tasks. UD-SfPNet further incorporates a novel color embedding module to enhance geometric consistency by exploiting the relationship between color encodings and surface orientation. A detail enhancement convolution module is also included to better preserve high-frequency geometric details that are lost under scattering. Experiments on the MuS-Polar3D dataset show that the proposed method significantly improves reconstruction accuracy, achieving a mean surface normal angular error of 15.12$^\circ$ (the lowest among compared methods). These results confirm the efficacy of combining descattering with polarization-based shape inference, and highlight the practical significance and potential applications of UD-SfPNet for optical 3D imaging in challenging underwater environments. The code is available at https://github.com/WangPuyun/UD-SfPNet.
-
-  </details>
-
-
-
-- **pySpatial: Generating 3D Visual Programs for Zero-Shot Spatial Reasoning**  
-  Zhanpeng Luo, Ce Zhang, Silong Yong, Cunxi Dai, Qianwei Wang, Haoxi Ran, Guanya Shi, Katia Sycara, Yaqi Xie  
-  _2026-03-01_ · https://arxiv.org/abs/2603.00905v1  
-  <details><summary>Abstract</summary>
-
-  Multi-modal Large Language Models (MLLMs) have demonstrated strong capabilities in general-purpose perception and reasoning, but they still struggle with tasks that require spatial understanding of the 3D world. To address this, we introduce pySpatial, a visual programming framework that equips MLLMs with the ability to interface with spatial tools via Python code generation. Given an image sequence and a natural-language query, the model composes function calls to spatial tools including 3D reconstruction, camera-pose recovery, novel-view rendering, etc. These operations convert raw 2D inputs into an explorable 3D scene, enabling MLLMs to reason explicitly over structured spatial representations. Notably, pySpatial requires no gradient-based fine-tuning and operates in a fully zero-shot setting. Experimental evaluations on the challenging MindCube and Omni3D-Bench benchmarks demonstrate that our framework pySpatial consistently surpasses strong MLLM baselines; for instance, it outperforms GPT-4.1-mini by 12.94% on MindCube. Furthermore, we conduct real-world indoor navigation experiments where the robot can successfully traverse complex environments using route plans generated by pySpatial, highlighting the practical effectiveness of our approach.
-
-  </details>
-
-
-
-- **PPC-MT: Parallel Point Cloud Completion with Mamba-Transformer Hybrid Architecture**  
-  Jie Li, Shengwei Tian, Long Yu, Xin Ning  
-  _2026-03-01_ · https://arxiv.org/abs/2603.00870v1  
-  <details><summary>Abstract</summary>
-
-  Existing point cloud completion methods struggle to balance high-quality reconstruction with computational efficiency. To address this, we propose PPC-MT, a novel parallel framework for point cloud completion leveraging a hybrid Mamba-Transformer architecture. Our approach introduces an innovative parallel completion strategy guided by Principal Component Analysis (PCA), which imposes a geometrically meaningful structure on unordered point clouds, transforming them into ordered sets and decomposing them into multiple subsets. These subsets are reconstructed in parallel using a multi-head reconstructor. This structured parallel synthesis paradigm significantly enhances the uniformity of point distribution and detail fidelity, while preserving computational efficiency. By integrating Mamba's linear complexity for efficient feature extraction during encoding with the Transformer's capability to model fine-grained multi-sequence relationships during decoding, PPC-MT effectively balances efficiency and reconstruction accuracy. Extensive quantitative and qualitative experiments on benchmark datasets, including PCN, ShapeNet-55/34, and KITTI, demonstrate that PPC-MT outperforms state-of-the-art methods across multiple metrics, validating the efficacy of our proposed framework.
-
-  </details>
-
-
-
-- **STMI: Segmentation-Guided Token Modulation with Cross-Modal Hypergraph Interaction for Multi-Modal Object Re-Identification**  
-  Xingguo Xu, Zhanyu Liu, Weixiang Zhou, Yuansheng Gao, Junjie Cao, Yuhao Wang, Jixiang Luo, Dell Zhang  
-  _2026-02-28_ · https://arxiv.org/abs/2603.00695v1  
-  <details><summary>Abstract</summary>
-
-  Multi-modal object Re-Identification (ReID) aims to exploit complementary information from different modalities to retrieve specific objects. However, existing methods often rely on hard token filtering or simple fusion strategies, which can lead to the loss of discriminative cues and increased background interference. To address these challenges, we propose STMI, a novel multi-modal learning framework consisting of three key components: (1) Segmentation-Guided Feature Modulation (SFM) module leverages SAM-generated masks to enhance foreground representations and suppress background noise through learnable attention modulation; (2) Semantic Token Reallocation (STR) module employs learnable query tokens and an adaptive reallocation mechanism to extract compact and informative representations without discarding any tokens; (3) Cross-Modal Hypergraph Interaction (CHI) module constructs a unified hypergraph across modalities to capture high-order semantic relationships. Extensive experiments on public benchmarks (i.e., RGBNT201, RGBNT100, and MSVR310) demonstrate the effectiveness and robustness of our proposed STMI framework in multi-modal ReID scenarios.
 
   </details>
 

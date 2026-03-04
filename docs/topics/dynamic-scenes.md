@@ -1,11 +1,55 @@
 # Dynamic Scenes & 4D Reconstruction
 
-_Updated: 2026-03-03 07:08 UTC_
+_Updated: 2026-03-04 07:04 UTC_
 
 Total papers shown: **8**
 
 
 ---
+
+- **The Dresden Dataset for 4D Reconstruction of Non-Rigid Abdominal Surgical Scenes**  
+  Reuben Docea, Rayan Younis, Yonghao Long, Maxime Fleury, Jinjing Xu, Chenyang Li, André Schulze, Ann Wierick, Johannes Bender, Micha Pfeiffer, et al.  
+  _2026-03-03_ · https://arxiv.org/abs/2603.02985v1  
+  <details><summary>Abstract</summary>
+
+  The D4D Dataset provides paired endoscopic video and high-quality structured-light geometry for evaluating 3D reconstruction of deforming abdominal soft tissue in realistic surgical conditions. Data were acquired from six porcine cadaver sessions using a da Vinci Xi stereo endoscope and a Zivid structured-light camera, registered via optical tracking and manually curated iterative alignment methods. Three sequence types - whole deformations, incremental deformations, and moved-camera clips - probe algorithm robustness to non-rigid motion, deformation magnitude, and out-of-view updates. Each clip provides rectified stereo images, per-frame instrument masks, stereo depth, start/end structured-light point clouds, curated camera poses and camera intrinsics. In postprocessing, ICP and semi-automatic registration techniques are used to register data, and instrument masks are created. The dataset enables quantitative geometric evaluation in both visible and occluded regions, alongside photometric view-synthesis baselines. Comprising over 300,000 frames and 369 point clouds across 98 curated recordings, this resource can serve as a comprehensive benchmark for developing and evaluating non-rigid SLAM, 4D reconstruction, and depth estimation methods.
+
+  </details>
+
+
+
+- **Interpretable Motion-Attentive Maps: Spatio-Temporally Localizing Concepts in Video Diffusion Transformers**  
+  Youngjun Jun, Seil Kang, Woojung Han, Seong Jae Hwang  
+  _2026-03-03_ · https://arxiv.org/abs/2603.02919v1  
+  <details><summary>Abstract</summary>
+
+  Video Diffusion Transformers (DiTs) have been synthesizing high-quality video with high fidelity from given text descriptions involving motion. However, understanding how Video DiTs convert motion words into video remains insufficient. Furthermore, while prior studies on interpretable saliency maps primarily target objects, motion-related behavior in Video DiTs remains largely unexplored. In this paper, we investigate concrete motion features that specify when and which object moves for a given motion concept. First, to spatially localize, we introduce GramCol, which adaptively produces per-frame saliency maps for any text concept, including both motion and non-motion. Second, we propose a motion-feature selection algorithm to obtain an Interpretable Motion-Attentive Map (IMAP) that localizes motion spatially and temporally. Our method discovers concept saliency maps without the need for any gradient calculation or parameter update. Experimentally, our method shows outstanding localization capability on the motion localization task and zero-shot video semantic segmentation, providing interpretable and clearer saliency maps for both motion and non-motion concepts.
+
+  </details>
+
+
+
+- **Track4World: Feedforward World-centric Dense 3D Tracking of All Pixels**  
+  Jiahao Lu, Jiayi Xu, Wenbo Hu, Ruijie Zhu, Chengfeng Zhao, Sai-Kit Yeung, Ying Shan, Yuan Liu  
+  _2026-03-03_ · https://arxiv.org/abs/2603.02573v1  
+  <details><summary>Abstract</summary>
+
+  Estimating the 3D trajectory of every pixel from a monocular video is crucial and promising for a comprehensive understanding of the 3D dynamics of videos. Recent monocular 3D tracking works demonstrate impressive performance, but are limited to either tracking sparse points on the first frame or a slow optimization-based framework for dense tracking. In this paper, we propose a feedforward model, called Track4World, enabling an efficient holistic 3D tracking of every pixel in the world-centric coordinate system. Built on the global 3D scene representation encoded by a VGGT-style ViT, Track4World applies a novel 3D correlation scheme to simultaneously estimate the pixel-wise 2D and 3D dense flow between arbitrary frame pairs. The estimated scene flow, along with the reconstructed 3D geometry, enables subsequent efficient 3D tracking of every pixel of this video. Extensive experiments on multiple benchmarks demonstrate that our approach consistently outperforms existing methods in 2D/3D flow estimation and 3D tracking, highlighting its robustness and scalability for real-world 4D reconstruction tasks.
+
+  </details>
+
+
+
+- **Aligning Fetal Anatomy with Kinematic Tree Log-Euclidean PolyRigid Transforms**  
+  Yingcheng Liu, Athena Taymourtash, Yang Liu, Esra Abaci Turk, William M. Wells, Leo Joskowicz, P. Ellen Grant, Polina Golland  
+  _2026-03-02_ · https://arxiv.org/abs/2603.02371v1  
+  <details><summary>Abstract</summary>
+
+  Automated analysis of articulated bodies is crucial in medical imaging. Existing surface-based models often ignore internal volumetric structures and rely on deformation methods that lack anatomical consistency guarantees. To address this problem, we introduce a differentiable volumetric body model based on the Skinned Multi-Person Linear (SMPL) formulation, driven by a new Kinematic Tree-based Log-Euclidean PolyRigid (KTPolyRigid) transform. KTPolyRigid resolves Lie algebra ambiguities associated with large, non-local articulated motions, and encourages smooth, bijective volumetric mappings. Evaluated on 53 fetal MRI volumes, KTPolyRigid yields deformation fields with significantly fewer folding artifacts. Furthermore, our framework enables robust groupwise image registration and a label-efficient, template-based segmentation of fetal organs. It provides a robust foundation for standardized volumetric analysis of articulated bodies in medical imaging.
+
+  </details>
+
+
 
 - **FluxMem: Adaptive Hierarchical Memory for Streaming Video Understanding**  
   Yiweng Xie, Bo He, Junke Wang, Xiangyu Zheng, Ziyi Ye, Zuxuan Wu  
@@ -46,50 +90,6 @@ Total papers shown: **8**
   <details><summary>Abstract</summary>
 
   Open-world promptable 3D semantic segmentation remains brittle as semantics are inferred in the input sensor coordinates. Yet, humans, in contrast, interpret parts via functional roles in a canonical space -- wings extend laterally, handles protrude to the side, and legs support from below. Psychophysical evidence shows that we mentally rotate objects into canonical frames to reveal these roles. To fill this gap, we propose \methodName{}, which attains canonical space perception by inducing a latent canonical reference frame learned directly from data. By construction, we create a unified canonical dataset through LLM-guided intra- and cross-category alignment, exposing canonical spatial regularities across 200 categories. By induction, we realize canonicality inside the model through a dual-branch architecture with canonical map anchoring and canonical box calibration, collapsing pose variation and symmetry into a stable canonical embedding. This shift from input pose space to canonical embedding yields far more stable and transferable part semantics. Experimental results show that \methodName{} establishes new state of the art in open-world promptable 3D segmentation.
-
-  </details>
-
-
-
-- **Decoupling Motion and Geometry in 4D Gaussian Splatting**  
-  Yi Zhang, Yulei Kang, Jian-Fang Hu  
-  _2026-03-01_ · https://arxiv.org/abs/2603.00952v1  
-  <details><summary>Abstract</summary>
-
-  High-fidelity reconstruction of dynamic scenes is an important yet challenging problem. While recent 4D Gaussian Splatting (4DGS) has demonstrated the ability to model temporal dynamics, it couples Gaussian motion and geometric attributes within a single covariance formulation, which limits its expressiveness for complex motions and often leads to visual artifacts. To address this, we propose VeGaS, a novel velocity-based 4D Gaussian Splatting framework that decouples Gaussian motion and geometry. Specifically, we introduce a Galilean shearing matrix that explicitly incorporates time-varying velocity to flexibly model complex non-linear motions, while strictly isolating the effects of Gaussian motion from the geometry-related conditional Gaussian covariance. Furthermore, a Geometric Deformation Network is introduced to refine Gaussian shapes and orientations using spatio-temporal context and velocity cues, enhancing temporal geometric modeling. Extensive experiments on public datasets demonstrate that VeGaS achieves state-of-the-art performance.
-
-  </details>
-
-
-
-- **Uncertainty-Aware Concept and Motion Segmentation for Semi-Supervised Angiography Videos**  
-  Yu Luo, Guangyu Wei, Yangfan Li, Jieyu He, Yueming Lyu  
-  _2026-03-01_ · https://arxiv.org/abs/2603.00881v1  
-  <details><summary>Abstract</summary>
-
-  Segmentation of the main coronary artery from X-ray coronary angiography (XCA) sequences is crucial for the diagnosis of coronary artery diseases. However, this task is challenging due to issues such as blurred boundaries, inconsistent radiation contrast, complex motion patterns, and a lack of annotated images for training. Although Semi-Supervised Learning (SSL) can alleviate the annotation burden, conventional methods struggle with complicated temporal dynamics and unreliable uncertainty quantification. To address these challenges, we propose SAM3-based Teacher-student framework with Motion-Aware consistency and Progressive Confidence Regularization (SMART), a semi-supervised vessel segmentation approach for X-ray angiography videos. First, our method utilizes SAM3's unique promptable concept segmentation design and innovates a SAM3-based teacher-student framework to maximize the performance potential of both the teacher and the student. Second, we enhance segmentation by integrating the vessel mask warping technique and motion consistency loss to model complex vessel dynamics. To address the issue of unreliable teacher predictions caused by blurred boundaries and minimal contrast, we further propose a progressive confidence-aware consistency regularization to mitigate the risk of unreliable outputs. Extensive experiments on three datasets of XCA sequences from different institutions demonstrate that SMART achieves state-of-the-art performance while requiring significantly fewer annotations, making it particularly valuable for real-world clinical applications where labeled data is scarce. Our code is available at: https://github.com/qimingfan10/SMART.
-
-  </details>
-
-
-
-- **Efficient Conformal Volumetry for Template-Based Segmentation**  
-  Matt Y. Cheung, Ashok Veeraraghavan, Guha Balakrishnan  
-  _2026-02-28_ · https://arxiv.org/abs/2603.00798v1  
-  <details><summary>Abstract</summary>
-
-  Template-based segmentation, a widely used paradigm in medical imaging, propagates anatomical labels via deformable registration from a labeled atlas to a target image, and is often used to compute volumetric biomarkers for downstream decision-making. While conformal prediction (CP) provides finite-sample valid intervals for scalar metrics, existing segmentation-based uncertainty quantification (UQ) approaches either rely on learned model features, often unavailable in classic template-based pipelines, or treat the registration process as a black box, resulting in overly conservative intervals when applied directly in output space. We introduce ConVOLT, a CP framework that achieves efficient volumetric UQ by conditioning calibration on properties of the estimated deformation field from template-based segmentation. ConVOLT calibrates a learned volumetric scaling factor from deformation space features. We evaluate ConVOLT on template-based segmentation tasks involving global, regional, and label volumetry across multiple datasets and registration methods. ConVOLT achieves target coverage while producing substantially tighter intervals than output-space conformal baselines. Our work paves way to exploit the registration process for efficient UQ in medical imaging pipelines.
-
-  </details>
-
-
-
-- **Exploring Spatiotemporal Feature Propagation for Video-Level Compressive Spectral Reconstruction: Dataset, Model and Benchmark**  
-  Lijing Cai, Zhan Shi, Chenglong Huang, Jinyao Wu, Qiping Li, Zikang Huo, Linsen Chen, Chongde Zi, Xun Cao  
-  _2026-02-28_ · https://arxiv.org/abs/2603.00611v1  
-  <details><summary>Abstract</summary>
-
-  Recently, Spectral Compressive Imaging (SCI) has achieved remarkable success, unlocking significant potential for dynamic spectral vision. However, existing reconstruction methods, primarily image-based, suffer from two limitations: (i) Encoding process masks spatial-spectral features, leading to uncertainty in reconstructing missing information from single compressed measurements, and (ii) The frame-by-frame reconstruction paradigm fails to ensure temporal consistency, which is crucial in the video perception. To address these challenges, this paper seeks to advance spectral reconstruction from the image level to the video level, leveraging the complementary features and temporal continuity across adjacent frames in dynamic scenes. Initially, we construct the first high-quality dynamic hyperspectral image dataset (DynaSpec), comprising 30 sequences obtained through frame-scanning acquisition. Subsequently, we propose the Propagation-Guided Spectral Video Reconstruction Transformer (PG-SVRT), which employs a spatial-then-temporal attention to effectively reconstruct spectral features from abundant video information, while using a bridged token to reduce computational complexity. Finally, we conduct simulation experiments to assess the performance of four SCI systems, and construct a DD-CASSI prototype for real-world data collection and benchmarking. Extensive experiments demonstrate that PG-SVRT achieves superior performance in reconstruction quality, spectral fidelity, and temporal consistency, while maintaining minimal FLOPs. Project page: https://github.com/nju-cite/DynaSpec
 
   </details>
 
