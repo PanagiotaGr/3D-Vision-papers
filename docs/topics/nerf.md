@@ -1,11 +1,33 @@
 # NeRF & Neural Radiance Fields
 
-_Updated: 2026-03-04 07:04 UTC_
+_Updated: 2026-03-05 07:08 UTC_
 
-Total papers shown: **12**
+Total papers shown: **9**
 
 
 ---
+
+- **BLOCK: An Open-Source Bi-Stage MLLM Character-to-Skin Pipeline for Minecraft**  
+  Hengquan Guo  
+  _2026-03-04_ · https://arxiv.org/abs/2603.03964v1  
+  <details><summary>Abstract</summary>
+
+  We present \textbf{BLOCK}, an open-source bi-stage character-to-skin pipeline that generates pixel-perfect Minecraft skins from arbitrary character concepts. BLOCK decomposes the problem into (i) a \textbf{3D preview synthesis stage} driven by a large multimodal model (MLLM) with a carefully designed prompt-and-reference template, producing a consistent dual-panel (front/back) oblique-view Minecraft-style preview; and (ii) a \textbf{skin decoding stage} based on a fine-tuned FLUX.2 model that translates the preview into a skin atlas image. We further propose \textbf{EvolveLoRA}, a progressive LoRA curriculum (text-to-image $\rightarrow$ image-to-image $\rightarrow$ preview-to-skin) that initializes each phase from the previous adapter to improve stability and efficiency. BLOCK is released with all prompt templates and fine-tuned weights to support reproducible character-to-skin generation.
+
+  </details>
+
+
+
+- **WSI-INR: Implicit Neural Representations for Lesion Segmentation in Whole-Slide Images**  
+  Yunheng Wu, Wenqi Huang, Liangyi Wang, Masahiro Oda, Yuichiro Hayashi, Daniel Rueckert, Kensaku Mori  
+  _2026-03-04_ · https://arxiv.org/abs/2603.03749v1  
+  <details><summary>Abstract</summary>
+
+  Whole-slide images (WSIs) are fundamental for computational pathology, where accurate lesion segmentation is critical for clinical decision making. Existing methods partition WSIs into discrete patches, disrupting spatial continuity and treating multi-resolution views as independent samples, which leads to spatially fragmented segmentation and reduced robustness to resolution variations. To address the issues, we propose WSI-INR, a novel patch-free framework based on Implicit Neural Representations (INRs). WSI-INR models the WSI as a continuous implicit function mapping spatial coordinates directly to tissue semantics features, outputting segmentation results while preserving intrinsic spatial information across the entire slide. In the WSI-INR, we incorporate multi-resolution hash grid encoding to regard different resolution levels as varying sampling densities of the same continuous tissue, achieving a consistent feature representation across resolutions. In addition, by jointly training a shared INR decoder, WSI-INR can capture general priors across different cases. Experimental results showed that WSI-INR maintains robust segmentation performance across resolutions; at Base/4, our resolution-specific optimization improves Dice score by +26.11%, while U-Net and TransUNet decrease by 54.28% and 36.18%, respectively. Crucially, this work enables INRs to segment highly heterogeneous pathological lesions beyond structurally consistent anatomical tissues, offering a fresh perspective for pathological analysis.
+
+  </details>
+
+
 
 - **VIRGi: View-dependent Instant Recoloring of 3D Gaussians Splats**  
   Alessio Mazzucchelli, Ivan Ojeda-Martin, Fernando Rivas-Manzaneque, Elena Garces, Adrian Penate-Sanchez, Francesc Moreno-Noguer  
@@ -20,7 +42,7 @@ Total papers shown: **12**
 
 - **Generalized non-exponential Gaussian splatting**  
   Sébastien Speierer, Adrian Jarabo  
-  _2026-03-03_ · https://arxiv.org/abs/2603.02887v1  
+  _2026-03-03_ · https://arxiv.org/abs/2603.02887v2  
   <details><summary>Abstract</summary>
 
   In this work we generalize 3D Gaussian splatting (3DGS) to a wider family of physically-based alpha-blending operators. 3DGS has become the standard de-facto for radiance field rendering and reconstruction, given its flexibility and efficiency. At its core, it is based on alpha-blending sorted semitransparent primitives, which in the limit converges to the classic radiative transfer function with exponential transmittance. Inspired by recent research on non-exponential radiative transfer, we generalize the image formation model of 3DGS to non-exponential regimes. Based on this generalization, we use a quadratic transmittance to define sub-linear, linear, and super-linear versions of 3DGS, which exhibit faster-than-exponential decay. We demonstrate that these new non-exponential variants achieve similar quality than the original 3DGS but significantly reduce the number of overdraws, which result on speed-ups of up to $4\times$ in complex real-world captures, on a ray-tracing-based renderer.
@@ -79,61 +101,6 @@ Total papers shown: **12**
   <details><summary>Abstract</summary>
 
   Recent advances in generalizable 3D Gaussian Splatting (3DGS) have enabled rapid 3D scene reconstruction within seconds, eliminating the need for per-scene optimization. However, existing methods primarily follow an offline reconstruction paradigm, lacking the capacity for continuous reconstruction, which limits their applicability to online scenarios such as robotics and VR/AR. In this paper, we introduce OnlineX, a feed-forward framework that reconstructs both 3D visual appearance and language fields in an online manner using only streaming images. A key challenge in online formulation is the cumulative drift issue, which is rooted in the fundamental conflict between two opposing roles of the memory state: an active role that constantly refreshes to capture high-frequency local geometry, and a stable role that conservatively accumulates and preserves the long-term global structure. To address this, we introduce a decoupled active-to-stable state evolution paradigm. Our framework decouples the memory state into a dedicated active state and a persistent stable state, and then cohesively fuses the information from the former into the latter to achieve both fidelity and stability. Moreover, we jointly model visual appearance and language fields and incorporate an implicit Gaussian fusion module to enhance reconstruction quality. Experiments on mainstream datasets demonstrate that our method consistently outperforms prior work in novel view synthesis and semantic understanding, showcasing robust performance across input sequences of varying lengths with real-time inference speed.
-
-  </details>
-
-
-
-- **Tiny-DroNeRF: Tiny Neural Radiance Fields aboard Federated Learning-enabled Nano-drones**  
-  Ilenia Carboni, Elia Cereda, Lorenzo Lamberti, Daniele Malpetti, Francesco Conti, Daniele Palossi  
-  _2026-03-02_ · https://arxiv.org/abs/2603.01850v1  
-  <details><summary>Abstract</summary>
-
-  Sub-30g nano-sized aerial robots can leverage their agility and form factor to autonomously explore cluttered and narrow environments, like in industrial inspection and search and rescue missions. However, the price for their tiny size is a strong limit in their resources, i.e., sub-100 mW microcontroller units (MCUs) delivering $\sim$100 GOps/s at best, and memory budgets well below 100 MB. Despite these strict constraints, we aim to enable complex vision-based tasks aboard nano-drones, such as dense 3D scene reconstruction: a key robotic task underlying fundamental capabilities like spatial awareness and motion planning. Top-performing 3D reconstruction methods leverage neural radiance fields (NeRF) models, which require GBs of memory and massive computation, usually delivered by high-end GPUs consuming 100s of Watts. Our work introduces Tiny-DroNeRF, a lightweight NeRF model, based on Instant-NGP, and optimized for running on a GAP9 ultra-low-power (ULP) MCU aboard our nano-drones. Then, we further empower our Tiny-DroNeRF by leveraging a collaborative federated learning scheme, which distributes the model training among multiple nano-drones. Our experimental results show a 96% reduction in Tiny-DroNeRF's memory footprint compared to Instant-NGP, with only a 5.7 dB drop in reconstruction accuracy. Finally, our federated learning scheme allows Tiny-DroNeRF to train with an amount of data otherwise impossible to keep in a single drone's memory, increasing the overall reconstruction accuracy. Ultimately, our work combines, for the first time, NeRF training on an ULP MCU with federated learning on nano-drones.
-
-  </details>
-
-
-
-- **Sparse View Distractor-Free Gaussian Splatting**  
-  Yi Gu, Zhaorui Wang, Jiahang Cao, Jiaxu Wang, Mingle Zhao, Dongjun Ye, Renjing Xu  
-  _2026-03-02_ · https://arxiv.org/abs/2603.01603v1  
-  <details><summary>Abstract</summary>
-
-  3D Gaussian Splatting (3DGS) enables efficient training and fast novel view synthesis in static environments. To address challenges posed by transient objects, distractor-free 3DGS methods have emerged and shown promising results when dense image captures are available. However, their performance degrades significantly under sparse input conditions. This limitation primarily stems from the reliance on the color residual heuristics to guide the training, which becomes unreliable with limited observations. In this work, we propose a framework to enhance distractor-free 3DGS under sparse-view conditions by incorporating rich prior information. Specifically, we first adopt the geometry foundation model VGGT to estimate camera parameters and generate a dense set of initial 3D points. Then, we harness the attention maps from VGGT for efficient and accurate semantic entity matching. Additionally, we utilize Vision-Language Models (VLMs) to further identify and preserve the large static regions in the scene. We also demonstrate how these priors can be seamlessly integrated into existing distractor-free 3DGS methods. Extensive experiments confirm the effectiveness and robustness of our approach in mitigating transient distractors for sparse-view 3DGS training.
-
-  </details>
-
-
-
-- **Radiometrically Consistent Gaussian Surfels for Inverse Rendering**  
-  Kyu Beom Han, Jaeyoon Kim, Woo Jae Kim, Jinhwan Seo, Sung-eui Yoon  
-  _2026-03-02_ · https://arxiv.org/abs/2603.01491v1  
-  <details><summary>Abstract</summary>
-
-  Inverse rendering with Gaussian Splatting has advanced rapidly, but accurately disentangling material properties from complex global illumination effects, particularly indirect illumination, remains a major challenge. Existing methods often query indirect radiance from Gaussian primitives pre-trained for novel-view synthesis. However, these pre-trained Gaussian primitives are supervised only towards limited training viewpoints, thus lack supervision for modeling indirect radiances from unobserved views. To address this issue, we introduce radiometric consistency, a novel physically-based constraint that provides supervision towards unobserved views by minimizing the residual between each Gaussian primitive's learned radiance and its physically-based rendered counterpart. Minimizing the residual for unobserved views establishes a self-correcting feedback loop that provides supervision from both physically-based rendering and novel-view synthesis, enabling accurate modeling of inter-reflection. We then propose Radiometrically Consistent Gaussian Surfels (RadioGS), an inverse rendering framework built upon our principle by efficiently integrating radiometric consistency by utilizing Gaussian surfels and 2D Gaussian ray tracing. We further propose a finetuning-based relighting strategy that adapts Gaussian surfel radiances to new illuminations within minutes, achieving low rendering cost (<10ms). Extensive experiments on existing inverse rendering benchmarks show that RadioGS outperforms existing Gaussian-based methods in inverse rendering, while retaining the computational efficiency.
-
-  </details>
-
-
-
-- **You Only Need One Stage: Novel-View Synthesis From A Single Blind Face Image**  
-  Taoyue Wang, Xiang Zhang, Xiaotian Li, Huiyuan Yang, Lijun Yin  
-  _2026-03-01_ · https://arxiv.org/abs/2603.01328v1  
-  <details><summary>Abstract</summary>
-
-  We propose a novel one-stage method, NVB-Face, for generating consistent Novel-View images directly from a single Blind Face image. Existing approaches to novel-view synthesis for objects or faces typically require a high-resolution RGB image as input. When dealing with degraded images, the conventional pipeline follows a two-stage process: first restoring the image to high resolution, then synthesizing novel views from the restored result. However, this approach is highly dependent on the quality of the restored image, often leading to inaccuracies and inconsistencies in the final output. To address this limitation, we extract single-view features directly from the blind face image and introduce a feature manipulator that transforms these features into 3D-aware, multi-view latent representations. Leveraging the powerful generative capacity of a diffusion model, our framework synthesizes high-quality, consistent novel-view face images. Experimental results show that our method significantly outperforms traditional two-stage approaches in both consistency and fidelity.
-
-  </details>
-
-
-
-- **HeroGS: Hierarchical Guidance for Robust 3D Gaussian Splatting under Sparse Views**  
-  Jiashu Li, Xumeng Han, Zhaoyang Wei, Zipeng Wang, Kuiran Wang, Guorong Li, Zhenjun Han, Jianbin Jiao  
-  _2026-03-01_ · https://arxiv.org/abs/2603.01099v2  
-  <details><summary>Abstract</summary>
-
-  3D Gaussian Splatting (3DGS) has recently emerged as a promising approach in novel view synthesis, combining photorealistic rendering with real-time efficiency. However, its success heavily relies on dense camera coverage; under sparse-view conditions, insufficient supervision leads to irregular Gaussian distributions, characterized by globally sparse coverage, blurred background, and distorted high-frequency areas. To address this, we propose HeroGS, Hierarchical Guidance for Robust 3D Gaussian Splatting, a unified framework that establishes hierarchical guidance across the image, feature, and parameter levels. At the image level, sparse supervision is converted into pseudo-dense guidance, globally regularizing the Gaussian distributions and forming a consistent foundation for subsequent optimization. Building upon this, Feature-Adaptive Densification and Pruning (FADP) at the feature level leverages low-level features to refine high-frequency details and adaptively densifies Gaussians in background regions. The optimized distributions then support Co-Pruned Geometry Consistency (CPG) at parameter level, which guides geometric consistency through parameter freezing and co-pruning, effectively removing inconsistent splats. The hierarchical guidance strategy effectively constrains and optimizes the overall Gaussian distributions, thereby enhancing both structural fidelity and rendering quality. Extensive experiments demonstrate that HeroGS achieves high-fidelity reconstructions and consistently surpasses state-of-the-art baselines under sparse-view conditions.
 
   </details>
 
