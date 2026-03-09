@@ -1,84 +1,106 @@
 # 3D Reconstruction
 
-_Updated: 2026-03-08 06:58 UTC_
+_Updated: 2026-03-09 07:16 UTC_
 
-Total papers shown: **7**
+Total papers shown: **9**
 
 
 ---
 
-- **FaceCam: Portrait Video Camera Control via Scale-Aware Conditioning**  
-  Weijie Lyu, Ming-Hsuan Yang, Zhixin Shu  
-  _2026-03-05_ · https://arxiv.org/abs/2603.05506v1  
+- **SCOPE: Scene-Contextualized Incremental Few-Shot 3D Segmentation**  
+  Vishal Thengane, Zhaochong An, Tianjin Huang, Son Lam Phung, Abdesselam Bouzerdoum, Lu Yin, Na Zhao, Xiatian Zhu  
+  _2026-03-06_ · https://arxiv.org/abs/2603.06572v1  
   <details><summary>Abstract</summary>
 
-  We introduce FaceCam, a system that generates video under customizable camera trajectories for monocular human portrait video input. Recent camera control approaches based on large video-generation models have shown promising progress but often exhibit geometric distortions and visual artifacts on portrait videos due to scale-ambiguous camera representations or 3D reconstruction errors. To overcome these limitations, we propose a face-tailored scale-aware representation for camera transformations that provides deterministic conditioning without relying on 3D priors. We train a video generation model on both multi-view studio captures and in-the-wild monocular videos, and introduce two camera-control data generation strategies: synthetic camera motion and multi-shot stitching, to exploit stationary training cameras while generalizing to dynamic, continuous camera trajectories at inference time. Experiments on Ava-256 dataset and diverse in-the-wild videos demonstrate that FaceCam achieves superior performance in camera controllability, visual quality, identity and motion preservation.
+  Incremental Few-Shot (IFS) segmentation aims to learn new categories over time from only a few annotations. Although widely studied in 2D, it remains underexplored for 3D point clouds. Existing methods suffer from catastrophic forgetting or fail to learn discriminative prototypes under sparse supervision, and often overlook a key cue: novel categories frequently appear as unlabelled background in base-training scenes. We introduce SCOPE (Scene-COntextualised Prototype Enrichment), a plug-and-play background-guided prototype enrichment framework that integrates with any prototype-based 3D segmentation method. After base training, a class-agnostic segmentation model extracts high-confidence pseudo-instances from background regions to build a prototype pool. When novel classes arrive with few labelled samples, relevant background prototypes are retrieved and fused with few-shot prototypes to form enriched representations without retraining the backbone or adding parameters. Experiments on ScanNet and S3DIS show that SCOPE achieves SOTA performance, improving novel-class IoU by up to 6.98% and 3.61%, and mean IoU by 2.25% and 1.70%, respectively, while maintaining low forgetting. Code is available https://github.com/Surrey-UP-Lab/SCOPE.
 
   </details>
 
 
 
-- **RealWonder: Real-Time Physical Action-Conditioned Video Generation**  
-  Wei Liu, Ziyu Chen, Zizhang Li, Yue Wang, Hong-Xing Yu, Jiajun Wu  
-  _2026-03-05_ · https://arxiv.org/abs/2603.05449v1  
+- **SG-DOR: Learning Scene Graphs with Direction-Conditioned Occlusion Reasoning for Pepper Plants**  
+  Rohit Menon, Niklas Mueller-Goldingen, Sicong Pan, Gokul Krishna Chenchani, Maren Bennewitz  
+  _2026-03-06_ · https://arxiv.org/abs/2603.06512v1  
   <details><summary>Abstract</summary>
 
-  Current video generation models cannot simulate physical consequences of 3D actions like forces and robotic manipulations, as they lack structural understanding of how actions affect 3D scenes. We present RealWonder, the first real-time system for action-conditioned video generation from a single image. Our key insight is using physics simulation as an intermediate bridge: instead of directly encoding continuous actions, we translate them through physics simulation into visual representations (optical flow and RGB) that video models can process. RealWonder integrates three components: 3D reconstruction from single images, physics simulation, and a distilled video generator requiring only 4 diffusion steps. Our system achieves 13.2 FPS at 480x832 resolution, enabling interactive exploration of forces, robot actions, and camera controls on rigid objects, deformable bodies, fluids, and granular materials. We envision RealWonder opens new opportunities to apply video models in immersive experiences, AR/VR, and robot learning. Our code and model weights are publicly available in our project website: https://liuwei283.github.io/RealWonder/
+  Robotic harvesting in dense crop canopies requires effective interventions that depend not only on geometry, but also on explicit, direction-conditioned relations identifying which organs obstruct a target fruit. We present SG-DOR (Scene Graphs with Direction-Conditioned Occlusion Reasoning), a relational framework that, given instance-segmented organ point clouds, infers a scene graph encoding physical attachments and direction-conditioned occlusion. We introduce an occlusion ranking task for retrieving and ranking candidate leaves for a target fruit and approach direction, and propose a direction-aware graph neural architecture with per-fruit leaf-set attention and union-level aggregation. Experiments on a multi-plant synthetic pepper dataset show improved occlusion prediction (F1=0.73, NDCG@3=0.85) and attachment inference (edge F1=0.83) over strong ablations, yielding a structured relational signal for downstream intervention planning.
 
   </details>
 
 
 
-- **OpenFrontier: General Navigation with Visual-Language Grounded Frontiers**  
-  Esteban Padilla, Boyang Sun, Marc Pollefeys, Hermann Blum  
-  _2026-03-05_ · https://arxiv.org/abs/2603.05377v1  
+- **Rewis3d: Reconstruction Improves Weakly-Supervised Semantic Segmentation**  
+  Jonas Ernst, Wolfgang Boettcher, Lukas Hoyer, Jan Eric Lenssen, Bernt Schiele  
+  _2026-03-06_ · https://arxiv.org/abs/2603.06374v1  
   <details><summary>Abstract</summary>
 
-  Open-world navigation requires robots to make decisions in complex everyday environments while adapting to flexible task requirements. Conventional navigation approaches often rely on dense 3D reconstruction and hand-crafted goal metrics, which limits their generalization across tasks and environments. Recent advances in vision--language navigation (VLN) and vision--language--action (VLA) models enable end-to-end policies conditioned on natural language, but typically require interactive training, large-scale data collection, or task-specific fine-tuning with a mobile agent. We formulate navigation as a sparse subgoal identification and reaching problem and observe that providing visual anchoring targets for high-level semantic priors enables highly efficient goal-conditioned navigation. Based on this insight, we select navigation frontiers as semantic anchors and propose OpenFrontier, a training-free navigation framework that seamlessly integrates diverse vision--language prior models. OpenFrontier enables efficient navigation with a lightweight system design, without dense 3D mapping, policy training, or model fine-tuning. We evaluate OpenFrontier across multiple navigation benchmarks and demonstrate strong zero-shot performance, as well as effective real-world deployment on a mobile robot.
+  We present Rewis3d, a framework that leverages recent advances in feed-forward 3D reconstruction to significantly improve weakly supervised semantic segmentation on 2D images. Obtaining dense, pixel-level annotations remains a costly bottleneck for training segmentation models. Alleviating this issue, sparse annotations offer an efficient weakly-supervised alternative. However, they still incur a performance gap. To address this, we introduce a novel approach that leverages 3D scene reconstruction as an auxiliary supervisory signal. Our key insight is that 3D geometric structure recovered from 2D videos provides strong cues that can propagate sparse annotations across entire scenes. Specifically, a dual student-teacher architecture enforces semantic consistency between 2D images and reconstructed 3D point clouds, using state-of-the-art feed-forward reconstruction to generate reliable geometric supervision. Extensive experiments demonstrate that Rewis3d achieves state-of-the-art performance in sparse supervision, outperforming existing approaches by 2-7% without requiring additional labels or inference overhead.
 
   </details>
 
 
 
-- **Dark3R: Learning Structure from Motion in the Dark**  
-  Andrew Y Guo, Anagh Malik, SaiKiran Tedla, Yutong Dai, Yiqian Qin, Zach Salehe, Benjamin Attal, Sotiris Nousias, Kyros Kutulakos, David B. Lindell  
-  _2026-03-05_ · https://arxiv.org/abs/2603.05330v1  
+- **P-SLCR: Unsupervised Point Cloud Semantic Segmentation via Prototypes Structure Learning and Consistent Reasoning**  
+  Lixin Zhan, Jie Jiang, Tianjian Zhou, Yukun Du, Yan Zheng, Xuehu Duan  
+  _2026-03-06_ · https://arxiv.org/abs/2603.06321v1  
   <details><summary>Abstract</summary>
 
-  We introduce Dark3R, a framework for structure from motion in the dark that operates directly on raw images with signal-to-noise ratios (SNRs) below $-4$ dB -- a regime where conventional feature- and learning-based methods break down. Our key insight is to adapt large-scale 3D foundation models to extreme low-light conditions through a teacher--student distillation process, enabling robust feature matching and camera pose estimation in low light. Dark3R requires no 3D supervision; it is trained solely on noisy--clean raw image pairs, which can be either captured directly or synthesized using a simple Poisson--Gaussian noise model applied to well-exposed raw images. To train and evaluate our approach, we introduce a new, exposure-bracketed dataset that includes $\sim$42,000 multi-view raw images with ground-truth 3D annotations, and we demonstrate that Dark3R achieves state-of-the-art structure from motion in the low-SNR regime. Further, we demonstrate state-of-the-art novel view synthesis in the dark using Dark3R's predicted poses and a coarse-to-fine radiance field optimization procedure.
+  Current semantic segmentation approaches for point cloud scenes heavily rely on manual labeling, while research on unsupervised semantic segmentation methods specifically for raw point clouds is still in its early stages. Unsupervised point cloud learning poses significant challenges due to the absence of annotation information and the lack of pre-training. The development of effective strategies is crucial in this context. In this paper, we propose a novel prototype library-driven unsupervised point cloud semantic segmentation strategy that utilizes Structure Learning and Consistent Reasoning (P-SLCR). First, we propose a Consistent Structure Learning to establish structural feature learning between consistent points and the library of consistent prototypes by selecting high-quality features. Second, we propose a Semantic Relation Consistent Reasoning that constructs a prototype inter-relation matrix between consistent and ambiguous prototype libraries separately. This process ensures the preservation of semantic consistency by imposing constraints on consistent and ambiguous prototype libraries through the prototype inter-relation matrix. Finally, our method was extensively evaluated on the S3DIS, SemanticKITTI, and Scannet datasets, achieving the best performance compared to unsupervised methods. Specifically, the mIoU of 47.1% is achieved for Area-5 of the S3DIS dataset, surpassing the classical fully supervised method PointNet by 2.5%.
 
   </details>
 
 
 
-- **Digital Twin Driven Textile Classification and Foreign Object Recognition in Automated Sorting Systems**  
-  Serkan Ergun, Tobias Mitterer, Hubert Zangl  
-  _2026-03-05_ · https://arxiv.org/abs/2603.05230v1  
+- **Hierarchical Collaborative Fusion for 3D Instance-aware Referring Expression Segmentation**  
+  Keshen Zhou, Runnan Chen, Mingming Gong, Tongliang Liu  
+  _2026-03-06_ · https://arxiv.org/abs/2603.06250v1  
   <details><summary>Abstract</summary>
 
-  The increasing demand for sustainable textile recycling requires robust automation solutions capable of handling deformable garments and detecting foreign objects in cluttered environments. This work presents a digital twin driven robotic sorting system that integrates grasp prediction, multi modal perception, and semantic reasoning for real world textile classification. A dual arm robotic cell equipped with RGBD sensing, capacitive tactile feedback, and collision-aware motion planning autonomously separates garments from an unsorted basket, transfers them to an inspection zone, and classifies them using state of the art Visual Language Models (VLMs). We benchmark nine VLM s from five model families on a dataset of 223 inspection scenarios comprising shirts, socks, trousers, underwear, foreign objects (including garments outside of the aforementioned classes), and empty scenes. The evaluation assesses per class accuracy, hallucination behavior, and computational performance under practical hardware constraints. Results show that the Qwen model family achieves the highest overall accuracy (up to 87.9 %), with strong foreign object detection performance, while lighter models such as Gemma3 offer competitive speed accuracy trade offs for edge deployment. A digital twin combined with MoveIt enables collision aware path planning and integrates segmented 3D point clouds of inspected garments into the virtual environment for improved manipulation reliability. The presented system demonstrates the feasibility of combining semantic VLM reasoning with conventional grasp detection and digital twin technology for scalable, autonomous textile sorting in realistic industrial settings.
+  Generalised 3D Referring Expression Segmentation (3D-GRES) localizes objects in 3D scenes based on natural language, even when descriptions match multiple or zero targets. Existing methods rely solely on sparse point clouds, lacking rich visual semantics for fine-grained descriptions. We propose HCF-RES, a multi-modal framework with two key innovations. First, Hierarchical Visual Semantic Decomposition leverages SAM instance masks to guide CLIP encoding at dual granularities -- pixel-level and instance-level features -- preserving object boundaries during 2D-to-3D projection. Second, Progressive Multi-level Fusion integrates representations through intra-modal collaboration, cross-modal adaptive weighting between 2D semantic and 3D geometric features, and language-guided refinement. HCF-RES achieves state-of-the-art results on both ScanRefer and Multi3DRefer.
 
   </details>
 
 
 
-- **SSR-GS: Separating Specular Reflection in Gaussian Splatting for Glossy Surface Reconstruction**  
-  Ningjing Fan, Yiqun Wang  
-  _2026-03-05_ · https://arxiv.org/abs/2603.05152v1  
+- **EntON: Eigenentropy-Optimized Neighborhood Densification in 3D Gaussian Splatting**  
+  Miriam Jäger, Boris Jutzi  
+  _2026-03-06_ · https://arxiv.org/abs/2603.06216v1  
   <details><summary>Abstract</summary>
 
-  In recent years, 3D Gaussian splatting (3DGS) has achieved remarkable progress in novel view synthesis. However, accurately reconstructing glossy surfaces under complex illumination remains challenging, particularly in scenes with strong specular reflections and multi-surface interreflections. To address this issue, we propose SSR-GS, a specular reflection modeling framework for glossy surface reconstruction. Specifically, we introduce a prefiltered Mip-Cubemap to model direct specular reflections efficiently, and propose an IndiASG module to capture indirect specular reflections. Furthermore, we design Visual Geometry Priors (VGP) that couple a reflection-aware visual prior via a reflection score (RS) to downweight the photometric loss contribution of reflection-dominated regions, with geometry priors derived from VGGT, including progressively decayed depth supervision and transformed normal constraints. Extensive experiments on both synthetic and real-world datasets demonstrate that SSR-GS achieves state-of-the-art performance in glossy surface reconstruction.
+  We present a novel Eigenentropy-optimized neighboorhood densification strategy EntON in 3D Gaussian Splatting (3DGS) for geometrically accurate and high-quality rendered 3D reconstruction. While standard 3DGS produces Gaussians whose centers and surfaces are poorly aligned with the underlying object geometry, surface-focused reconstruction methods frequently sacrifice photometric accuracy. In contrast to the conventional densification strategy, which relies on the magnitude of the view-space position gradient, our approach introduces a geometry-aware strategy to guide adaptive splitting and pruning. Specifically, we compute the 3D shape feature Eigenentropy from the eigenvalues of the covariance matrix in the k-nearest neighborhood of each Gaussian center, which quantifies the local structural order. These Eigenentropy values are integrated into an alternating optimization framework: During the optimization process, the algorithm alternates between (i) standard gradient-based densification, which refines regions via view-space gradients, and (ii) Eigenentropy-aware densification, which preferentially densifies Gaussians in low-Eigenentropy (ordered, flat) neighborhoods to better capture fine geometric details on the object surface, and prunes those in high-Eigenentropy (disordered, spherical) regions. We provide quantitative and qualitative evaluations on two benchmark datasets: small-scale DTU dataset and large-scale TUM2TWIN dataset, covering man-made objects and urban scenes. Experiments demonstrate that our Eigenentropy-aware alternating densification strategy improves geometric accuracy by up to 33% and rendering quality by up to 7%, while reducing the number of Gaussians by up to 50% and training time by up to 23%. Overall, EnTON achieves a favorable balance between geometric accuracy, rendering quality and efficiency by avoiding unnecessary scene expansion.
 
   </details>
 
 
 
-- **CoIn3D: Revisiting Configuration-Invariant Multi-Camera 3D Object Detection**  
-  Zhaonian Kuang, Rui Ding, Haotian Wang, Xinhu Zheng, Meng Yang, Gang Hua  
-  _2026-03-05_ · https://arxiv.org/abs/2603.05042v1  
+- **JOPP-3D: Joint Open Vocabulary Semantic Segmentation on Point Clouds and Panoramas**  
+  Sandeep Inuganti, Hideaki Kanayama, Kanta Shimizu, Mahdi Chamseddine, Soichiro Yokota, Didier Stricker, Jason Rambach  
+  _2026-03-06_ · https://arxiv.org/abs/2603.06168v1  
   <details><summary>Abstract</summary>
 
-  Multi-camera 3D object detection (MC3D) has attracted increasing attention with the growing deployment of multi-sensor physical agents, such as robots and autonomous vehicles. However, MC3D models still struggle to generalize to unseen platforms with new multi-camera configurations. Current solutions simply employ a meta-camera for unified representation but lack comprehensive consideration. In this paper, we revisit this issue and identify that the devil lies in spatial prior discrepancies across source and target configurations, including different intrinsics, extrinsics, and array layouts. To address this, we propose CoIn3D, a generalizable MC3D framework that enables strong transferability from source configurations to unseen target ones. CoIn3D explicitly incorporates all identified spatial priors into both feature embedding and image observation through spatial-aware feature modulation (SFM) and camera-aware data augmentation (CDA), respectively. SFM enriches feature space by integrating four spatial representations, such as focal length, ground depth, ground gradient, and Plücker coordinate. CDA improves observation diversity under various configurations via a training-free dynamic novel-view image synthesis scheme. Extensive experiments demonstrate that CoIn3D achieves strong cross-configuration performance on landmark datasets such as NuScenes, Waymo, and Lyft, under three dominant MC3D paradigms represented by BEVDepth, BEVFormer, and PETR.
+  Semantic segmentation across visual modalities such as 3D point clouds and panoramic images remains a challenging task, primarily due to the scarcity of annotated data and the limited adaptability of fixed-label models. In this paper, we present JOPP-3D, an open-vocabulary semantic segmentation framework that jointly leverages panoramic and point cloud data to enable language-driven scene understanding. We convert RGB-D panoramic images into their corresponding tangential perspective images and 3D point clouds, then use these modalities to extract and align foundational vision-language features. This allows natural language querying to generate semantic masks on both input modalities. Experimental evaluation on the Stanford-2D-3D-s and ToF-360 datasets demonstrates the capability of JOPP-3D to produce coherent and semantically meaningful segmentations across panoramic and 3D domains. Our proposed method achieves a significant improvement compared to the SOTA in open and closed vocabulary 2D and 3D semantic segmentation.
+
+  </details>
+
+
+
+- **Transforming Omnidirectional RGB-LiDAR data into 3D Gaussian Splatting**  
+  Semin Bae, Hansol Lim, Jongseong Brad Choi  
+  _2026-03-06_ · https://arxiv.org/abs/2603.06061v1  
+  <details><summary>Abstract</summary>
+
+  The demand for large-scale digital twins is rapidly growing in robotics and autonomous driving. However, constructing these environments with 3D Gaussian Splatting (3DGS) usually requires expensive, purpose-built data collection. Meanwhile, deployed platforms routinely collect extensive omnidirectional RGB and LiDAR logs, but a significant portion of these sensor data is directly discarded or strictly underutilized due to transmission constraints and the lack of scalable reuse pipeline. In this paper, we present an omnidirectional RGB-LiDAR reuse pipeline that transforms these archived logs into robust initialization assets for 3DGS. Direct conversion of such raw logs introduces practical bottlenecks: inherent non-linear distortion leads to unreliable Structure-from-Motion (SfM) tracking, and dense, unorganized LiDAR clouds cause computational overhead during 3DGS optimization. To overcome these challenges, our pipeline strategically integrates an ERP-to-cubemap conversion module for deterministic spatial anchoring, alongside PRISM-a color stratified downsampling strategy. By bridging these multi-modal inputs via Fast Point Feature Histograms (FPFH) based global registration and Iterative Closest Point (ICP), our pipeline successfully repurposes a considerable fraction of discarded data into usable SfM geometry. Furthermore, our LiDAR-reinforced initialization consistently enhances the final 3DGS rendering fidelity in structurally complex scenes compared to vision-only baselines. Ultimately, this work provides a deterministic workflow for creating simulation-grade digital twins from standard archived sensor logs.
+
+  </details>
+
+
+
+- **RePer-360: Releasing Perspective Priors for 360$^\circ$ Depth Estimation via Self-Modulation**  
+  Cheng Guan, Chunyu Lin, Zhijie Shen, Junsong Zhang, Jiyuan Wang  
+  _2026-03-06_ · https://arxiv.org/abs/2603.05999v1  
+  <details><summary>Abstract</summary>
+
+  Recent depth foundation models trained on perspective imagery achieve strong performance, yet generalize poorly to 360$^\circ$ images due to the substantial geometric discrepancy between perspective and panoramic domains. Moreover, fully fine-tuning these models typically requires large amounts of panoramic data. To address this issue, we propose RePer-360, a distortion-aware self-modulation framework for monocular panoramic depth estimation that adapts depth foundation models while preserving powerful pretrained perspective priors. Specifically, we design a lightweight geometry-aligned guidance module to derive a modulation signal from two complementary projections (i.e., ERP and CP) and use it to guide the model toward the panoramic domain without overwriting its pretrained perspective knowledge. We further introduce a Self-Conditioned AdaLN-Zero mechanism that produces pixel-wise scaling factors to reduce the feature distribution gap between the perspective and panoramic domains. In addition, a cubemap-domain consistency loss further improves training stability and cross-projection alignment. By shifting the focus from complementary-projection fusion to panoramic domain adaptation under preserved pretrained perspective priors, RePer-360 surpasses standard fine-tuning methods while using only 1\% of the training data. Under the same in-domain training setting, it further achieves an approximately 20\% improvement in RMSE. Code will be released upon acceptance.
 
   </details>
 
