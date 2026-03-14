@@ -1,8 +1,8 @@
 # 3D Reconstruction
 
-_Updated: 2026-03-13 07:10 UTC_
+_Updated: 2026-03-14 07:04 UTC_
 
-Total papers shown: **21**
+Total papers shown: **16**
 
 
 ---
@@ -178,61 +178,6 @@ Total papers shown: **21**
   <details><summary>Abstract</summary>
 
   High-quality quadrilateral mesh generation is a fundamental challenge in computer graphics. Traditional optimization-based methods are often constrained by the topological quality of input meshes and suffer from severe efficiency bottlenecks, frequently becoming computationally prohibitive when handling high-resolution models. While emerging learning-based approaches offer greater flexibility, they primarily focus on cross-field prediction, often resulting in the loss of critical structural layouts and a lack of editability. In this paper, we propose TopGen, a robust and efficient learning-based framework that mimics professional manual modeling workflows by simultaneously predicting structural layouts and cross-fields. By processing input triangular meshes through point cloud sampling and a shape encoder, TopGen is inherently robust to non-manifold geometries and low-quality initial topologies. We introduce a dual-query decoder using edge-based and face-based sampling points as queries to perform structural line classification and cross-field regression in parallel. This integrated approach explicitly extracts the geometric skeleton while concurrently capturing orientation fields. Such synergy ensures the preservation of geometric integrity and provides an intuitive, editable foundation for subsequent quadrilateral remeshing. To support this framework, we also introduce a large-scale quadrilateral mesh dataset, TopGen-220K, featuring high-quality paired data comprising raw triangular meshes, structural layouts, cross-fields, and their corresponding quad meshes. Experimental results demonstrate that TopGen significantly outperforms existing state-of-the-art methods in both geometric fidelity and topological edge flow rationality.
-
-  </details>
-
-
-
-- **LCAMV: High-Accuracy 3D Reconstruction of Color-Varying Objects Using LCA Correction and Minimum-Variance Fusion in Structured Light**  
-  Wonbeen Oh, Jae-Sang Hyun  
-  _2026-03-11_ · https://arxiv.org/abs/2603.10456v1  
-  <details><summary>Abstract</summary>
-
-  Accurate 3D reconstruction of colored objects with structured light (SL) is hindered by lateral chromatic aberration (LCA) in optical components and uneven noise characteristics across RGB channels. This paper introduces lateral chromatic aberration correction and minimum-variance fusion (LCAMV), a robust 3D reconstruction method that operates with a single projector-camera pair without additional hardware or acquisition constraints. LCAMV analytically models and pixel-wise compensates LCA in both the projector and camera, then adaptively fuses multi-channel phase data using a Poisson-Gaussian noise model and minimum-variance estimation. Unlike existing methods that require extra hardware or multiple exposures, LCAMV enables fast acquisition. Experiments on planar and non-planar colored surfaces show that LCAMV outperforms grayscale conversion and conventional channel-weighting, reducing depth error by up to 43.6\%. These results establish LCAMV as an effective solution for high-precision 3D reconstruction of nonuniformly colored objects.
-
-  </details>
-
-
-
-- **AsyncMDE: Real-Time Monocular Depth Estimation via Asynchronous Spatial Memory**  
-  Lianjie Ma, Yuquan Li, Bingzheng Jiang, Ziming Zhong, Han Ding, Lijun Zhu  
-  _2026-03-11_ · https://arxiv.org/abs/2603.10438v1  
-  <details><summary>Abstract</summary>
-
-  Foundation-model-based monocular depth estimation offers a viable alternative to active sensors for robot perception, yet its computational cost often prohibits deployment on edge platforms. Existing methods perform independent per-frame inference, wasting the substantial computational redundancy between adjacent viewpoints in continuous robot operation. This paper presents AsyncMDE, an asynchronous depth perception system consisting of a foundation model and a lightweight model that amortizes the foundation model's computational cost over time. The foundation model produces high-quality spatial features in the background, while the lightweight model runs asynchronously in the foreground, fusing cached memory with current observations through complementary fusion, outputting depth estimates, and autoregressively updating the memory. This enables cross-frame feature reuse with bounded accuracy degradation. At a mere 3.83M parameters, it operates at 237 FPS on an RTX 4090, recovering 77% of the accuracy gap to the foundation model while achieving a 25X parameter reduction. Validated across indoor static, dynamic, and synthetic extreme-motion benchmarks, AsyncMDE degrades gracefully between refreshes and achieves 161FPS on a Jetson AGX Orin with TensorRT, clearly demonstrating its feasibility for real-time edge deployment.
-
-  </details>
-
-
-
-- **On the Structural Failure of Chamfer Distance in 3D Shape Optimization**  
-  Chang-Yong Song, David Hyde  
-  _2026-03-10_ · https://arxiv.org/abs/2603.09925v1  
-  <details><summary>Abstract</summary>
-
-  Chamfer distance is the standard training loss for point cloud reconstruction, completion, and generation, yet directly optimizing it can produce worse Chamfer values than not optimizing it at all. We show that this paradoxical failure is gradient-structural. The per-point Chamfer gradient creates a many-to-one collapse that is the unique attractor of the forward term and cannot be resolved by any local regularizer, including repulsion, smoothness, and density-aware re-weighting. We derive a necessary condition for collapse suppression: coupling must propagate beyond local neighborhoods. In a controlled 2D setting, shared-basis deformation suppresses collapse by providing global coupling; in 3D shape morphing, a differentiable MPM prior instantiates the same principle, consistently reducing the Chamfer gap across 20 directed pairs with a 2.5$\times$ improvement on the topologically complex dragon. The presence or absence of non-local coupling determines whether Chamfer optimization succeeds or collapses. This provides a practical design criterion for any pipeline that optimizes point-level distance metrics.
-
-  </details>
-
-
-
-- **VLM-Loc: Localization in Point Cloud Maps via Vision-Language Models**  
-  Shuhao Kang, Youqi Liao, Peijie Wang, Wenlong Liao, Qilin Zhang, Benjamin Busam, Xieyuanli Chen, Yun Liu  
-  _2026-03-10_ · https://arxiv.org/abs/2603.09826v1  
-  <details><summary>Abstract</summary>
-
-  Text-to-point-cloud (T2P) localization aims to infer precise spatial positions within 3D point cloud maps from natural language descriptions, reflecting how humans perceive and communicate spatial layouts through language. However, existing methods largely rely on shallow text-point cloud correspondence without effective spatial reasoning, limiting their accuracy in complex environments. To address this limitation, we propose VLM-Loc, a framework that leverages the spatial reasoning capability of large vision-language models (VLMs) for T2P localization. Specifically, we transform point clouds into bird's-eye-view (BEV) images and scene graphs that jointly encode geometric and semantic context, providing structured inputs for the VLM to learn cross-modal representations bridging linguistic and spatial semantics. On top of these representations, we introduce a partial node assignment mechanism that explicitly associates textual cues with scene graph nodes, enabling interpretable spatial reasoning for accurate localization. To facilitate systematic evaluation across diverse scenes, we present CityLoc, a benchmark built from multi-source point clouds for fine-grained T2P localization. Experiments on CityLoc demonstrate VLM-Loc achieves superior accuracy and robustness compared to state-of-the-art methods. Our code, model, and dataset are available at \href{https://github.com/MCG-NKU/nku-3d-vision}{repository}.
-
-  </details>
-
-
-
-- **ConfCtrl: Enabling Precise Camera Control in Video Diffusion via Confidence-Aware Interpolation**  
-  Liudi Yang, George Eskandar, Fengyi Shen, Mohammad Altillawi, Yang Bai, Chi Zhang, Ziyuan Liu, Abhinav Valada  
-  _2026-03-10_ · https://arxiv.org/abs/2603.09819v1  
-  <details><summary>Abstract</summary>
-
-  We address the challenge of novel view synthesis from only two input images under large viewpoint changes. Existing regression-based methods lack the capacity to reconstruct unseen regions, while camera-guided diffusion models often deviate from intended trajectories due to noisy point cloud projections or insufficient conditioning from camera poses. To address these issues, we propose ConfCtrl, a confidence-aware video interpolation framework that enables diffusion models to follow prescribed camera poses while completing unseen regions. ConfCtrl initializes the diffusion process by combining a confidence-weighted projected point cloud latent with noise as the conditioning input. It then applies a Kalman-inspired predict-update mechanism, treating the projected point cloud as a noisy measurement and using learned residual corrections to balance pose-driven predictions with noisy geometric observations. This allows the model to rely on reliable projections while down-weighting uncertain regions, yielding stable, geometry-aware generation. Experiments on multiple datasets show that ConfCtrl produces geometrically consistent and visually plausible novel views, effectively reconstructing occluded regions under large viewpoint changes.
 
   </details>
 
