@@ -1,8 +1,8 @@
 # Datasets & Benchmarks (3D / Vision)
 
-_Updated: 2026-03-14 07:04 UTC_
+_Updated: 2026-03-15 07:12 UTC_
 
-Total papers shown: **50**
+Total papers shown: **44**
 
 
 ---
@@ -486,72 +486,6 @@ Total papers shown: **50**
   <details><summary>Abstract</summary>
 
   With the rapid advancement of artificial intelligence, intelligent dentistry for clinical diagnosis and treatment has become increasingly promising. As the primary clinical dentistry task, tooth structure segmentation for Cone-Beam Computed Tomography (CBCT) has made significant progress in recent years. However, challenges arise from the obtainment difficulty of full-annotated data, and the acquisition variability of multi-source data across different institutions, which have caused low-quality utilization, voxel-level inconsistency, and domain-specific disparity in CBCT slices. Thus, the rational and efficient utilization of multi-source and unlabeled data represents a pivotal problem. In this paper, we propose SemiTooth, a generalizable semi-supervised framework for multi-source tooth segmentation. Specifically, we first compile MS3Toothset, Multi-Source Semi-Supervised Tooth DataSet for clinical dental CBCT, which contains data from three sources with different-level annotations. Then, we design a multi-teacher and multi-student framework, i.e., SemiTooth, which promotes semi-supervised learning for multi-source data. SemiTooth employs distinct student networks that learn from unlabeled data with different sources, supervised by its respective teachers. Furthermore, a Stricter Weighted-Confidence Constraint is introduced for multiple teachers to improve the multi-source accuracy.Extensive experiments are conducted on MS3Toothset to verify the feasibility and superiority of the SemiTooth framework, which achieves SOTA performance on the semi-supervised and multi-source tooth segmentation scenario.
-
-  </details>
-
-
-
-- **LaMoGen: Language to Motion Generation Through LLM-Guided Symbolic Inference**  
-  Junkun Jiang, Ho Yin Au, Jingyu Xiang, Jie Chen  
-  _2026-03-12_ · https://arxiv.org/abs/2603.11605v1  
-  <details><summary>Abstract</summary>
-
-  Human motion is highly expressive and naturally aligned with language, yet prevailing methods relying heavily on joint text-motion embeddings struggle to synthesize temporally accurate, detailed motions and often lack explainability. To address these limitations, we introduce LabanLite, a motion representation developed by adapting and extending the Labanotation system. Unlike black-box text-motion embeddings, LabanLite encodes each atomic body-part action (e.g., a single left-foot step) as a discrete Laban symbol paired with a textual template. This abstraction decomposes complex motions into interpretable symbol sequences and body-part instructions, establishing a symbolic link between high-level language and low-level motion trajectories. Building on LabanLite, we present LaMoGen, a Text-to-LabanLite-to-Motion Generation framework that enables large language models (LLMs) to compose motion sequences through symbolic reasoning. The LLM interprets motion patterns, relates them to textual descriptions, and recombines symbols into executable plans, producing motions that are both interpretable and linguistically grounded. To support rigorous evaluation, we introduce a Labanotation-based benchmark with structured description-motion pairs and three metrics that jointly measure text-motion alignment across symbolic, temporal, and harmony dimensions. Experiments demonstrate that LaMoGen establishes a new baseline for both interpretability and controllability, outperforming prior methods on our benchmark and two public datasets. These results highlight the advantages of symbolic reasoning and agent-based design for language-driven motion synthesis.
-
-  </details>
-
-
-
-- **WeEdit: A Dataset, Benchmark and Glyph-Guided Framework for Text-centric Image Editing**  
-  Hui Zhang, Juntao Liu, Zongkai Liu, Liqiang Niu, Fandong Meng, Zuxuan Wu, Yu-Gang Jiang  
-  _2026-03-12_ · https://arxiv.org/abs/2603.11593v1  
-  <details><summary>Abstract</summary>
-
-  Instruction-based image editing aims to modify specific content within existing images according to user-provided instructions while preserving non-target regions. Beyond traditional object- and style-centric manipulation, text-centric image editing focuses on modifying, translating, or rearranging textual elements embedded within images. However, existing leading models often struggle to execute complex text editing precisely, frequently producing blurry or hallucinated characters. We attribute these failures primarily to the lack of specialized training paradigms tailored for text-centric editing, as well as the absence of large-scale datasets and standardized benchmarks necessary for a closed-loop training and evaluation system. To address these limitations, we present WeEdit, a systematic solution encompassing a scalable data construction pipeline, two benchmarks, and a tailored two-stage training strategy. Specifically, we propose a novel HTML-based automatic editing pipeline, which generates 330K training pairs covering diverse editing operations and 15 languages, accompanied by standardized bilingual and multilingual benchmarks for comprehensive evaluation. On the algorithmic side, we employ glyph-guided supervised fine-tuning to inject explicit spatial and content priors, followed by a multi-objective reinforcement learning stage to align generation with instruction adherence, text clarity, and background preservation. Extensive experiments demonstrate that WeEdit outperforms previous open-source models by a clear margin across diverse editing operations.
-
-  </details>
-
-
-
-- **SVLL: Staged Vision-Language Learning for Physically Grounded Embodied Task Planning**  
-  Yuyuan Yang, Junkun Hong, Hongrong Wang, Honghao Cai, Xunpeng Ren, Ge Wang, Mingcong Lei, Shenhao Yan, Jiahao Yang, Chengsi Yao, et al.  
-  _2026-03-12_ · https://arxiv.org/abs/2603.11563v1  
-  <details><summary>Abstract</summary>
-
-  Embodied task planning demands vision-language models to generate action sequences that are both visually grounded and causally coherent over time. However, existing training paradigms face a critical trade-off: joint end-to-end training often leads to premature temporal binding, while standard reinforcement learning methods suffer from optimization instability. To bridge this gap, we present Staged Vision-Language Learning (SVLL), a unified three-stage framework for robust, physically-grounded embodied planning. In the first two stages, SVLL decouples spatial grounding from temporal reasoning, establishing robust visual dependency before introducing sequential action history. In the final stage, we identify a key limitation of standard Direct Preference Optimization (DPO), its purely relative nature -- optimizing only the preference gap between winning and losing trajectories while neglecting absolute likelihood constraints on optimal path, often yields unsafe or hallucinated behaviors. To address this, we further introduce Bias-DPO, a novel alignment objective that injects an inductive bias toward expert trajectories by explicitly maximizing likelihood on ground-truth actions while penalizing overconfident hallucinations. By anchoring the policy to the expert manifold and mitigating causal misalignment, SVLL, powered by Bias-DPO, ensures strict adherence to environmental affordances and effectively suppresses physically impossible shortcuts. Finally, extensive experiments on the interactive AI2-THOR benchmark and real-world robotic deployments demonstrate that SVLL outperforms both state-of-the-art open-source (e.g., Qwen2.5-VL-7B) and closed-source models (e.g., GPT-4o, Gemini-2.0-flash) in task success rate, while significantly reducing physical constraint violations.
-
-  </details>
-
-
-
-- **TornadoNet: Real-Time Building Damage Detection with Ordinal Supervision**  
-  Robinson Umeike, Cuong Pham, Ryan Hausen, Thang Dao, Shane Crawford, Tanya Brown-Giammanco, Gerard Lemson, John van de Lindt, Blythe Johnston, Arik Mitschang, et al.  
-  _2026-03-12_ · https://arxiv.org/abs/2603.11557v1  
-  <details><summary>Abstract</summary>
-
-  We present TornadoNet, a comprehensive benchmark for automated street-level building damage assessment evaluating how modern real-time object detection architectures and ordinal-aware supervision strategies perform under realistic post-disaster conditions. TornadoNet provides the first controlled benchmark demonstrating how architectural design and loss formulation jointly influence multi-level damage detection from street-view imagery, delivering methodological insights and deployable tools for disaster response. Using 3,333 high-resolution geotagged images and 8,890 annotated building instances from the 2021 Midwest tornado outbreak, we systematically compare CNN-based detectors from the YOLO family against transformer-based models (RT-DETR) for multi-level damage detection. Models are trained under standardized protocols using a five-level damage classification framework based on IN-CORE damage states, validated through expert cross-annotation. Baseline experiments reveal complementary architectural strengths. CNN-based YOLO models achieve highest detection accuracy and throughput, with larger variants reaching 46.05% mAP@0.5 at 66-276 FPS on A100 GPUs. Transformer-based RT-DETR models exhibit stronger ordinal consistency, achieving 88.13% Ordinal Top-1 Accuracy and MAOE of 0.65, indicating more reliable severity grading despite lower baseline mAP. To align supervision with the ordered nature of damage severity, we introduce soft ordinal classification targets and evaluate explicit ordinal-distance penalties. RT-DETR trained with calibrated ordinal supervision achieves 44.70% mAP@0.5, a 4.8 percentage-point improvement, with gains in ordinal metrics (91.15% Ordinal Top-1 Accuracy, MAOE = 0.56). These findings establish that ordinal-aware supervision improves damage severity estimation when aligned with detector architecture. Model & Data: https://github.com/crumeike/TornadoNet
-
-  </details>
-
-
-
-- **Enhancing Image Aesthetics with Dual-Conditioned Diffusion Models Guided by Multimodal Perception**  
-  Xinyu Nan, Ning Wang, Yuyao Zhai, Mei Yang  
-  _2026-03-12_ · https://arxiv.org/abs/2603.11556v1  
-  <details><summary>Abstract</summary>
-
-  Image aesthetic enhancement aims to perceive aesthetic deficiencies in images and perform corresponding editing operations, which is highly challenging and requires the model to possess creativity and aesthetic perception capabilities. Although recent advancements in image editing models have significantly enhanced their controllability and flexibility, they struggle with enhancing image aesthetic. The primary challenges are twofold: first, following editing instructions with aesthetic perception is difficult, and second, there is a scarcity of "perfectly-paired" images that have consistent content but distinct aesthetic qualities. In this paper, we propose Dual-supervised Image Aesthetic Enhancement (DIAE), a diffusion-based generative model with multimodal aesthetic perception. First, DIAE incorporates Multimodal Aesthetic Perception (MAP) to convert the ambiguous aesthetic instruction into explicit guidance by (i) employing detailed, standardized aesthetic instructions across multiple aesthetic attributes, and (ii) utilizing multimodal control signals derived from text-image pairs that maintain consistency within the same aesthetic attribute. Second, to mitigate the lack of "perfectly-paired" images, we collect "imperfectly-paired" dataset called IIAEData, consisting of images with varying aesthetic qualities while sharing identical semantics. To better leverage the weak matching characteristics of IIAEData during training, a dual-branch supervision framework is also introduced for weakly supervised image aesthetic enhancement. Experimental results demonstrate that DIAE outperforms the baselines and obtains superior image aesthetic scores and image content consistency scores.
-
-  </details>
-
-
-
-- **MANSION: Multi-floor lANguage-to-3D Scene generatIOn for loNg-horizon tasks**  
-  Lirong Che, Shuo Wen, Shan Huang, Chuang Wang, Yuzhe Yang, Gregory Dudek, Xueqian Wang, Jian Su  
-  _2026-03-12_ · https://arxiv.org/abs/2603.11554v1  
-  <details><summary>Abstract</summary>
-
-  Real-world robotic tasks are long-horizon and often span multiple floors, demanding rich spatial reasoning. However, existing embodied benchmarks are largely confined to single-floor in-house environments, failing to reflect the complexity of real-world tasks. We introduce MANSION, the first language-driven framework for generating building-scale, multi-floor 3D environments. Being aware of vertical structural constraints, MANSION generates realistic, navigable whole-building structures with diverse, human-friendly scenes, enabling the development and evaluation of cross-floor long-horizon tasks. Building on this framework, we release MansionWorld, a dataset of over 1,000 diverse buildings ranging from hospitals to offices, alongside a Task-Semantic Scene Editing Agent that customizes these environments using open-vocabulary commands to meet specific user needs. Benchmarking reveals that state-of-the-art agents degrade sharply in our settings, establishing MANSION as a critical testbed for the next generation of spatial reasoning and planning.
 
   </details>
 
