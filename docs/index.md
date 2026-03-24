@@ -2,24 +2,24 @@
 
 Daily arXiv digest covering NeRF, Gaussian Splatting, SLAM, 3D Reconstruction & Neural Rendering
 
-_Updated: 2026-03-23 07:38 UTC_
+_Updated: 2026-03-24 07:17 UTC_
 
 
 ## Topics
 
-- [NeRF & Neural Radiance Fields](topics/nerf.md) — **3** papers (last 3 days)
+- [NeRF & Neural Radiance Fields](topics/nerf.md) — **11** papers (last 3 days)
 
-- [Gaussian Splatting & 3DGS](topics/gaussian-splatting.md) — **2** papers (last 3 days)
+- [Gaussian Splatting & 3DGS](topics/gaussian-splatting.md) — **12** papers (last 3 days)
 
-- [SLAM & Localization](topics/slam.md) — **1** papers (last 3 days)
+- [SLAM & Localization](topics/slam.md) — **9** papers (last 3 days)
 
-- [3D Reconstruction](topics/3d-reconstruction.md) — **9** papers (last 3 days)
+- [3D Reconstruction](topics/3d-reconstruction.md) — **16** papers (last 3 days)
 
-- [Neural Rendering & View Synthesis](topics/neural-rendering.md) — **3** papers (last 3 days)
+- [Neural Rendering & View Synthesis](topics/neural-rendering.md) — **8** papers (last 3 days)
 
-- [Dynamic Scenes & 4D Reconstruction](topics/dynamic-scenes.md) — **4** papers (last 3 days)
+- [Dynamic Scenes & 4D Reconstruction](topics/dynamic-scenes.md) — **11** papers (last 3 days)
 
-- [Datasets & Benchmarks (3D / Vision)](topics/datasets-benchmarks.md) — **31** papers (last 3 days)
+- [Datasets & Benchmarks (3D / Vision)](topics/datasets-benchmarks.md) — **50** papers (last 3 days)
 
 
 ---
