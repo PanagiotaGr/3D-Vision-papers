@@ -1,11 +1,88 @@
 # Dynamic Scenes & 4D Reconstruction
 
-_Updated: 2026-03-24 07:17 UTC_
+_Updated: 2026-03-25 07:16 UTC_
 
-Total papers shown: **11**
+Total papers shown: **15**
 
 
 ---
+
+- **DA-Flow: Degradation-Aware Optical Flow Estimation with Diffusion Models**  
+  Jaewon Min, Jaeeun Lee, Yeji Choi, Paul Hyunbin Cho, Jin Hyeon Kim, Tae-Young Lee, Jongsik Ahn, Hwayeong Lee, Seonghyun Park, Seungryong Kim  
+  _2026-03-24_ · https://arxiv.org/abs/2603.23499v1  
+  <details><summary>Abstract</summary>
+
+  Optical flow models trained on high-quality data often degrade severely when confronted with real-world corruptions such as blur, noise, and compression artifacts. To overcome this limitation, we formulate Degradation-Aware Optical Flow, a new task targeting accurate dense correspondence estimation from real-world corrupted videos. Our key insight is that the intermediate representations of image restoration diffusion models are inherently corruption-aware but lack temporal awareness. To address this limitation, we lift the model to attend across adjacent frames via full spatio-temporal attention, and empirically demonstrate that the resulting features exhibit zero-shot correspondence capabilities. Based on this finding, we present DA-Flow, a hybrid architecture that fuses these diffusion features with convolutional features within an iterative refinement framework. DA-Flow substantially outperforms existing optical flow methods under severe degradation across multiple benchmarks.
+
+  </details>
+
+
+
+- **AgentRVOS: Reasoning over Object Tracks for Zero-Shot Referring Video Object Segmentation**  
+  Woojeong Jin, Jaeho Lee, Heeseong Shin, Seungho Jang, Junhwan Heo, Seungryong Kim  
+  _2026-03-24_ · https://arxiv.org/abs/2603.23489v1  
+  <details><summary>Abstract</summary>
+
+  Referring Video Object Segmentation (RVOS) aims to segment a target object throughout a video given a natural language query. Training-free methods for this task follow a common pipeline: a MLLM selects keyframes, grounds the referred object within those frames, and a video segmentation model propagates the results. While intuitive, this design asks the MLLM to make temporal decisions before any object-level evidence is available, limiting both reasoning quality and spatio-temporal coverage. To overcome this, we propose AgentRVOS, a training-free agentic pipeline built on the complementary strengths of SAM3 and a MLLM. Given a concept derived from the query, SAM3 provides reliable perception over the full spatio-temporal extent through generated mask tracks. The MLLM then identifies the target through query-grounded reasoning over this object-level evidence, iteratively pruning guided by SAM3's temporal existence information. Extensive experiments show that AgentRVOS achieves state-of-the-art performance among training-free methods across multiple benchmarks, with consistent results across diverse MLLM backbones. Our project page is available at: https://cvlab-kaist.github.io/AgentRVOS/.
+
+  </details>
+
+
+
+- **TETO: Tracking Events with Teacher Observation for Motion Estimation and Frame Interpolation**  
+  Jini Yang, Eunbeen Hong, Soowon Son, Hyunkoo Lee, Sunghwan Hong, Sunok Kim, Seungryong Kim  
+  _2026-03-24_ · https://arxiv.org/abs/2603.23487v1  
+  <details><summary>Abstract</summary>
+
+  Event cameras capture per-pixel brightness changes with microsecond resolution, offering continuous motion information lost between RGB frames. However, existing event-based motion estimators depend on large-scale synthetic data that often suffers from a significant sim-to-real gap. We propose TETO (Tracking Events with Teacher Observation), a teacher-student framework that learns event motion estimation from only $\sim$25 minutes of unannotated real-world recordings through knowledge distillation from a pretrained RGB tracker. Our motion-aware data curation and query sampling strategy maximizes learning from limited data by disentangling object motion from dominant ego-motion. The resulting estimator jointly predicts point trajectories and dense optical flow, which we leverage as explicit motion priors to condition a pretrained video diffusion transformer for frame interpolation. We achieve state-of-the-art point tracking on EVIMO2 and optical flow on DSEC using orders of magnitude less training data, and demonstrate that accurate motion estimation translates directly to superior frame interpolation quality on BS-ERGB and HQ-EVFI.
+
+  </details>
+
+
+
+- **Object Pose Transformer: Unifying Unseen Object Pose Estimation**  
+  Weihang Li, Lorenzo Garattoni, Fabien Despinoy, Nassir Navab, Benjamin Busam  
+  _2026-03-24_ · https://arxiv.org/abs/2603.23370v1  
+  <details><summary>Abstract</summary>
+
+  Learning model-free object pose estimation for unseen instances remains a fundamental challenge in 3D vision. Existing methods typically fall into two disjoint paradigms: category-level approaches predict absolute poses in a canonical space but rely on predefined taxonomies, while relative pose methods estimate cross-view transformations but cannot recover single-view absolute pose. In this work, we propose Object Pose Transformer (\ours{}), a unified feed-forward framework that bridges these paradigms through task factorization within a single model. \ours{} jointly predicts depth, point maps, camera parameters, and normalized object coordinates (NOCS) from RGB inputs, enabling both category-level absolute SA(3) pose and unseen-object relative SE(3) pose. Our approach leverages contrastive object-centric latent embeddings for canonicalization without requiring semantic labels at inference time, and uses point maps as a camera-space representation to enable multi-view relative geometric reasoning. Through cross-frame feature interaction and shared object embeddings, our model leverages relative geometric consistency across views to improve absolute pose estimation, reducing ambiguity in single-view predictions. Furthermore, \ours{} is camera-agnostic, learning camera intrinsics on-the-fly and supporting optional depth input for metric-scale recovery, while remaining fully functional in RGB-only settings. Extensive experiments on diverse benchmarks (NOCS, HouseCat6D, Omni6DPose, Toyota-Light) demonstrate state-of-the-art performance in both absolute and relative pose estimation tasks within a single unified architecture.
+
+  </details>
+
+
+
+- **3rd Place of MeViS-Audio Track of the 5th PVUW: VIRST-Audio**  
+  Jihwan Hong, Jaeyoung Do  
+  _2026-03-24_ · https://arxiv.org/abs/2603.23126v1  
+  <details><summary>Abstract</summary>
+
+  Audio-based Referring Video Object Segmentation (ARVOS) requires grounding audio queries into pixel-level object masks over time, posing challenges in bridging acoustic signals with spatio-temporal visual representations. In this report, we present VIRST-Audio, a practical framework built upon a pretrained RVOS model integrated with a vision-language architecture. Instead of relying on audio-specific training, we convert input audio into text using an ASR module and perform segmentation using text-based supervision, enabling effective transfer from text-based reasoning to audio-driven scenarios. To improve robustness, we further incorporate an existence-aware gating mechanism that estimates whether the referred target object is present in the video and suppresses predictions when it is absent, reducing hallucinated masks and stabilizing segmentation behavior. We evaluate our approach on the MeViS-Audio track of the 5th PVUW Challenge, where VIRST-Audio achieves 3rd place, demonstrating strong generalization and reliable performance in audio-based referring video segmentation.
+
+  </details>
+
+
+
+- **Cluster-Wise Spatio-Temporal Masking for Efficient Video-Language Pretraining**  
+  Weijun Zhuang, Yuqing Huang, Weikang Meng, Xin Li, Ming Liu, Xiaopeng Hong, Yaowei Wang, Wangmeng Zuo  
+  _2026-03-24_ · https://arxiv.org/abs/2603.22953v1  
+  <details><summary>Abstract</summary>
+
+  Large-scale video-language pretraining enables strong generalization across multimodal tasks but often incurs prohibitive computational costs. Although recent advances in masked visual modeling help mitigate this issue, they still suffer from two fundamental limitations: severe visual information loss under high masking ratios and temporal information leakage caused by inter-frame correlations. To address these challenges, we propose ClusterSTM, a Cluster-Wise Spatio-Temporal Masking strategy for efficient video-language pretraining. ClusterSTM first performs intra-frame clustering to partition visual tokens into multiple semantically independent clusters, then conducts cluster-wise masking by retaining the token with the highest temporal density within each cluster. Our masking strategy ensure that the retained tokens capture holistic video content while exhibit strong temporal correlation. Additionally, we introduce a video-text relevance reconstruction objective that aligns high-level multimodal semantics beyond conventional visual reconstruction. Extensive experiments across multiple benchmarks demonstrate that ClusterSTM achieves superior performance on video-text retrieval, video question answering, and video captioning tasks, establishing a new state-of-the-art among efficient video-language models.
+
+  </details>
+
+
+
+- **SLARM: Streaming and Language-Aligned Reconstruction Model for Dynamic Scenes**  
+  Zhicheng Qiu, Jiarui Meng, Tong-an Luo, Yican Huang, Xuan Feng, Xuanfu Li, ZHan Xu  
+  _2026-03-24_ · https://arxiv.org/abs/2603.22893v1  
+  <details><summary>Abstract</summary>
+
+  We propose SLARM, a feed-forward model that unifies dynamic scene reconstruction, semantic understanding, and real-time streaming inference. SLARM captures complex, non-uniform motion through higher-order motion modeling, trained solely on differentiable renderings without any flow supervision. Besides, SLARM distills semantic features from LSeg to obtain language-aligned representations. This design enables semantic querying via natural language, and the tight coupling between semantics and geometry further enhances the accuracy and robustness of dynamic reconstruction. Moreover, SLARM processes image sequences using window-based causal attention, achieving stable, low-latency streaming inference without accumulating memory cost. Within this unified framework, SLARM achieves state-of-the-art results in dynamic estimation, rendering quality, and scene parsing, improving motion accuracy by 21%, reconstruction PSNR by 1.6 dB, and segmentation mIoU by 20% over existing methods.
+
+  </details>
+
+
 
 - **WorldCache: Content-Aware Caching for Accelerated Video World Models**  
   Umair Nawaz, Ahmed Heakl, Ufaq Khan, Abdelrahman Shaker, Salman Khan, Fahad Shahbaz Khan  
@@ -90,39 +167,6 @@ Total papers shown: **11**
   <details><summary>Abstract</summary>
 
   Audio-driven 3D talking head synthesis has advanced rapidly with Neural Radiance Fields (NeRF) and 3D Gaussian Splatting (3DGS). By leveraging rich pre-trained priors, few-shot methods enable instant personalization from just a few seconds of video. However, under expressive facial motion, existing few-shot approaches often suffer from geometric instability and audio-emotion mismatch, highlighting the need for more effective emotion-aware motion modeling. In this work, we present EmoTaG, a few-shot emotion-aware 3D talking head synthesis framework built on the Pretrain-and-Adapt paradigm. Our key insight is to reformulate motion prediction in a structured FLAME parameter space rather than directly deforming 3D Gaussians, thereby introducing explicit geometric priors that improve motion stability. Building upon this, we propose a Gated Residual Motion Network (GRMN), which captures emotional prosody from audio while supplementing head pose and upper-face cues absent from audio, enabling expressive and coherent motion generation. Extensive experiments demonstrate that EmoTaG achieves state-of-the-art performance in emotional expressiveness, lip synchronization, visual realism, and motion stability.
-
-  </details>
-
-
-
-- **DSCSNet: A Dynamic Sparse Compression Sensing Network for Closely-Spaced Infrared Small Target Unmixing**  
-  Zhiyang Tang, Yiming Zhu, Ruimin Huang, Meng Yang, Yong Ma, Jun Huang, Fan Fan  
-  _2026-03-22_ · https://arxiv.org/abs/2603.21192v1  
-  <details><summary>Abstract</summary>
-
-  Due to the limitations of optical lens focal length and detector resolution, distant clustered infrared small targets often appear as mixed spots. The Close Small Object Unmixing (CSOU) task aims to recover the number, sub-pixel positions, and radiant intensities of individual targets from these spots, which is a highly ill-posed inverse problem. Existing methods struggle to balance the rigorous sparsity guarantees of model-driven approaches and the dynamic scene adaptability of data-driven methods. To address this dilemma, this paper proposes a Dynamic Sparse Compressed Sensing Network (DSCSNet), a deep-unfolded network that couples the Alternating Direction Method of Multipliers (ADMM) with learnable parameters. Specifically, we embed a strict $\ell_1$-norm sparsity constraint into the auxiliary variable update step of ADMM to replace the traditional $\ell_2$-norm smoothness-promoting terms, which effectively preserves the discrete energy peaks of small targets. We also integrate a self-attention-based dynamic thresholding mechanism into the reconstruction stage, which adaptively adjusts the sparsification intensity using the sparsity-enhanced information from the iterative process. These modules are jointly optimized end-to-end across the three iterative steps of ADMM. Retaining the physical logic of compressed sensing, DSCSNet achieves robust sparsity induction and scene adaptability, thus enhancing the unmixing accuracy and generalization in complex infrared scenarios. Extensive experiments on the synthetic infrared dataset CSIST-100K demonstrate that DSCSNet outperforms state-of-the-art methods in key metrics such as CSO-mAP and sub-pixel localization error.
-
-  </details>
-
-
-
-- **LiFR-Seg: Anytime High-Frame-Rate Segmentation via Event-Guided Propagation**  
-  Xiaoshan Wu, Xiaoyang Lyu, Yifei Yu, Bo Wang, Zhongrui Wang, Xiaojuan Qi  
-  _2026-03-22_ · https://arxiv.org/abs/2603.21115v1  
-  <details><summary>Abstract</summary>
-
-  Dense semantic segmentation in dynamic environments is fundamentally limited by the low-frame-rate (LFR) nature of standard cameras, which creates critical perceptual gaps between frames. To solve this, we introduce Anytime Interframe Semantic Segmentation: a new task for predicting segmentation at any arbitrary time using only a single past RGB frame and a stream of asynchronous event data. This task presents a core challenge: how to robustly propagate dense semantic features using a motion field derived from sparse and often noisy event data, all while mitigating feature degradation in highly dynamic scenes. We propose LiFR-Seg, a novel framework that directly addresses these challenges by propagating deep semantic features through time. The core of our method is an uncertainty-aware warping process, guided by an event-driven motion field and its learned, explicit confidence. A temporal memory attention module further ensures coherence in dynamic scenarios. We validate our method on the DSEC dataset and a new high-frequency synthetic benchmark (SHF-DSEC) we contribute. Remarkably, our LFR system achieves performance (73.82% mIoU on DSEC) that is statistically indistinguishable from an HFR upper-bound (within 0.09%) that has full access to the target frame. This work presents a new, efficient paradigm for achieving robust, high-frame-rate perception with low-frame-rate hardware. Project Page: https://candy-crusher.github.io/LiFR_Seg_Proj/#; Code: https://github.com/Candy-Crusher/LiFR-Seg.git.
-
-  </details>
-
-
-
-- **Fast and Robust Deformable 3D Gaussian Splatting**  
-  Han Jiao, Jiakai Sun, Lei Zhao, Zhanjie Zhang, Wei Xing, Huaizhong Lin  
-  _2026-03-21_ · https://arxiv.org/abs/2603.20857v1  
-  <details><summary>Abstract</summary>
-
-  3D Gaussian Splatting has demonstrated remarkable real-time rendering capabilities and superior visual quality in novel view synthesis for static scenes. Building upon these advantages, researchers have progressively extended 3D Gaussians to dynamic scene reconstruction. Deformation field-based methods have emerged as a promising approach among various techniques. These methods maintain 3D Gaussian attributes in a canonical field and employ the deformation field to transform this field across temporal sequences. Nevertheless, these approaches frequently encounter challenges such as suboptimal rendering speeds, significant dependence on initial point clouds, and vulnerability to local optima in dim scenes. To overcome these limitations, we present FRoG, an efficient and robust framework for high-quality dynamic scene reconstruction. FRoG integrates per-Gaussian embedding with a coarse-to-fine temporal embedding strategy, accelerating rendering through the early fusion of temporal embeddings. Moreover, to enhance robustness against sparse initializations, we introduce a novel depth- and error-guided sampling strategy. This strategy populates the canonical field with new 3D Gaussians at low-deviation initial positions, significantly reducing the optimization burden on the deformation field and improving detail reconstruction in both static and dynamic regions. Furthermore, by modulating opacity variations, we mitigate the local optima problem in dim scenes, improving color fidelity. Comprehensive experimental results validate that our method achieves accelerated rendering speeds while maintaining state-of-the-art visual quality.
 
   </details>
 
