@@ -1,11 +1,55 @@
 # SLAM & Localization
 
-_Updated: 2026-03-25 07:16 UTC_
+_Updated: 2026-03-26 07:34 UTC_
 
-Total papers shown: **12**
+Total papers shown: **10**
 
 
 ---
+
+- **Comparative analysis of dual-form networks for live land monitoring using multi-modal satellite image time series**  
+  Iris Dumeur, Jérémy Anger, Gabriele Facciolo  
+  _2026-03-25_ · https://arxiv.org/abs/2603.24109v1  
+  <details><summary>Abstract</summary>
+
+  Multi-modal Satellite Image Time Series (SITS) analysis faces significant computational challenges for live land monitoring applications. While Transformer architectures excel at capturing temporal dependencies and fusing multi-modal data, their quadratic computational complexity and the need to reprocess entire sequences for each new acquisition limit their deployment for regular, large-area monitoring. This paper studies various dual-form attention mechanisms for efficient multi-modal SITS analysis, that enable parallel training while supporting recurrent inference for incremental processing. We compare linear attention and retention mechanisms within a multi-modal spectro-temporal encoder. To address SITS-specific challenges of temporal irregularity and unalignment, we develop temporal adaptations of dual-form mechanisms that compute token distances based on actual acquisition dates rather than sequence indices. Our approach is evaluated on two tasks using Sentinel-1 and Sentinel-2 data: multi-modal SITS forecasting as a proxy task, and real-world solar panel construction monitoring. Experimental results demonstrate that dual-form mechanisms achieve performance comparable to standard Transformers while enabling efficient recurrent inference. The multimodal framework consistently outperforms mono-modal approaches across both tasks, demonstrating the effectiveness of dual mechanisms for sensor fusion. The results presented in this work open new opportunities for operational land monitoring systems requiring regular updates over large geographic areas.
+
+  </details>
+
+
+
+- **HGGT: Robust and Flexible 3D Hand Mesh Reconstruction from Uncalibrated Images**  
+  Yumeng Liu, Xiao-Xiao Long, Marc Habermann, Xuanze Yang, Cheng Lin, Yuan Liu, Yuexin Ma, Wenping Wang, Ligang Liu  
+  _2026-03-25_ · https://arxiv.org/abs/2603.23997v1  
+  <details><summary>Abstract</summary>
+
+  Recovering high-fidelity 3D hand geometry from images is a critical task in computer vision, holding significant value for domains such as robotics, animation and VR/AR. Crucially, scalable applications demand both accuracy and deployment flexibility, requiring the ability to leverage massive amounts of unstructured image data from the internet or enable deployment on consumer-grade RGB cameras without complex calibration. However, current methods face a dilemma. While single-view approaches are easy to deploy, they suffer from depth ambiguity and occlusion. Conversely, multi-view systems resolve these uncertainties but typically demand fixed, calibrated setups, limiting their real-world utility. To bridge this gap, we draw inspiration from 3D foundation models that learn explicit geometry directly from visual data. By reformulating hand reconstruction from arbitrary views as a visual-geometry grounded task, we propose a feed-forward architecture that, for the first time in literature, jointly infers 3D hand meshes and camera poses from uncalibrated views. Extensive evaluations show that our approach outperforms state-of-the-art benchmarks and demonstrates strong generalization to uncalibrated, in-the-wild scenarios. Here is the link of our project page: https://lym29.github.io/HGGT/.
+
+  </details>
+
+
+
+- **HyDRA: Hybrid Domain-Aware Robust Architecture for Heterogeneous Collaborative Perception**  
+  Minwoo Song, Minhee Kang, Heejin Ahn  
+  _2026-03-25_ · https://arxiv.org/abs/2603.23975v1  
+  <details><summary>Abstract</summary>
+
+  In collaborative perception, an agent's performance can be degraded by heterogeneity arising from differences in model architecture or training data distributions. To address this challenge, we propose HyDRA (Hybrid Domain-Aware Robust Architecture), a unified pipeline that integrates intermediate and late fusion within a domain-aware framework. We introduce a lightweight domain classifier that dynamically identifies heterogeneous agents and assigns them to the late-fusion branch. Furthermore, we propose anchor-guided pose graph optimization to mitigate localization errors inherent in late fusion, leveraging reliable detections from intermediate fusion as fixed spatial anchors. Extensive experiments demonstrate that, despite requiring no additional training, HyDRA achieves performance comparable to state-of-the-art heterogeneity-aware CP methods. Importantly, this performance is maintained as the number of collaborating agents increases, enabling zero-cost scaling without retraining.
+
+  </details>
+
+
+
+- **Bio-Inspired Event-Based Visual Servoing for Ground Robots**  
+  Maral Mordad, Kian Behzad, Debojyoti Biswas, Noah J. Cowan, Milad Siami  
+  _2026-03-24_ · https://arxiv.org/abs/2603.23672v1  
+  <details><summary>Abstract</summary>
+
+  Biological sensory systems are inherently adaptive, filtering out constant stimuli and prioritizing relative changes, likely enhancing computational and metabolic efficiency. Inspired by active sensing behaviors across a wide range of animals, this paper presents a novel event-based visual servoing framework for ground robots. Utilizing a Dynamic Vision Sensor (DVS), we demonstrate that by applying a fixed spatial kernel to the asynchronous event stream generated from structured logarithmic intensity-change patterns, the resulting net event flux analytically isolates specific kinematic states. We establish a generalized theoretical bound for this event rate estimator and show that linear and quadratic spatial profiles isolate the robot's velocity and position-velocity product, respectively. Leveraging these properties, we employ a multi-pattern stimulus to directly synthesize a nonlinear state-feedback term entirely without traditional state estimation. To overcome the inescapable loss of linear observability at equilibrium inherent in event sensing, we propose a bio-inspired active sensing limit-cycle controller. Experimental validation on a 1/10-scale autonomous ground vehicle confirms the efficacy, extreme low-latency, and computational efficiency of the proposed direct-sensing approach.
+
+  </details>
+
+
 
 - **WildWorld: A Large-Scale Dataset for Dynamic World Modeling with Actions and Explicit State toward Generative ARPG**  
   Zhen Li, Zian Meng, Shuwei Shi, Wenshuo Peng, Yuwei Wu, Bo Zheng, Chuanhao Li, Kaipeng Zhang  
@@ -34,7 +78,7 @@ Total papers shown: **12**
   _2026-03-24_ · https://arxiv.org/abs/2603.23052v1  
   <details><summary>Abstract</summary>
 
-  Visual-Inertial Odometry (VIO) is a staple for reliable state estimation on constrained and lightweight platforms due to its versatility and demonstrated performance. However, pertinent challenges regarding robust operation in dark, low-texture, obscured environments complicate the use of such methods. Alternatively, Frequency Modulated Continuous Wave (FMCW) radars, and by extension Radar-Inertial Odometry (RIO), offer robustness to these visual challenges, albeit at the cost of reduced information density and worse long-term accuracy. To address these limitations, this work combines the two in a tightly coupled manner, enabling the resulting method to operate robustly regardless of environmental conditions or trajectory dynamics. The proposed method fuses image features, radar Doppler measurements, and Inertial Measurement Unit (IMU) measurements within an Iterated Extended Kalman Filter (IEKF) in real-time, with radar range data augmenting the visual feature depth initialization. The method is evaluated through flight experiments conducted in both indoor and outdoor environments, as well as through challenges to both exteroceptive modalities (such as darkness, fog, or fast flight), thoroughly demonstrating its robustness. The implementation of the proposed method is available at: https://github.com/ntnu-arl/radvio .
+  Visual-Inertial Odometry (VIO) is a staple for reliable state estimation on constrained and lightweight platforms due to its versatility and demonstrated performance. However, pertinent challenges regarding robust operation in dark, low-texture, obscured environments complicate the use of such methods. Alternatively, Frequency Modulated Continuous Wave (FMCW) radars, and by extension Radar-Inertial Odometry (RIO), offer robustness to these visual challenges, albeit at the cost of reduced information density and worse long-term accuracy. To address these limitations, this work combines the two in a tightly coupled manner, enabling the resulting method to operate robustly regardless of environmental conditions or trajectory dynamics. The proposed method fuses image features, radar Doppler measurements, and Inertial Measurement Unit (IMU) measurements within an Iterated Extended Kalman Filter (IEKF) in real-time, with radar range data augmenting the visual feature depth initialization. The method is evaluated through flight experiments conducted in both indoor and outdoor environments, as well as through challenges to both exteroceptive modalities (such as darkness, fog, or fast flight), thoroughly demonstrating its robustness. The implementation of the proposed method is available at: https://github.com/ntnu-arl/radvio
 
   </details>
 
@@ -68,72 +112,6 @@ Total papers shown: **12**
   <details><summary>Abstract</summary>
 
   Accurate inter-vehicle distance estimation is a cornerstone of advanced driver assistance systems and autonomous driving. While LiDAR and radar provide high precision, their cost prohibits widespread adoption in mass-market vehicles. Monocular vision offers a low-cost alternative but suffers from scale ambiguity and sensitivity to environmental disturbances. This paper introduces a typography-based monocular distance estimation framework, which exploits the standardized typography of license plates as passive fiducial markers for metric distance estimation. The core geometric module uses robust plate detection and character segmentation to measure character height and computes distance via the pinhole camera model. The system incorporates interactive calibration, adaptive detection with strict and permissive modes, and multi-method character segmentation leveraging both adaptive and global thresholding. To enhance robustness, the framework further includes camera pose compensation using lane-based horizon estimation, hybrid deep-learning fusion, temporal Kalman filtering for velocity estimation, and multi-feature fusion that exploits additional typographic cues such as stroke width, character spacing, and plate border thickness. Experimental validation with a calibrated monocular camera in a controlled indoor setup achieved a coefficient of variation of 2.3% in character height across consecutive frames and a mean absolute error of 7.7%. The framework operates without GPU acceleration, demonstrating real-time feasibility. A comprehensive comparison with a plate-width based method shows that character-based ranging reduces the standard deviation of estimates by 35%, translating to smoother, more consistent distance readings in practice, where erratic estimates could trigger unnecessary braking or acceleration.
-
-  </details>
-
-
-
-- **SOUPLE: Enhancing Audio-Visual Localization and Segmentation with Learnable Prompt Contexts**  
-  Khanh Binh Nguyen, Chae Jung Park  
-  _2026-03-24_ · https://arxiv.org/abs/2603.22732v1  
-  <details><summary>Abstract</summary>
-
-  Large-scale pre-trained image-text models exhibit robust multimodal representations, yet applying the Contrastive Language-Image Pre-training (CLIP) model to audio-visual localization remains challenging. Replacing the classification token ([CLS]) with an audio-embedded token ([V_A]) struggles to capture semantic cues, and the prompt "a photo of a [V_A]" fails to establish meaningful connections between audio embeddings and context tokens. To address these issues, we propose Sound-aware Prompt Learning (SOUPLE), which replaces fixed prompts with learnable context tokens. These tokens incorporate visual features to generate conditional context for a mask decoder, effectively bridging semantic correspondence between audio and visual inputs. Experiments on VGGSound, SoundNet, and AVSBench demonstrate that SOUPLE improves localization and segmentation performance.
-
-  </details>
-
-
-
-- **Variable-Resolution Virtual Maps for Autonomous Exploration with Unmanned Surface Vehicles (USVs)**  
-  Ye Li, Yewei Huang, Wenlong GaoZhang, Alberto Quattrini Li, Brendan Englot, Yuanchang Liu  
-  _2026-03-24_ · https://arxiv.org/abs/2603.22667v1  
-  <details><summary>Abstract</summary>
-
-  Autonomous exploration by unmanned surface vehicles (USVs) in near-shore waters requires reliable localisation and consistent mapping over extended areas, but this is challenged by GNSS degradation, environment-induced localisation uncertainty, and limited on-board computation. Virtual map-based methods explicitly model localisation and mapping uncertainty by tightly coupling factor-graph SLAM with a map uncertainty criterion. However, their storage and computational costs scale poorly with fixed-resolution workspace discretisations, leading to inefficiency in large near-shore environments. Moreover, overvaluing feature-sparse open-water regions can increase the risk of SLAM failure as a result of imbalance between exploration and exploitation. To address these limitations, we propose a Variable-Resolution Virtual Map (VRVM), a computationally efficient method for representing map uncertainty using bivariate Gaussian virtual landmarks placed in the cells of an adaptive quadtree. The adaptive quadtree enables an area-weighted uncertainty representation that keeps coarse, far-field virtual landmarks deliberately uncertain while allocating higher resolution to information-dense regions, and reduces the sensitivity of the map valuation to local refinements of the tree. An expectation-maximisation (EM) planner is adopted to evaluate pose and map uncertainty along frontiers using the VRVM, balancing exploration and exploitation. We evaluate VRVM against several state-of-the-art exploration algorithms in the VRX Gazebo simulator, using a realistic marina environment across different testing scenarios with an increasing level of exploration difficulty. The results indicate that our method offers safer behaviour and better utilisation of on-board computation in GNSS-degraded near-shore environments.
-
-  </details>
-
-
-
-- **FreeArtGS: Articulated Gaussian Splatting Under Free-moving Scenario**  
-  Hang Dai, Hongwei Fan, Han Zhang, Duojin Wu, Jiyao Zhang, Hao Dong  
-  _2026-03-23_ · https://arxiv.org/abs/2603.22102v1  
-  <details><summary>Abstract</summary>
-
-  The increasing demand for augmented reality and robotics is driving the need for articulated object reconstruction with high scalability. However, existing settings for reconstructing from discrete articulation states or casual monocular videos require non-trivial axis alignment or suffer from insufficient coverage, limiting their applicability. In this paper, we introduce FreeArtGS, a novel method for reconstructing articulated objects under free-moving scenario, a new setting with a simple setup and high scalability. FreeArtGS combines free-moving part segmentation with joint estimation and end-to-end optimization, taking only a monocular RGB-D video as input. By optimizing with the priors from off-the-shelf point-tracking and feature models, the free-moving part segmentation module identifies rigid parts from relative motion under unconstrained capture. The joint estimation module calibrates the unified object-to-camera poses and recovers joint type and axis robustly from part segmentation. Finally, 3DGS-based end-to-end optimization is implemented to jointly reconstruct visual textures, geometry, and joint angles of the articulated object. We conduct experiments on two benchmarks and real-world free-moving articulated objects. Experimental results demonstrate that FreeArtGS consistently excels in reconstructing free-moving articulated objects and remains highly competitive in previous reconstruction settings, proving itself a practical and effective solution for realistic asset generation. The project page is available at: https://freeartgs.github.io/
-
-  </details>
-
-
-
-- **MineRobot: A Unified Framework for Kinematics Modeling and Solving of Underground Mining Robots in Virtual Environments**  
-  Shengzhe Hou, Xinming Lu, Tianyu Zhang, Changqing Yan, Xingli Zhang  
-  _2026-03-23_ · https://arxiv.org/abs/2603.22055v1  
-  <details><summary>Abstract</summary>
-
-  Underground mining robots are increasingly operated in virtual environments (VEs) for training, planning, and digital-twin applications, where reliable kinematics is essential for avoiding hazardous in-situ trials. Unlike typical open-chain industrial manipulators, mining robots are often closed-chain mechanisms driven by linear actuators and involving planar four-bar linkages, which makes both kinematics modeling and real-time solving challenging. We present \emph{MineRobot}, a unified framework for modeling and solving the kinematics of underground mining robots in VEs. First, we introduce the Mining Robot Description Format (MRDF), a domain-specific representation that parameterizes kinematics for mining robots with native semantics for actuators and loop closures. Second, we develop a topology-processing pipeline that contracts four-bar substructures into generalized joints and, for each actuator, extracts an Independent Topologically Equivalent Path (ITEP), which is classified into one of four canonical types. Third, leveraging ITEP independence, we compose per-type solvers into an actuator-centered sequential forward-kinematics (FK) pipeline. Building on the same decomposition, we formulate inverse kinematics (IK) as a bound-constrained optimization problem and solve it with a Gauss--Seidel-style procedure that alternates actuator-length updates. By converting coupled closed-loop kinematics into a sequence of small topology-aware solves, the framework avoids robot-specific hand derivations and supports efficient computation. Experiments demonstrate that MineRobot provides the real-time performance and robustness required by VE applications.
-
-  </details>
-
-
-
-- **LRC-WeatherNet: LiDAR, RADAR, and Camera Fusion Network for Real-time Weather-type Classification in Autonomous Driving**  
-  Nour Alhuda Albashir, Lars Pernickel, Danial Hamoud, Idriss Gouigah, Eren Erdal Aksoy  
-  _2026-03-23_ · https://arxiv.org/abs/2603.21987v1  
-  <details><summary>Abstract</summary>
-
-  Autonomous vehicles face major perception and navigation challenges in adverse weather such as rain, fog, and snow, which degrade the performance of LiDAR, RADAR, and RGB camera sensors. While each sensor type offers unique strengths, such as RADAR robustness in poor visibility and LiDAR precision in clear conditions, they also suffer distinct limitations when exposed to environmental obstructions. This study proposes LRC-WeatherNet, a novel multi-sensor fusion framework that integrates LiDAR, RADAR, and camera data for real-time classification of weather conditions. By employing both early fusion using a unified Bird's Eye View representation and mid-level gated fusion of modality-specific feature maps, our approach adapts to the varying reliability of each sensor under changing weather. Evaluated on the extensive MSU-4S dataset covering nine weather types, LRC-WeatherNet achieves superior classification performance and computational efficiency, significantly outperforming unimodal baselines in adverse conditions. This work is the first to combine all three modalities for robust, real-time weather classification in autonomous driving. We release our trained models and source code in https://github.com/nouralhudaalbashir/LRC-WeatherNet.
-
-  </details>
-
-
-
-- **Image-Conditioned Adaptive Parameter Tuning for Visual Odometry Frontends**  
-  Simone Nascivera, Leonard Bauersfeld, Jeff Delaune, Davide Scaramuzza  
-  _2026-03-23_ · https://arxiv.org/abs/2603.21785v1  
-  <details><summary>Abstract</summary>
-
-  Resource-constrained autonomous robots rely on sparse direct and semi-direct visual-(inertial)-odometry (VO) pipelines, as they provide a favorable tradeoff between accuracy, robustness, and computational cost. However, the performance of most systems depends critically on hand-tuned hyperparameters governing feature detection, tracking, and outlier rejection. These parameters are typically fixed during deployment, even though their optimal values vary with scene characteristics such as texture density, illumination, motion blur, and sensor noise, leading to brittle performance in real-world environments. We propose the first image-conditioned reinforcement learning framework for online tuning of VO frontend parameters, effectively embedding the expert into the system. Our key idea is to formulate the frontend configuration as a sequential decision-making problem and learn a policy that directly maps visual input to feature detection and tracking parameters. The policy uses a lightweight texture-aware CNN encoder and a privileged critic during training. Unlike prior RL-based approaches that rely solely on internal VO statistics, our method observes the image content and proactively adapts parameters before tracking degrades. Experiments on TartanAirV2 and TUM RGB-D show 3x longer feature tracks and 3x lower computational cost, despite training entirely in simulation.
 
   </details>
 
