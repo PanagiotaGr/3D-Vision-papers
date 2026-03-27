@@ -1,11 +1,88 @@
 # Dynamic Scenes & 4D Reconstruction
 
-_Updated: 2026-03-26 07:34 UTC_
+_Updated: 2026-03-27 07:34 UTC_
 
-Total papers shown: **13**
+Total papers shown: **11**
 
 
 ---
+
+- **UNIC: Neural Garment Deformation Field for Real-time Clothed Character Animation**  
+  Chengfeng Zhao, Junbo Qi, Yulou Liu, Zhiyang Dou, Minchen Li, Taku Komura, Ziwei Liu, Wenping Wang, Yuan Liu  
+  _2026-03-26_ · https://arxiv.org/abs/2603.25580v1  
+  <details><summary>Abstract</summary>
+
+  Simulating physically realistic garment deformations is an essential task for virtual immersive experience, which is often achieved by physics simulation methods. However, these methods are typically time-consuming, computationally demanding, and require costly hardware, which is not suitable for real-time applications. Recent learning-based methods tried to resolve this problem by training graph neural networks to learn the garment deformation on vertices, which, however, fail to capture the intricate deformation of complex garment meshes with complex topologies. In this paper, we introduce a novel neural deformation field-based method, named UNIC, to animate the garments of an avatar in real time, given the motion sequences. Our key idea is to learn the instance-specific neural deformation field to animate the garment meshes. Such an instance-specific learning scheme does not require UNIC to generalize to new garments but only to new motion sequences, which greatly reduces the difficulty in training and improves the deformation quality. Moreover, neural deformation fields map the 3D points to their deformation offsets, which not only avoids handling topologies of the complex garments but also injects a natural smoothness constraint in the deformation learning. Extensive experiments have been conducted on various kinds of garment meshes to demonstrate the effectiveness and efficiency of UNIC over baseline methods, making it potentially practical and useful in real-world interactive applications like video games.
+
+  </details>
+
+
+
+- **Challenges in Hyperspectral Imaging for Autonomous Driving: The HSI-Drive Case**  
+  Koldo Basterretxea, Jon Gutiérrez-Zaballa, Javier Echanobe  
+  _2026-03-26_ · https://arxiv.org/abs/2603.25510v1  
+  <details><summary>Abstract</summary>
+
+  The use of hyperspectral imaging (HSI) in autonomous driving (AD), while promising, faces many challenges related to the specifics and requirements of this application domain. On the one hand, non-controlled and variable lighting conditions, the wide depth-of-field ranges, and dynamic scenes with fast-moving objects. On the other hand, the requirements for real-time operation and the limited computational resources of embedded platforms. The combination of these factors determines both the criteria for selecting appropriate HSI technologies and the development of custom vision algorithms that leverage the spectral and spatial information obtained from the sensors. In this article, we analyse several techniques explored in the research of HSI-based vision systems with application to AD, using as an example results obtained from experiments using data from the most recent version of the HSI-Drive dataset.
+
+  </details>
+
+
+
+- **LaMP: Learning Vision-Language-Action Policies with 3D Scene Flow as Latent Motion Prior**  
+  Xinkai Wang, Chenyi Wang, Yifu Xu, Mingzhe Ye, Fu-Cheng Zhang, Jialin Tian, Xinyu Zhan, Lifeng Zhu, Cewu Lu, Lixin Yang  
+  _2026-03-26_ · https://arxiv.org/abs/2603.25399v1  
+  <details><summary>Abstract</summary>
+
+  We introduce \textbf{LaMP}, a dual-expert Vision-Language-Action framework that embeds dense 3D scene flow as a latent motion prior for robotic manipulation. Existing VLA models regress actions directly from 2D semantic visual features, forcing them to learn complex 3D physical interactions implicitly. This implicit learning strategy degrades under unfamiliar spatial dynamics. LaMP addresses this limitation by aligning a flow-matching \emph{Motion Expert} with a policy-predicting \emph{Action Expert} through gated cross-attention. Specifically, the Motion Expert generates a one-step partially denoised 3D scene flow, and its hidden states condition the Action Expert without full multi-step reconstruction. We evaluate LaMP on the LIBERO, LIBERO-Plus, and SimplerEnv-WidowX simulation benchmarks as well as real-world experiments. LaMP consistently outperforms evaluated VLA baselines across LIBERO, LIBERO-Plus, and SimplerEnv-WidowX benchmarks, achieving the highest reported average success rates under the same training budgets. On LIBERO-Plus OOD perturbations, LaMP shows improved robustness with an average 9.7% gain over the strongest prior baseline. Our project page is available at https://summerwxk.github.io/lamp-project-page/.
+
+  </details>
+
+
+
+- **MoRGS: Efficient Per-Gaussian Motion Reasoning for Streamable Dynamic 3D Scenes**  
+  Wonjoon Lee, Sungmin Woo, Donghyeong Kim, Jungho Lee, Sangheon Park, Sangyoun Lee  
+  _2026-03-26_ · https://arxiv.org/abs/2603.25042v1  
+  <details><summary>Abstract</summary>
+
+  Online reconstruction of dynamic scenes aims to learn from streaming multi-view inputs under low-latency constraints. The fast training and real-time rendering capabilities of 3D Gaussian Splatting have made on-the-fly reconstruction practically feasible, enabling online 4D reconstruction. However, existing online approaches, despite their efficiency and visual quality, fail to learn per-Gaussian motion that reflects true scene dynamics. Without explicit motion cues, appearance and motion are optimized solely under photometric loss, causing per-Gaussian motion to chase pixel residuals rather than true 3D motion. To address this, we propose MoRGS, an efficient online per-Gaussian motion reasoning framework that explicitly models per-Gaussian motion to improve 4D reconstruction quality. Specifically, we leverage optical flow on a sparse set of key views as lightweight motion cues that regularize per-Gaussian motion beyond photometric supervision. To compensate for the sparsity of flow supervision, we learn a per-Gaussian motion offset field that reconciles discrepancies between projected 3D motion and observed flow across views and time. In addition, we introduce a per-Gaussian motion confidence that separates dynamic from static Gaussians and weights Gaussian attribute residual updates, thereby suppressing redundant motion in static regions for better temporal consistency and accelerating the modeling of large motions. Extensive experiments demonstrate that MoRGS achieves state-of-the-art reconstruction quality and motion fidelity among online methods, while maintaining streamable performance.
+
+  </details>
+
+
+
+- **Infinite Gaze Generation for Videos with Autoregressive Diffusion**  
+  Jenna Kang, Colin Groth, Tong Wu, Finley Torrens, Patsorn Sangkloy, Gordon Wetzstein, Qi Sun  
+  _2026-03-26_ · https://arxiv.org/abs/2603.24938v1  
+  <details><summary>Abstract</summary>
+
+  Predicting human gaze in video is fundamental to advancing scene understanding and multimodal interaction. While traditional saliency maps provide spatial probability distributions and scanpaths offer ordered fixations, both abstractions often collapse the fine-grained temporal dynamics of raw gaze. Furthermore, existing models are typically constrained to short-term windows ($\approx$ 3-5s), failing to capture the long-range behavioral dependencies inherent in real-world content. We present a generative framework for infinite-horizon raw gaze prediction in videos of arbitrary length. By leveraging an autoregressive diffusion model, we synthesize gaze trajectories characterized by continuous spatial coordinates and high-resolution timestamps. Our model is conditioned on a saliency-aware visual latent space. Quantitative and qualitative evaluations demonstrate that our approach significantly outperforms existing approaches in long-range spatio-temporal accuracy and trajectory realism.
+
+  </details>
+
+
+
+- **TIGFlow-GRPO: Trajectory Forecasting via Interaction-Aware Flow Matching and Reward-Driven Optimization**  
+  Xuepeng Jing, Wenhuan Lu, Hao Meng, Zhizhi Yu, Jianguo Wei  
+  _2026-03-26_ · https://arxiv.org/abs/2603.24936v1  
+  <details><summary>Abstract</summary>
+
+  Human trajectory forecasting is important for intelligent multimedia systems operating in visually complex environments, such as autonomous driving and crowd surveillance. Although Conditional Flow Matching (CFM) has shown strong ability in modeling trajectory distributions from spatio-temporal observations, existing approaches still focus primarily on supervised fitting, which may leave social norms and scene constraints insufficiently reflected in generated trajectories. To address this issue, we propose TIGFlow-GRPO, a two-stage generative framework that aligns flow-based trajectory generation with behavioral rules. In the first stage, we build a CFM-based predictor with a Trajectory-Interaction-Graph (TIG) module to model fine-grained visual-spatial interactions and strengthen context encoding. This stage captures both agent-agent and agent-scene relations more effectively, providing more informative conditional features for subsequent alignment. In the second stage, we perform Flow-GRPO post-training,where deterministic flow rollout is reformulated as stochastic ODE-to-SDE sampling to enable trajectory exploration, and a composite reward combines view-aware social compliance with map-aware physical feasibility. By evaluating trajectories explored through SDE rollout, GRPO progressively steers multimodal predictions toward behaviorally plausible futures. Experiments on the ETH/UCY and SDD datasets show that TIGFlow-GRPO improves forecasting accuracy and long-horizon stability while generating trajectories that are more socially compliant and physically feasible. These results suggest that the proposed framework provides an effective way to connect flow-based trajectory modeling with behavior-aware alignment in dynamic multimedia environments.
+
+  </details>
+
+
+
+- **DRoPS: Dynamic 3D Reconstruction of Pre-Scanned Objects**  
+  Narek Tumanyan, Samuel Rota Bulò, Denis Rozumny, Lorenzo Porzi, Adam Harley, Tali Dekel, Peter Kontschieder, Jonathon Luiten  
+  _2026-03-25_ · https://arxiv.org/abs/2603.24770v1  
+  <details><summary>Abstract</summary>
+
+  Dynamic scene reconstruction from casual videos has seen recent remarkable progress. Numerous approaches have attempted to overcome the ill-posedness of the task by distilling priors from 2D foundational models and by imposing hand-crafted regularization on the optimized motion. However, these methods struggle to reconstruct scenes from extreme novel viewpoints, especially when highly articulated motions are present. In this paper, we present DRoPS, a novel approach that leverages a static pre-scan of the dynamic object as an explicit geometric and appearance prior. While existing state-of-the-art methods fail to fully exploit the pre-scan, DRoPS leverages our novel setup to effectively constrain the solution space and ensure geometrical consistency throughout the sequence. The core of our novelty is twofold: first, we establish a grid-structured and surface-aligned model by organizing Gaussian primitives into pixel grids anchored to the object surface. Second, by leveraging the grid structure of our primitives, we parameterize motion using a CNN conditioned on those grids, injecting strong implicit regularization and correlating the motion of nearby points. Extensive experiments demonstrate that our method significantly outperforms the current state of the art in rendering quality and 3D tracking accuracy.
+
+  </details>
+
+
 
 - **Accelerating Diffusion-based Video Editing via Heterogeneous Caching: Beyond Full Computing at Sampled Denoising Timestep**  
   Tianyi Liu, Ye Lu, Linfeng Zhang, Chen Cai, Jianjun Gao, Yi Wang, Kim-Hui Yap, Lap-Pui Chau  
@@ -46,105 +123,6 @@ Total papers shown: **13**
   <details><summary>Abstract</summary>
 
   Autonomous trucking poses unique challenges due to articulated tractor-trailer geometry, and time-varying sensor poses caused by the fifth-wheel joint and trailer flex. Existing perception and calibration methods assume static baselines or rely on high-parallax and texture-rich scenes, limiting their reliability under real-world settings. We propose dCAP (dynamic Calibration and Articulated Perception), a vision-based framework that continuously estimates the 6-DoF (degree of freedom) relative pose between tractor and trailer cameras. dCAP employs a transformer with cross-view and temporal attention to robustly aggregate spatial cues while maintaining temporal consistency, enabling accurate perception under rapid articulation and occlusion. Integrated with BEVFormer, dCAP improves 3D object detection by replacing static calibration with dynamically predicted extrinsics. To facilitate evaluation, we introduce STT4AT, a CARLA-based benchmark simulating semi-trailer trucks with synchronized multi-sensor suites and time-varying inter-rig geometry across diverse environments. Experiments demonstrate that dCAP achieves stable, accurate perception while addressing the limitations of static calibration in autonomous trucking. The dataset, development kit, and source code will be publicly released.
-
-  </details>
-
-
-
-- **DA-Flow: Degradation-Aware Optical Flow Estimation with Diffusion Models**  
-  Jaewon Min, Jaeeun Lee, Yeji Choi, Paul Hyunbin Cho, Jin Hyeon Kim, Tae-Young Lee, Jongsik Ahn, Hwayeong Lee, Seonghyun Park, Seungryong Kim  
-  _2026-03-24_ · https://arxiv.org/abs/2603.23499v1  
-  <details><summary>Abstract</summary>
-
-  Optical flow models trained on high-quality data often degrade severely when confronted with real-world corruptions such as blur, noise, and compression artifacts. To overcome this limitation, we formulate Degradation-Aware Optical Flow, a new task targeting accurate dense correspondence estimation from real-world corrupted videos. Our key insight is that the intermediate representations of image restoration diffusion models are inherently corruption-aware but lack temporal awareness. To address this limitation, we lift the model to attend across adjacent frames via full spatio-temporal attention, and empirically demonstrate that the resulting features exhibit zero-shot correspondence capabilities. Based on this finding, we present DA-Flow, a hybrid architecture that fuses these diffusion features with convolutional features within an iterative refinement framework. DA-Flow substantially outperforms existing optical flow methods under severe degradation across multiple benchmarks.
-
-  </details>
-
-
-
-- **AgentRVOS: Reasoning over Object Tracks for Zero-Shot Referring Video Object Segmentation**  
-  Woojeong Jin, Jaeho Lee, Heeseong Shin, Seungho Jang, Junhwan Heo, Seungryong Kim  
-  _2026-03-24_ · https://arxiv.org/abs/2603.23489v1  
-  <details><summary>Abstract</summary>
-
-  Referring Video Object Segmentation (RVOS) aims to segment a target object throughout a video given a natural language query. Training-free methods for this task follow a common pipeline: a MLLM selects keyframes, grounds the referred object within those frames, and a video segmentation model propagates the results. While intuitive, this design asks the MLLM to make temporal decisions before any object-level evidence is available, limiting both reasoning quality and spatio-temporal coverage. To overcome this, we propose AgentRVOS, a training-free agentic pipeline built on the complementary strengths of SAM3 and a MLLM. Given a concept derived from the query, SAM3 provides reliable perception over the full spatio-temporal extent through generated mask tracks. The MLLM then identifies the target through query-grounded reasoning over this object-level evidence, iteratively pruning guided by SAM3's temporal existence information. Extensive experiments show that AgentRVOS achieves state-of-the-art performance among training-free methods across multiple benchmarks, with consistent results across diverse MLLM backbones. Our project page is available at: https://cvlab-kaist.github.io/AgentRVOS/.
-
-  </details>
-
-
-
-- **TETO: Tracking Events with Teacher Observation for Motion Estimation and Frame Interpolation**  
-  Jini Yang, Eunbeen Hong, Soowon Son, Hyunkoo Lee, Sunghwan Hong, Sunok Kim, Seungryong Kim  
-  _2026-03-24_ · https://arxiv.org/abs/2603.23487v1  
-  <details><summary>Abstract</summary>
-
-  Event cameras capture per-pixel brightness changes with microsecond resolution, offering continuous motion information lost between RGB frames. However, existing event-based motion estimators depend on large-scale synthetic data that often suffers from a significant sim-to-real gap. We propose TETO (Tracking Events with Teacher Observation), a teacher-student framework that learns event motion estimation from only $\sim$25 minutes of unannotated real-world recordings through knowledge distillation from a pretrained RGB tracker. Our motion-aware data curation and query sampling strategy maximizes learning from limited data by disentangling object motion from dominant ego-motion. The resulting estimator jointly predicts point trajectories and dense optical flow, which we leverage as explicit motion priors to condition a pretrained video diffusion transformer for frame interpolation. We achieve state-of-the-art point tracking on EVIMO2 and optical flow on DSEC using orders of magnitude less training data, and demonstrate that accurate motion estimation translates directly to superior frame interpolation quality on BS-ERGB and HQ-EVFI.
-
-  </details>
-
-
-
-- **Object Pose Transformer: Unifying Unseen Object Pose Estimation**  
-  Weihang Li, Lorenzo Garattoni, Fabien Despinoy, Nassir Navab, Benjamin Busam  
-  _2026-03-24_ · https://arxiv.org/abs/2603.23370v1  
-  <details><summary>Abstract</summary>
-
-  Learning model-free object pose estimation for unseen instances remains a fundamental challenge in 3D vision. Existing methods typically fall into two disjoint paradigms: category-level approaches predict absolute poses in a canonical space but rely on predefined taxonomies, while relative pose methods estimate cross-view transformations but cannot recover single-view absolute pose. In this work, we propose Object Pose Transformer (\ours{}), a unified feed-forward framework that bridges these paradigms through task factorization within a single model. \ours{} jointly predicts depth, point maps, camera parameters, and normalized object coordinates (NOCS) from RGB inputs, enabling both category-level absolute SA(3) pose and unseen-object relative SE(3) pose. Our approach leverages contrastive object-centric latent embeddings for canonicalization without requiring semantic labels at inference time, and uses point maps as a camera-space representation to enable multi-view relative geometric reasoning. Through cross-frame feature interaction and shared object embeddings, our model leverages relative geometric consistency across views to improve absolute pose estimation, reducing ambiguity in single-view predictions. Furthermore, \ours{} is camera-agnostic, learning camera intrinsics on-the-fly and supporting optional depth input for metric-scale recovery, while remaining fully functional in RGB-only settings. Extensive experiments on diverse benchmarks (NOCS, HouseCat6D, Omni6DPose, Toyota-Light) demonstrate state-of-the-art performance in both absolute and relative pose estimation tasks within a single unified architecture.
-
-  </details>
-
-
-
-- **3rd Place of MeViS-Audio Track of the 5th PVUW: VIRST-Audio**  
-  Jihwan Hong, Jaeyoung Do  
-  _2026-03-24_ · https://arxiv.org/abs/2603.23126v1  
-  <details><summary>Abstract</summary>
-
-  Audio-based Referring Video Object Segmentation (ARVOS) requires grounding audio queries into pixel-level object masks over time, posing challenges in bridging acoustic signals with spatio-temporal visual representations. In this report, we present VIRST-Audio, a practical framework built upon a pretrained RVOS model integrated with a vision-language architecture. Instead of relying on audio-specific training, we convert input audio into text using an ASR module and perform segmentation using text-based supervision, enabling effective transfer from text-based reasoning to audio-driven scenarios. To improve robustness, we further incorporate an existence-aware gating mechanism that estimates whether the referred target object is present in the video and suppresses predictions when it is absent, reducing hallucinated masks and stabilizing segmentation behavior. We evaluate our approach on the MeViS-Audio track of the 5th PVUW Challenge, where VIRST-Audio achieves 3rd place, demonstrating strong generalization and reliable performance in audio-based referring video segmentation.
-
-  </details>
-
-
-
-- **Cluster-Wise Spatio-Temporal Masking for Efficient Video-Language Pretraining**  
-  Weijun Zhuang, Yuqing Huang, Weikang Meng, Xin Li, Ming Liu, Xiaopeng Hong, Yaowei Wang, Wangmeng Zuo  
-  _2026-03-24_ · https://arxiv.org/abs/2603.22953v1  
-  <details><summary>Abstract</summary>
-
-  Large-scale video-language pretraining enables strong generalization across multimodal tasks but often incurs prohibitive computational costs. Although recent advances in masked visual modeling help mitigate this issue, they still suffer from two fundamental limitations: severe visual information loss under high masking ratios and temporal information leakage caused by inter-frame correlations. To address these challenges, we propose ClusterSTM, a Cluster-Wise Spatio-Temporal Masking strategy for efficient video-language pretraining. ClusterSTM first performs intra-frame clustering to partition visual tokens into multiple semantically independent clusters, then conducts cluster-wise masking by retaining the token with the highest temporal density within each cluster. Our masking strategy ensure that the retained tokens capture holistic video content while exhibit strong temporal correlation. Additionally, we introduce a video-text relevance reconstruction objective that aligns high-level multimodal semantics beyond conventional visual reconstruction. Extensive experiments across multiple benchmarks demonstrate that ClusterSTM achieves superior performance on video-text retrieval, video question answering, and video captioning tasks, establishing a new state-of-the-art among efficient video-language models.
-
-  </details>
-
-
-
-- **SLARM: Streaming and Language-Aligned Reconstruction Model for Dynamic Scenes**  
-  Zhicheng Qiu, Jiarui Meng, Tong-an Luo, Yican Huang, Xuan Feng, Xuanfu Li, ZHan Xu  
-  _2026-03-24_ · https://arxiv.org/abs/2603.22893v2  
-  <details><summary>Abstract</summary>
-
-  We propose SLARM, a feed-forward model that unifies dynamic scene reconstruction, semantic understanding, and real-time streaming inference. SLARM captures complex, non-uniform motion through higher-order motion modeling, trained solely on differentiable renderings without any flow supervision. Besides, SLARM distills semantic features from LSeg to obtain language-aligned representations. This design enables semantic querying via natural language, and the tight coupling between semantics and geometry further enhances the accuracy and robustness of dynamic reconstruction. Moreover, SLARM processes image sequences using window-based causal attention, achieving stable, low-latency streaming inference without accumulating memory cost. Within this unified framework, SLARM achieves state-of-the-art results in dynamic estimation, rendering quality, and scene parsing, improving motion accuracy by 21%, reconstruction PSNR by 1.6 dB, and segmentation mIoU by 20% over existing methods.
-
-  </details>
-
-
-
-- **WorldCache: Content-Aware Caching for Accelerated Video World Models**  
-  Umair Nawaz, Ahmed Heakl, Ufaq Khan, Abdelrahman Shaker, Salman Khan, Fahad Shahbaz Khan  
-  _2026-03-23_ · https://arxiv.org/abs/2603.22286v1  
-  <details><summary>Abstract</summary>
-
-  Diffusion Transformers (DiTs) power high-fidelity video world models but remain computationally expensive due to sequential denoising and costly spatio-temporal attention. Training-free feature caching accelerates inference by reusing intermediate activations across denoising steps; however, existing methods largely rely on a Zero-Order Hold assumption i.e., reusing cached features as static snapshots when global drift is small. This often leads to ghosting artifacts, blur, and motion inconsistencies in dynamic scenes. We propose \textbf{WorldCache}, a Perception-Constrained Dynamical Caching framework that improves both when and how to reuse features. WorldCache introduces motion-adaptive thresholds, saliency-weighted drift estimation, optimal approximation via blending and warping, and phase-aware threshold scheduling across diffusion steps. Our cohesive approach enables adaptive, motion-consistent feature reuse without retraining. On Cosmos-Predict2.5-2B evaluated on PAI-Bench, WorldCache achieves \textbf{2.3$\times$} inference speedup while preserving \textbf{99.4\%} of baseline quality, substantially outperforming prior training-free caching approaches. Our code can be accessed on \href{https://umair1221.github.io/World-Cache/}{World-Cache}.
-
-  </details>
-
-
-
-- **UniMotion: A Unified Framework for Motion-Text-Vision Understanding and Generation**  
-  Ziyi Wang, Xinshun Wang, Shuang Chen, Yang Cong, Mengyuan Liu  
-  _2026-03-23_ · https://arxiv.org/abs/2603.22282v1  
-  <details><summary>Abstract</summary>
-
-  We present UniMotion, to our knowledge the first unified framework for simultaneous understanding and generation of human motion, natural language, and RGB images within a single architecture. Existing unified models handle only restricted modality subsets (e.g., Motion-Text or static Pose-Image) and predominantly rely on discrete tokenization, which introduces quantization errors and disrupts temporal continuity. UniMotion overcomes both limitations through a core principle: treating motion as a first-class continuous modality on equal footing with RGB. A novel Cross-Modal Aligned Motion VAE (CMA-VAE) and symmetric dual-path embedders construct parallel continuous pathways for Motion and RGB within a shared LLM backbone. To inject visual-semantic priors into motion representations without requiring images at inference, we propose Dual-Posterior KL Alignment (DPA), which distills a vision-fused encoder's richer posterior into the motion-only encoder. To address the cold-start problem -- where text supervision alone is too sparse to calibrate the newly introduced motion pathway -- we further propose Latent Reconstruction Alignment (LRA), a self-supervised pre-training strategy that uses dense motion latents as unambiguous conditions to co-calibrate the embedder, backbone, and flow head, establishing a stable motion-aware foundation for all downstream tasks. UniMotion achieves state-of-the-art performance across seven tasks spanning any-to-any understanding, generation, and editing among the three modalities, with especially strong advantages on cross-modal compositional tasks.
 
   </details>
 
