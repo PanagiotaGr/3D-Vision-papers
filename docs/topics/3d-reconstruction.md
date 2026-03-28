@@ -1,8 +1,8 @@
 # 3D Reconstruction
 
-_Updated: 2026-03-27 07:34 UTC_
+_Updated: 2026-03-28 07:11 UTC_
 
-Total papers shown: **16**
+Total papers shown: **11**
 
 
 ---
@@ -123,61 +123,6 @@ Total papers shown: **16**
   <details><summary>Abstract</summary>
 
   Accurate 3D reconstruction of deformable soft tissues is essential for surgical robotic perception. However, low-texture surfaces, specular highlights, and instrument occlusions often fragment geometric continuity, posing a challenge for existing fixed-topology approaches. To address this, we propose EndoVGGT, a geometry-centric framework equipped with a Deformation-aware Graph Attention (DeGAT) module. Rather than using static spatial neighborhoods, DeGAT dynamically constructs feature-space semantic graphs to capture long-range correlations among coherent tissue regions. This enables robust propagation of structural cues across occlusions, enforcing global consistency and improving non-rigid deformation recovery. Extensive experiments on SCARED show that our method significantly improves fidelity, increasing PSNR by 24.6% and SSIM by 9.1% over prior state-of-the-art. Crucially, EndoVGGT exhibits strong zero-shot cross-dataset generalization to the unseen SCARED and EndoNeRF domains, confirming that DeGAT learns domain-agnostic geometric priors. These results highlight the efficacy of dynamic feature-space modeling for consistent surgical 3D reconstruction.
-
-  </details>
-
-
-
-- **HGGT: Robust and Flexible 3D Hand Mesh Reconstruction from Uncalibrated Images**  
-  Yumeng Liu, Xiao-Xiao Long, Marc Habermann, Xuanze Yang, Cheng Lin, Yuan Liu, Yuexin Ma, Wenping Wang, Ligang Liu  
-  _2026-03-25_ · https://arxiv.org/abs/2603.23997v2  
-  <details><summary>Abstract</summary>
-
-  Recovering high-fidelity 3D hand geometry from images is a critical task in computer vision, holding significant value for domains such as robotics, animation and VR/AR. Crucially, scalable applications demand both accuracy and deployment flexibility, requiring the ability to leverage massive amounts of unstructured image data from the internet or enable deployment on consumer-grade RGB cameras without complex calibration. However, current methods face a dilemma. While single-view approaches are easy to deploy, they suffer from depth ambiguity and occlusion. Conversely, multi-view systems resolve these uncertainties but typically demand fixed, calibrated setups, limiting their real-world utility. To bridge this gap, we draw inspiration from 3D foundation models that learn explicit geometry directly from visual data. By reformulating hand reconstruction from arbitrary views as a visual-geometry grounded task, we propose a feed-forward architecture that, for the first time in literature, jointly infers 3D hand meshes and camera poses from uncalibrated views. Extensive evaluations show that our approach outperforms state-of-the-art benchmarks and demonstrates strong generalization to uncalibrated, in-the-wild scenarios. Here is the link of our project page: https://lym29.github.io/HGGT/.
-
-  </details>
-
-
-
-- **SLAT-Phys: Fast Material Property Field Prediction from Structured 3D Latents**  
-  Rocktim Jyoti Das, Dinesh Manocha  
-  _2026-03-25_ · https://arxiv.org/abs/2603.23973v1  
-  <details><summary>Abstract</summary>
-
-  Estimating the material property field of 3D assets is critical for physics-based simulation, robotics, and digital twin generation. Existing vision-based approaches are either too expensive and slow or rely on 3D information. We present SLAT-Phys, an end-to-end method that predicts spatially varying material property fields of 3D assets directly from a single RGB image without explicit 3D reconstruction. Our approach leverages spatially organised latent features from a pretrained 3D asset generation model that encodes rich geometry and semantic prior, and trains a lightweight neural decoder to estimate Young's modulus, density, and Poisson's ratio. The coarse volumetric layout and semantic cues of the latent representation about object geometry and appearance enable accurate material estimation. Our experiments demonstrate that our method provides competitive accuracy in predicting continuous material parameters when compared against prior approaches, while significantly reducing computation time. In particular, SLAT-Phys requires only 9.9 seconds per object on an NVIDIA RTXA5000 GPU and avoids reconstruction and voxelization preprocessing. This results in 120x speedup compared to prior methods and enables faster material property estimation from a single image.
-
-  </details>
-
-
-
-- **PointRFT: Explicit Reinforcement Fine-tuning for Point Cloud Few-shot Learning**  
-  Yankai Wang, Yiding Sun, Qirui Wang, Pengbo Li, Chaoyi Lu, Dongxu Zhang  
-  _2026-03-25_ · https://arxiv.org/abs/2603.23957v1  
-  <details><summary>Abstract</summary>
-
-  Understanding spatial dynamics and semantics in point cloud is fundamental for comprehensive 3D comprehension. While reinforcement learning algorithms such as Group Relative Policy Optimization (GRPO) have recently achieved remarkable breakthroughs in large language models by incentivizing reasoning capabilities through strategic reward design, their potential remains largely unexplored in the 3D perception domain. This naturally raises a pivotal question: Can RL-based methods effectively empower 3D point cloud fine-tuning? In this paper, we propose PointRFT, the first reinforcement fine-tuning paradigm tailored specifically for point cloud representation learning. We select three prevalent 3D foundation models and devise specialized accuracy reward and dispersion reward functions to stabilize training and mitigate distribution shifts. Through comprehensive few-shot classification experiments comparing distinct training paradigms, we demonstrate that PointRFT consistently outperforms vanilla supervised fine-tuning (SFT) across diverse benchmarks. Furthermore, when organically integrated into a hybrid Pretraining-SFT-RFT paradigm, the representational capacity of point cloud foundation models is substantially unleashed, achieving state-of-the-art performance particularly under data-scarce scenarios.
-
-  </details>
-
-
-
-- **An Adapter-free Fine-tuning Approach for Tuning 3D Foundation Models**  
-  Sneha Paul, Zachary Patterson, Nizar Bouguila  
-  _2026-03-24_ · https://arxiv.org/abs/2603.23730v1  
-  <details><summary>Abstract</summary>
-
-  Point cloud foundation models demonstrate strong generalization, yet adapting them to downstream tasks remains challenging in low-data regimes. Full fine-tuning often leads to overfitting and significant drift from pre-trained representations, while existing parameter-efficient fine-tuning (PEFT) methods mitigate this issue by introducing additional trainable components at the cost of increased inference-time latency. We propose Momentum-Consistency Fine-Tuning (MCFT), an adapter-free approach that bridges the gap between full and parameter-efficient fine-tuning. MCFT selectively fine-tunes a portion of the pre-trained encoder while enforcing a momentum-based consistency constraint to preserve task-agnostic representations. Unlike PEFT methods, MCFT introduces no additional representation learning parameters beyond a standard task head, maintaining the original model's parameter count and inference efficiency. We further extend MCFT with two variants: a semi-supervised framework that leverages abundant unlabeled data to enhance few-shot performance, and a pruning-based variant that improves computational efficiency through structured layer removal. Extensive experiments on object recognition and part segmentation benchmarks demonstrate that MCFT consistently outperforms prior methods, achieving a 3.30% gain in 5-shot settings and up to a 6.13% improvement with semi-supervised learning, while remaining well-suited for resource-constrained deployment.
-
-  </details>
-
-
-
-- **AdvSplat: Adversarial Attacks on Feed-Forward Gaussian Splatting Models**  
-  Yiran Qiao, Yiren Lu, Yunlai Zhou, Rui Yang, Linlin Hou, Yu Yin, Jing Ma  
-  _2026-03-24_ · https://arxiv.org/abs/2603.23686v1  
-  <details><summary>Abstract</summary>
-
-  3D Gaussian Splatting (3DGS) is increasingly recognized as a powerful paradigm for real-time, high-fidelity 3D reconstruction. However, its per-scene optimization pipeline limits scalability and generalization, and prevents efficient inference. Recently emerged feed-forward 3DGS models address these limitations by enabling fast reconstruction from a few input views after large-scale pretraining, without scene-specific optimization. Despite their advantages and strong potential for commercial deployment, the use of neural networks as the backbone also amplifies the risk of adversarial manipulation. In this paper, we introduce AdvSplat, the first systematic study of adversarial attacks on feed-forward 3DGS. We first employ white-box attacks to reveal fundamental vulnerabilities of this model family. We then develop two improved, practically relevant, query-efficient black-box algorithms that optimize pixel-space perturbations via a frequency-domain parameterization: one based on gradient estimation and the other gradient-free, without requiring any access to model internals. Extensive experiments across multiple datasets demonstrate that AdvSplat can significantly disrupt reconstruction results by injecting imperceptible perturbations into the input images. Our findings surface an overlooked yet urgent problem in this domain, and we hope to draw the community's attention to this emerging security and robustness challenge.
 
   </details>
 
