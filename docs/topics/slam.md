@@ -1,11 +1,99 @@
 # SLAM & Localization
 
-_Updated: 2026-04-02 07:39 UTC_
+_Updated: 2026-04-03 07:35 UTC_
 
-Total papers shown: **13**
+Total papers shown: **11**
 
 
 ---
+
+- **Cross-Modal Visuo-Tactile Object Perception**  
+  Anirvan Dutta, Simone Tasciotti, Claudia Cusseddu, Ang Li, Panayiota Poirazi, Julijana Gjorgjieva, Etienne Burdet, Patrick van der Smagt, Mohsen Kaboli  
+  _2026-04-02_ · https://arxiv.org/abs/2604.02108v1  
+  <details><summary>Abstract</summary>
+
+  Estimating physical properties is critical for safe and efficient autonomous robotic manipulation, particularly during contact-rich interactions. In such settings, vision and tactile sensing provide complementary information about object geometry, pose, inertia, stiffness, and contact dynamics, such as stick-slip behavior. However, these properties are only indirectly observable and cannot always be modeled precisely (e.g., deformation in non-rigid objects coupled with nonlinear contact friction), making the estimation problem inherently complex and requiring sustained exploitation of visuo-tactile sensory information during action. Existing visuo-tactile perception frameworks have primarily emphasized forceful sensor fusion or static cross-modal alignment, with limited consideration of how uncertainty and beliefs about object properties evolve over time. Inspired by human multi-sensory perception and active inference, we propose the Cross-Modal Latent Filter (CMLF) to learn a structured, causal latent state-space of physical object properties. CMLF supports bidirectional transfer of cross-modal priors between vision and touch and integrates sensory evidence through a Bayesian inference process that evolves over time. Real-world robotic experiments demonstrate that CMLF improves the efficiency and robustness of latent physical properties estimation under uncertainty compared to baseline approaches. Beyond performance gains, the model exhibits perceptual coupling phenomena analogous to those observed in humans, including susceptibility to cross-modal illusions and similar trajectories in learning cross-sensory associations. Together, these results constitutes a significant step toward generalizable, robust and physically consistent cross-modal integration for robotic multi-sensory perception.
+
+  </details>
+
+
+
+- **HyVGGT-VO: Tightly Coupled Hybrid Dense Visual Odometry with Feed-Forward Models**  
+  Junxiang Pan, Lipu Zhou, Baojie Chen  
+  _2026-04-02_ · https://arxiv.org/abs/2604.02107v1  
+  <details><summary>Abstract</summary>
+
+  Dense visual odometry (VO), which provides pose estimation and dense 3D reconstruction, serves as the cornerstone for applications ranging from robotics to augmented reality. Recently, feed-forward models have demonstrated remarkable capabilities in dense mapping. However, when these models are used in dense visual SLAM systems, their heavy computational burden restricts them to yielding sparse pose outputs at keyframes while still failing to achieve real-time pose estimation. In contrast, traditional sparse methods provide high computational efficiency and high-frequency pose outputs, but lack the capability for dense reconstruction. To address these limitations, we propose HyVGGT-VO, a novel framework that combines the computational efficiency of sparse VO with the dense reconstruction capabilities of feed-forward models. To the best of our knowledge, this is the first work to tightly couple a traditional VO framework with VGGT, a state-of-the-art feed-forward model. Specifically, we design an adaptive hybrid tracking frontend that dynamically switches between traditional optical flow and the VGGT tracking head to ensure robustness. Furthermore, we introduce a hierarchical optimization framework that jointly refines VO poses and the scale of VGGT predictions to ensure global scale consistency. Our approach achieves an approximately 5x processing speedup compared to existing VGGT-based methods, while reducing the average trajectory error by 85% on the indoor EuRoC dataset and 12% on the outdoor KITTI benchmark. Our code will be publicly available upon acceptance. Project page: https://geneta2580.github.io/HyVGGT-VO.io.
+
+  </details>
+
+
+
+- **GS^2: Graph-based Spatial Distribution Optimization for Compact 3D Gaussian Splatting**  
+  Xianben Yang, Tao Wang, Yuxuan Li, Yi Jin, Haibin Ling  
+  _2026-04-02_ · https://arxiv.org/abs/2604.01884v1  
+  <details><summary>Abstract</summary>
+
+  3D Gaussian Splatting (3DGS) has demonstrated breakthrough performance in novel view synthesis and real-time rendering. Nevertheless, its practicality is constrained by the high memory cost due to a huge number of Gaussian points. Many pruning-based 3DGS variants have been proposed for memory saving, but often compromise spatial consistency and may lead to rendering artifacts. To address this issue, we propose graph-based spatial distribution optimization for compact 3D Gaussian Splatting (GS\textasciicircum2), which enhances reconstruction quality by optimizing the spatial distribution of Gaussian points. Specifically, we introduce an evidence lower bound (ELBO)-based adaptive densification strategy that automatically controls the densification process. In addition, an opacity-aware progressive pruning strategy is proposed to further reduce memory consumption by dynamically removing low-opacity Gaussian points. Furthermore, we propose a graph-based feature encoding module to adjust the spatial distribution via feature-guided point shifting. Extensive experiments validate that GS\textasciicircum2 achieves a compact Gaussian representation while delivering superior rendering quality. Compared with 3DGS, it achieves higher PSNR with only about 12.5\% Gaussian points. Furthermore, it outperforms all compared baselines in both rendering quality and memory efficiency.
+
+  </details>
+
+
+
+- **PTC-Depth: Pose-Refined Monocular Depth Estimation with Temporal Consistency**  
+  Leezy Han, Seunggyu Kim, Dongseok Shim, Hyeonbeom Lee  
+  _2026-04-02_ · https://arxiv.org/abs/2604.01791v1  
+  <details><summary>Abstract</summary>
+
+  Monocular depth estimation (MDE) has been widely adopted in the perception systems of autonomous vehicles and mobile robots. However, existing approaches often struggle to maintain temporal consistency in depth estimation across consecutive frames. This inconsistency not only causes jitter but can also lead to estimation failures when the depth range changes abruptly. To address these challenges, this paper proposes a consistency-aware monocular depth estimation framework that leverages wheel odometry from a mobile robot to achieve stable and coherent depth predictions over time. Specifically, we estimate camera pose and sparse depth from triangulation using optical flow between consecutive frames. The sparse depth estimates are used to update a recursive Bayesian estimate of the metric scale, which is then applied to rescale the relative depth predicted by a pre-trained depth estimation foundation model. The proposed method is evaluated on the KITTI, TartanAir, MS2, and our own dataset, demonstrating robust and accurate depth estimation performance.
+
+  </details>
+
+
+
+- **Unifying UAV Cross-View Geo-Localization via 3D Geometric Perception**  
+  Haoyuan Li, Wen Yang, Fang Xu, Hong Tan, Haijian Zhang, Shengyang Li, Gui-Song Xia  
+  _2026-04-02_ · https://arxiv.org/abs/2604.01747v1  
+  <details><summary>Abstract</summary>
+
+  Cross-view geo-localization for Unmanned Aerial Vehicles (UAVs) operating in GNSS-denied environments remains challenging due to the severe geometric discrepancy between oblique UAV imagery and orthogonal satellite maps. Most existing methods address this problem through a decoupled pipeline of place retrieval and pose estimation, implicitly treating perspective distortion as appearance noise rather than an explicit geometric transformation. In this work, we propose a geometry-aware UAV geo-localization framework that explicitly models the 3D scene geometry to unify coarse place recognition and fine-grained pose estimation within a single inference pipeline. Our approach reconstructs a local 3D scene from multi-view UAV image sequences using a Visual Geometry Grounded Transformer (VGGT), and renders a virtual Bird's-Eye View (BEV) representation that orthorectifies the UAV perspective to align with satellite imagery. This BEV serves as a geometric intermediary that enables robust cross-view retrieval and provides spatial priors for accurate 3 Degrees of Freedom (3-DoF) pose regression. To efficiently handle multiple location hypotheses, we introduce a Satellite-wise Attention Block that isolates the interaction between each satellite candidate and the reconstructed UAV scene, preventing inter-candidate interference while maintaining linear computational complexity. In addition, we release a recalibrated version of the University-1652 dataset with precise coordinate annotations and spatial overlap analysis, enabling rigorous evaluation of end-to-end localization accuracy. Extensive experiments on the refined University-1652 benchmark and SUES-200 demonstrate that our method significantly outperforms state-of-the-art baselines, achieving robust meter-level localization accuracy and improved generalization in complex urban environments.
+
+  </details>
+
+
+
+- **Setup-Independent Full Projector Compensation**  
+  Haibo Li, Qingyue Deng, Jijiang Li, Haibin Ling, Bingyao Huang  
+  _2026-04-02_ · https://arxiv.org/abs/2604.01736v1  
+  <details><summary>Abstract</summary>
+
+  Projector compensation seeks to correct geometric and photometric distortions that occur when images are projected onto nonplanar or textured surfaces. However, most existing methods are highly setup-dependent, requiring fine-tuning or retraining whenever the surface, lighting, or projector-camera pose changes. Progress has been limited by two key challenges: (1) the absence of large, diverse training datasets and (2) existing geometric correction models are typically constrained by specific spatial setups; without further retraining or fine-tuning, they often fail to generalize directly to novel geometric configurations. We introduce SIComp, the first Setup-Independent framework for full projector Compensation, capable of generalizing to unseen setups without fine-tuning or retraining. To enable this, we construct a large-scale real-world dataset spanning 277 distinct projector-camera setups. SIComp adopts a co-adaptive design that decouples geometry and photometry: A carefully tailored optical flow module performs online geometric correction, while a novel photometric network handles photometric compensation. To further enhance robustness under varying illumination, we integrate intensity-varying surface priors into the network design. Extensive experiments demonstrate that SIComp consistently produces high-quality compensation across diverse unseen setups, substantially outperforming existing methods in terms of generalization ability and establishing the first generalizable solution to projector compensation. The code and dataset are available on our project page: https://hai-bo-li.github.io/SIComp/
+
+  </details>
+
+
+
+- **Hi-LOAM: Hierarchical Implicit Neural Fields for LiDAR Odometry and Mapping**  
+  Zhiliu Yang, Jianyuan Zhang, Lianhui Zhao, Jinyu Dai, Zhu Yang  
+  _2026-04-02_ · https://arxiv.org/abs/2604.01720v1  
+  <details><summary>Abstract</summary>
+
+  LiDAR Odometry and Mapping (LOAM) is a pivotal technique for embodied-AI applications such as autonomous driving and robot navigation. Most existing LOAM frameworks are either contingent on the supervision signal, or lack of the reconstruction fidelity, which are deficient in depicting details of large-scale complex scenes. To overcome these limitations, we propose a multi-scale implicit neural localization and mapping framework using LiDAR sensor, called Hi-LOAM. Hi-LOAM receives LiDAR point cloud as the input data modality, learns and stores hierarchical latent features in multiple levels of hash tables based on an octree structure, then these multi-scale latent features are decoded into signed distance value through shallow Multilayer Perceptrons (MLPs) in the mapping procedure. For pose estimation procedure, we rely on a correspondence-free, scan-to-implicit matching paradigm to estimate optimal pose and register current scan into the submap. The entire training process is conducted in a self-supervised manner, which waives the model pre-training and manifests its generalizability when applied to diverse environments. Extensive experiments on multiple real-world and synthetic datasets demonstrate the superior performance, in terms of the effectiveness and generalization capabilities, of our Hi-LOAM compared to existing state-of-the-art methods.
+
+  </details>
+
+
+
+- **Riemannian and Symplectic Geometry for Hierarchical Text-Driven Place Recognition**  
+  Tianyi Shang, Zhenyu Li  
+  _2026-04-02_ · https://arxiv.org/abs/2604.01598v1  
+  <details><summary>Abstract</summary>
+
+  Text-to-point-cloud localization enables robots to understand spatial positions through natural language descriptions, which is crucial for human-robot collaboration in applications such as autonomous driving and last-mile delivery. However, existing methods employ pooled global descriptors for similarity retrieval, which suffer from severe information loss and fail to capture discriminative scene structures. To address these issues, we propose SympLoc, a novel coarse-to-fine localization framework with multi-level alignment in the coarse stage. Different from previous methods that rely solely on global descriptors, our coarse stage consists of three complementary alignment levels: 1) Instance-level alignment establishes direct correspondence between individual object instances in point clouds and textual hints through Riemannian self-attention in hyperbolic space; 2) Relation-level alignment explicitly models pairwise spatial relationships between objects using the Information-Symplectic Relation Encoder (ISRE), which reformulates relation features through Fisher-Rao metric and Hamiltonian dynamics for uncertainty-aware geometrically consistent propagation; 3) Global-level alignment synthesizes discriminative global descriptors via the Spectral Manifold Transform (SMT) that extracts structural invariants through graph spectral analysis. This hierarchical alignment strategy progressively captures fine-grained to coarse-grained scene semantics, enabling robust cross-modal retrieval. Extensive experiments on the KITTI360Pose dataset demonstrate that SympLoc achieves a 19% improvement in Top-1 recall@10m compared to existing state-of-the-art approaches.
+
+  </details>
+
+
 
 - **PanoAir: A Panoramic Visual-Inertial SLAM with Cross-Time Real-World UAV Dataset**  
   Yiyang Wu, Xiaohu Zhang, Yanjin Du, Tongsu Zhang, Chujun Li, Siyang Chen, Guoyi Zhang, Xiangpeng Xu  
@@ -35,116 +123,6 @@ Total papers shown: **13**
   <details><summary>Abstract</summary>
 
   With recent advances, Feed-forward Reconstruction Models (FFRMs) have demonstrated great potential in reconstruction quality and adaptiveness to multiple downstream tasks. However, the excessive reliance on multi-view geometric annotations, e.g. 3D point maps and camera poses, makes the fully-supervised training scheme of FFRMs difficult to scale up. In this paper, we propose Reliev3R, a weakly-supervised paradigm for training FFRMs from scratch without cost-prohibitive multi-view geometric annotations. Relieving the reliance on geometric sensory data and compute-exhaustive structure-from-motion preprocessing, our method draws 3D knowledge directly from monocular relative depths and image sparse correspondences given by zero-shot predictions of pretrained models. At the core of Reliev3R, we design an ambiguity-aware relative depth loss and a trigonometry-based reprojection loss to facilitate supervision for multi-view geometric consistency. Training from scratch with the less data, Reliev3R catches up with its fully-supervised sibling models, taking a step towards low-cost 3D reconstruction supervisions and scalable FFRMs.
-
-  </details>
-
-
-
-- **A Dual-Stream Transformer Architecture for Illumination-Invariant TIR-LiDAR Person Tracking**  
-  Yuki Minase, Kanji Tanaka  
-  _2026-04-01_ · https://arxiv.org/abs/2604.00363v1  
-  <details><summary>Abstract</summary>
-
-  Robust person tracking is a critical capability for autonomous mobile robots operating in diverse and unpredictable environments. While RGB-D tracking has shown high precision, its performance severely degrades under challenging illumination conditions, such as total darkness or intense backlighting. To achieve all-weather robustness, this paper proposes a novel Thermal-Infrared and Depth (TIR-D) tracking architecture that leverages the standard sensor suite of SLAM-capable robots, namely LiDAR and TIR cameras. A major challenge in TIR-D tracking is the scarcity of annotated multi-modal datasets. To address this, we introduce a sequential knowledge transfer strategy that evolves structural priors from a large-scale thermal-trained model into the TIR-D domain. By employing a differential learning rate strategy -- referred to as ``Fine-grained Differential Learning Rate Strategy'' -- we effectively preserve pre-trained feature extraction capabilities while enabling rapid adaptation to geometric depth cues. Experimental results demonstrate that our proposed TIR-D tracker achieves superior performance, with an Average Overlap (AO) of 0.700 and a Success Rate (SR) of 58.7\%, significantly outperforming conventional RGB-transfer and single-modality baselines. Our approach provides a practical and resource-efficient solution for robust human-following in all-weather robotics applications.
-
-  </details>
-
-
-
-- **Semantic Zone-Based Map Management for Stable AI-Integrated Mobile Robots**  
-  Huichang Yun, Seungho Yoo  
-  _2026-03-31_ · https://arxiv.org/abs/2603.29627v1  
-  <details><summary>Abstract</summary>
-
-  Recent advances in large AI models (VLMs and LLMs) and joint use of the 3D dense maps, enable mobile robots to provide more powerful and interactive services grounded in rich spatial context. However, deploying both heavy AI models and dense maps on edge robots is challenging under strict memory budgets. When the memory budget is exceeded, required keyframes may not be loaded in time, which can degrade the stability of position estimation and interfering model performance. We proposes a semantic zone-based map management approach to stabilize dense-map utilization under memory constraints. We associate keyframes with semantic indoor regions (e.g., rooms and corridors) and keyframe management at the semantic zone level prioritizes spatially relevant map content while respecting memory constraints. This reduces keyframe loading and unloading frequency and memory usage. We evaluate the proposed approach in large-scale simulated indoor environments and on an NVIDIA Jetson Orin Nano under concurrent SLAM-VLM execution. With Qwen3.5:0.8b, the proposed method improves throughput by 3.3 tokens/s and reduces latency by 21.7% relative to a geometric map-management strategy. Furthermore, while the geometric strategy suffers from out-of-memory failures and stalled execution under memory pressure, the proposed method eliminates both issues, preserving localization stability and enabling robust VLM operation. These results demonstrate that the proposed approach enables efficient dense map utilization for memory constrained, AI-integrated mobile robots. Code is available at: https://github.com/huichangs/rtabmap/tree/segment
-
-  </details>
-
-
-
-- **Communication Outage-Resistant UUV State Estimation: A Variational History Distillation Approach**  
-  Shuyue Li, Miguel López-Benítez, Eng Gee Lim, Fei Ma, Qian Dong, Mengze Cao, Limin Yu, Xiaohui Qin  
-  _2026-03-31_ · https://arxiv.org/abs/2603.29512v1  
-  <details><summary>Abstract</summary>
-
-  The reliable operation of Unmanned Underwater Vehicle (UUV) clusters is highly dependent on continuous acoustic communication. However, this communication method is highly susceptible to intermittent interruptions. When communication outages occur, standard state estimators such as the Unscented Kalman Filter (UKF) will be forced to make open-loop predictions. If the environment contains unmodeled dynamic factors, such as unknown ocean currents, this estimation error will grow rapidly, which may eventually lead to mission failure. To address this critical issue, this paper proposes a Variational History Distillation (VHD) approach. VHD regards trajectory prediction as an approximate Bayesian reasoning process, which links a standard motion model based on physics with a pattern extracted directly from the past trajectory of the UUV. This is achieved by synthesizing ``virtual measurements'' distilled from historical trajectories. Recognizing that the reliability of extrapolated historical trends degrades over extended prediction horizons, an adaptive confidence mechanism is introduced. This mechanism allows the filter to gradually reduce the trust of virtual measurements as the communication outage time is extended. Extensive Monte Carlo simulations in a high-fidelity environment demonstrate that the proposed method achieves a 91\% reduction in prediction Root Mean Square Error (RMSE), reducing the error from approximately 170 m to 15 m during a 40-second communication outage. These results demonstrate that VHD can maintain robust state estimation performance even under complete communication loss.
-
-  </details>
-
-
-
-- **All-in-One Augmented Reality Guided Head and Neck Tumor Resection**  
-  Yue Yang, Matthieu Chabanas, Carrie Reale, Annie Benson, Jason Slagle, Matthew Weinger, Michael Topf, Jie Ying Wu  
-  _2026-03-31_ · https://arxiv.org/abs/2603.29495v1  
-  <details><summary>Abstract</summary>
-
-  Positive margins are common in head and neck squamous cell carcinoma, yet intraoperative re-resection is often imprecise because margin locations are typically communicated verbally from pathology. We present an all-in-one augmented reality (AR) system that relocalizes positive margins from a resected specimen to the resection bed and visualizes them in situ using HoloLens 2 depth sensing and fully automated markerless surface registration. In a silicone phantom study with six medical trainees, markerless registration achieved target registration errors comparable to a marker-based baseline (median 1.8 mm vs. 1.7 mm; maximum < 4 mm). In a margin relocalization task, AR guidance reduced error from verbal guidance (median 14.2 mm) to a few millimeters (median 3.2 mm), with all AR localizations within 5 mm error. These results support the feasibility of markerless AR margin guidance for more precise intraoperative re-excision.
-
-  </details>
-
-
-
-- **Interacting Multiple Model Proprioceptive Odometry for Legged Robots**  
-  Wanlei Li, Zichang Chen, Shilei Li, Xiaogang Xiong, Yunjiang Lou  
-  _2026-03-31_ · https://arxiv.org/abs/2603.29383v1  
-  <details><summary>Abstract</summary>
-
-  State estimation for legged robots remains challenging because legged odometry generally suffers from limited observability and therefore depends critically on measurement constraints to suppress drift. When exteroceptive sensors are unreliable or degraded, such constraints are mainly derived from proprioceptive measurements, particularly contact-related leg kinematics information. However, most existing proprioceptive odometry methods rely on an idealized point-contact assumption, which is often violated during real locomotion. Consequently, the effectiveness of proprioceptive constraints may be significantly reduced, resulting in degraded estimation accuracy. To address these limitations, we propose an interacting multiple model (IMM)-based proprioceptive odometry framework for legged robots. By incorporating multiple contact hypotheses within a unified probabilistic framework, the proposed method enables online mode switching and probabilistic fusion under varying contact conditions. Extensive simulations and real-world experiments demonstrate that the proposed method achieves superior pose estimation accuracy over state-of-the-art methods while maintaining comparable computational efficiency.
-
-  </details>
-
-
-
-- **StereoVGGT: A Training-Free Visual Geometry Transformer for Stereo Vision**  
-  Ziyang Chen, Yansong Qu, You Shen, Xuan Cheng, Liujuan Cao  
-  _2026-03-31_ · https://arxiv.org/abs/2603.29368v1  
-  <details><summary>Abstract</summary>
-
-  Driven by the advancement of 3D devices, stereo vision tasks including stereo matching and stereo conversion have emerged as a critical research frontier. Contemporary stereo vision backbones typically rely on either monocular depth estimation (MDE) models or visual foundation models (VFMs). Crucially, these models are predominantly pretrained without explicit supervision of camera poses. Given that such geometric knowledge is indispensable for stereo vision, the absence of explicit spatial constraints constitutes a significant performance bottleneck for existing architectures. Recognizing that the Visual Geometry Grounded Transformer (VGGT) operates as a foundation model pretrained on extensive 3D priors, including camera poses, we investigate its potential as a robust backbone for stereo vision tasks. Nevertheless, empirical results indicate that its direct application to stereo vision yields suboptimal performance. We observe that VGGT suffers from a more significant degradation of geometric details during feature extraction. Such characteristics conflict with the requirements of binocular stereo vision, thereby constraining its efficacy for relative tasks. To bridge this gap, we propose StereoVGGT, a feature backbone specifically tailored for stereo vision. By leveraging the frozen VGGT and introducing a training-free feature adjustment pipeline, we mitigate geometric degradation and harness the latent camera calibration knowledge embedded within the model. StereoVGGT-based stereo matching network achieved the $1^{st}$ rank among all published methods on the KITTI benchmark, validating that StereoVGGT serves as a highly effective backbone for stereo vision.
-
-  </details>
-
-
-
-- **MotionScale: Reconstructing Appearance, Geometry, and Motion of Dynamic Scenes with Scalable 4D Gaussian Splatting**  
-  Haoran Zhou, Gim Hee Lee  
-  _2026-03-31_ · https://arxiv.org/abs/2603.29296v1  
-  <details><summary>Abstract</summary>
-
-  Realistic reconstruction of dynamic 4D scenes from monocular videos is essential for understanding the physical world. Despite recent progress in neural rendering, existing methods often struggle to recover accurate 3D geometry and temporally consistent motion in complex environments. To address these challenges, we propose MotionScale, a 4D Gaussian Splatting framework that scales efficiently to large scenes and extended sequences while maintaining high-fidelity structural and motion coherence. At the core of our approach is a scalable motion field parameterized by cluster-centric basis transformations that adaptively expand to capture diverse and evolving motion patterns. To ensure robust reconstruction over long durations, we introduce a progressive optimization strategy comprising two decoupled propagation stages: 1) A background extension stage that adapts to newly visible regions, refines camera poses, and explicitly models transient shadows; 2) A foreground propagation stage that enforces motion consistency through a specialized three-stage refinement process. Extensive experiments on challenging real-world benchmarks demonstrate that MotionScale significantly outperforms state-of-the-art methods in both reconstruction quality and temporal stability. Project page: https://hrzhou2.github.io/motion-scale-web/.
-
-  </details>
-
-
-
-- **M2H-MX: Multi-Task Dense Visual Perception for Real-Time Monocular Spatial Understanding**  
-  U. V. B. L. Udugama, George Vosselman, Francesco Nex  
-  _2026-03-31_ · https://arxiv.org/abs/2603.29236v1  
-  <details><summary>Abstract</summary>
-
-  Monocular cameras are attractive for robotic perception due to their low cost and ease of deployment, yet achieving reliable real-time spatial understanding from a single image stream remains challenging. While recent multi-task dense prediction models have improved per-pixel depth and semantic estimation, translating these advances into stable monocular mapping systems is still non-trivial. This paper presents M2H-MX, a real-time multi-task perception model for monocular spatial understanding. The model preserves multi-scale feature representations while introducing register-gated global context and controlled cross-task interaction in a lightweight decoder, enabling depth and semantic predictions to reinforce each other under strict latency constraints. Its outputs integrate directly into an unmodified monocular SLAM pipeline through a compact perception-to-mapping interface. We evaluate both dense prediction accuracy and in-the-loop system performance. On NYUDv2, M2H-MX-L achieves state-of-the-art results, improving semantic mIoU by 6.6% and reducing depth RMSE by 9.4% over representative multi-task baselines. When deployed in a real-time monocular mapping system on ScanNet, M2H-MX reduces average trajectory error by 60.7% compared to a strong monocular SLAM baseline while producing cleaner metric-semantic maps. These results demonstrate that modern multi-task dense prediction can be reliably deployed for real-time monocular spatial perception in robotic systems.
-
-  </details>
-
-
-
-- **Efficient Camera Pose Augmentation for View Generalization in Robotic Policy Learning**  
-  Sen Wang, Huaiyi Dong, Jingyi Tian, Jiayi Li, Zhuo Yang, Tongtong Cao, Anlin Chen, Shuang Wu, Le Wang, Sanping Zhou  
-  _2026-03-31_ · https://arxiv.org/abs/2603.29192v1  
-  <details><summary>Abstract</summary>
-
-  Prevailing 2D-centric visuomotor policies exhibit a pronounced deficiency in novel view generalization, as their reliance on static observations hinders consistent action mapping across unseen views. In response, we introduce GenSplat, a feed-forward 3D Gaussian Splatting framework that facilitates view-generalized policy learning through novel view rendering. GenSplat employs a permutation-equivariant architecture to reconstruct high-fidelity 3D scenes from sparse, uncalibrated inputs in a single forward pass. To ensure structural integrity, we design a 3D-prior distillation strategy that regularizes the 3DGS optimization, preventing the geometric collapse typical of purely photometric supervision. By rendering diverse synthetic views from these stable 3D representations, we systematically augment the observational manifold during training. This augmentation forces the policy to ground its decisions in underlying 3D structures, thereby ensuring robust execution under severe spatial perturbations where baselines severely degrade.
-
-  </details>
-
-
-
-- **Hierarchical Visual Relocalization with Nearest View Synthesis from Feature Gaussian Splatting**  
-  Huaqi Tao, Bingxi Liu, Guangcheng Chen, Fulin Tang, Li He, Hong Zhang  
-  _2026-03-31_ · https://arxiv.org/abs/2603.29185v1  
-  <details><summary>Abstract</summary>
-
-  Visual relocalization is a fundamental task in the field of 3D computer vision, estimating a camera's pose when it revisits a previously known scene. While point-based hierarchical relocalization methods have shown strong scalability and efficiency, they are often limited by sparse image observations and weak feature matching. In this work, we propose SplatHLoc, a novel hierarchical visual relocalization framework that uses Feature Gaussian Splatting as the scene representation. To address the sparsity of database images, we propose an adaptive viewpoint retrieval method that synthesizes virtual candidates with viewpoints more closely aligned with the query, thereby improving the accuracy of initial pose estimation. For feature matching, we observe that Gaussian-rendered features and those extracted directly from images exhibit different strengths across the two-stage matching process: the former performs better in the coarse stage, while the latter proves more effective in the fine stage. Therefore, we introduce a hybrid feature matching strategy, enabling more accurate and efficient pose estimation. Extensive experiments on both indoor and outdoor datasets show that SplatHLoc enhances the robustness of visual relocalization, setting a new state-of-the-art.
 
   </details>
 
