@@ -1,11 +1,77 @@
 # SLAM & Localization
 
-_Updated: 2026-04-07 07:47 UTC_
+_Updated: 2026-04-08 07:51 UTC_
 
-Total papers shown: **10**
+Total papers shown: **12**
 
 
 ---
+
+- **Graph-PiT: Enhancing Structural Coherence in Part-Based Image Synthesis via Graph Priors**  
+  Junbin Zhang, Meng Cao, Feng Tan, Yikai Lin, Yuexian Zou  
+  _2026-04-07_ · https://arxiv.org/abs/2604.06074v1  
+  <details><summary>Abstract</summary>
+
+  Achieving fine-grained and structurally sound controllability is a cornerstone of advanced visual generation. Existing part-based frameworks treat user-provided parts as an unordered set and therefore ignore their intrinsic spatial and semantic relationships, which often results in compositions that lack structural integrity. To bridge this gap, we propose Graph-PiT, a framework that explicitly models the structural dependencies of visual components using a graph prior. Specifically, we represent visual parts as nodes and their spatial-semantic relationships as edges. At the heart of our method is a Hierarchical Graph Neural Network (HGNN) module that performs bidirectional message passing between coarse-grained part-level super-nodes and fine-grained IP+ token sub-nodes, refining part embeddings before they enter the generative pipeline. We also introduce a graph Laplacian smoothness loss and an edge-reconstruction loss so that adjacent parts acquire compatible, relation-aware embeddings. Quantitative experiments on controlled synthetic domains (character, product, indoor layout, and jigsaw), together with qualitative transfer to real web images, show that Graph-PiT improves structural coherence over vanilla PiT while remaining compatible with the original IP-Prior pipeline. Ablation experiments confirm that explicit relational reasoning is crucial for enforcing user-specified adjacency constraints. Our approach not only enhances the plausibility of generated concepts but also offers a scalable and interpretable mechanism for complex, multi-part image synthesis. The code is available at https://github.com/wolf-bailang/Graph-PiT.
+
+  </details>
+
+
+
+- **GaussianGrow: Geometry-aware Gaussian Growing from 3D Point Clouds with Text Guidance**  
+  Weiqi Zhang, Junsheng Zhou, Haotian Geng, Kanle Shi, Shenkun Xu, Yi Fang, Yu-Shen Liu  
+  _2026-04-07_ · https://arxiv.org/abs/2604.05721v1  
+  <details><summary>Abstract</summary>
+
+  3D Gaussian Splatting has demonstrated superior performance in rendering efficiency and quality, yet the generation of 3D Gaussians still remains a challenge without proper geometric priors. Existing methods have explored predicting point maps as geometric references for inferring Gaussian primitives, while the unreliable estimated geometries may lead to poor generations. In this work, we introduce GaussianGrow, a novel approach that generates 3D Gaussians by learning to grow them from easily accessible 3D point clouds, naturally enforcing geometric accuracy in Gaussian generation. Specifically, we design a text-guided Gaussian growing scheme that leverages a multi-view diffusion model to synthesize consistent appearances from input point clouds for supervision. To mitigate artifacts caused by fusing neighboring views, we constrain novel views generated at non-preset camera poses identified in overlapping regions across different views. For completing the hard-to-observe regions, we propose to iteratively detect the camera pose by observing the largest un-grown regions in point clouds and inpainting them by inpainting the rendered view with a pretrained 2D diffusion model. The process continues until complete Gaussians are generated. We extensively evaluate GaussianGrow on text-guided Gaussian generation from synthetic and even real-scanned point clouds. Project Page: https://weiqi-zhang.github.io/GaussianGrow
+
+  </details>
+
+
+
+- **LSGS-Loc: Towards Robust 3DGS-Based Visual Localization for Large-Scale UAV Scenarios**  
+  Xiang Zhang, Tengfei Wang, Fang Xu, Xin Wang, Zongqian Zhan  
+  _2026-04-07_ · https://arxiv.org/abs/2604.05402v1  
+  <details><summary>Abstract</summary>
+
+  Visual localization in large-scale UAV scenarios is a critical capability for autonomous systems, yet it remains challenging due to geometric complexity and environmental variations. While 3D Gaussian Splatting (3DGS) has emerged as a promising scene representation, existing 3DGS-based visual localization methods struggle with robust pose initialization and sensitivity to rendering artifacts in large-scale settings. To address these limitations, we propose LSGS-Loc, a novel visual localization pipeline tailored for large-scale 3DGS scenes. Specifically, we introduce a scale-aware pose initialization strategy that combines scene-agnostic relative pose estimation with explicit 3DGS scale constraints, enabling geometrically grounded localization without scene-specific training. Furthermore, in the pose refinement, to mitigate the impact of reconstruction artifacts such as blur and floaters, we develop a Laplacian-based reliability masking mechanism that guides photometric refinement toward high-quality regions. Extensive experiments on large-scale UAV benchmarks demonstrate that our method achieves state-of-the-art accuracy and robustness for unordered image queries, significantly outperforming existing 3DGS-based approaches. Code is available at: https://github.com/xzhang-z/LSGS-Loc
+
+  </details>
+
+
+
+- **AnyImageNav: Any-View Geometry for Precise Last-Meter Image-Goal Navigation**  
+  Yijie Deng, Shuaihang Yuan, Yi Fang  
+  _2026-04-07_ · https://arxiv.org/abs/2604.05351v1  
+  <details><summary>Abstract</summary>
+
+  Image Goal Navigation (ImageNav) is evaluated by a coarse success criterion, the agent must stop within 1m of the target, which is sufficient for finding objects but falls short for downstream tasks such as grasping that require precise positioning. We introduce AnyImageNav, a training-free system that pushes ImageNav toward this more demanding setting. Our key insight is that the goal image can be treated as a geometric query: any photo of an object, a hallway, or a room corner can be registered to the agent's observations via dense pixel-level correspondences, enabling recovery of the exact 6-DoF camera pose. Our method realizes this through a semantic-to-geometric cascade: a semantic relevance signal guides exploration and acts as a proximity gate, invoking a 3D multi-view foundation model only when the current view is highly relevant to the goal image; the model then self-certifies its registration in a loop for an accurate recovered pose. Our method sets state-of-the-art navigation success rates on Gibson (93.1%) and HM3D (82.6%), and achieves pose recovery that prior methods do not provide: a position error of 0.27m and heading error of 3.41 degrees on Gibson, and 0.21m / 1.23 degrees on HM3D, a 5-10x improvement over adapted baselines.
+
+  </details>
+
+
+
+- **Coverage Optimization for Camera View Selection**  
+  Timothy Chen, Adam Dai, Maximilian Adang, Grace Gao, Mac Schwager  
+  _2026-04-06_ · https://arxiv.org/abs/2604.05259v1  
+  <details><summary>Abstract</summary>
+
+  What makes a good viewpoint? The quality of the data used to learn 3D reconstructions is crucial for enabling efficient and accurate scene modeling. We study the active view selection problem and develop a principled analysis that yields a simple and interpretable criterion for selecting informative camera poses. Our key insight is that informative views can be obtained by minimizing a tractable approximation of the Fisher Information Gain, which reduces to favoring viewpoints that cover geometry that has been insufficiently observed by past cameras. This leads to a lightweight coverage-based view selection metric that avoids expensive transmittance estimation and is robust to noise and training dynamics. We call this metric COVER (Camera Optimization for View Exploration and Reconstruction). We integrate our method into the Nerfstudio framework and evaluate it on real datasets within fixed and embodied data acquisition scenarios. Across multiple datasets and radiance-field baselines, our method consistently improves reconstruction quality compared to state-of-the-art active view selection methods. Additional visualizations and our Nerfstudio package can be found at https://chengine.github.io/nbv_gym/.
+
+  </details>
+
+
+
+- **Synchronous Observer Design for Landmark-Inertial SLAM with Magnetometer and Intermittent GNSS Measurements**  
+  Arkadeep Saha, Pieter van Goor, Ravi Banavar  
+  _2026-04-06_ · https://arxiv.org/abs/2604.05156v1  
+  <details><summary>Abstract</summary>
+
+  In Landmark-Inertial Simultaneous Localisation and Mapping (LI-SLAM), the positions of landmarks in the environment and the robot's pose relative to these landmarks are estimated using landmark position measurements, and measurements from the Inertial Measurement Unit (IMU). However, the robot and landmark positions in the inertial frame, and the yaw of the robot, are not observable in LI-SLAM. This paper proposes a nonlinear observer for LI-SLAM that overcomes the observability constraints with the addition of intermittent GNSS position and magnetometer measurements. The full-state error dynamics of the proposed observer is shown to be both almost-globally asymptotically stable and locally exponentially stable, and this is validated using simulations.
+
+  </details>
+
+
 
 - **Multi-Modal Sensor Fusion using Hybrid Attention for Autonomous Driving**  
   Mayank Mayank, Bharanidhar Duraisamy, Florian Geiß, Abhinav Valada  
@@ -68,50 +134,6 @@ Total papers shown: **10**
   <details><summary>Abstract</summary>
 
   We present DINO Patch Visual Odometry (DINO-VO), an end-to-end monocular visual odometry system with strong scene generalization. Current Visual Odometry (VO) systems often rely on heuristic feature extraction strategies, which can degrade accuracy and robustness, particularly in large-scale outdoor environments. DINO-VO addresses these limitations by incorporating a differentiable adaptive patch selector into the end-to-end pipeline, improving the quality of extracted patches and enhancing generalization across diverse datasets. Additionally, our system integrates a multi-task feature extraction module with a differentiable bundle adjustment (BA) module that leverages inverse depth priors, enabling the system to learn and utilize appearance and geometric information effectively. This integration bridges the gap between feature learning and state estimation. Extensive experiments on the TartanAir, KITTI, Euroc, and TUM datasets demonstrate that DINO-VO exhibits strong generalization across synthetic, indoor, and outdoor environments, achieving state-of-the-art tracking accuracy.
-
-  </details>
-
-
-
-- **Learning 3D Reconstruction with Priors in Test Time**  
-  Lei Zhou, Haoyu Wu, Akshat Dave, Dimitris Samaras  
-  _2026-04-04_ · https://arxiv.org/abs/2604.03878v1  
-  <details><summary>Abstract</summary>
-
-  We introduce a test-time framework for multiview Transformers (MVTs) that incorporates priors (e.g., camera poses, intrinsics, and depth) to improve 3D tasks without retraining or modifying pre-trained image-only networks. Rather than feeding priors into the architecture, we cast them as constraints on the predictions and optimize the network at inference time. The optimization loss consists of a self-supervised objective and prior penalty terms. The self-supervised objective captures the compatibility among multi-view predictions and is implemented using photometric or geometric loss between renderings from other views and each view itself. Any available priors are converted into penalty terms on the corresponding output modalities. Across a series of 3D vision benchmarks, including point map estimation and camera pose estimation, our method consistently improves performance over base MVTs by a large margin. On the ETH3D, 7-Scenes, and NRGBD datasets, our method reduces the point-map distance error by more than half compared with the base image-only models. Our method also outperforms retrained prior-aware feed-forward methods, demonstrating the effectiveness of our test-time constrained optimization (TCO) framework for incorporating priors into 3D vision tasks.
-
-  </details>
-
-
-
-- **InCaRPose: In-Cabin Relative Camera Pose Estimation Model and Dataset**  
-  Felix Stillger, Lukas Hahn, Frederik Hasecke, Tobias Meisen  
-  _2026-04-04_ · https://arxiv.org/abs/2604.03814v1  
-  <details><summary>Abstract</summary>
-
-  Camera extrinsic calibration is a fundamental task in computer vision. However, precise relative pose estimation in constrained, highly distorted environments, such as in-cabin automotive monitoring (ICAM), remains challenging. We present InCaRPose, a Transformer-based architecture designed for robust relative pose prediction between image pairs, which can be used for camera extrinsic calibration. By leveraging frozen backbone features such as DINOv3 and a Transformer-based decoder, our model effectively captures the geometric relationship between a reference and a target view. Unlike traditional methods, our approach achieves absolute metric-scale translation within the physically plausible adjustment range of in-cabin camera mounts in a single inference step, which is critical for ICAM, where accurate real-world distances are required for safety-relevant perception. We specifically address the challenges of highly distorted fisheye cameras in automotive interiors by training exclusively on synthetic data. Our model is capable of generalization to real-world cabin environments without relying on the exact same camera intrinsics and additionally achieves competitive performance on the public 7-Scenes dataset. Despite having limited training data, InCaRPose maintains high precision in both rotation and translation, even with a ViT-Small backbone. This enables real-time performance for time-critical inference, such as driver monitoring in supervised autonomous driving. We release our real-world In-Cabin-Pose test dataset consisting of highly distorted vehicle-interior images and our code at https://github.com/felixstillger/InCaRPose.
-
-  </details>
-
-
-
-- **CT-VoxelMap: Efficient Continuous-Time LiDAR-Inertial Odometry with Probabilistic Adaptive Voxel Mapping**  
-  Lei Zhao, Xingyi Li, Tianchen Deng, Chuan Cao, Han Zhang, Weidong Chen  
-  _2026-04-04_ · https://arxiv.org/abs/2604.03747v1  
-  <details><summary>Abstract</summary>
-
-  Maintaining stable and accurate localization during fast motion or on rough terrain remains highly challenging for mobile robots with onboard resources. Currently, multi-sensor fusion methods based on continuous-time representation offer a potential and effective solution to this challenge. Among these, spline-based methods provide an efficient and intuitive approach for continuous-time representation. Previous continuous-time odometry works based on B-splines either treat control points as variables to be estimated or perform estimation in quaternion space, which introduces complexity in deriving analytical Jacobians and often overlooks the fitting error between the spline and the true trajectory over time. To address these issues, we first propose representing the increments of control points on matrix Lie groups as variables to be estimated. Leveraging the feature of the cumulative form of B-splines, we derive a more compact formulation that yields simpler analytical Jacobians without requiring additional boundary condition considerations. Second, we utilize forward propagation information from IMU measurements to estimate fitting errors online and further introduce a hybrid feature-based voxel map management strategy, enhancing system accuracy and robustness. Finally, we propose a re-estimation policy that significantly improves system computational efficiency and robustness. The proposed method is evaluated on multiple challenging public datasets, demonstrating superior performance on most sequences. Detailed ablation studies are conducted to analyze the impact of each module on the overall pose estimation system.
-
-  </details>
-
-
-
-- **SymphoMotion: Joint Control of Camera Motion and Object Dynamics for Coherent Video Generation**  
-  Guiyu Zhang, Yabo Chen, Xunzhi Xiang, Junchao Huang, Zhongyu Wang, Li Jiang  
-  _2026-04-04_ · https://arxiv.org/abs/2604.03723v1  
-  <details><summary>Abstract</summary>
-
-  Controlling both camera motion and object dynamics is essential for coherent and expressive video generation, yet current methods typically handle only one motion type or rely on ambiguous 2D cues that entangle camera-induced parallax with true object movement. We present SymphoMotion, a unified motion-control framework that jointly governs camera trajectories and object dynamics within a single model. SymphoMotion features a Camera Trajectory Control mechanism that integrates explicit camera paths with geometry-aware cues to ensure stable, structurally consistent viewpoint transitions, and an Object Dynamics Control mechanism that combines 2D visual guidance with 3D trajectory embeddings to enable depth-aware, spatially coherent object manipulation. To support large-scale training and evaluation, we further construct RealCOD-25K, a comprehensive real-world dataset containing paired camera poses and object-level 3D trajectories across diverse indoor and outdoor scenes, addressing a key data gap in unified motion control. Extensive experiments and user studies show that SymphoMotion significantly outperforms existing methods in visual fidelity, camera controllability, and object-motion accuracy, establishing a new benchmark for unified motion control in video generation.Codes and data are publicly available at https://grenoble-zhang.github.io/SymphoMotion/.
 
   </details>
 
