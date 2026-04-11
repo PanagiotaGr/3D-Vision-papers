@@ -1,8 +1,8 @@
 # 3D Reconstruction
 
-_Updated: 2026-04-10 07:57 UTC_
+_Updated: 2026-04-11 07:15 UTC_
 
-Total papers shown: **23**
+Total papers shown: **19**
 
 
 ---
@@ -211,50 +211,6 @@ Total papers shown: **23**
   <details><summary>Abstract</summary>
 
   The manufacturing sector is increasingly adopting Multimodal Large Language Models (MLLMs) to transition from simple perception to autonomous execution, yet current evaluations fail to reflect the rigorous demands of real-world manufacturing environments. Progress is hindered by data scarcity and a lack of fine-grained domain semantics in existing datasets. To bridge this gap, we introduce FORGE. Wefirst construct a high-quality multimodal dataset that combines real-world 2D images and 3D point clouds, annotated with fine-grained domain semantics (e.g., exact model numbers). We then evaluate 18 state-of-the-art MLLMs across three manufacturing tasks, namely workpiece verification, structural surface inspection, and assembly verification, revealing significant performance gaps. Counter to conventional understanding, the bottleneck analysis shows that visual grounding is not the primary limiting factor. Instead, insufficient domain-specific knowledge is the key bottleneck, setting a clear direction for future research. Beyond evaluation, we show that our structured annotations can serve as an actionable training resource: supervised fine-tuning of a compact 3B-parameter model on our data yields up to 90.8% relative improvement in accuracy on held-out manufacturing scenarios, providing preliminary evidence for a practical pathway toward domain-adapted manufacturing MLLMs. The code and datasets are available at https://ai4manufacturing.github.io/forge-web.
-
-  </details>
-
-
-
-- **Enhancing MLLM Spatial Understanding via Active 3D Scene Exploration for Multi-Perspective Reasoning**  
-  Jiahua Chen, Qihong Tang, Weinong Wang, Qi Fan  
-  _2026-04-08_ · https://arxiv.org/abs/2604.06725v1  
-  <details><summary>Abstract</summary>
-
-  Although Multimodal Large Language Models have achieved remarkable progress, they still struggle with complex 3D spatial reasoning due to the reliance on 2D visual priors. Existing approaches typically mitigate this limitation either through computationally expensive post-training procedures on limited 3D datasets or through rigid tool-calling mechanisms that lack explicit geometric understanding and viewpoint flexibility. To address these challenges, we propose a \textit{training-free} framework that introduces a Visual Chain-of-Thought mechanism grounded in explicit 3D reconstruction. The proposed pipeline first reconstructs a high-fidelity 3D mesh from a single image using MLLM-guided keyword extraction and mask generation at multiple granularities. Subsequently, the framework leverages an external knowledge base to iteratively compute optimal camera extrinsic parameters and synthesize novel views, thereby emulating human perspective-taking. Extensive experiments demonstrate that the proposed approach significantly enhances spatial comprehension. Specifically, the framework outperforms specialized spatial models and general-purpose MLLMs, including \textit{GPT-5.2} and \textit{Gemini-2.5-Flash}, on major benchmarks such as 3DSRBench and Rel3D.
-
-  </details>
-
-
-
-- **4D Vessel Reconstruction for Benchtop Thrombectomy Analysis**  
-  Ethan Nguyen, Javier Carmona, Arisa Matsuzaki, Naoki Kaneko, Katsushi Arisaka  
-  _2026-04-08_ · https://arxiv.org/abs/2604.06671v1  
-  <details><summary>Abstract</summary>
-
-  Introduction: Mechanical thrombectomy can cause vessel deformation and procedure-related injury. Benchtop models are widely used for device testing, but time-resolved, full-field 3D vessel-motion measurements remain limited. Methods: We developed a nine-camera, low-cost multi-view workflow for benchtop thrombectomy in silicone middle cerebral artery phantoms (2160p, 20 fps). Multi-view videos were calibrated, segmented, and reconstructed with 4D Gaussian Splatting. Reconstructed point clouds were converted to fixed-connectivity edge graphs for region-of-interest (ROI) displacement tracking and a relative surface-based stress proxy. Stress-proxy values were derived from edge stretch using a Neo-Hookean mapping and reported as comparative surface metrics. A synthetic Blender pipeline with known deformation provided geometric and temporal validation. Results: In synthetic bulk translation, the stress proxy remained near zero for most edges (median $\approx$ 0 MPa; 90th percentile 0.028 MPa), with sparse outliers. In synthetic pulling (1-5 mm), reconstruction showed close geometric and temporal agreement with ground truth, with symmetric Chamfer distance of 1.714-1.815 mm and precision of 0.964-0.972 at $τ= 1$ mm. In preliminary benchtop comparative trials (one trial per condition), cervical aspiration catheter placement showed higher max-median ROI displacement and stress-proxy values than internal carotid artery terminus placement. Conclusion: The proposed protocol provides standardized, time-resolved surface kinematics and comparative relative displacement and stress proxy measurements for thrombectomy benchtop studies. The framework supports condition-to-condition comparisons and methods validation, while remaining distinct from absolute wall-stress estimation. Implementation code and example data are available at https://ethanuser.github.io/vessel4D
-
-  </details>
-
-
-
-- **VDPP: Video Depth Post-Processing for Speed and Scalability**  
-  Daewon Yoon, Injun Baek, Sangyu Han, Yearim Kim, Nojun Kwak  
-  _2026-04-08_ · https://arxiv.org/abs/2604.06665v1  
-  <details><summary>Abstract</summary>
-
-  Video depth estimation is essential for providing 3D scene structure in applications ranging from autonomous driving to mixed reality. Current end-to-end video depth models have established state-of-the-art performance. Although current end-to-end (E2E) models have achieved state-of-the-art performance, they function as tightly coupled systems that suffer from a significant adaptation lag whenever superior single-image depth estimators are released. To mitigate this issue, post-processing methods such as NVDS offer a modular plug-and-play alternative to incorporate any evolving image depth model without retraining. However, existing post-processing methods still struggle to match the efficiency and practicality of E2E systems due to limited speed, accuracy, and RGB reliance. In this work, we revitalize the role of post-processing by proposing VDPP (Video Depth Post-Processing), a framework that improves the speed and accuracy of post-processing methods for video depth estimation. By shifting the paradigm from computationally expensive scene reconstruction to targeted geometric refinement, VDPP operates purely on geometric refinements in low-resolution space. This design achieves exceptional speed (>43.5 FPS on NVIDIA Jetson Orin Nano) while matching the temporal coherence of E2E systems, with dense residual learning driving geometric representations rather than full reconstructions. Furthermore, our VDPP's RGB-free architecture ensures true scalability, enabling immediate integration with any evolving image depth model. Our results demonstrate that VDPP provides a superior balance of speed, accuracy, and memory efficiency, making it the most practical solution for real-time edge deployment. Our project page is at https://github.com/injun-baek/VDPP
-
-  </details>
-
-
-
-- **LiftFormer: Lifting and Frame Theory Based Monocular Depth Estimation Using Depth and Edge Oriented Subspace Representation**  
-  Shuai Li, Huibin Bai, Yanbo Gao, Chong Lv, Hui Yuan, Chuankun Li, Wei Hua, Tian Xie  
-  _2026-04-08_ · https://arxiv.org/abs/2604.06576v1  
-  <details><summary>Abstract</summary>
-
-  Monocular depth estimation (MDE) has attracted increasing interest in the past few years, owing to its important role in 3D vision. MDE is the estimation of a depth map from a monocular image/video to represent the 3D structure of a scene, which is a highly ill-posed problem. To solve this problem, in this paper, we propose a LiftFormer based on lifting theory topology, for constructing an intermediate subspace that bridges the image color features and depth values, and a subspace that enhances the depth prediction around edges. MDE is formulated by transforming the depth value prediction problem into depth-oriented geometric representation (DGR) subspace feature representation, thus bridging the learning from color values to geometric depth values. A DGR subspace is constructed based on frame theory by using linearly dependent vectors in accordance with depth bins to provide a redundant and robust representation. The image spatial features are transformed into the DGR subspace, where these features correspond directly to the depth values. Moreover, considering that edges usually present sharp changes in a depth map and tend to be erroneously predicted, an edge-aware representation (ER) subspace is constructed, where depth features are transformed and further used to enhance the local features around edges. The experimental results demonstrate that our LiftFormer achieves state-of-the-art performance on widely used datasets, and an ablation study validates the effectiveness of both proposed lifting modules in our LiftFormer.
 
   </details>
 

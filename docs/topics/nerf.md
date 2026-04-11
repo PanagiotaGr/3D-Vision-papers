@@ -1,8 +1,8 @@
 # NeRF & Neural Radiance Fields
 
-_Updated: 2026-04-10 07:57 UTC_
+_Updated: 2026-04-11 07:15 UTC_
 
-Total papers shown: **7**
+Total papers shown: **5**
 
 
 ---
@@ -57,28 +57,6 @@ Total papers shown: **7**
   <details><summary>Abstract</summary>
 
   In this work, we present LIANet (Location Is All You Need Network), a coordinate-based neural representation that models multi-temporal spaceborne Earth observation (EO) data for a given region of interest as a continuous spatiotemporal neural field. Given only spatial and temporal coordinates, LIANet reconstructs the corresponding satellite imagery. Once pretrained, this neural representation can be adapted to various EO downstream tasks, such as semantic segmentation or pixel-wise regression, importantly, without requiring access to the original satellite data. LIANet intends to serve as a user-friendly alternative to Geospatial Foundation Models (GFMs) by eliminating the overhead of data access and preprocessing for end-users and enabling fine-tuning solely based on labels. We demonstrate the pretraining of LIANet across target areas of varying sizes and show that fine-tuning it for downstream tasks achieves competitive performance compared to training from scratch or using established GFMs. The source code and datasets are publicly available at https://github.com/mojganmadadi/LIANet/tree/v1.0.1.
-
-  </details>
-
-
-
-- **LiveStre4m: Feed-Forward Live Streaming of Novel Views from Unposed Multi-View Video**  
-  Pedro Quesado, Erkut Akdag, Yasaman Kashefbahrami, Willem Menu, Egor Bondarev  
-  _2026-04-08_ · https://arxiv.org/abs/2604.06740v1  
-  <details><summary>Abstract</summary>
-
-  Live-streaming Novel View Synthesis (NVS) from unposed multi-view video remains an open challenge in a wide range of applications. Existing methods for dynamic scene representation typically require ground-truth camera parameters and involve lengthy optimizations ($\approx 2.67$s), which makes them unsuitable for live streaming scenarios. To address this issue, we propose a novel viewpoint video live-streaming method (LiveStre4m), a feed-forward model for real-time NVS from unposed sparse multi-view inputs. LiveStre4m introduces a multi-view vision transformer for keyframe 3D scene reconstruction coupled with a diffusion-transformer interpolation module that ensures temporal consistency and stable streaming. In addition, a Camera Pose Predictor module is proposed to efficiently estimate both poses and intrinsics directly from RGB images, removing the reliance on known camera calibration information. Our approach enables temporally consistent novel-view video streaming in real-time using as few as two synchronized unposed input streams. LiveStre4m attains an average reconstruction time of $ 0.07$s per-frame at $ 1024 \times 768$ resolution, outperforming the optimization-based dynamic scene representation methods by orders of magnitude in runtime. These results demonstrate that LiveStre4m makes real-time NVS streaming feasible in practical settings, marking a substantial step toward deployable live novel-view synthesis systems. Code available at: https://github.com/pedro-quesado/LiveStre4m
-
-  </details>
-
-
-
-- **GS-Surrogate: Deformable Gaussian Splatting for Parameter Space Exploration of Ensemble Simulations**  
-  Ziwei Li, Rumali Perera, Angus Forbes, Ken Moreland, Dave Pugmire, Scott Klasky, Wei-Lun Chao, Han-Wei Shen  
-  _2026-04-07_ · https://arxiv.org/abs/2604.06358v1  
-  <details><summary>Abstract</summary>
-
-  Exploring ensemble simulations is increasingly important across many scientific domains. However, supporting flexible post-hoc exploration remains challenging due to the trade-off between storing the expensive raw data and flexibly adjusting visualization settings. Existing visualization surrogate models have improved this workflow, but they either operate in image space without an explicit 3D representation or rely on neural radiance fields that are computationally expensive for interactive exploration and encode all parameter-driven variations within a single implicit field. In this work, we introduce GS-Surrogate, a deformable Gaussian Splatting-based visualization surrogate for parameter-space exploration. Our method first constructs a canonical Gaussian field as a base 3D representation and adapts it through sequential parameter-conditioned deformations. By separating simulation-related variations from visualization-specific changes, this explicit formulation enables efficient and controllable adaptation to different visualization tasks, such as isosurface extraction and transfer function editing. We evaluate our framework on a range of simulation datasets, demonstrating that GS-Surrogate enables real-time and flexible exploration across both simulation and visualization parameter spaces.
 
   </details>
 
