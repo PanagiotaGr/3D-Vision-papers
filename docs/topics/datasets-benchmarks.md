@@ -1,8 +1,8 @@
 # Datasets & Benchmarks (3D / Vision)
 
-_Updated: 2026-04-11 07:15 UTC_
+_Updated: 2026-04-12 07:42 UTC_
 
-Total papers shown: **50**
+Total papers shown: **43**
 
 
 ---
@@ -475,83 +475,6 @@ Total papers shown: **50**
   <details><summary>Abstract</summary>
 
   Dynamic urban environments are often captured by cameras placed at spatially separated locations with little or no view overlap. However, most existing 4D reconstruction methods assume densely overlapping views. When applied to such sparse observations, these methods fail to reconstruct intermediate regions and often introduce temporal artifacts. To address this practical yet underexplored sparse multi-location setting, we propose Stitch4D, a unified 4D reconstruction framework that explicitly compensates for missing spatial coverage in sparse observations. Stitch4D (i) synthesizes intermediate bridge views to densify spatial constraints and improve spatial coverage, and (ii) jointly optimizes real and synthesized observations within a unified coordinate frame under explicit inter-location consistency constraints. By restoring intermediate coverage before optimization, Stitch4D prevents geometric collapse and reconstructs coherent geometry and smooth scene dynamics even in sparsely observed environments. To evaluate this setting, we introduce Urban Sparse 4D (U-S4D), a CARLA-based benchmark designed to assess spatiotemporal alignment under sparse multi-location configurations. Experimental results on U-S4D show that Stitch4D surpasses representative 4D reconstruction baselines and achieves superior visual quality. These results indicate that recovering intermediate spatial coverage is essential for stable 4D reconstruction in sparse urban environments.
-
-  </details>
-
-
-
-- **PanoSAM2: Lightweight Distortion- and Memory-aware Adaptions of SAM2 for 360 Video Object Segmentation**  
-  Dingwen Xiao, Weiming Zhang, Shiqi Wen, Lin Wang  
-  _2026-04-09_ · https://arxiv.org/abs/2604.07901v1  
-  <details><summary>Abstract</summary>
-
-  360 video object segmentation (360VOS) aims to predict temporally-consistent masks in 360 videos, offering full-scene coverage, benefiting applications, such as VR/AR and embodied AI. Learning 360VOS model is nontrivial due to the lack of high-quality labeled dataset. Recently, Segment Anything Models (SAMs), especially SAM2 -- with its design of memory module -- shows strong, promptable VOS capability. However, directly using SAM2 for 360VOS yields implausible results as 360 videos suffer from the projection distortion, semantic inconsistency of left-right sides, and sparse object mask information in SAM2's memory. To this end, we propose PanoSAM2, a novel 360VOS framework based on our lightweight distortion- and memory-aware adaptation strategies of SAM2 to achieve reliable 360VOS while retaining SAM2's user-friendly prompting design. Concretely, to tackle the projection distortion and semantic inconsistency issues, we propose a Pano-Aware Decoder with seam-consistent receptive fields and iterative distortion refinement to maintain continuity across the 0/360 degree boundary. Meanwhile, a Distortion-Guided Mask Loss is introduced to weight pixels by distortion magnitude, stressing stretched regions and boundaries. To address the object sparsity issue, we propose a Long-Short Memory Module to maintain a compact long-term object pointer to re-instantiate and align short-term memories, thereby enhancing temporal coherence. Extensive experiments show that PanoSAM2 yields substantial gains over SAM2: +5.6 on 360VOTS and +6.7 on PanoVOS, showing the effectiveness of our method.
-
-  </details>
-
-
-
-- **AnomalyAgent: Agentic Industrial Anomaly Synthesis via Tool-Augmented Reinforcement Learning**  
-  Jiaming Su, Tengchao Yang, Ruikang Zhang, Zhengan Yan, Haoyu Sun, Linfeng Zhang  
-  _2026-04-09_ · https://arxiv.org/abs/2604.07900v1  
-  <details><summary>Abstract</summary>
-
-  Industrial anomaly generation is a crucial method for alleviating the data scarcity problem in anomaly detection tasks. Most existing anomaly synthesis methods rely on single-step generation mechanisms, lacking complex reasoning and iterative optimization capabilities, making it difficult to generate anomaly samples with high semantic realism. We propose AnomalyAgent, an anomaly synthesis agent with self-reflection, knowledge retrieval, and iterative refinement capabilities, aiming to generate realistic and diverse anomalies. Specifically, AnomalyAgent is equipped with five tools: Prompt Generation (PG), Image Generation (IG), Quality Evaluation (QE), Knowledge Retrieval (KR), and Mask Generation (MG), enabling closed-loop optimization. To improve decision-making and self-reflection, we construct structured trajectories from real anomaly images and design a two-stage training framework: supervised fine-tuning followed by reinforcement learning. This process is driven by a three-part reward mechanism: (1) task rewards to supervise the quality and location rationality of generated anomalies; (2) reflection rewards to train the model's ability to improve anomaly synthesis prompt; (3) behavioral rewards to ensure adherence to the trajectory. On the MVTec-AD dataset, AnomalyAgent achieves IS/IC-L of 2.10/0.33 for anomaly generation, 57.0% classification accuracy using ResNet34, and 99.3%/74.2% AP at the image/pixel level using a simple UNet, surpassing all zero-shot SOTA methods. The code and data will be made publicly available.
-
-  </details>
-
-
-
-- **Sampling-Aware 3D Spatial Analysis in Multiplexed Imaging**  
-  Ido Harlev, Tamar Oukhanov, Raz Ben-Uri, Leeat Keren, Shai Bagon  
-  _2026-04-09_ · https://arxiv.org/abs/2604.07890v1  
-  <details><summary>Abstract</summary>
-
-  Highly multiplexed microscopy enables rich spatial characterization of tissues at single-cell resolution, yet most analyses rely on two-dimensional sections despite inherently three-dimensional tissue organization. Acquiring dense volumetric data in spatial proteomics remains costly and technically challenging, leaving practitioners to choose between 2D sections or 3D serial sections under limited imaging budgets. In this work, we study how sampling geometry impacts the stability of commonly used spatial statistics, and we introduce a geometry-aware reconstruction module that enables sparse yet consistent 3D analysis from serial sections. Using controlled simulations, we show that planar sampling reliably recovers global cell-type abundance but exhibits high variance for local statistics such as cell clustering and cell-cell interactions, particularly for rare or spatially localized populations. We observe consistent behavior in real multiplexed datasets, where interaction metrics and neighborhood relationships fluctuate substantially across individual sections. To support sparse 3D analysis in practice, we present a reconstruction approach that links cell projections across adjacent sections using phenotype and proximity constraints and recovers single-cell 3D centroids using cell-type-specific shape priors. We further analyze the trade-off between section spacing, coverage, and redundancy, identifying acquisition regimes that maximize reconstruction utility under fixed imaging budgets. We validate the reconstruction module on a public imaging mass cytometry dataset with dense axial sampling and demonstrate its downstream utility on an in-house CODEX dataset by enabling structure-level 3D analyses that are unreliable in 2D. Together, our results provide diagnostic tools and practical guidance for deciding when 2D sampling suffices and when sparse 3D reconstruction is warranted.
-
-  </details>
-
-
-
-- **Reinforcement-Guided Synthetic Data Generation for Privacy-Sensitive Identity Recognition**  
-  Xuemei Jia, Jiawei Du, Hui Wei, Jun Chen, Joey Tianyi Zhou, Zheng Wang  
-  _2026-04-09_ · https://arxiv.org/abs/2604.07884v1  
-  <details><summary>Abstract</summary>
-
-  High-fidelity generative models are increasingly needed in privacy-sensitive scenarios, where access to data is severely restricted due to regulatory and copyright constraints. This scarcity hampers model development--ironically, in settings where generative models are most needed to compensate for the lack of data. This creates a self-reinforcing challenge: limited data leads to poor generative models, which in turn fail to mitigate data scarcity. To break this cycle, we propose a reinforcement-guided synthetic data generation framework that adapts general-domain generative priors to privacy-sensitive identity recognition tasks. We first perform a cold-start adaptation to align a pretrained generator with the target domain, establishing semantic relevance and initial fidelity. Building on this foundation, we introduce a multi-objective reward that jointly optimizes semantic consistency, coverage diversity, and expression richness, guiding the generator to produce both realistic and task-effective samples. During downstream training, a dynamic sample selection mechanism further prioritizes high-utility synthetic samples, enabling adaptive data scaling and improved domain alignment. Extensive experiments on benchmark datasets demonstrate that our framework significantly improves both generation fidelity and classification accuracy, while also exhibiting strong generalization to novel categories in small-data regimes.
-
-  </details>
-
-
-
-- **ReconPhys: Reconstruct Appearance and Physical Attributes from Single Video**  
-  Boyuan Wang, Xiaofeng Wang, Yongkang Li, Zheng Zhu, Yifan Chang, Angen Ye, Guosheng Zhao, Chaojun Ni, Guan Huang, Yijie Ren, et al.  
-  _2026-04-09_ · https://arxiv.org/abs/2604.07882v1  
-  <details><summary>Abstract</summary>
-
-  Reconstructing non-rigid objects with physical plausibility remains a significant challenge. Existing approaches leverage differentiable rendering for per-scene optimization, recovering geometry and dynamics but requiring expensive tuning or manual annotation, which limits practicality and generalizability. To address this, we propose ReconPhys, the first feedforward framework that jointly learns physical attribute estimation and 3D Gaussian Splatting reconstruction from a single monocular video. Our method employs a dual-branch architecture trained via a self-supervised strategy, eliminating the need for ground-truth physics labels. Given a video sequence, ReconPhys simultaneously infers geometry, appearance, and physical attributes. Experiments on a large-scale synthetic dataset demonstrate superior performance: our method achieves 21.64 PSNR in future prediction compared to 13.27 by state-of-the-art optimization baselines, while reducing Chamfer Distance from 0.349 to 0.004. Crucially, ReconPhys enables fast inference (<1 second) versus hours required by existing methods, facilitating rapid generation of simulation-ready assets for robotics and graphics.
-
-  </details>
-
-
-
-- **FlowGuard: Towards Lightweight In-Generation Safety Detection for Diffusion Models via Linear Latent Decoding**  
-  Jinghan Yang, Yihe Fan, Xudong Pan, Min Yang  
-  _2026-04-09_ · https://arxiv.org/abs/2604.07879v1  
-  <details><summary>Abstract</summary>
-
-  Diffusion-based image generation models have advanced rapidly but pose a safety risk due to their potential to generate Not-Safe-For-Work (NSFW) content. Existing NSFW detection methods mainly operate either before or after image generation. Pre-generation methods rely on text prompts and struggle with the gap between prompt safety and image safety. Post-generation methods apply classifiers to final outputs, but they are poorly suited to intermediate noisy images. To address this, we introduce FlowGuard, a cross-model in-generation detection framework that inspects intermediate denoising steps. This is particularly challenging in latent diffusion, where early-stage noise obscures visual signals. FlowGuard employs a novel linear approximation for latent decoding and leverages a curriculum learning approach to stabilize training. By detecting unsafe content early, FlowGuard reduces unnecessary diffusion steps to cut computational costs. Our cross-model benchmark spanning nine diffusion-based backbones shows the effectiveness of FlowGuard for in-generation NSFW detection in both in-distribution and out-of-distribution settings, outperforming existing methods by over 30% in F1 score while delivering transformative efficiency gains, including slashing peak GPU memory demand by over 97% and projection time from 8.1 seconds to 0.2 seconds compared to standard VAE decoding.
-
-  </details>
-
-
-
-- **LPM 1.0: Video-based Character Performance Model**  
-  Ailing Zeng, Casper Yang, Chauncey Ge, Eddie Zhang, Garvey Xu, Gavin Lin, Gilbert Gu, Jeremy Pi, Leo Li, Mingyi Shi, et al.  
-  _2026-04-09_ · https://arxiv.org/abs/2604.07823v1  
-  <details><summary>Abstract</summary>
-
-  Performance, the externalization of intent, emotion, and personality through visual, vocal, and temporal behavior, is what makes a character alive. Learning such performance from video is a promising alternative to traditional 3D pipelines. However, existing video models struggle to jointly achieve high expressiveness, real-time inference, and long-horizon identity stability, a tension we call the performance trilemma. Conversation is the most comprehensive performance scenario, as characters simultaneously speak, listen, react, and emote while maintaining identity over time. To address this, we present LPM 1.0 (Large Performance Model), focusing on single-person full-duplex audio-visual conversational performance. Concretely, we build a multimodal human-centric dataset through strict filtering, speaking-listening audio-video pairing, performance understanding, and identity-aware multi-reference extraction; train a 17B-parameter Diffusion Transformer (Base LPM) for highly controllable, identity-consistent performance through multimodal conditioning; and distill it into a causal streaming generator (Online LPM) for low-latency, infinite-length interaction. At inference, given a character image with identity-aware references, LPM 1.0 generates listening videos from user audio and speaking videos from synthesized audio, with text prompts for motion control, all at real-time speed with identity-stable, infinite-length generation. LPM 1.0 thus serves as a visual engine for conversational agents, live streaming characters, and game NPCs. To systematically evaluate this setting, we propose LPM-Bench, the first benchmark for interactive character performance. LPM 1.0 achieves state-of-the-art results across all evaluated dimensions while maintaining real-time inference.
 
   </details>
 
